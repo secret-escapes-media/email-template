@@ -1,0 +1,25 @@
+---
+layout: default
+title: Overview
+nav-order: 1
+
+main-cta-label: Buy now
+
+
+intro-title: ENJOY 12 HAND PICKED WINES FROM VIRGIN WINES
+
+intro-rows:
+  - content: Virgin Wines are offering Secret Escapes members an unbeatable offer on a delectable selection of boutique wines. For just £59.88, you’ll receive 12 stunning wines from across the globe, delivered direct to your door. As winter starts to finally lose its grip on the weather, Virgin Wines has hand-selected a boutique offering to complement the flavours of this time of year. Enjoy top customer rated Californian Malbec, the gooseberry tones of a great Aussie Sauvignon Blanc, or the gold medal-winning Barossa Valley Shiraz.
+  - content: Enjoy the case with free delivery, plus the great benefits of Virgin Wines membership, including a money back guarantee on every bottle, plus interest on any spend over five pounds.
+
+
+---
+
+
+{% include intro-standard.html %}
+
+
+{% assign offers = site.data.offers %}
+{% for offer in offers %}
+  {% include offer/two-column.html %}
+{% endfor %}

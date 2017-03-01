@@ -1,0 +1,114 @@
+
+/*============================================
+|  Global variables & useful tools
+|============================================*/
+
+$white:       #fff;
+$black:       #000;
+$light-grey:  #eeeeee;
+$dark-grey:  #1a1a1a;
+
+$se-orange:       #ff8c00;
+$se-dark-grey:    #292728;
+
+$primary:   #6dccea;
+$secondary: #50679e;
+
+$text-black:      #0d0d0d;
+$text-heading:    #0d0d0d;
+$text-paragraph:  #5f5f5f;
+
+// -------- breakpoints --------
+
+$xxxlarge:  1120px;
+$xxlarge:   970px;
+$xlarge:    850px;
+$large:     650px;
+$medium:    450px;
+$small:     300px;
+
+@mixin bp($width){
+  @if $width == xxxlarge {
+    @media (min-width:$xxxlarge) {@content;}
+  }
+  @if $width == xxlarge {
+    @media (min-width:$xxlarge) {@content;}
+  }
+  @if $width == xlarge {
+    @media (min-width:$xlarge) {@content;}
+  }
+  @if $width == large {
+    @media (min-width:$large) {@content;}
+  }
+  @if $width == medium {
+    @media (min-width:$medium) {@content;}
+  }
+  @if $width == small {
+    @media (min-width:$small) {@content;}
+  }
+}
+
+// vertical breakpoint for small screen mobile
+@mixin bp-vertical {
+  @media (max-height:$medium) and (max-width:$large) { @content; }
+}
+
+
+// -------- global box-sizing & font smoothing --------
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+// -------- responsive images --------
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+// -------- text link style --------
+
+a {
+  color: inherit;
+  text-decoration:none;
+  &:hover { text-decoration: underline; }
+}
+
+
+// -------- enable 100% height --------
+
+body, html { height: 100%; }
+
+
+// -------- general transition --------
+
+$transition-time: .25s;
+@mixin transition() { transition: all $transition-time ease; }
+
+
+// -------- clearfix --------
+
+@mixin clearfix() {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+

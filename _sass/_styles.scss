@@ -1,0 +1,52 @@
+
+/*|======================================================================
+  |  Site styles
+  |====================================================================*/
+
+#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-smoothing: antialiased !important; mso-line-height-rule: exactly;} /* Prevent WebKit and Windows mobile changing default text sizes & general resets for text */
+table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+[style*="Open Sans"] { font-family: 'Open Sans', Arial, sans-serif !important } /* Stops outlook from using times new roman. Font family is reversed on inline style*/
+a[x-apple-data-detectors] {color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } /* stops apple devices inserting links for phone numbers, dates, etc */
+
+/* RESET STYLES */
+body{margin:0; padding:0;}
+img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+table{border-collapse:collapse!important; margin: 0 auto!important;}
+body{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+/* iOS BLUE LINKS FIX */
+.appleBody a {color:#000000; text-decoration: none;}
+.appleFooter a {color:#000000; text-decoration: none;}
+
+/* MOBILE STYLES */
+@media screen and (max-width: 600px) {
+
+  /* FUILD CONTENT */
+  table[class*="wrapper"]{ width:100% !important; }
+  table[class*="responsive-table"]{
+    width: 100%!important;
+    height: auto!important;
+  }
+  img[class*="img-max"]{
+    max-width: 100% !important;
+    width: 100% !important;
+    height:auto !important;
+  }
+  img[class*="border-reset"]{ border-radius: 0 !important; }
+
+  /* HIDE ON MOBILE */
+  *[class*="mobile-hide"]    { display:none !important; }
+
+  /* GENERAL STYLES */
+  td[class*="mobile-center-align"]{ text-align: center !important; }
+  br[class*="desktop-break"]      { display: none; }
+  td[class="logo"]{
+    text-align: left;
+    padding: 30px 15px !important;
+  }
+
+}

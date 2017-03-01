@@ -1,0 +1,23 @@
+# Site settings
+title: Email Template
+description: >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi veniam voluptatibus totam accusantium laborum quo dolore.
+baseurl: "/email-template" # the subpath of your site, e.g. /blog/
+url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md]
+
+# Email global settings
+partner-name: Virgin Wines
+subject-line: 12-bottle boutique wine case offer to welcome the spring
+campaign-link: campaign-link
+
+# Theme colours
+color-se-orange: ff8c00 #ff8c00
+color-se-black: 1a1a1a #1a1a1a
+color-text-title: 0d0d0d #0d0d0d
+color-text-paragraph: 5f5f5f #5f5f5f
+color-primary: de111c #de111c
+color-secondary: de111c #de111c

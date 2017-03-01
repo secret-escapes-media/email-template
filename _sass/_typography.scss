@@ -1,0 +1,152 @@
+
+/*|======================================================================
+  |  Typography
+  |====================================================================*/
+
+/*====== Site typography ======*/
+
+$core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+$main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+$title-font-family: 'Sentinel', Georgia,Times,"Times New Roman",serif;
+
+html { font-size:62.5%; }
+body,
+input, textarea, keygen, select, button {
+  font: 400 14px/1.728 $main-font-family;
+  -webkit-text-size-adjust: 100%;
+  @include bp(medium) {
+    font-size: 15px;
+  }
+  color: $text-paragraph;
+}
+
+
+
+/*====== GENERAL STYLES & CLASSES ======*/
+
+p             { max-width: $xlarge; }
+p + *         { margin-top: 1em; }
+li            { list-style-position: inside; }
+ul li         { list-style-type: disc; }
+ol li         { list-style-type: decimal; }
+em            { font-style: italic; }
+strong        { font-weight: 800; }
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { text-align: center; }
+.align-center p,
+p.align-center { margin-left: auto; margin-right: auto; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: rgba(black, 0.15);
+  margin: 2em 0;
+  .align-center &,
+  &.align-center { width: 120px; margin-left: auto; margin-right: auto; }
+}
+
+/*====== TITLES & PARAGRAPH ======*/
+
+.title {
+  font-family: $title-font-family;
+  color: $text-heading;
+  letter-spacing: .025em;
+  line-height: 1.15;
+  + * { margin-top: .6em; }
+  + hr { margin-top: 2em; }
+  & + & { margin-top: .2em; }
+}
+
+.title,
+.paragraph {
+  &--tracking { letter-spacing: 0.1em;}
+
+  &--light     { font-weight: 200; }
+  &--bold      { font-weight: 600; }
+  &--bolder    { font-weight: 800; }
+  &--expanded  { letter-spacing: .2em; }
+  &--condense  { letter-spacing: 0; }
+  &--tight     { line-height: .9; }
+  &--tighter   { line-height: .8; }
+  &--upper     { text-transform: uppercase; }
+  &--italic    { font-style: italic; }
+
+  &--largest     { font-size: 4.3em; }
+  &--larger      { font-size: 3.375em; }
+  &--large       { font-size: 2.986em; }
+  &--medium      { font-size: 2.25em; }
+  &--small       { font-size: 2em; }
+  &--smaller     { font-size: 1.867em; }
+  &--smallest    { font-size: 1.5em; }
+  &--tiny        { font-size: 1.44em; }
+  &--micro       { font-size: 1.2em; }
+  @include bp(xxlarge){
+    &--largest     { font-size: 8em; }
+    &--larger      { font-size: 6em; }
+    &--large       { font-size: 4em; }
+    &--medium      { font-size: 2.933em; }
+    &--small       { font-size: 2.467em; }
+    &--smaller     { font-size: 2.25em; }
+  }
+}
+
+
+/*====== PARAGRAPH ======*/
+
+.paragraph {
+  &--lead {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  &--large { font-size: 1.05em; }
+  @include bp(large){
+    &--lead { font-size: 1.267em; }
+    &--large { font-size: 1.2em; }
+  }
+  &--small {
+    font-size: 0.85em;
+  }
+}
+
+
+/*====== BUTTONS ======*/
+
+.btn {
+  @include transition;
+  display:inline-block;
+  padding: .5em 2em .4em;
+  font-family: $title-font-family;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  color: white;
+  background-color: $primary;
+  &:hover {
+    background-color: $secondary;
+    text-decoration: none;
+  }
+  & + & { margin-left: 0.5em; }
+  * + & { margin-top: 1.5em; }
+
+  &--subtle {
+    color: $dark-grey;
+    border: 2px solid rgba($dark-grey, 0.4);
+    background-color: transparent;
+    &:hover { border: 2px solid rgba($dark-grey, 0.7); background-color: transparent; }
+    &-invert {
+      background-color: transparent; color: white;
+      border: 2px solid rgba(white, 0.4);
+      &:hover { border: 2px solid white; background-color: white; color: $dark-grey; }
+    }
+  }
+  &--small { font-size: 0.85em; padding: .5em 1.5em .2em; }
+  &--large { font-size: 1.1em; padding: .4em 2.5em; }
+  &--invert {
+    background-color: rgba(white, 0.85); color: $dark-grey;
+    &:hover { background-color: white; color: $dark-grey; }
+  }
+}
+
