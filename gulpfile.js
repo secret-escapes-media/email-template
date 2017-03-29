@@ -23,22 +23,8 @@ gulp.task('serve', function () {
         }
       }
     });
-    // watches js to concat & uglify
-    gulp.watch('js/script.js', ['concatScripts']);
     // Reloads page when some of the already built files changed:
     gulp.watch('_site/**/*.*').on('change', browserSync.reload);
-});
-
-// concat & min scripts
-gulp.task('concatScripts', function(){
-  return gulp.src([
-    './js/modernizr-custom.js',
-    './bower_components/jquery/dist/jquery.min.js',
-    './js/script.js'])
-  .pipe(concat('scripts.js'))
-  .pipe(uglify())
-  .pipe(rename('scripts.min.js'))
-  .pipe(gulp.dest('./js'));
 });
 
 // minify complied html
@@ -75,7 +61,7 @@ gulp.task('compressImages', function () {
 
 
 // builds jekyll site & watch for changes
-gulp.task('default', ['build', 'serve', 'concatScripts']);
+gulp.task('default', ['build', 'serve']);
 
 // run before uploading to live - compresses images & css
 gulp.task('compress', ['compressImages', 'optimiseCss', 'htmlMinify']);

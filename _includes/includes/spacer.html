@@ -1,0 +1,12 @@
+
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = "f2f2f2" %}
+{% endif %}
+
+<table bgcolor="#{{ bgcolor }}" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td height="{{ include.height }}"></td>
+  </tr>
+</table>

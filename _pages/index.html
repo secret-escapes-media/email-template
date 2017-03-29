@@ -1,0 +1,64 @@
+---
+layout: default
+title: Overview
+nav-order: 1
+
+
+partner-name: Jo Malone
+subject-line: "Subject line"
+campaign-link: link
+main-cta-label: Click me
+
+
+objects:
+
+  intro:
+    - title: Praesent commodo cursus magna
+      super-title: Praesent commodo cursus magna
+      subtitle: Praesent commodo cursus magna, vel scelerisque nisl
+      image: intro.jpg
+      image-title: title.png
+      cta: true
+      cta-label:
+      link:
+      content: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+      content-rows:
+        - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+        - paragraph: Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+
+  features:
+    - title: Praesent commodo cursus magna
+      super-title: Praesent commodo cursus magna
+      subtitle:
+      image: intro.jpg
+      cta: true
+      cta-label:
+      link:
+      content: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
+      content-rows:
+
+        - title: A trio of limited edition cologne
+          image: treat.jpg
+          paragraph: Enjoy a complimentary sample from a selection of our most loved scents when you visit any Jo Malone London Boutique in London Heathrow or Gatwick airports. Simply show this email to redeem your sample.*
+          cta: true
+
+        - title: Reserve collect before you fly
+          image: collect.jpg
+          paragraph: Did you know you could pre-order your Jo Malone London favourites online at and collect in-store before you fly?
+          cta: true
+
+---
+
+
+
+{% include complex/feature.html object="intro" %}
+
+
+{% include complex/alternating-content.html object="features" %}
+
+
+{% include complex/feature.html object="features" %}
+
+
+{% include includes/spacer.html height="15" %}

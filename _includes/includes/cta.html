@@ -1,0 +1,33 @@
+
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = "f2f2f2" %}
+{% endif %}
+
+<!-- CTA BLOCK -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" align="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-radius: 4px;">
+
+              <tr>
+                <td align="left" style="padding: 0 30px 30px; text-align: center" class="mobile-pad-3c mobile-center-align">
+                  <a
+                    href="{% if include.link %}{{ include.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                    style="{{ site.data.style.button-large }}">
+                    {% if include.cta-label %}{{ include.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
+                  </a>
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
