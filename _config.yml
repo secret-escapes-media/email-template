@@ -1,11 +1,3 @@
-# Site settings
-title: Email Template
-description: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi veniam voluptatibus totam accusantium laborum quo dolore.
-baseurl: "/email-template" # the subpath of your site, e.g. /blog/
-url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
-
 # Build settings
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md]
-
