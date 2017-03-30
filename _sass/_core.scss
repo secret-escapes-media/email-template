@@ -27,16 +27,16 @@ $small:     300px;
 
 @mixin bp($width){
   @if $width == xlarge {
-    @media (min-width:$xlarge) {@content;}
+    @media (max-width:$xlarge) {@content;}
   }
   @if $width == large {
-    @media (min-width:$large) {@content;}
+    @media (max-width:$large) {@content;}
   }
   @if $width == medium {
-    @media (min-width:$medium) {@content;}
+    @media (max-width:$medium) {@content;}
   }
   @if $width == small {
-    @media (min-width:$small) {@content;}
+    @media (max-width:$small) {@content;}
   }
 }
 
