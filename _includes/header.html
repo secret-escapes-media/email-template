@@ -5,7 +5,7 @@
     <td bgcolor="#ffffff" align="center" style="padding: 10px 0;border-bottom: 1px solid #e0e0e0;">
       <!-- HIDDEN PREHEADER TEXT -->
       <div style="display: none; font-size: 1px; color: #000000; line-height: 1px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-        !!! email-heading !!!
+        {{page.email-heading}}
       </div>
       <!-- OPEN IN BROWSER MESSAGE -->
       <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
@@ -46,7 +46,7 @@
                   </td>
                   <td width="300" align="right">
                     <a href="{{ page.campaign-link }}">
-                      <img alt="{{ page.partner-name }} Logo" src="{{ site.baseurl }}/img/logo-partner.png" width="110"  style="display:block; padding: 5px 0 0;" border="0" />
+                      <img alt="{{ page.partner-name }} Logo" src="{{ site.baseurl }}/img/logo-partner.png" width="110"  style="display:block;" border="0" />
                     </a>
                   </td>
                 </tr>
