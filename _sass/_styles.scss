@@ -41,12 +41,22 @@ body, table, td, a{
 /* Remove spacing between tables in Outlook 2007 and up */
 table, td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
 /* Allow smoother rendering of resized image in Internet Explorer */
-img{-ms-interpolation-mode:bicubic;}
-a[x-apple-data-detectors] {color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } /* stops apple devices inserting links for phone numbers, dates, etc */
+img{ -ms-interpolation-mode:bicubic; }
+/* stops apple devices inserting links for phone numbers, dates, etc */
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
 
 /* Stops outlook from using times new roman. Font family is reversed on inline style*/
 [style*="Montserrat"] { font-family: 'Montserrat', Arial, sans-serif !important }
 [style*="Open Sans"] { font-family: 'Open Sans', Arial, sans-serif !important }
+
+
 
 /* RESET STYLES */
 body{margin:0; padding:0;}
