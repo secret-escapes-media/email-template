@@ -17,6 +17,8 @@
   {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
 {% endif %}
 
+
+
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 15px 30px;">
@@ -24,36 +26,19 @@
         <tr>
           <td bgcolor="#f2f2f2">
 
-            <!-- PAGE SUPER TITLE -->
-            {% if object.super-title %}
-            <table bgcolor="#{{ site.data.style.color-se-black }}" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-top-left-radius: 4px;border-top-right-radius: 4px;">
-              <tr>
-                <td>
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td align="center" style="padding: 15px; color: #ffffff; {{ site.data.style.text-h2 }}" class="padding-copy-header">
-                        {{ object.super-title }}
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-            {% endif %}
-
             {% if object.image %}
             <!-- HERO IMAGE -->
             <table style="border-radius: 4px;" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td>
                   <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="{{ site.baseurl }}/img/content/{{ object.image }}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max border-reset" />
+                    <img src="{{ site.baseurl }}/img/content/{{ object.image }}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max" />
                   </a>
                 </td>
               </tr>
               {% if object.image-caption %}
               <tr>
-                <td align="center" bgcolor="#{{ site.data.style.color-se-extralight-orange }}" style="padding: 10px 30px; {{ site.data.style.text-h5 }} color: #{{ color-text-title }};" class="padding-copy-header">
+                <td align="center" bgcolor="#{{ color-se-grey }}" style="padding: 10px 30px; {{ site.data.style.text-h5 }} color: #{{ color-text-title }};" class="padding-copy-header">
                   {{ object.image-caption }}
                 </td>
               </tr>
@@ -61,7 +46,7 @@
             </table>
             {% endif %}
 
-            <table bgcolor="{% if include.theme == 'dark' %}#{{ site.data.style.color-se-black }}{% else %}#ffffff{% endif %}" style="border-radius: 4px; {% unless include.theme == 'dark' %}{% unless object.image %}border-top: 1px solid #e0e0e0;{% endunless %}border-left: 1px solid #e0e0e0;border-right: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;{% endunless %}" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table bgcolor="{% if include.theme == 'dark' %}#{{ site.data.style.color-se-black }}{% else %}#ffffff{% endif %}" style="{% if object.image %}border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;{% else %}border-radius: 4px;{% endif %} {% unless include.theme == 'dark' %}{% unless object.image %}border-top: 1px solid #e0e0e0;{% endunless %}border-left: 1px solid #e0e0e0;border-right: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;{% endunless %}" width="100%" border="0" cellspacing="0" cellpadding="0">
               <!-- COPY -->
               <tr>
                 <td style="padding: 30px 0;">
@@ -84,6 +69,7 @@
                   </table>
 
                   {% if object.title or object.subtitle %}
+                  {% if object.content or object.content-rows %}
                   <!-- START - bulletproof hr -->
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -104,23 +90,47 @@
                   </table>
                   <!-- END - bulletproof hr -->
                   {% endif %}
+                  {% endif %}
 
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
                     {% if object.content-rows %}
-                      {% for content in object.content-rows %}
-                      <tr>
-                        <td align="left" style="padding: 0 30px{% unless forloop.last %} 10px{% endunless %}; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
-                          {{ content.paragraph }}
-                        </td>
-                      </tr>
+                      {% for object in object.content-rows %}
+
+                        {% if object.title %}
+                        <tr>
+                          <td align="left" style="padding: 10px 30px; color: #{{ color-text-title }}; {{ site.data.style.text-h5 }}">
+                            {{ object.title }}
+                          </td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                          <td align="left" style="padding: 0 30px{% unless forloop.last %} 10px{% endunless %}; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                            {% if object.pre %}<span style="font-weight: 700;font-size:1.1em; margin-right: 6px; color: #{{ site.data.style.color-theme }}">{{ object.pre }}</span>{% endif %}
+                            {{ object.paragraph }}
+                          </td>
+                        </tr>
+                        {% if object.cta %}
+                        <tr>
+                          <td align="left" width="300" style="padding: 15px 30px;">
+                            <a
+                              href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                              style="{{ site.data.style.button-small }}">
+                              {% if object.cta-label %}{{ object.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
+                            </a>
+                          </td>
+                        </tr>
+                        {% endif %}
+
                       {% endfor %}
-                    {% else %}
+                    {% elsif object.content %}
+
                       <tr>
-                        <td align="left" style="padding: 10px 30px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                        <td align="left" style="padding: 0 30px 10px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                           {{ object.content }}
                         </td>
                       </tr>
+
                     {% endif %}
 
                     {% if object.cta %}

@@ -4,7 +4,7 @@ title: Overview
 nav-order: 1
 
 
-partner-name: Jo Malone
+partner-name:
 subject-line: "Subject line"
 campaign-link: link
 main-cta-label: Click me
@@ -13,24 +13,19 @@ main-cta-label: Click me
 objects:
 
   intro:
-    - title: Praesent commodo cursus magna
-      super-title: Praesent commodo cursus magna
-      subtitle: Praesent commodo cursus magna, vel scelerisque nisl
+    - title: Jekyll email builder
+      subtitle: Style guide/component library
       image: intro.jpg
       image-title: title.png
       cta: true
       cta-label:
       link:
-      content: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
-      content-rows:
-        - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
-        - paragraph: Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      content: This page is to showcase all possible includes and layout options using the builder. Refer to the readme for examples on how to use and configure the includes.
 
 
   features:
-    - title: Praesent commodo cursus magna
-      super-title: Praesent commodo cursus magna
-      subtitle:
+    - title: Nullam id dolor id nibh ultricies
+      subtitle: Praesent commodo cursus magna
       image: intro.jpg
       cta: true
       cta-label:
@@ -46,19 +41,55 @@ objects:
         - title: Reserve collect before you fly
           image: collect.jpg
           paragraph: Did you know you could pre-order your Jo Malone London favourites online at and collect in-store before you fly?
-          cta: true
 
 ---
 
 
 
-{% include complex/feature.html object="intro" %}
+{% for object in page.objects["intro"] %}
+  {% include blocks/feature.html %}
+{% endfor %}
 
 
-{% include complex/alternating-content.html object="features" %}
+{% for object in page.objects["features"] %}
+  {% include blocks/alternating-content.html %}
+{% endfor %}
 
 
-{% include complex/feature.html object="features" %}
+{% for object in page.objects["features"] %}
+  {% include blocks/feature.html %}
+{% endfor %}
 
 
-{% include includes/spacer.html height="15" %}
+{% include includes/section-intro.html title="Example offer cards" %}
+
+
+{% assign offers = site.data.offers %}
+{% for offer in offers limit:2 %}
+  {% include offer/two-column.html %}
+{% endfor %}
+{% for offer in offers limit:1 %}
+  {% include offer/full-width.html %}
+{% endfor %}
+{% for offer in offers limit:1 %}
+  {% include offer/feature.html %}
+{% endfor %}
+
+
+{% include includes/section-intro.html title="Looped data file options" %}
+
+
+{% assign categories = site.data.categories %}
+{% for object in categories limit:2 %}
+  {% include blocks/two-column.html %}
+{% endfor %}
+{% for object in categories limit:1 %}
+  {% include blocks/full-width.html %}
+{% endfor %}
+{% for object in categories limit:1 %}
+  {% include blocks/feature.html %}
+{% endfor %}
+
+
+{% include includes/cta.html %}
+
