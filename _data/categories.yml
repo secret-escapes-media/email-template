@@ -1,62 +1,71 @@
 
   - title: London
-    image: london.jpg
+    subtitle:
+    image: eg-category.jpg
     location: London, England
     content: Eight million trees, 47% green space, Europe’s greenest big city – London in spring is an unexpected delight. Beat the crowds and sneak a visit in now.
-    cta:
+    cta: 
     link:
 
   - title: Amsterdam
-    image: amsterdam.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Amsterdam, Netherlands
     content: Utterly delightful to explore on foot, filled with fascinating buildings and awesome art, Amsterdam is somewhere everyone should tick off at least once.
     cta:
     link:
 
   - title: Bruges
-    image: bruges.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Bruges, Belgium
     content: Our favourite fairy-tale medieval town, Bruges is dreamy in spring, when the crowds are lighter and the courtyard of the Beguinage is carpeted by daffodils.
     cta:
     link:
 
   - title: Brussels
-    image: brussels.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Brussels, Belgium
     content: In the mood for culture? Brussels is bursting with brilliant museums and galleries, with gorgeous old buildings and classic restaurants as a backdrop.
     cta:
     link:
 
   - title: Lisbon
-    image: lisbon.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Lisbon, Portugal
     content: Turn down the tempo with a break in chilled-out Lisbon. Ride the trams, climb the hills and tuck into delicious Portuguese food at the Time Out Market.
     cta:
     link:
 
   - title: Valencia
-    image: valencia.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Valencia, Spain
     content: Still something of a hidden gem, Valencia offers a wealth of cultural highlights in the spring, plus atmospheric streets and markets for idyllic wandering.
     cta:
     link:
 
   - title: Berlin
-    image: berlin.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Berlin, Germany
     content: Exciting, diverse, surprising; there’s nowhere quite like Berlin. From its incredible history to the wild nightlife, you won’t ever forget your visit.
     cta:
     link:
 
   - title: Rome
-    image: rome.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Rome, Italy
     content: A little more peaceful, springtime Rome offers all the classics you’d expect – plus a few you might not, like the butterfly-filled American Academy Gardens.
     cta:
     link:
 
   - title: Barcelona
-    image: barcelona.jpg
+    subtitle:
+    image: eg-category.jpg
     location: Barcelona, Spain
     content: As the good weather returns, La Rambla comes alive again – and the open-air terrazas start beckoning with cold beers and tasty tapas. A springtime fave.
     cta:

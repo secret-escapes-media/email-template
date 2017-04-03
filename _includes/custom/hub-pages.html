@@ -1,0 +1,140 @@
+
+{% assign gutter = site.data.style.gutter %}
+
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
+{% endif %}
+
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
+{% else %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
+{% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+{% if include.theme == 'dark' %}
+  {% assign bordercolor = site.data.style.color-bordercolor-dark %}
+  {% assign color-text-title = site.data.style.color-text-title-dark %}
+  {% assign color-text-paragraph = site.data.style.color-text-paragraph-dark %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+  {% assign color-text-title = site.data.style.color-text-title %}
+  {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
+{% endif %}
+
+
+{% if object.title %}
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" style="padding-bottom: {{gutter | times:2}}px;" align="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
+
+            {% include includes/hr.html %}
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" style="padding: 0 {{gutter | times:2}}px 0px; color: #{{ color-text-title }}; {{ site.data.style.text-h1 }}" class="padding-copy-header">
+                  {{ object.title }}
+                </td>
+              </tr>
+            </table>
+
+            {% if object.subtitle %}
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ site.data.style.text-h5 }}" class="padding-copy-header">
+                    {{ object.subtitle }}
+                  </td>
+                </tr>
+              </table>
+            {% endif %}
+
+            {% include includes/hr.html %}
+              
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                  {{ object.content }}
+                </td>
+              </tr>
+            </table>
+
+
+            {% if object.cta %}
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px;">
+                  <a
+                    href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                    style="{% if include.theme == 'dark' %}{{ site.data.style.button-small-invert }}{% else %}{{ site.data.style.button-small }}{% endif %}">
+                    {% if object.cta-label %}
+                      {{ object.cta-label }}
+                    {% else %}
+                      {{ page.main-cta-label }}
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+            </table>
+            {% endif %}
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{% endif %}
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 {{gutter}}px {{gutter | times:2}}px;">
+      {% for object in object.content-rows %}
+      {% assign loopindex = forloop.index | modulo: 2 %}
+
+      {% if forloop.first or loopindex == 1 %}
+      <!-- FIRST ROW -->
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td valign="middle" style="vertical-align:middle;">
+      {% endif %}
+
+            <!-- LEFT COLUMN -->
+            <table cellpadding="0" cellspacing="0" border="0" width="50%" class="responsive-table" style="height: 200px;" align="{% if forloop.first or loopindex == 1 %}left{% else %}right{% endif %}">
+              <tr>
+                <td style="padding: 0; vertical-align:middle;" valign="middle">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                      <td align="center" valign="middle">
+                        <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
+                          <img class="border-reset" src="img/content/{{ object.image }}" width="300" style="display: block; width: 100%; height:auto;" alt="" border="0" class="img-max" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+      {% if forloop.last or loopindex != 1 %}
+          </td>
+        </tr>
+      </table>
+      <!-- FIRST ROW END -->
+      {% endif %}
+
+      {% endfor %}
+    </td>
+  </tr>
+</table>

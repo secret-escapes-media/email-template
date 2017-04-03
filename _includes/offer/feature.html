@@ -2,19 +2,19 @@
 {% if include.bgcolor %}
   {% assign bgcolor = include.bgcolor %}
 {% else %}
-  {% assign bgcolor = "f2f2f2" %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
 {% endif %}
 
-{% if include.theme == "dark" %}
-  <!-- theme card for dark background -->
-  {% assign color-text-title = "ffffff" %}
-  {% assign color-text-paragraph = "ffffff" %}
-  {% assign color-se-grey = "444444" %}
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
 {% else %}
-  <!-- set colours to default -->
-  {% assign color-se-grey = site.data.style.color-se-grey %}
-  {% assign color-text-title = site.data.style.color-text-title %}
-  {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
+{% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
 {% endif %}
 
 <!-- SALE CARD - LARGE -->
@@ -24,17 +24,17 @@
       <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
         <tr>
           <td>
-            <table bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-radius: 4px;  border: 1px solid #{{color-se-grey}};">
+            <table bgcolor="#{{ boxcolor }}" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-radius: 4px;  border: 1px solid #{{ bordercolor }};">
               <!-- HERO IMAGE -->
               <tr>
                 <td>
                   <a href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="{{ site.baseurl }}/img/offers/{{ offer.title | slugify }}.jpg" width="600" border="0" alt="" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+                    <img src="img/offers/{{ offer.title | slugify }}.jpg" width="600" border="0" alt="" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
                   </a>
                 </td>
               </tr>
             </table>
-            <table bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #e0e0e0; border-top: 0;">
+            <table bgcolor="#{{ boxcolor }}" width="100%" border="0" cellspacing="0" cellpadding="0">
               <!-- COPY -->
               <tr>
                 <td>
@@ -54,7 +54,7 @@
               </tr>
               <!-- TWO COLUMNS -->
               <tr>
-                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #ececec; padding: 20px 0;">
+                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #{{ bordercolor }}; padding: 20px 0;">
                   <!-- LEFT COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="360" align="left" class="responsive-table">
                     <tr>

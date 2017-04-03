@@ -2,23 +2,24 @@
 {% if include.bgcolor %}
   {% assign bgcolor = include.bgcolor %}
 {% else %}
-  {% assign bgcolor = "f2f2f2" %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
 {% endif %}
 
-{% if include.theme == "dark" %}
-  <!-- theme card for dark background -->
-  {% assign color-text-title = "ffffff" %}
-  {% assign color-text-paragraph = "ffffff" %}
-  {% assign color-se-grey = "444444" %}
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
 {% else %}
-  <!-- set colours to default -->
-  {% assign color-se-grey = site.data.style.color-se-grey %}
-  {% assign color-text-title = site.data.style.color-text-title %}
-  {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
 {% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+
 
 {% assign loopindex = forloop.index | modulo: 2 %}
-
 {% if forloop.first or loopindex == 1 %}
 
 <!-- 2 COLUMN SALE CARDS -->
@@ -41,12 +42,12 @@
         <tr>
           <td>
             <a href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-              <img src="{{ site.baseurl }}/img/offers/{{ offer.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+              <img src="img/offers/{{ offer.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
             </a>
           </td>
         </tr>
         <tr>
-          <td style="background-color: #ffffff; padding: 20px 30px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border: 1px solid #e0e0e0;">
+          <td style="background-color: #{{ boxcolor }}; padding: 20px 30px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
             <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="center" style="padding-bottom: 3px; color: #{{ site.data.style.color-text-title }}; {{ site.data.style.text-h4 }}">

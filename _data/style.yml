@@ -1,17 +1,31 @@
 
-# Theme colours
+
+### Base colours
 color-se-orange: ff8c00 #ff8c00
-color-se-light-orange: febe77 #febe77
-color-se-extralight-orange: feddb7 #feddb7
-color-se-dark-orange: bf6900 #bf6900
-color-se-extradark-orange: 7b521e #7b521e
 color-se-black: 222222 #222222
 color-se-grey: dddddd #dddddd
 color-text-title: 0d0d0d #0d0d0d
-color-text-paragraph: 5f5f5f #5f5f5f
-color-black: 0d0d0d #0d0d0d
+color-text-paragraph: 828282 #828282
+color-bgcolor: f2f2f2 #f2f2f2
+color-boxcolor: ffffff #ffffff
+color-bordercolor: e0e0e0 #e0e0e0
+#dark theme
+color-bgcolor-dark: 000000 #000000
+color-boxcolor-dark: 000000 #000000
+color-bordercolor-dark: 1a1a1a #1a1a1a
+color-text-title-dark: ffffff #ffffff
+color-text-paragraph-dark: f2f2f2 #f2f2f2
+#custom colours
+color-theme-primary: b1311c #b1311c
+color-theme-secondary: 4C6144 #4C6144
 
-# Typography
+
+### Grid
+gutter: 15 # use math within includes, e.g "divided_by: or "times:"
+
+
+### Typography
+
 text-banner: "font-size: 48px; line-height: 50px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200; text-transform:uppercase; letter-spacing:6px;"
 
 text-h1: "font-size: 27px; line-height: 35px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
@@ -19,15 +33,20 @@ text-h2: "font-size: 22px; line-height: 27px; font-family: Helvetica, Arial, san
 text-h3: "font-size: 18px; line-height: 24px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 500;"
 text-h4: "font-size: 16px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
 text-h5: "font-size: 13px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
-text-p-lead: "font-size: 17px; line-height: 27px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
-text-p: "font-size: 14px; line-height: 21px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 300;"
-text-p-small: "font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 300;"
+text-h6: "font-size: 13px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600;"
 
-# Buttons
+text-p-lead: "font-size: 17px; line-height: 27px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
+text-p: "font-size: 14px; line-height: 21px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+text-p-small: "font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+
+
+### Buttons
 button-large: >
-  font-size: 14px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 10px solid #ff8c00; border-bottom: 10px solid #ff8c00; border-left: 32px solid #ff8c00; border-right: 32px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
+  font-size: 13px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 10px solid #ff8c00; border-bottom: 10px solid #ff8c00; border-left: 32px solid #ff8c00; border-right: 32px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
 button-small: >
   font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 6px solid #ff8c00; border-bottom: 6px solid #ff8c00; border-left: 24px solid #ff8c00; border-right: 24px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 1px; text-transform: uppercase;
-button-invert: >
-  font-size: 14px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 10px solid #ffffff; border-bottom: 10px solid #ffffff; border-left: 32px solid #ffffff; border-right: 32px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
+button-large-invert: >
+  font-size: 13px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 10px solid #ffffff; border-bottom: 10px solid #ffffff; border-left: 32px solid #ffffff; border-right: 32px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
+button-small-invert: >
+  font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 6px solid #ffffff; border-bottom: 6px solid #ffffff; border-left: 24px solid #ffffff; border-right: 24px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 1px; text-transform: uppercase;
 

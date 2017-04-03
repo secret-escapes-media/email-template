@@ -1,11 +1,13 @@
 
+{% assign gutter = site.data.style.gutter %}
+
 {% if include.bgcolor %}
   {% assign bgcolor = include.bgcolor %}
 {% else %}
   {% assign bgcolor = "f2f2f2" %}
 {% endif %}
 
-<!-- CTA BLOCK -->
+<!-- cta.html -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#{{ bgcolor }}" align="center">
@@ -15,10 +17,10 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-radius: 4px;">
 
               <tr>
-                <td align="left" style="padding: 0 30px 30px; text-align: center" class="mobile-pad-3c mobile-center-align">
+                <td align="left" style="padding: 0 {{gutter | times:2}}px {{gutter | times:2}}px; text-align: center" class="mobile-pad-3c mobile-center-align">
                   <a
                     href="{% if include.link %}{{ include.link }}{% else %}{{ page.campaign-link }}{% endif %}"
-                    style="{{ site.data.style.button-large }}">
+                    style="{% if include.theme == 'dark' %}{{ site.data.style.button-large-invert }}{% else %}{{ site.data.style.button-large }}{% endif %}">
                     {% if include.cta-label %}{{ include.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
                   </a>
                 </td>

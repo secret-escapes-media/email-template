@@ -53,9 +53,9 @@ a[x-apple-data-detectors] {
 }
 
 /* Stops outlook from using times new roman. Font family is reversed on inline style*/
-[style*="Montserrat"] { font-family: 'Montserrat', Arial, sans-serif !important }
 [style*="Open Sans"] { font-family: 'Open Sans', Arial, sans-serif !important }
-
+[style*="Oswald"] { font-family: 'Oswald', Arial, sans-serif !important }
+[style*="Prata"] { font-family: 'Prata', Didot,'Didot LT STD','Bodoni MT','Hoefler Text',Garamond,'Times New Roman',serif !important }
 
 
 /* RESET STYLES */
