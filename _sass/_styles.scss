@@ -77,6 +77,8 @@ body{height:100% !important; margin:0; padding:0; width:100% !important;}
     width: 100%!important;
     height: auto!important;
   }
+  td[class*="responsive-td"]{ display: block !important; }
+
   img[class*="img-max"]{
     max-width: 100% !important;
     width: 100% !important;
@@ -94,5 +96,7 @@ body{height:100% !important; margin:0; padding:0; width:100% !important;}
     text-align: left;
     padding: 30px 15px !important;
   }
+  img[class="logo-se"] { width: 100px; }
+  img[class="logo-partner"] { width: 100px; }
 
 }
