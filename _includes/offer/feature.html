@@ -28,7 +28,7 @@
               <!-- HERO IMAGE -->
               <tr>
                 <td>
-                  <a href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}">
+                  <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
                     <img src="img/offers/{{ offer.title | slugify }}.jpg" width="600" border="0" alt="" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
                   </a>
                 </td>
@@ -76,7 +76,7 @@
                           <tr>
                             <td width="300" style="padding: 0 0 0 20px; text-align:right" class="mobile-pad-3c mobile-center-align">
                               <a
-                                href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                                href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
                                 style="{{ site.data.style.button-small }}">
                                 View offer
                               </a>
