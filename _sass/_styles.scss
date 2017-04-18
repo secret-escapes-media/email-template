@@ -54,8 +54,6 @@ a[x-apple-data-detectors] {
 
 /* Stops outlook from using times new roman. Font family is reversed on inline style*/
 [style*="Open Sans"] { font-family: 'Open Sans', Arial, sans-serif !important }
-[style*="Oswald"] { font-family: 'Oswald', Arial, sans-serif !important }
-[style*="Prata"] { font-family: 'Prata', Didot,'Didot LT STD','Bodoni MT','Hoefler Text',Garamond,'Times New Roman',serif !important }
 
 
 /* RESET STYLES */
@@ -69,6 +67,8 @@ body{height:100% !important; margin:0; padding:0; width:100% !important;}
 .appleFooter a {color:#000000; text-decoration: none;}
 
 /* MOBILE STYLES */
+@include bp(small){}
+@include bp(medium){}
 @include bp(large){
 
   /* FLUID CONTENT */
@@ -100,3 +100,4 @@ body{height:100% !important; margin:0; padding:0; width:100% !important;}
   img[class="logo-partner"] { width: 100px; }
 
 }
+@include bp(xlarge){}
