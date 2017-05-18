@@ -107,7 +107,7 @@
                         {% endif %}
 
                         <tr>
-                          <td align="left" style="padding: 0 {{gutter | times:2}}px {{gutter}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                          <td align="left" style="padding: 0 {{gutter | times:2}}px{% unless forloop.last %} {{gutter}}px{% endunless %}; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                             {% if sub_object.pre %}
                               <span style="font-weight: 700;font-size:1.1em; margin-right: 6px; color: #{{ site.data.style.color-theme }}">{{ sub_object.pre }}</span>
                             {% endif %}
