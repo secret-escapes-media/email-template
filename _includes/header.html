@@ -1,12 +1,12 @@
 {% if page.theme == 'dark' %}
-  {% assign top_bgcolor = site.data.style.color-bgcolor-dark %}
-  {% assign header_bgcolor = site.data.style.color-boxcolor-dark %}
+  {% assign top_bgcolor = site.data.style.color-boxcolor-dark %}
+  {% assign header_bgcolor = site.data.style.color-bgcolor-dark %}
   {% assign bordercolor = "1a1a1a" %}
   {% assign color-text-title = site.data.style.color-text-title-dark %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph-dark %}
 {% else %}
-  {% assign top_bgcolor = site.data.style.color-boxcolor %}
-  {% assign header_bgcolor = site.data.style.color-bgcolor %}
+  {% assign top_bgcolor = site.data.style.color-bgcolor %}
+  {% assign header_bgcolor = site.data.style.color-boxcolor %}
   {% assign bordercolor = site.data.style.color-bordercolor %}
   {% assign color-text-title = site.data.style.color-text-title %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
@@ -15,7 +15,7 @@
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td bgcolor="#{{top_bgcolor}}" align="center" style="padding: {{site.data.style.gutter | divided_by:1.5}}px 0;border-bottom: 1px solid #{{bordercolor}};">
+    <td bgcolor="#{{top_bgcolor}}" align="center" style="padding: {{site.data.style.gutter | divided_by:1.5}}px 0;">
       <!-- HIDDEN PREHEADER TEXT -->
       <div style="display: none; font-size: 1px; color: #{{color-text-title}}; line-height: 1px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
         {{page.email-title}}

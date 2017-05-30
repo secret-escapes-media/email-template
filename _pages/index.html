@@ -3,7 +3,7 @@ layout: default
 
 
 partner-name:
-email-title: 
+email-title:
 subject-line: "Subject line"
 campaign-link: link
 main-cta-label: Click me
@@ -16,6 +16,7 @@ objects:
       subtitle: Style guide/component library
       image: intro.jpg
       image-title: title.png
+      image-title-width: 570
       cta: true
       cta-label:
       link:
@@ -55,7 +56,7 @@ objects:
 
 
 {% for object in page.objects["intro"] %}
-  {% include blocks/feature.html %}
+  {% include blocks/banner.html %}
 {% endfor %}
 
 
