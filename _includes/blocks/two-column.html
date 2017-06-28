@@ -54,7 +54,7 @@
         <tr>
           <td>
             <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-              <img src="img/content/{{ object.image }}" border="0" alt="" width="285" height="200" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+              <img src="{% include img-pre.html type='CONTENT' name=object.image %}" border="0" alt="" width="285" height="200" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
             </a>
           </td>
         </tr>

@@ -59,7 +59,7 @@
                   </td>
                   <td width="300" align="right">
                     <a href="{{ page.campaign-link }}">
-                      <img alt="{{ page.partner-name }} Logo" class="logo-partner" src="img/logo-partner{% if page.theme == 'dark' %}-white{% endif %}.png" width="110"  style="display:block;" border="0" />
+                      <img alt="{{ page.partner-name }} Logo" class="logo-partner" src="{% if page.theme == 'dark' %}{% include img-pre.html type='LOGO' name='partner-white.png' %}{% else %} {% include img-pre.html type='LOGO' name='partner.png' %}{% endif %}" width="110"  style="display:block;" border="0" />
                     </a>
                   </td>
                 </tr>

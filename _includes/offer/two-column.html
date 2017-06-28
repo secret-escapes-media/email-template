@@ -17,7 +17,7 @@
   {% assign bordercolor = site.data.style.color-bordercolor %}
 {% endif %}
 
-
+{% assign offer-image = offer.title | slugify | append: '.jpg' %}
 
 {% assign loopindex = forloop.index | modulo: 2 %}
 {% if forloop.first or loopindex == 1 %}
@@ -42,7 +42,7 @@
         <tr>
           <td>
             <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
-              <img src="img/offers/{{ offer.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+              <img src="{% include img-pre.html type='OFFER' name=offer-image %}" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
             </a>
           </td>
         </tr>

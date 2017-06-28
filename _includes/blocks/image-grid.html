@@ -117,7 +117,7 @@
               <tr>
                 <td align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}" valign="middle">
                   <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="img/content/{{ object.image }}" width="300" style="display: block; height:auto;" alt="" border="0" class="border-reset img-max" />
+                    <img src="{% include img-pre.html type='CONTENT' name=object.image %}" width="300" style="display: block; height:auto;" alt="" border="0" class="border-reset img-max" />
                   </a>
                 </td>
               </tr>
