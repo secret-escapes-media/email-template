@@ -46,7 +46,7 @@
               <tr>
                 <td>
                   <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="{% include img-pre.html type='CONTENT' name=object.image %}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max" />
+                    <img src="{% include img-pre.html type='C' name=object.image %}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max" />
                   </a>
                 </td>
               </tr>
