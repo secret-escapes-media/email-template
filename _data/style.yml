@@ -3,7 +3,7 @@
 color-se-orange: ff8c00 #ff8c00
 color-se-black: 222222 #222222
 color-se-grey: dddddd #dddddd
-color-text-title: 0d0d0d #0d0d0d
+color-text-title: 484848 #484848
 color-text-paragraph: 828282 #828282
 
 ### Light theme
@@ -42,7 +42,7 @@ text-h2: "font-size: 22px; line-height: 27px; font-family: Helvetica, Arial, san
 text-h3: "font-size: 18px; line-height: 24px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
 text-h4: "font-size: 15px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
 text-h5: "font-size: 13px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;"
-text-h6: "font-size: 13px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+text-h6: "font-size: 12px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
 
 text-p-lead: "font-size: 16px; line-height: 26px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
 text-p: "font-size: 14px; line-height: 21px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
@@ -71,3 +71,24 @@ button-outline-invert:
   outside: "display: inline-block; border: 2px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;"
   inside: "font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ffffff; text-decoration: none; background-color: #0d0d0d; border-top: 6px solid #0d0d0d; border-bottom: 6px solid #0d0d0d; border-left: 24px solid #0d0d0d; border-right: 24px solid #0d0d0d; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;"
 
+
+
+
+
+
+### Secret Escapes styles // do not touch
+
+se-text-h1: "font-size: 27px; line-height: 35px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
+se-text-h2: "font-size: 22px; line-height: 27px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+se-text-h3: "font-size: 18px; line-height: 24px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+se-text-h4: "font-size: 15px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
+se-text-h5: "font-size: 13px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;"
+se-text-h6: "font-size: 12px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
+
+se-text-p-lead: "font-size: 16px; line-height: 26px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+se-text-p: "font-size: 14px; line-height: 21px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+se-text-p-small: "font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"
+
+se-button: "font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 8px solid #ff8c00; border-bottom: 8px solid #ff8c00; border-left: 24px solid #ff8c00; border-right: 24px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;"
+
+se-button-large: "font-size: 14px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 14px solid #ff8c00; border-bottom: 14px solid #ff8c00; border-left: 40px solid #ff8c00; border-right: 40px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;"

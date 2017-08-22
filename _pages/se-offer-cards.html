@@ -8,13 +8,13 @@ email-title:
 subject-line:
 campaign-link: link
 main-button-label: Default button text
-terms-and-conditions: 
+terms-and-conditions:
 
 
 objects:
 
   intro:
-    - banner-title: Example offer card layouts
+    - banner-title: Secret Escapes offer card layouts
       image: banner.jpg
       content: The structure of how offers flow into the template blocks has changed in version 2. Now the same groups that are used for showing normal content can be used for offers, and you just have to assign the type to "offer" on the include. This will pull in the content block for offer details, as well as link to the offer image.
 
@@ -35,17 +35,13 @@ objects:
 
 
 
-  styling-offers:
-    - title: Styling offer cards
-      content-rows:
-        - content: "Simple styling of the offer cards is done inline through attributes on the includes."
-        - content: "Possible attributes are: <strong>title-style</strong> (h1, h2, h3, h4, h5, h6), <strong>paragraph-style</strong> (lead, small), <strong>button-style</strong> (large, small, subtle), <strong>align</strong> (left, center, right)"
-        - content: "To change the <strong>subtitle-style</strong> you have to have a title setting (this is a strange limitation of Jekyll as far as I can tell). subtitle-style options are the same as title: h1, h2, h3, h4, h5, h6"
+  three-column-offers:
+    - title: Three column offer cards
 
 
 
 ---
-{% assign offers = site.data.offers %}
+{% assign offers = site.data.se-offers %}
 
 
 
@@ -62,7 +58,7 @@ objects:
 
 
 {% for object in offers limit:1 %}
-  {% include groups/feature.html type="offer" %}
+  {% include offers/feature.html %}
 {% endfor %}
 
 
@@ -73,7 +69,7 @@ objects:
 
 
 {% for object in offers limit:2 %}
-  {% include groups/full-width.html type="offer" %}
+  {% include offers/full-width.html %}
 {% endfor %}
 
 
@@ -84,26 +80,16 @@ objects:
 
 
 {% for object in offers limit:2 %}
-  {% include groups/two-column.html type="offer" %}
+  {% include offers/two-column.html %}
 {% endfor %}
 
 
-<!-- Restyling the offer cards -->
-{% for object in page.objects["styling-offers"] %}
+<!-- Three column offer card -->
+{% for object in page.objects["three-column-offers"] %}
   {% include groups/section-intro.html %}
 {% endfor %}
 
 
-{% for object in offers limit:2 %}
-  {% include groups/two-column.html type="offer" align="left" button-style="large" %}
+{% for object in offers limit:3 %}
+  {% include offers/three-column.html %}
 {% endfor %}
-
-{% for object in offers limit:1 %}
-  {% include groups/full-width.html type="offer" align="left" button-style="small" %}
-{% endfor %}
-
-{% for object in offers limit:1 %}
-  {% include groups/full-width.html type="offer" align="left" title-style="h2" paragraph-style="small" %}
-{% endfor %}
-
-

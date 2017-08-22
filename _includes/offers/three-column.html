@@ -1,0 +1,149 @@
+
+
+
+{% if forloop.first %}
+<!--
+THREE COLUMNS
+Three column layout that rearranges to single column for mobile.
+-->
+{% endif %}
+
+
+{% include elements/_settings.html %}
+
+
+{% unless include.spacing-padding %} {% assign spacing-padding = '10' %} {% endunless %}
+
+
+{% if forloop.first %}
+<!-- three-column.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{bgcolor}}" align="center" style="padding: 0 {{spacing-gutter}}px;">
+{% endif %}
+
+  {% assign loopindex = forloop.index | plus: 1 %}
+  {% assign thirdColumn = loopindex | modulo: 3 %}
+
+    {% if forloop.first %}
+    <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+      <tr>
+        <td>
+
+          <!-- FIRST CONTAINER COLUMN -->
+          <table align="left" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="395">
+            <tr>
+              <td>
+    {% endif %}
+
+    {% if thirdColumn == 1 %}
+              </td>
+            </tr>
+          </table>
+          <!-- END – FIRST CONTAINER COLUMN -->
+
+          <!-- SECOND CONTAINER COLUMN -->
+          <table align="right" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="190">
+            <tr>
+              <td>
+
+                <!-- COLUMN -->
+                <table align="center" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="190">
+                  <tr>
+                    <td style="padding-bottom: {{spacing-margin | times:3}}px;">
+
+                      <!-- CONTENT START -->
+                      <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        {% if object.image %}
+                        <tr>
+                          <td>
+                            <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
+                              <img src="{% include img-pre.html type='O' name=object.image %}" border="0" alt="" width="100%" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+                            </a>
+                          </td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                          <td style="background-color: #{{ boxcolor }}; padding: {{spacing-padding}}px 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+
+                            {% include offers/content-small.html %}
+
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- CONTENT END -->
+                    </td>
+                  </tr>
+                </table>
+                <!-- END - COLUMN -->
+
+              </td>
+            </tr>
+          </table>
+          <!-- END – SECOND CONTAINER COLUMN -->
+
+          </td>
+        </tr>
+      </table>
+      <!-- END - ROW -->
+
+      {% unless forloop.last %}
+      <!-- ROW -->
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
+
+            <!-- FIRST CONTAINER COLUMN -->
+            <table align="left" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="395">
+              <tr>
+                <td>
+      {% endunless %}
+
+    {% else %} <!-- normal column -->
+      <!-- COLUMN -->
+      <table align="{% cycle 'left', 'right' %}" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="190">
+        <tr>
+          <td style="padding-bottom: {{spacing-margin | times:1.5}}px;">
+            <!-- CONTENT START -->
+            <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>
+                  <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
+                    <img src="{% include img-pre.html type='O' name=object.image %}" border="0" alt="" width="100%" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px; max-width: 190px;" class="img-max border-reset" />
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color: #{{ boxcolor }}; padding: {{spacing-padding}}px 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+
+                  {% include offers/content-small.html %}
+
+                </td>
+              </tr>
+            </table>
+            <!-- CONTENT END -->
+          </td>
+        </tr>
+      </table>
+      <!-- END - COLUMN -->
+
+    {% endif %}
+
+    {% if forloop.last %}  <!-- last column – ends row and continer -->
+            </td>
+          </tr>
+        </table>
+        <!-- END – FIRST CONTAINER COLUMN -->
+
+        </td>
+      </tr>
+    </table>
+    <!-- END - ROW -->
+    {% endif %}
+
+
+{% if forloop.last %}
+    </td>
+  </tr>
+</table>
+{% endif %}
