@@ -1,0 +1,39 @@
+
+/*|======================================================================
+  |  Typography styles
+  |====================================================================*/
+
+[style*="Open Sans"] { font-family: 'Open Sans', Arial, sans-serif !important }
+
+
+@media screen and (max-width: 600px) {
+
+  td[class="title-text-banner"]{
+    font-size: 30px !important;
+    line-height: 34px !important;
+    letter-spacing: 2px !important;
+    font-weight: 400 !important;
+  }
+
+  .title-h1 { font-size: 24px !important; line-height: 28px !important; }
+  .title-h2 { font-size: 18px !important; line-height: 22px !important; }
+  .title-h3 { font-size: 17px !important; line-height: 21px !important; }
+  .title-h4 { font-size: 15px !important; line-height: 21px !important; }
+  .title-h5 {}
+  .title-h6 {}
+
+  .button {
+    font-size: 12px !important;
+    border-top-width: 6px !important;
+    border-bottom-width: 6px !important;
+    border-left-width: 15px !important;
+    border-right-width: 15px !important;
+  }
+
+  .paragraph {
+    font-size: 14px !important;
+    line-height: 21px !important;
+    font-weight: 400 !important;
+  }
+
+}

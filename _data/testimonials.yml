@@ -1,0 +1,31 @@
+
+  - title: Hamish Gray
+    featured: false
+    rating: 4
+    from: twitter
+    content-rows:
+      - content: "Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit."
+
+  - title: Hamish Gray
+    featured: false
+    rating: 5
+    from: trustpilot
+    content-rows:
+      - content: "Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit."
+
+  - title: Hamish Gray
+    featured: false
+    rating: 3
+    from: twitter
+    content-rows:
+      - content: "Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit."
+
+  - title: Hamish Gray
+    featured: false
+    rating: 5
+    content-rows:
+      - content: "Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit."

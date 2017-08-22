@@ -1,0 +1,9 @@
+{% if include.type == 'offer' or include.type == 'O' %}
+  {% assign type = 'O' %}
+{% elsif include.type == 'logo' or include.type == 'L' %}
+  {% assign type = 'L' %}
+{% else %}
+  {% assign type = 'C' %}
+{% endif %}
+
+img/projectinitialsMM--{{type}}--{{include.name}}

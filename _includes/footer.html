@@ -1,37 +1,43 @@
+
+
+{% include elements/_settings.html %}
+
+
 {% if page.theme == 'dark' %}
   {% assign bgcolor = site.data.style.color-bgcolor-dark %}
+  {% assign boxcolor = site.data.style.color-boxcolor-dark %}
   {% assign bordercolor = "1a1a1a" %}
   {% assign color-text-title = site.data.style.color-text-title-dark %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph-dark %}
 {% else %}
   {% assign bgcolor = site.data.style.color-boxcolor %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
   {% assign bordercolor = site.data.style.color-bordercolor %}
   {% assign color-text-title = site.data.style.color-text-title %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
 {% endif %}
 
-
 <!-- sign off -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td bgcolor="#{{bgcolor}}" align="center" style="border-bottom: 1px solid #{{bordercolor}};">
+    <td bgcolor="#{{boxcolor}}" align="center">
       <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
         <tr>
           <td>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; font-weight: 300; color: #{{color-text-title}}; text-align: center; line-height: 20px; padding: 30px 30px 3px;">
+                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; font-weight: 300; color: #{{color-text-paragraph}}; text-align: center; line-height: 20px; padding: {{spacing-padding | times:2}}px {{spacing-gutter | times:2}}px {{spacing-content}}px;">
                   Best wishes,
                 </td>
               </tr>
               <tr>
-                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 18px; font-weight: 400; color: #{{color-text-title}}; text-align: center; line-height: 20px; padding: 0 30px 0;">
+                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 18px; font-weight: 400; color: #{{color-text-title}}; text-align: center; line-height: 20px; padding: 0 {{spacing-gutter | times:2}}px;">
                   The Secret Escapes Team
                 </td>
               </tr>
               <tr>
-                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 13px; font-weight: 300; color: #{{color-text-title}}; text-align:center; line-height: 19px; padding: 7px 20px 30px;">
-                  Any questions? See our<a href="http://www.secretescapes.com/faq?%%=v(@gaString)=%%" style="text-decoration: none; color: #{{ site.color-primary }};"> FAQs</a> here.
+                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 13px; font-weight: 300; color: #{{color-text-paragraph}}; text-align:center; line-height: 19px; padding: {{spacing-content}}px {{spacing-gutter | times:2}}px {{spacing-padding | times:2}}px;">
+                  Any questions? See our<a href="http://www.secretescapes.com/faq?%%=v(@gaString)=%%" style="text-decoration: none; font-weight: 600; color: #{{ site.color-text-title }};"> FAQs</a> here.
                 </td>
               </tr>
             </table>
@@ -43,34 +49,52 @@
 </table>
 
 
+{% include elements/spacer.html height="1" bgcolor=bgcolor %}
+
 
 <!-- terms & conditions -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td bgcolor="#{{bgcolor}}" align="center" style="padding: 30px 0;">
+    <td bgcolor="#{{bgcolor}}" align="center" style="padding: {{spacing-padding | times:2}}px 0;">
       <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
         <tr>
           <td>
             <!-- COPY -->
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+              {% if page.terms-and-conditions %}
+                <tr>
+                  <td align="center" style="padding: 0 {{spacing-padding}}px; {{ site.data.style.text-h5 }} color: #{{color-text-title}};">
+                    Terms and conditions
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: {{spacing-content}}px {{spacing-padding}}px; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}};">
+                    {{ page.terms-and-conditions }}
+                  </td>
+                </tr>
+              {% endif %}
+
+              {% include elements/hr.html theme="dark" %}
+
               <tr>
-                <td align="left" style="padding: 0 15px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
+                <td align="left" style="padding: 0 {{spacing-padding}}px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
                   When we’re not curating luxury escapes, we like to keep an eye out for promotions we think you’ll love – like this one. This email was written by our editorial team in partnership with {{ page.partner-name }}. We hope you enjoyed it.
                 </td>
               </tr>
               <tr>
-                <td align="left" style="padding: 10px 15px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
-                  Clicking our emails will log you into Secret Escapes. To tell friends about the sales it's best to use the share buttons on the site. To get in contact, please email us at <a href="mailto:support@secretescapes.com" style="color:#{{color-text-paragraph}}; text-decoration: none; font-weight:400;">support@secretescapes.com</a> or give us a call on <a href="#" style="color:#{{color-text-paragraph}}; text-decoration: none; font-weight:400;">0843 22 77 777</a>.
+                <td align="left" style="padding: {{spacing-content}}px {{spacing-padding}}px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
+                  Clicking our emails will log you into Secret Escapes. To tell friends about the sales it's best to use the share buttons on the site. To get in contact, please email us at <a href="mailto:support@secretescapes.com" style="color:#{{color-text-title}}; text-decoration: none; font-weight:600;">support@secretescapes.com</a> or give us a call on <a href="#" style="color:#{{color-text-title}}; text-decoration: none; font-weight:600;">0843 22 77 777</a>.
                 </td>
               </tr>
               <tr>
-                <td align="left" style="padding: 10px 15px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
+                <td align="left" style="padding: {{spacing-content}}px {{spacing-padding}}px 0; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
                   England &amp; Wales Company No. <a href="#" style="color:#{{color-text-paragraph}}; text-decoration: none;">07026107</a>
                 </td>
               </tr>
               <tr>
-                <td align="left" style="padding: 10px 15px 0px; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
-                  This email was sent to <a href="#" style="color:#{{color-text-paragraph}}; text-decoration: none;">%%EMAIL%%.</a> <a href="http://www.secretescapes.com/your-subscriptions?%%=v(@gaString)=%%" style="text-decoration: none; color: #{{color-text-paragraph}}; font-weight:400;">Unsubscribe here</a>
+                <td align="left" style="padding: {{spacing-content}}px {{spacing-padding}}px 0px; {{ site.data.style.text-p-small }} color: #{{color-text-paragraph}}; text-align: justify;">
+                  This email was sent to <a href="#" style="color:#{{color-text-title}}; text-decoration: none;">%%EMAIL%%.</a> <a href="http://www.secretescapes.com/your-subscriptions?%%=v(@gaString)=%%" style="text-decoration: none; color: #{{color-text-title}}; font-weight:600;">Unsubscribe here</a>
                 </td>
               </tr>
             </table>
@@ -84,10 +108,10 @@
 
 <table class="mobile-hide" border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td>
+    <td bgcolor="#{{bgcolor}}">
       <table cellpadding="0" cellspacing="0" border="0" align="center" width="600px" style="width:600px;">
         <tr>
-          <td cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; line-height:1px;" height="1px; min-width: 600px;">
+          <td cellpadding="0" cellspacing="0" border="0" style="background-color:#{{bgcolor}}; line-height:1px;" height="1px; min-width: 600px;">
           <img src="http://image.email.secretescapes.com/lib/fe8a1272746c017a7d/m/2/Media_Spacer.png" height="1px" width="600px" style="max-height:1px; min-height:1px; display:block; width:600px; min-width:600px;"/>
           </td>
         </tr>

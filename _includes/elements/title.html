@@ -1,0 +1,73 @@
+
+{% if include.title-style == "h1" %}
+  {% assign title-style = site.data.style.text-h1 %}
+{% elsif include.title-style == "h2" %}
+  {% assign title-style = site.data.style.text-h2 %}
+{% elsif include.title-style == "h3" %}
+  {% assign title-style = site.data.style.text-h3 %}
+{% elsif include.title-style == "h4" %}
+  {% assign title-style = site.data.style.text-h4 %}
+{% elsif include.title-style == "h5" %}
+  {% assign title-style = site.data.style.text-h5 %}
+{% elsif include.title-style == "h6" %}
+  {% assign title-style = site.data.style.text-h6 %}
+{% elsif include.title-style == "text-banner" %}
+  {% assign title-style = site.data.style.text-banner %}
+{% else %}
+  {% assign title-style = site.data.style.text-h1 %}
+{% endif %}
+
+{% if include.subtitle-style == "h1" %}
+  {% assign subtitle-style = site.data.style.text-h1 %}
+{% elsif include.subtitle-style == "h2" %}
+  {% assign subtitle-style = site.data.style.text-h2 %}
+{% elsif include.subtitle-style == "h3" %}
+  {% assign subtitle-style = site.data.style.text-h3 %}
+{% elsif include.subtitle-style == "h4" %}
+  {% assign subtitle-style = site.data.style.text-h4 %}
+{% elsif include.subtitle-style == "h5" %}
+  {% assign subtitle-style = site.data.style.text-h5 %}
+{% elsif include.subtitle-style == "h6" %}
+  {% assign subtitle-style = site.data.style.text-h6 %}
+{% else %}
+  {% assign subtitle-style = site.data.style.text-h4 %}
+{% endif %}
+
+{% if include.title %}
+  {% assign title = include.title %}
+{% else %}
+  {% assign title = object.title %}
+{% endif %}
+
+{% if include.subtitle %}
+  {% assign subtitle = include.subtitle %}
+{% else %}
+  {% assign subtitle = object.subtitle %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% elsif object.align %}
+  {% assign align = object.align %}
+{% endif %}
+
+
+{% if title %}
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td class="title{% if include.title-style %} title-{{ include.title-style }}{% endif %}" align="{{ align }}" style="padding: 0 {{spacing-padding | times:2}}px {% if subtitle %}{{spacing-content | divided_by:2}}px{% else %}{{spacing-content}}px{% endif %}; color: #{{ color-text-title }}; {{ title-style }}">
+        {{ title }}
+      </td>
+    </tr>
+  </table>
+{% endif %}
+
+{% if subtitle %}
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="subtitle{% if include.subtitle-style %} subtitle-{{ include.subtitle-style }}{% endif %}" align="{{ align }}" style="padding: 0 {{spacing-padding | times:2}}px {{spacing-content}}px; color: #{{ color-text-title }}; {{ subtitle-style }}">
+        {{ subtitle }}
+      </td>
+    </tr>
+  </table>
+{% endif %}

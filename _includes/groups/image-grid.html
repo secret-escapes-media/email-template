@@ -1,0 +1,41 @@
+
+
+
+{% include elements/_settings.html %}
+
+
+
+{% assign loopindex = forloop.index | modulo: 2 %}
+{% if forloop.first or loopindex == 1 %}
+{% if forloop.first %}
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 {{spacing-gutter}}px {{spacing-margin | times:2}}px;">
+{% endif %}
+    {% if loopindex == 1 %}
+      <table border="0" cellpadding="0" cellspacing="0" width="620" class="responsive-table">
+        <tr>
+    {% endif %}
+{% endif %}
+
+          <td valign="middle" style="vertical-align:middle;" class="responsive-td">
+            <table cellpadding="0" cellspacing="0" border="0" class="responsive-table" style="height: 200px;" align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}">
+              <tr>
+                <td align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}" valign="middle">
+                  <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
+                    <img src="{% include img-pre.html name=object.image %}" width="300" style="display: block; height:auto;" alt="" border="0" class="border-reset img-max" />
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+
+{% if forloop.last or loopindex != 1 %}
+        </tr>
+      </table>
+{% if forloop.last %}
+    </td>
+  </tr>
+</table>
+{% endif %}
+{% endif %}

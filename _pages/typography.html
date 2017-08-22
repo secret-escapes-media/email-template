@@ -1,0 +1,85 @@
+---
+layout: default
+theme: dark
+
+
+partner-name:
+email-title:
+subject-line:
+campaign-link: link
+main-button-label: Default button text
+
+
+objects:
+
+  intro:
+    - banner-title: Example offer card layouts
+      image: banner.jpg
+      content: The structure of how offers flow into the template blocks has changed in version 2. Now the same groups that are used for showing normal content can be used for offers, and you just have to assign the type to "offer" on the include. This will pull in the content block for offer details, as well as link to the offer image.
+
+
+
+  typography:
+    - title: Typography
+
+
+
+  buttons:
+    - title: Buttons
+
+
+
+---
+{% assign offers = site.data.offers %}
+
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include groups/banner.html bgcolor="ffffff" %}
+{% endfor %}
+
+{% include elements/spacer.html height="1" bgcolor="e0e0e0" %}
+{% include elements/spacer.html height="30" %}
+
+
+
+<!-- Typography -->
+{% for object in page.objects["typography"] %}
+  {% include groups/section-intro.html bgcolor="ffffff" %}
+{% endfor %}
+
+
+{% include elements/title.html title-style="h1" title="H1 title text" %}
+{% include elements/spacer.html height="15" %}
+{% include elements/title.html title-style="h2" title="H2 title text" %}
+{% include elements/spacer.html height="15" %}
+{% include elements/title.html title-style="h3" title="H3 title text" %}
+{% include elements/spacer.html height="15" %}
+{% include elements/title.html title-style="h4" title="H4 title text" %}
+{% include elements/spacer.html height="15" %}
+{% include elements/title.html title-style="h5" title="H5 title text" %}
+{% include elements/spacer.html height="15" %}
+{% include elements/title.html title-style="h6" title="H6 title text" %}
+
+{% include elements/spacer.html height="45" %}
+
+
+<!-- Buttons -->
+{% for object in page.objects["buttons"] %}
+  {% include groups/section-intro.html bgcolor="ffffff" %}
+{% endfor %}
+
+
+{% include blocks/button.html button-style="large" button-label="Large button" boxcolor="ffffff" bgcolor="ffffff" %}
+{% include blocks/button.html button-style="small" button-label="Small button" boxcolor="ffffff" bgcolor="ffffff" %}
+{% include blocks/button.html button-style="subtle" button-label="Subtle button" boxcolor="ffffff" bgcolor="ffffff" %}
+{% include blocks/button.html button-style="outline" button-label="Outline button" boxcolor="ffffff" bgcolor="ffffff" %}
+
+{% include elements/spacer.html height="15" bgcolor="4f4f4f" %}
+{% include blocks/button.html button-style="large-invert" button-label="Large invert button" boxcolor="4f4f4f" bgcolor="4f4f4f" %}
+{% include blocks/button.html button-style="small-invert" button-label="Small invert button" boxcolor="4f4f4f" bgcolor="4f4f4f" %}
+{% include blocks/button.html button-style="subtle-invert" button-label="Subtle invert button" boxcolor="4f4f4f" bgcolor="4f4f4f" %}
+{% include blocks/button.html button-style="outline-invert" button-label="Subtle invert button" boxcolor="4f4f4f" bgcolor="4f4f4f" %}
+
+

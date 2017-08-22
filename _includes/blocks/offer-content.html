@@ -1,0 +1,21 @@
+{% if include.title-style %}
+  {% include elements/title.html %}
+{% else %}
+  {% include elements/title.html title-style="h3" subtitle-style="h5" %}
+{% endif %}
+
+{% if object.content or object.content-rows %}
+  {% include elements/paragraphs.html %}
+{% endif %}
+
+{% if object.price %}
+  {% include elements/from-price.html %}
+{% endif %}
+
+{% if object.button and include.button-style %}
+  {% include elements/spacer.html height=site.data.style.spacing-content %}
+  {% include elements/button.html button-style=include.button-style button-label="View offer" %}
+{% elsif object.button %}
+  {% include elements/spacer.html height=site.data.style.spacing-content %}
+  {% include elements/button.html button-style="subtle" button-label="View offer" %}
+{% endif %}

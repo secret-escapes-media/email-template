@@ -1,18 +1,20 @@
+
+
   - title: An offer
-    category: category-1
-    location: Region, Country
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    subtitle: Region, Country
+    image: an-offer.jpg
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum.
     price: 999999
     price-description: per room per night
-    saved: 40%
-    expires: 2016-03-23
-    link:
+    button: true
+    link: offer-link
 
   - title: Another offer
-    category: category-2
-    location: Region, Country
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    subtitle: Region, Country
+    image: another-offer.jpg
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum.
     price: 999999
     price-description: per room per night
-    link:
+    button: true
+    link: offer2-link
 

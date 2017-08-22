@@ -1,12 +1,14 @@
 ---
 layout: default
+theme: dark
 
 
 partner-name:
 email-title:
-subject-line: "Subject line"
+subject-line:
 campaign-link: link
-main-cta-label: Click me
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
 
 
 objects:
@@ -14,78 +16,111 @@ objects:
   intro:
     - title: Jekyll email builder
       subtitle: Style guide/component library
-      image: intro.jpg
+      image: banner.jpg
       image-title: title.png
-      image-title-width: 570
-      cta: true
-      cta-label:
+      image-title-width: 250
+      button: true
+      button-label:
       link:
-      content: This page is to showcase all possible includes and layout options using the builder. Refer to the readme for examples on how to use and configure the includes.
+      content-rows:
+        - content: "This page is to showcase all possible includes and layout options using the builder. Refer to the readme for examples on how to use and configure the includes."
+        - content: "Possible configuration through attributes on the includes are: <strong>gutter</strong> to change the margins around a card, <strong>align</strong> can be left, center or right, <strong>boxcolor</strong> which changes the internal colour of a card, <strong>bgcolor</strong> to change the sections background colour."
+
 
 
   features:
-    - title: Nullam id dolor id nibh ultricies
-      subtitle: Praesent commodo cursus magna
-      image: intro.jpg
-      cta: true
-      cta-label:
-      link:
-      content: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
-      content-rows:
+    - title: A trio of limited edition cologne
+      image: subobject.jpg
+      content: Enjoy a complimentary sample from a selection of our most loved scents when you visit any Jo Malone London Boutique in London Heathrow or Gatwick airports. Simply show this email to redeem your sample.*
+      button: true
 
-        - title: A trio of limited edition cologne
-          image: subobject.jpg
-          content: Enjoy a complimentary sample from a selection of our most loved scents when you visit any Jo Malone London Boutique in London Heathrow or Gatwick airports. Simply show this email to redeem your sample.*
-          cta: true
+    - title: Reserve collect before you fly
+      image: subobject.jpg
+      content: Did you know you could pre-order your Jo Malone London favourites online at and collect in-store before you fly?
 
-        - title: Reserve collect before you fly
-          image: subobject.jpg
-          content: Did you know you could pre-order your Jo Malone London favourites online at and collect in-store before you fly?
+
 
   offers-intro:
     - title: Example offer cards
       subtitle:
       content: Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue.
 
-  categories-intro:
+
+
+  destinations-intro:
     - title: Looped data file options
+
+
+
+  footer-banner:
+    - banner-title: Heading here
+      image: banner.jpg
+      image-title-width: 250
+
 
 
 ---
 
+{% assign offers = site.data.offers %}
+{% assign destinations = site.data.destinations %}
+
+
 
 
 {% for object in page.objects["intro"] %}
-  {% include blocks/banner.html %}
+  {% include groups/banner.html %}
+{% endfor %}
+
+
+{% for object in page.objects["intro"] %}
+  {% include groups/feature.html %}
+{% endfor %}
+
+
+{% for object in offers limit:1 %}
+  {% include groups/feature.html type="offer" %}
 {% endfor %}
 
 
 {% for object in page.objects["features"] %}
-  {% include blocks/alternating-content.html %}
+  {% include groups/alternating-content.html title-style="h4" paragraph-style="small" %}
 {% endfor %}
 
 
 {% for object in page.objects["offers-intro"] %}
-  {% include blocks/section-intro.html %}
+  {% include groups/section-intro.html %}
 {% endfor %}
 
 
-{% assign offers = site.data.offers %}
-{% for offer in offers limit:2 %}
-  {% include offer/two-column.html %}
+{% for object in offers limit:2 %}
+  {% include groups/two-column.html type="offer" %}
 {% endfor %}
 
 
-{% for object in page.objects["categories-intro"] %}
-  {% include blocks/section-intro.html %}
+{% for object in page.objects["destinations-intro"] %}
+  {% include groups/section-intro.html %}
 {% endfor %}
 
 
-{% assign categories = site.data.categories %}
-{% for object in categories limit:3 %}
-  {% include blocks/full-width.html %}
+{% for object in destinations limit:3 %}
+  {% include groups/full-width.html height="300" %}
 {% endfor %}
 
 
-{% include includes/cta.html %}
+{% for object in destinations limit:2 %}
+  {% include groups/two-column.html %}
+{% endfor %}
+
+
+{% for object in destinations limit:3 %}
+  {% include groups/three-column.html %}
+{% endfor %}
+
+
+{% include blocks/button.html bgcolor="f2f2f2" button-style="large" %}
+
+
+{% for object in page.objects["footer-banner"] %}
+  {% include blocks/banner-image.html %}
+{% endfor %}
 

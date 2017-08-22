@@ -1,0 +1,73 @@
+
+  - title: Mallorca
+    subtitle: Spain
+    featured: true
+    image: destination.jpg
+    content: "Forget the Mallorca of the past. We love the island now for its gorgeously well-appointed hotels, all the better for enjoying those famous white-sand beaches"
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Corfu
+    subtitle: Greece
+    featured: false
+    image: destination.jpg
+    content: "A much-loved spot with the Secret Escapes team: breathtakingly gorgeous, culturally fascinating, and studded with charming hotels and resorts."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Split
+    subtitle: Croatia
+    featured: false
+    image: destination.jpg
+    content: "A heady blend of ancient and modern, Split offers a dramatic setting with a fun-loving, youthful vibe. Top tip: craft beers and Mexican food at Te Je To. Yum."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Lisbon
+    subtitle: Portugal
+    featured: false
+    image: destination.jpg
+    content: "There’s nothing like the blue sky of a Lisbon summer, so make sure you book a hotel with a fine terrace. Enjoy fresh seafood, lively bars and plenty of shopping."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Nice & Cannes
+    subtitle: France
+    featured: false
+    image: destination.jpg
+    content: "Beautiful Nice is as glamorous as ever. Fancy taking it up a notch? Make like a celeb and head to Cannes. And remember – we can get you all this luxe for less."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Barcelona
+    subtitle: Spain
+    featured: false
+    image: destination.jpg
+    content: "A city like no other, the fascinating architecture of Barcelona is perfect for summertime wandering. Our top tip: choose a hotel with rooftop pool."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Venice & Rimini
+    subtitle: Italy
+    featured: false
+    image: destination.jpg
+    content: "Two of our favourite spots for summer trips, both on the Adriatic: Venice, for culture and photos, and Rimini, for beaches and up-til-dawn nightlife."
+    button: true
+    button-label: Find out more
+    link:
+
+  - title: Rhodes
+    subtitle: Greece
+    featured: false
+    image: destination.jpg
+    content: "Azure bays, jagged cliffs, atmospheric medieval towns… a holiday to Rhodes is a unique experience. And the best way to do it is in complete luxury – for less."
+    button: true
+    button-label: Find out more
+    link:
+
