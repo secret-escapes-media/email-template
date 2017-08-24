@@ -1,7 +1,9 @@
 <!--
 %%[
 /* ......................... Google Analytics Variables ......................... */
-Set @UserID = [_SubscriberKey]
+Set @user= [_SubscriberKey]
+Set @territory='UK'
+Set @CampaignCode = emailname_
 Set @Email = URLEncode([email],1,1)
 Set @Email = Replace(@Email,"%40","@")
 Set @EncEmail = SHA1(LowerCase([email]),"UTF-8")
