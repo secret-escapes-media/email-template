@@ -13,6 +13,8 @@
 
 {% if include.theme == 'dark' %}
   {% assign hrcolor = site.data.style.color-hrcolor-dark %}
+{% elsif include.hrcolor %}
+  {% assign hrcolor = include.hrcolor %}
 {% else %}
   {% assign hrcolor = site.data.style.color-hrcolor %}
 {% endif %}
