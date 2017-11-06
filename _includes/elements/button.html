@@ -7,6 +7,11 @@
   {% assign button-outline = site.data.style.button-outline-invert.outside %}
   {% assign button-style = site.data.style.button-outline-invert.inside %}
 
+{% elsif include.button-style == "se-large" %}
+  {% assign button-style = site.data.style.se-button-large %}
+{% elsif include.button-style == "se" %}
+  {% assign button-style = site.data.style.se-button %}
+
 {% elsif include.button-style == "large" %}
   {% assign button-style = site.data.style.button-large %}
 {% elsif include.button-style == "large-invert" %}
