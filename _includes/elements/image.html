@@ -16,7 +16,7 @@
 
               <tr>
                 <td>
-                  <a href="{{ include.link }}">
+                  <a href="{% if include.link %}{{ include.link }}{% else %}{{ page.campaign-link }}{% endif %}">
                     <img src="{% include img-pre.html name=include.image %}" width="600" border="0" alt="" style="display: block;" class="img-max border-reset" />
                   </a>
                 </td>
