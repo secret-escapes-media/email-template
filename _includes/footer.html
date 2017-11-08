@@ -7,12 +7,14 @@
   {% assign bgcolor = site.data.style.color-bgcolor-dark %}
   {% assign boxcolor = site.data.style.color-boxcolor-dark %}
   {% assign bordercolor = "1a1a1a" %}
+  {% assign hrcolor = site.data.style.color-hrcolor-dark %}
   {% assign color-text-title = site.data.style.color-text-title-dark %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph-dark %}
 {% else %}
   {% assign bgcolor = site.data.style.color-boxcolor %}
   {% assign boxcolor = site.data.style.color-boxcolor %}
   {% assign bordercolor = site.data.style.color-bordercolor %}
+  {% assign hrcolor = site.data.style.color-hrcolor %}
   {% assign color-text-title = site.data.style.color-text-title %}
   {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
 {% endif %}
@@ -26,7 +28,7 @@
           <td>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; font-weight: 300; color: #{{color-text-paragraph}}; text-align: center; line-height: 20px; padding: {{spacing-padding | times:2}}px {{spacing-gutter | times:2}}px {{spacing-content}}px;">
+                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; font-weight: 400; color: #{{color-text-paragraph}}; text-align: center; line-height: 20px; padding: {{spacing-padding | times:2}}px {{spacing-gutter | times:2}}px {{spacing-content}}px;">
                   Best wishes,
                 </td>
               </tr>
@@ -36,27 +38,27 @@
                 </td>
               </tr>
               <tr>
-                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 13px; font-weight: 300; color: #{{color-text-paragraph}}; text-align:center; line-height: 19px; padding: {{spacing-content}}px {{spacing-gutter | times:2}}px {{spacing-padding}}px;">
-                  Any questions? See our<a href="http://www.secretescapes.com/faq?%%=v(@gaString)=%%" style="text-decoration: none; font-weight: 600; color: #{{ site.color-text-title }};"> FAQs</a> here.
+                <td style="font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 13px; font-weight: 400; color: #{{color-text-paragraph}}; text-align:center; line-height: 19px; padding: {{spacing-content}}px {{spacing-gutter | times:2}}px {{spacing-padding}}px;">
+                  Any questions? See our<a href="http://www.secretescapes.com/faq?%%=v(@gaString)=%%" style="text-decoration: none; font-weight: 600; color: #{{color-text-title}};"> FAQs</a> here.
                 </td>
               </tr>
 
-              {% include elements/hr.html theme="dark" %}
+              {% include elements/hr.html theme=page.theme %}
 
               <tr>
                 <td align="center" valign="top" style="text-align: center; padding: {{spacing-content}}px {{spacing-gutter | times:2}}px {{spacing-padding | times:2}}px;">
                   <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
-                    <img style="max-height: 18px;" alt="Human score" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text1_dark.png" height="18" border="0">
+                    <img style="max-height: 18px;" alt="Human score" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text1{% if page.theme == 'dark' %}_dark{% endif %}.png" height="18" border="0">
                   </a> &nbsp;&nbsp;
                   <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
                     <img style="max-height: 20px;" alt="Trustpilot Stars" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/stars.png" height="20" border="0">
                   </a> &nbsp;&nbsp;
                   <span style="display: inline-block">
                     <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
-                      <img style="max-height: 18px;" alt="number of reviews" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text2_dark.png" height="18" border="0">
+                      <img style="max-height: 18px;" alt="number of reviews" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text2{% if page.theme == 'dark' %}_dark{% endif %}.png" height="18" border="0">
                     </a> &nbsp;&nbsp;
                     <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
-                      <img style="max-height: 16px; display: inline-block" alt="Trustpilot Logo" src="https://emailsignature.trustpilot.com/logo/n/1/logo@2x_dark.png" height="16" border="0">
+                      <img style="max-height: 16px; display: inline-block" alt="Trustpilot Logo" src="https://emailsignature.trustpilot.com/logo/n/1/logo@2x{% if page.theme == 'dark' %}_dark{% endif %}.png" height="16" border="0">
                     </a>
                   </span>
                 </td>
@@ -77,7 +79,7 @@
 <!-- terms & conditions -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td bgcolor="#{{bgcolor}}" align="center" style="padding: {{spacing-padding | times:2}}px 0;">
+    <td bgcolor="#{{bgcolor}}" align="center" style="padding: {{spacing-padding | times:2}}px 0; border-top: 1px solid #{{bordercolor}};">
       <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
         <tr>
           <td>
@@ -95,7 +97,7 @@
                     {{ page.terms-and-conditions }}
                   </td>
                 </tr>
-              {% include elements/hr.html theme="dark" %}
+              {% include elements/hr.html theme=page.theme %}
               {% endif %}
 
               <tr>
