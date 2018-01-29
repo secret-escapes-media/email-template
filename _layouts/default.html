@@ -3,8 +3,8 @@
 Set @user= [_SubscriberKey]
 Set @territory='UK'
 Set @CampaignCode = emailname_
-Set @Email = [email]
-Set @EncEmail = SHA1(LowerCase([email]),"UTF-8")
+Set @Email = emailaddr
+Set @EncEmail = SHA1(LowerCase(@Email),"UTF-8")
 Set @Reference = AttributeValue("reference")
 Set @JobID = jobid
 Set @CampaignName = emailname_
