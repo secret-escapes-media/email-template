@@ -1,39 +1,20 @@
+{% if include.height %} {% assign hr-height = include.height %} {% else %} {% assign hr-height = "30" %} {% endif %}
+{% assign hr-height-split = hr-height | divided_by: 2 | append: 'px' %}
+{% assign hr-width = "100px" %}
+{% assign hr-color = include.color %}
 
-{% if include.spacing-content %}
-  {% assign spacing-content = include.spacing-content %}
-{% else %}
-  {% assign spacing-content = site.data.style.spacing-content %}
-{% endif %}
-
-{% if include.align %}
-  {% assign align = include.align %}
-{% else %}
-  {% assign align = "center" %}
-{% endif %}
-
-{% if include.theme == 'dark' %}
-  {% assign hrcolor = site.data.style.color-hrcolor-dark %}
-{% elsif include.hrcolor %}
-  {% assign hrcolor = include.hrcolor %}
-{% else %}
-  {% assign hrcolor = site.data.style.color-hrcolor %}
-{% endif %}
-
-
-<table {% if include.boxcolor %}bgcolor="#{{ include.boxcolor }}"{% endif %} width="100%" border="0" cellspacing="0" cellpadding="0">
+<!-- horizontal rule -->
+<table {{fluid-table}}>
   <tr>
-    <td align="{{align}}" style="padding: 0 {{spacing-gutter | times:2}}px;">
-      <table align="{{align}}" width="100" border="0" cellspacing="0" cellpadding="0" style="height:{{spacing-content | times:3}}px;">
-
+    <td>
+      <table {{table}} style="height: {{hr-height-split}};">
         <tr>
-          <td align="{{align}}"
-            style="background: none; height: {{spacing-content}}px; width: 100px; margin-top: 0; margin-bottom: 0; margin-left: auto; margin-right: auto; padding: 0; line-height: 0; border-bottom: 1px solid #{{hrcolor}};">
-            <div style="width: 100px;"></div>
+          <td style="height: {{hr-height-split}}; width: {{hr-width}}; border-bottom: 1px solid {{hr-color}};">
+            <div style="{{hr-width}}"></div>
           </td>
         </tr>
-
         <tr>
-          <td align="{{align}}" style="background:none; height:{{spacing-content | times:2}}px; width:100px; margin:0; padding:0; line-height:0;"></td>
+          <td style="height:{{hr-height-split}}; width: {{hr-width}};"></td>
         </tr>
       </table>
     </td>

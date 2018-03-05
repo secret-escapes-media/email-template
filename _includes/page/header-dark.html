@@ -1,0 +1,32 @@
+<!-- dont think that this will actually be used -->
+
+<!-- header -->
+<table {{fluid-table}}>
+  <tr>
+    <td bgcolor="{{color.grey-darkest}}">
+      <div align="center">
+        <table {{responsive-table}}>
+          <tr>
+            <!-- header logos -->
+            <td style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
+              <table {{fluid-table}}>
+                <tr>
+                  <td width="300" align="left">
+                    <a href="http://www.secretescapes.com/current-sales?{% include page/_amp-script/se-site-tracking.html %}">
+                      {% include logo/se-white.html %}
+                    </a>
+                  </td>
+                  <td width="300" align="right">
+                    <a href="{{ page.campaign-link }}">
+                      {% include logo/partner-white.html %}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>

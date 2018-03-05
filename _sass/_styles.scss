@@ -1,25 +1,11 @@
+// main mobile styles
 
-/*|======================================================================
-  |  Site styles
-  |====================================================================*/
-
-
-
-
-/* MOBILE STYLES */
- // small : 300px
-@include bp(small){}
- // medium : 450px
-@include bp(medium){}
  // large : 600px
 @include bp(large){
 
   /* FLUID CONTENT */
-  table[class*="wrapper"]{ width:100% !important; }
-  table[class*="responsive-table"]{
-    width: 100%!important;
-    height: auto!important;
-  }
+  table[class*="wrapper"]{ width:100% !important; }   // not sure what this is doing. I think resposive table can be used
+
   td[class*="responsive-td"]{ display: block !important; }
 
   img[class*="img-max"]{
@@ -35,13 +21,32 @@
   /* GENERAL STYLES */
   td[class*="mobile-center-align"]{ text-align: center !important; }
   br[class*="desktop-break"]      { display: none; }
-  td[class="logo"]{
-    text-align: left;
-    padding: 30px 15px !important;
+
+
+
+  //############################################################## actually done
+
+
+  table[class*="responsive-table"]{
+    width: 100%!important;
+    height: auto!important; // why is this height actually needed? I suppose this can't do any harm
   }
+
+
+
+  /////////////////////////////////////////////////////////////////////// header
+  td[class="header-padding"]{
+    padding-top:    25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  /////////////////////////////////////////////////////////////////////// logos
   img[class="logo-se"] { width: 100px; }
   img[class="logo-partner"] { width: 100px; }
 
+
+
+
+
+
 }
-// xlarge : 850px
-@include bp(xlarge){}

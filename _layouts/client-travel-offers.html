@@ -1,0 +1,182 @@
+---
+layout: default
+---
+
+{% include variables.html %}
+
+{% include page/client/header.html %}
+
+
+{% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
+{% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
+{% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <td bgcolor="{{color.grey-lightest}}" style="{{spacing.hpad.sm}} padding-bottom: 80px;">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+
+            <!-- Intro section -->
+            <table {{fluid-table}}>
+              <!-- Main image -->
+              <tr>
+                <td>
+                  <a href="{{intro-link}}">
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block;" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- Intro content -->
+              <tr>
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+                  <table {{fluid-table}}>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};">
+                        {{page.intro.title}}
+                      </td>
+                    </tr>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 20px;">
+                        {% include elements/new-button.html link=intro-link label=cta-label style=button.partner %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+
+            {% include elements/space.html height="60" %}
+
+
+            <!-- travel offers section -->
+            <table {{fluid-table}}>
+              <tr>
+                <td>
+
+                  {% for offer in page.offers.offer-list %}
+
+                    {% assign offer-link = offer.link %}
+                    {% assign offer-cta-label = page.offers.cta-label %}
+                    {% assign offer-image = offer.image | append: '.jpg' %}
+                    {% assign offer-height = page.offers.image.height %}
+                    {% assign offer-title-style = title.family | append: title.color.dark | append: title.md | append: title.weight %}
+                    {% assign offer-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+
+                    <!-- offer -->
+                    <table {{responsive-table}}>
+                      <tr>
+                        <td{% if page.offers.space-between and forloop.index != 1 %} style="padding-top: {{page.offers.space-between}}px;"{% endif %}>
+
+                          <!-- column wrap -->
+                          <table {{responsive-table}}>
+                            <tr>
+                              <td valign="middle">
+
+                                <!-- image-column -->
+                                <table {{table}} class="responsive-table" align="left" width="50%" height="{{offer-height}}">
+                                  <tr>
+                                    <td align="center" valign="middle">
+                                      <!-- offer image -->
+                                      <a href="{{offer-link}}">
+                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer-image %}" width="{{page.offer.image.width}}" height="{{page.offer.image.height}}" style="display: block;" border="0" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                                <!-- content-column -->
+                                <table {{table}} class="responsive-table" align="right" width="49.999999%" height="{{offer-height}}" bgcolor="{{color.white}}">
+                                  <tr>
+                                    <td align="left" valign="middle" style="{{spacing.boxpad.sm}}">
+                                      <table {{fluid-table}}>
+                                        <!-- offer title -->
+                                        <tr>
+                                          <td style="{{offer-title-style}}">
+                                            {{offer.title}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer content -->
+                                        <tr>
+                                          <td style="{{offer-text-style}} padding-top: 8px;">
+                                            {{offer.content}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer price -->
+                                        <tr>
+                                          <td style="{{offer-text-style}} padding-top: 4px;">
+                                            From <span style="{{text.xl}} {{text.bold}} color: {{color.partner}};">£{{offer.price}}</span> {{offer.price-description}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer call-to-action -->
+                                        <tr>
+                                          <td style="padding-top: 10px;">
+                                            {% include elements/new-button.html link=offer-link label=offer-cta-label style=button.partner-light-sm align="left" %}
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                              </td>
+                            </tr>
+                          </table>
+
+                        </td>
+                      </tr>
+                    </table>
+
+                  {% endfor %}
+
+                </td>
+              </tr>
+            </table>
+
+
+            <!-- call to action -->
+            <table>
+              <tr>
+                <td style="padding-top: 60px;">
+                  {% include elements/new-button.html link=intro-link label=cta-label style=button.partner %}
+                </td>
+              </tr>
+            </table>
+
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+{% include page/client/footer.html %}
