@@ -1,0 +1,148 @@
+---
+layout: default
+theme: dark
+
+
+partner-name:
+email-title:
+subject-line:
+campaign-link: link
+main-button-label: Default button text
+terms-and-conditions: 
+
+
+objects:
+
+  intro:
+    - banner-title: Example content layouts
+      image: banner.jpg
+      content: "These are examples of the various content layout options, using the dark theme with <strong>bgcolor</strong> and <strong>boxcolor</strong> attributes to theme the page."
+
+
+
+  alternating-content:
+    - title: Alternating content
+
+
+
+  image-grid:
+    - title: Image grid
+
+
+
+  feature:
+    - title: Feature cards
+
+
+
+  full-width:
+    - title: Full width cards
+      content: "Ensure to set the <strong>height</strong> attribute on the include to the height of the image so the content vertically centres"
+
+
+
+  two-column:
+    - title: Two column cards
+
+
+
+  styling-cards:
+    - title: Custom styling
+      content-rows:
+        - content: "Simple styling of the cards is done inline through attributes on the includes."
+        - content: "Possible attributes are: <strong>title-style</strong> (h1, h2, h3, h4, h5, h6), <strong>paragraph-style</strong> (lead, small), <strong>button-style</strong> (large, small, subtle), <strong>align</strong> (left, center, right)"
+        - content: "To change the <strong>subtitle-style</strong> you have to have a title setting (this is a strange limitation of Jekyll as far as I can tell). subtitle-style options are the same as title: h1, h2, h3, h4, h5, h6"
+
+
+
+---
+{% assign destinations = site.data.destinations %}
+
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include groups/banner.html theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" %}
+{% endfor %}
+
+
+<!-- Alternating content -->
+{% for object in page.objects["alternating-content"] %}
+  {% include groups/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+
+{% for object in destinations limit:3 %}
+  {% include groups/alternating-content.html theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" %}
+{% endfor %}
+
+
+<!-- Image grid -->
+{% for object in page.objects["image-grid"] %}
+  {% include groups/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+
+{% for object in destinations limit:6 %}
+  {% include groups/image-grid.html theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" %}
+{% endfor %}
+
+
+<!-- Large feature card -->
+{% for object in page.objects["feature"] %}
+  {% include groups/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+
+{% for object in destinations limit:1 %}
+  {% include groups/feature.html theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" title-style="h1" button-style="large-invert" %}
+{% endfor %}
+
+
+<!-- Full width card -->
+{% for object in page.objects["full-width"] %}
+  {% include groups/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+
+{% for object in destinations limit:2 %}
+  {% include groups/full-width.html height="300" theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" %}
+{% endfor %}
+
+
+<!-- Two column card -->
+{% for object in page.objects["two-column"] %}
+  {% include groups/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+
+{% for object in destinations limit:2 %}
+  {% include groups/two-column.html theme="dark" bgcolor="1a1a1a" boxcolor="0d0d0d" %}
+{% endfor %}
+
+
+{% include elements/spacer.html height="15" bgcolor="f2f2f2" %}
+
+
+<!-- Restyling the cards -->
+{% for object in page.objects["styling-cards"] %}
+  {% include groups/section-intro.html %}
+{% endfor %}
+
+
+{% for object in destinations limit:1 %}
+  {% include groups/feature.html title-style="h1" paragraph-style="lead" button-style="large" %}
+{% endfor %}
+
+{% for object in destinations limit:2 %}
+  {% include groups/two-column.html align="left" button-style="large" %}
+{% endfor %}
+
+{% for object in destinations limit:1 %}
+  {% include groups/full-width.html height="300" align="left" button-style="outline" %}
+{% endfor %}
+
+{% for object in destinations limit:1 %}
+  {% include groups/full-width.html height="300" align="left" title-style="h2" paragraph-style="small" %}
+{% endfor %}
+

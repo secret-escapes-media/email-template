@@ -50,7 +50,6 @@ gulp.task('rebuild-jekyll', ['build-jekyll'], function () {
 // serve site with browserSync. also mirrors site to sub-directory
 gulp.task('serve', function() {
   browserSync.init({
-    ui: false,
     server: {
       baseDir: '_site/'
     }
@@ -106,8 +105,7 @@ gulp.task('compress-html', function () {
     .pipe(htmltidy({
       'indent': true,
       'wrap': 0,
-      'vertical-space': true,
-      'new-empty-tags': 'custom'
+      'vertical-space': true
     }))
     .pipe(gulp.dest('./_site'))
 })
@@ -118,11 +116,11 @@ gulp.task('compress-html', function () {
 // builds jekyll site & watches for changes
 gulp.task('default', gulpSequence(
     ['build-jekyll'],
+    ['serve'],
     [
       'watch-jekyll',
       'watch-images'
-    ],
-    'serve'
+    ]
   )
 );
 
