@@ -1,0 +1,82 @@
+{% assign category = include.content %}
+
+{% assign row-width = 600 %}
+{% assign column-gutter = 30 %}
+{% assign row-gutter = 30 %}
+{% assign column-width = row-width | minus: column-gutter | divided_by: 2 %}
+
+
+{% for product in category.products.product-list %}
+
+  {% assign odd-or-even = forloop.index | modulo: 2 %}
+  {% if odd-or-even == 1 %}
+    {% assign column-align = "left" %}
+    {% assign row-position = "start" %}
+  {% elsif odd-or-even == 0 %}
+    {% assign column-align = "right" %}
+    {% assign row-position = "end" %}
+  {% endif %}
+
+  {% assign product-image = product.image | append: '.jpg' %}
+
+
+  {% if row-position == "start" %}
+    <!-- Two column product range - row start -->
+    <table {{table}} align="center" class="responsive-table" width="{{row-width}}">
+      <tr>
+        <td>
+  {% endif %}
+
+          <!-- column container -->
+          <table {{table}} align="{{column-align}}" class="responsive-table" width="{{column-width}}">
+            <tr>
+              <td style="padding-bottom: {{row-gutter}}px;">
+
+                <!-- column content -->
+                <table {{fluid-table}}>
+
+                  <!-- product image -->
+                  <tr>
+                    <td>
+                      <a href="{{product.link}}">
+                        <img class="img-max" src="{% include img-pre.html type="P" name=product-image %}" width="{{column-width}}" border="0" style="display: block;" />
+                      </a>
+                    </td>
+                  </tr>
+
+                  <!-- product title -->
+                  <tr>
+                    <td align="center" style="{{title.family}} {{title.weight}} {{title.color.normal}} {{title.md}} padding-top: 10px;">
+                      {{product.title}}
+                    </td>
+                  </tr>
+
+                  <!-- product price -->
+                  <tr>
+                    <td align="center" style="{{text.family}} {{text.bold}} {{text.lg}} {{text.color.normal}} padding-top: 8px;">
+                      £{{product.price}}
+                    </td>
+                  </tr>
+
+                  <!-- product cta -->
+                  <tr>
+                    <td align="center" style="padding-top: 5px;">
+                      {% include element/button.html link=product.link label=category.products.cta-label style=button.partner-subtle size=button.size.sm %}
+                    </td>
+                  </tr>
+
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+  {% if row-position == "end" %}
+    <!-- Two column product range - row end -->
+        </td>
+      </tr>
+    </table>
+  {% endif %}
+
+
+{% endfor %}

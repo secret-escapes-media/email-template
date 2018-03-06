@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% include variables.html %}
+
+{% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
+{% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
+{% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+
+
+{% include layout/client/header.html %}
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <td bgcolor="{{color.grey-lightest}}" style="{{spacing.hpad.sm}} padding-bottom: 80px;">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+            <table {{fluid-table}}>
+
+              <!-- Main image -->
+              <tr>
+                <td>
+                  <a href="{{intro-link}}">
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block;" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- Intro content -->
+              <tr>
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+                  <table {{fluid-table}}>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};">
+                        {{page.intro.title}}
+                      </td>
+                    </tr>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 20px;">
+                        {% include element/button.html link=intro-link label=cta-label style=button.partner %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+{% include layout/client/footer.html %}

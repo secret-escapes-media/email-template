@@ -1,0 +1,53 @@
+////////////////////////////////////////////////////////////////////// resposive
+@media (max-width:600px) {
+
+  /////////////////////////////////////////////////////////////////////// layout
+
+  table[class*="responsive-table"]{
+    width: 100%!important;
+    height: auto!important;
+  }
+
+  img[class*="img-max"]{
+    max-width: 100% !important;
+    width: 100% !important;
+    height:auto !important;
+  }
+
+  td[class="header-padding"]{
+    padding-top:    25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  ////////////////////////////////////////////////////////////////////// content
+
+  /* HIDE ON MOBILE - mostly for the gmail hack at the end of the html */
+  *[class*="mobile-hide"]    { display:none !important; }
+
+  td[class*="mobile-center-align"] { text-align: center !important; }
+  br[class*="desktop-break"]       { display: none; }
+  img[class="logo-se"]             { width: 100px; }
+  img[class="logo-partner"]        { width: 100px; }
+
+  /////////////////////////////////////////////////////////////////// typography
+
+  //   .title-h1 { font-size: 24px !important; line-height: 28px !important; }
+  //   .title-h2 { font-size: 18px !important; line-height: 22px !important; }
+  //   .title-h3 { font-size: 17px !important; line-height: 21px !important; }
+  //   .title-h4 { font-size: 15px !important; line-height: 21px !important; }
+  //
+  //   .button {
+  //     font-size: 12px !important;
+  //     border-top-width: 6px !important;
+  //     border-bottom-width: 6px !important;
+  //     border-left-width: 15px !important;
+  //     border-right-width: 15px !important;
+  //   }
+  //
+  //   .paragraph {
+  //     font-size: 14px !important;
+  //     line-height: 21px !important;
+  //     font-weight: 400 !important;
+  //   }
+
+}
