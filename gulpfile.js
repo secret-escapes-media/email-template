@@ -18,26 +18,6 @@ var htmltidy     = require('gulp-htmltidy');
 
 // build the jekyll site
 gulp.task('build-jekyll', function (done) {
-
-  // checks for updated image name id
-  vfs.src('img/**/*.*')
-    .pipe(map(function (file, cb) {
-
-      // find filename for each file
-      var fullPath = file.path;
-          fullPath = fullPath.split('/');
-      var fileName = fullPath[fullPath.length-1]; // finds last item in array
-
-      // kill the task if it uses the default image name id
-      if (fileName.match(/^projectinitialsMM/g)) {
-        message.error('please update the image names for the current project');
-        process.exit();
-      }
-
-      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
-    }));
-
-  // build jekyll site
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 });
@@ -90,6 +70,23 @@ gulp.task('watch-images', ['build-images'], function() {
 
 // compress images files for live
 gulp.task('compress-images', function () {
+
+  // checks for updated image name id
+  vfs.src('img/**/*.*')
+    .pipe(map(function (file, cb) {
+      // find filename for each file
+      var fullPath = file.path;
+          fullPath = fullPath.split('/');
+      var fileName = fullPath[fullPath.length-1]; // finds last item in array
+      // kill the task if it uses the default image name id
+      if (fileName.match(/^projectinitialsMM/g)) {
+        message.error('please update the image name prefix - currently using \"projectinitialsMM\"');
+        process.exit();
+      }
+      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+    }));
+
+  // process images
   return gulp.src('./_site/img/**/*')
   .pipe(image())
   .pipe(size(200000)) // checks image size in bytes - 200kb
