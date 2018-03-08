@@ -1,0 +1,53 @@
+{% assign content = include.content %}
+{% assign background-color = content.background.color %}
+{% assign background-image = content.background.image %}
+
+
+
+<!-- full width section -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image has to be the same height of the email for consistent rending in outlook -->
+    <td class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+      <table {{responsive-table}}>
+        <tr>
+          <td style="padding-top: 120px; padding-bottom: 120px;">
+            <table {{fluid-table}}>
+
+              <!-- title -->
+              <tr>
+                <td align="center" style="{{title.family}} {{title.color.normal}} {{title.xxl}} {{title.weight}} {{text.color.white}}">
+                  {{content.title}}
+                </td>
+              </tr>
+
+              <!-- description -->
+              <tr>
+                <td align="center" style="{{text.family}} {{text.color.light}} {{text.lg}} {{text.weight}} {{text.color.white}} padding-top: 10px;">
+                  Three aspiring photographers from Secret Escapes discovered three irresistibly photogenic destinations with Nikon – discover their journey here
+                </td>
+              </tr>
+
+              <!-- find out more - call to action -->
+              <tr>
+                <td style="padding-top: 30px;">
+                  {% include element/button.html link=content.button.link label=content.button.label style=button.orange size=button.size.sm %}
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
+    </td>
+  </tr>
+</table>

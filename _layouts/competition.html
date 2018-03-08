@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+{% include variables.html %}
+
+{% assign title-style = title.family | append: title.color.normal | append: title.comp | append: title.weight | append: text.color.white %}
+{% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
+{% assign background-color = page.background.color %}
+{% assign background-image = page.background.image | append: '.jpg' %}
+
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image has to be the same height of the email for consistent rending in outlook -->
+    <td bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} padding-bottom: 80px; background-position: top center; background-repeat: no-repeat;">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+            <table {{fluid-table}}>
+
+              <!-- logos -->
+              <tr>
+                <td align="center" style="{{text.color.white}} padding-top: 45px;">
+                  <a href="{{page.link}}">
+                    {% include element/logo/combined.html %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- title -->
+              <tr>
+                <td align="center" style="{{title-style}} padding-top: 80px;">
+                  {{page.title}}
+                </td>
+              </tr>
+
+              <!-- enter now - call to action -->
+              <tr>
+                <td style=" padding-top: 30px;">
+                  {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg %}
+                </td>
+              </tr>
+
+              <!-- feature image -->
+              <tr>
+                <td style="padding-top: 100px;">
+                  <a href="{{page.link}}">
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- description -->
+              <tr>
+                <td align="center" style="{{text-style}} padding-top: 45px;">
+                  {{page.more-info.content}}
+                </td>
+              </tr>
+
+              <!-- find out more - call to action -->
+              <tr>
+                <td style="padding-top: 30px;">
+                  {% include element/button.html link=page.more-info.button.link label=page.more-info.button.label style=button.orange %}
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
+    </td>
+  </tr>
+</table>
+
+{% include layout/competition/full-width-promo.html content=page.promo %}
+
+{% include layout/competition/footer.html %}
