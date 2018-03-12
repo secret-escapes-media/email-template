@@ -12,6 +12,7 @@ var image        = require('gulp-image');
 var message      = require('gulp-message');
 var gulpSequence = require('gulp-sequence');
 var htmltidy     = require('gulp-htmltidy');
+var replace      = require('gulp-replace');
 
 
 // ----------------------------------------------------------------------  build
@@ -106,6 +107,8 @@ gulp.task('compress-html', function () {
       'vertical-space': true,
       'new-empty-tags': 'custom'
     }))
+    // cant stop htmltidy from auto closing this custom element, Exact target wont accept it closed, so need to replace
+    .pipe(replace('<custom name="opencounter" type="tracking" />', '<custom name="opencounter" type="tracking">'))
     .pipe(gulp.dest('./_site'))
 })
 
