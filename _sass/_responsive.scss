@@ -25,10 +25,33 @@
   *[class*="mobile-hide"]    { display:none !important; }
 
   td[class*="mobile-center-align"] { text-align: center !important; }
+  td[class*="mobile-margin"]       { padding-left: 15px !important; padding-right: 15px !important; }
   br[class*="desktop-break"]       { display: none; }
   img[class="logo-se"]             { width: 100px; }
   img[class="logo-partner"]        { width: 100px; }
   td[class*="background-cover"]    { background-size: cover; }
+
+  ////////////////////////////////////////////////////////////// se promo footer
+
+  table[class*="se-promo-table"]{
+    width: 100%!important;
+    max-width: 410px !important;
+    height: auto!important;
+  }
+
+  td[class*="se-promo-td"]{
+    width: 100% !important;
+  }
+
+  td[class*="se-promo-se-icon-td"]{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  img[class*="se-promo-line"]{
+    height: 1px !important;
+    width: 100% !important;
+  }
 
   /////////////////////////////////////////////////////////////////// typography
 

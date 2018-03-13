@@ -35,6 +35,16 @@ size:
     border-left-width: 30px;
     border-right-width: 30px;
     border-bottom-width: 18px;
+  xs: >
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: .2em;
+    border-style: solid;
+    border-top-width: 16px;
+    border-left-width: 26px;
+    border-right-width: 26px;
+    border-bottom-width: 16px;
 
 orange: >
   color:            #ffffff;

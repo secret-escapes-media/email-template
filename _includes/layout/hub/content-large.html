@@ -1,0 +1,62 @@
+{% for hub-content in page.hub-content.content-list %}
+
+  {% if hub-content.link %}
+    {% assign hub-content-link = hub-content.link %}
+  {% elsif page.hub-content.link %}
+    {% assign hub-content-link = page.hub-content.link %}
+  {% else %}
+    {% assign hub-content-link = page.link %}
+  {% endif %}
+
+  {% if hub-content.cta-label %}
+    {% assign hub-content-cta-label = hub-content.cta-label %}
+  {% elsif page.hub-content.cta-label %}
+    {% assign hub-content-cta-label = page.hub-content.cta-label %}
+  {% else %}
+    {% assign hub-content-cta-label = page.cta-label %}
+  {% endif %}
+
+  {% assign hub-content-title-style = title.family | append: title.color.normal | append: title.xxl | append: title.weight %}
+  {% assign hub-content-text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+  {% assign hub-content-image = hub-content.image %}
+  {% assign hub-content-height = page.hub-content.image.height %}
+
+  <!-- hub content -->
+
+  <table {{fluid-table}}>
+    <!-- content image -->
+    <tr>
+      <td align="center">
+        <a href="{{hub-content-link}}">
+          <img src="{% include img-pre.html type="C" name=hub-content-image %}" border="0" width="600" alt="{{hub-content.title}}" style="display: block;" class="img-max" />
+        </a>
+      </td>
+    </tr>
+    <!-- content container -->
+    <tr>
+      <td align="center" style="{{spacing.boxpad.sm}} padding-bottom: {{page.hub-content.space-between}}px;">
+        <table {{fluid-table}}>
+          <!-- feauture title -->
+          <tr>
+            <td align="center" style="{{hub-content-title-style}}">
+              {{hub-content.title}}
+            </td>
+          </tr>
+          <!-- feauture content -->
+          <tr>
+            <td align="center" style="{{hub-content-text-style}} padding-top: 8px;">
+              {{hub-content.content}}
+            </td>
+          </tr>
+          <!-- feauture call-to-action -->
+          <tr>
+            <td style="padding-top: 20px;">
+              {% include element/button.html link=hub-content-link label=hub-content-cta-label style=button.partner size=button.size.md %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+{% endfor %}

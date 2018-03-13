@@ -1,0 +1,102 @@
+{% assign content = include.content %}
+
+{% assign title = "Save up to 60% on luxury hotels and holidays"  %}
+{% assign background-color = "#181a28" %}
+{% assign background-image = "se-promo.jpg" %}
+
+
+<!-- secret escapes promo -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image has to be the same height of the email for consistent rending in outlook -->
+    <td class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="background-position: top center; background-repeat: no-repeat;">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+      <table {{responsive-table}}>
+        <tr>
+          <td style="{{spacing.hpad.sm}} padding-top: 90px;">
+            <table {{table}} class="se-promo-table" width="410" style="table-layout: fixed;">
+
+              <!-- Logo hr thing -->
+              <tr>
+                <td class="se-promo-td" width="190" align="left" valign="middle">
+                  <img class="se-promo-line" src="{% include img-pre.html type="I" name="line.png" %}" width="179" style="display:block;" border="0" />
+                </td>
+                <td class="se-promo-se-icon-td" width="30">
+                  <img src="{% include img-pre.html type="I" name="se.png" %}" width="30" style="display:block;" border="0" alt="Secret Escapes Icon" />
+                </td>
+                <td class="se-promo-td" width="190" align="right" valign="middle">
+                  <img class="se-promo-line" src="{% include img-pre.html type="I" name="line.png" %}" width="179" style="display:block;" border="0" />
+                </td>
+              </tr>
+
+              <!-- title -->
+              <tr>
+                <td colspan="3" align="center" style="{{title-core.family}} {{title-core.light}} {{title-core.xxxl}} {{text.color.white}} padding-top: 25px;">
+                  Save up to 60% on luxury hotels and holidays
+                </td>
+              </tr>
+
+              <!-- see current sales cta -->
+              <tr>
+                <td colspan="3" style="padding-top: 25px;">
+                  {% include element/button.html link="https://www.secretescapes.com/current-sales" label="See Current Sales" style=button.orange size=button.size.sm %}
+                </td>
+              </tr>
+
+              <!-- social media links -->
+              <tr>
+                <td colspan="3" align="center" style="padding-bottom: 40px; padding-top:40px;">
+                  <table {{table}} width="195">
+                    <tr>
+                      <td width="65" align="center">
+                        <a href="https://www.facebook.com/SecretEscapes/"><img src="{% include img-pre.html type="I" name="fb.png" %}" width="45" style="display:block;" border="0" alt="Facebook Icon" /></a>
+                      </td>
+                      <td width="65" align="center">
+                        <a href="https://www.instagram.com/secretescapes/"><img src="{% include img-pre.html type="I" name="insta.png" %}" width="45" style="display:block;" border="0" alt="Instagram Icon" /></a>
+                      </td>
+                      <td width="65" align="center">
+                        <a href="https://twitter.com/secret_escapes"><img src="{% include img-pre.html type="I" name="tw.png" %}" width="45" style="display:block;" border="0" alt="Twitter Icon" /></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- trust pilot bottom bar -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center" style="{{text.color.white}} background-color: {{color.black}}; {{spacing.hpad.sm}} padding-top: 25px; padding-bottom: 25px; line-height: 28px; background-color: #000000; background-color: rgba(0,0,0,.33);">
+            <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+              <img style="max-height: 18px;" alt="Human score" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text1_dark.png" height="18" border="0">
+            </a> &nbsp;&nbsp;
+            <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+              <img style="max-height: 20px;" alt="Trustpilot Stars" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/stars.png" height="20" border="0">
+            </a> &nbsp;&nbsp;
+            <span style="display: inline-block">
+              <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                <img style="max-height: 18px;" alt="number of reviews" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text2_dark.png" height="18" border="0">
+              </a> &nbsp;&nbsp;
+              <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                <img style="max-height: 16px; display: inline-block" alt="Trustpilot Logo" src="https://emailsignature.trustpilot.com/logo/n/1/logo@2x_dark.png" height="16" border="0">
+              </a>
+            </span>
+          </td>
+        </tr>
+      </table>
+
+      <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
+    </td>
+  </tr>
+</table>

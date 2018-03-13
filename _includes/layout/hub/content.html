@@ -1,0 +1,91 @@
+{% for hub-content in page.hub-content.content-list %}
+
+  {% assign odd-or-even = forloop.index | modulo: 2 %}
+  {% if odd-or-even == 1 %}
+    {% assign image-align = "left" %}
+    {% assign content-align = "right" %}
+  {% elsif odd-or-even == 0 %}
+    {% assign image-align = "right" %}
+    {% assign content-align = "left" %}
+  {% endif %}
+
+  {% if hub-content.link %}
+    {% assign hub-content-link = hub-content.link %}
+  {% elsif page.hub-content.link %}
+    {% assign hub-content-link = page.hub-content.link %}
+  {% else %}
+    {% assign hub-content-link = page.link %}
+  {% endif %}
+
+  {% if hub-content.cta-label %}
+    {% assign hub-content-cta-label = hub-content.cta-label %}
+  {% elsif page.hub-content.cta-label %}
+    {% assign hub-content-cta-label = page.hub-content.cta-label %}
+  {% else %}
+    {% assign hub-content-cta-label = hub-content.cta-label %}
+  {% endif %}
+
+  {% assign hub-content-title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+  {% assign hub-content-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+  {% assign hub-content-image = hub-content.image %}
+  {% assign hub-content-height = page.hub-content.image.height %}
+
+  <!-- hub content -->
+  <table {{responsive-table}}>
+    <tr>
+      <td{% if page.hub-content.space-between and forloop.index != 1 %} style="padding-top: {{page.hub-content.space-between}}px;"{% endif %}>
+
+        <!-- column wrap -->
+        <table {{responsive-table}}>
+          <tr>
+            <td valign="middle">
+
+              <!-- image-column -->
+              <table {{table}} class="responsive-table" align="{{image-align}}" width="50%" height="{{hub-content-height}}">
+                <tr>
+                  <td align="center" valign="middle">
+                    <!-- hub content image -->
+                    <a href="{{hub-content-link}}">
+                      <img class="img-max" src="{% include img-pre.html type="C" name=hub-content-image %}" width="{{page.hub-content.image.width}}" height="{{page.hub-content.image.height}}" style="display: block;" border="0" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- content-column -->
+              <table {{table}} class="responsive-table" align="{{content-align}}" width="49.999999%" height="{{hub-content-height}}">
+                <tr>
+                  <td align="left" valign="middle" style="{{spacing.boxpad.sm}}">
+                    <table {{fluid-table}}>
+                      <!-- feauture title -->
+                      <tr>
+                        <td style="{{hub-content-title-style}}">
+                          {{hub-content.title}}
+                        </td>
+                      </tr>
+                      <!-- feauture content -->
+                      <tr>
+                        <td style="{{hub-content-text-style}} padding-top: 8px;">
+                          {{hub-content.content}}
+                        </td>
+                      </tr>
+                      <!-- feauture call-to-action -->
+                      <tr>
+                        <td style="padding-top: 10px;">
+                          {% include element/button.html link=hub-content-link label=hub-content-cta-label style=button.partner-light size=button.size.sm align="left" %}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+{% endfor %}

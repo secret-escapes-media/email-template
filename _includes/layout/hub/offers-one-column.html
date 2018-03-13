@@ -1,0 +1,17 @@
+{% for offer in page.offers %}
+  <!-- column container -->
+  <table {{fluid-table}}>
+    <tr>
+      <td class="mobile-margin" style="padding-bottom: 30px;">
+        <!-- column content -->
+        <table {{fluid-table}}>
+          <tr>
+            <td>
+              {% include element/offer/content-one-column.html %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+{% endfor %}

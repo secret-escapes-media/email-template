@@ -1,0 +1,68 @@
+<table {{fluid-table}}>
+
+  <!-- offer image -->
+  <tr>
+    <td>
+      <a href="{{offer.link}}">
+        <img src="{% include img-pre.html type='O' name=offer.image %}" border="0" alt="{{offer.title}}" width="600" style="display: block;" class="img-max" />
+      </a>
+    </td>
+  </tr>
+
+  <!-- offer content -->
+  <tr>
+    <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+      <table {{fluid-table}}>
+
+        <!-- title -->
+        <tr>
+          <td colspan="3" style="{{title-core.family}} {{title-core.color.normal}} {{title-core.lg}} {{title-core.weight}} padding-bottom: 10px;">
+            {{offer.title}}
+          </td>
+        </tr>
+
+        <!-- offer location -->
+        <tr>
+          <td colspan="3" style="padding-bottom: 12px;">
+            <table {{fluid-table}}>
+              <tr>
+                <!-- map pin icon -->
+                <td valign="middle" width="20">
+                  <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
+                </td>
+                <!-- location text -->
+                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;">
+                  {{offer.location}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- description -->
+        <tr>
+          <td colspan="3" style="{{text.family}} {{text.color.light}} {{text.md}} {{text.weight}} padding-bottom: 15px;">
+            {{offer.content}}
+          </td>
+        </tr>
+
+        <tr>
+          <!-- cta button -->
+          <td width="165" align="left" valign="middle">
+            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.sm align="left" %}
+          </td>
+          <!-- percentage saving -->
+          <td width="109" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} border-right: 1px solid {{color.grey-lighter}};">
+            save up to <span style="{{title-core.color.orange}} {{title-core.md}}">{{offer.saved}}%</span>
+          </td>
+          <!-- price -->
+          <td width="255" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-left: 10px;">
+            From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+</table>
