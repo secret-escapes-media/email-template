@@ -26,7 +26,9 @@
   {% endif %}
 
   {% assign hub-content-title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+  {% assign hub-content-title-style-class = "title--xl" %}
   {% assign hub-content-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+  {% assign hub-content-text-style-class = "text--sm" %}
   {% assign hub-content-image = hub-content.image %}
   {% assign hub-content-height = page.hub-content.image.height %}
 
@@ -59,20 +61,20 @@
                     <table {{fluid-table}}>
                       <!-- feauture title -->
                       <tr>
-                        <td style="{{hub-content-title-style}}">
+                        <td style="{{hub-content-title-style}}" class="hub-content-title-style-class">
                           {{hub-content.title}}
                         </td>
                       </tr>
                       <!-- feauture content -->
                       <tr>
-                        <td style="{{hub-content-text-style}} padding-top: 8px;">
+                        <td style="{{hub-content-text-style}} padding-top: 8px;" class="hub-content-text-style-class">
                           {{hub-content.content}}
                         </td>
                       </tr>
                       <!-- feauture call-to-action -->
                       <tr>
                         <td style="padding-top: 10px;">
-                          {% include element/button.html link=hub-content-link label=hub-content-cta-label style=button.partner-light size=button.size.sm align="left" %}
+                          {% include element/button.html link=hub-content-link label=hub-content-cta-label style=button.partner-light size=button.size.sm class="button--sm" align="left" %}
                         </td>
                       </tr>
                     </table>

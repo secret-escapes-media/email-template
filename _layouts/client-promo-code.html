@@ -7,8 +7,9 @@ layout: default
 {% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
 {% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
 {% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign title-style-class = "title--xl" %}
 {% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
-
+{% assign text-style-class = "text--md" %}
 
 {% include layout/client/header.html %}
 
@@ -32,12 +33,12 @@ layout: default
 
               <!-- Intro content -->
               <tr>
-                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="mobile-margin">
                   <table {{fluid-table}}>
 
                     <!-- title -->
                     <tr>
-                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};">
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
                         {{page.intro.title}}
                       </td>
                     </tr>
@@ -46,14 +47,14 @@ layout: default
                     {% if page.intro.content-rows %}
                       {% for row in page.intro.content-rows %}
                       <tr>
-                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}">
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
                           {{row.content}}
                         </td>
                       </tr>
                       {% endfor %}
                     {% else %}
                       <tr>
-                        <td align="center" style="{{text-style}}">
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
                           {{page.intro.content}}
                         </td>
                       </tr>
@@ -67,7 +68,7 @@ layout: default
 
                     <!-- promo code -->
                     <tr>
-                      <td align="center" style="{{text.family}} {{text.color.light}} {{text.xl}} {{text.weight}}">
+                      <td align="center" style="{{text.family}} {{text.color.light}} {{text.xl}} {{text.weight}}" class="text--xl">
                         {{page.intro.promo.pre}}
                       </td>
                     </tr>
@@ -75,7 +76,7 @@ layout: default
                       <td align="center" style="{{spacing.vpad.xs}}">
                         <table {{fluid-table}} style="border: 1px solid {{color.partner}};">
                           <tr>
-                            <td align="center" style="{{text.family}} {{text.color.dark}} {{text.xl}} {{text.bold}} {{text.wide-kern}} {{spacing.boxpad.sm}}">
+                            <td align="center" style="{{text.family}} {{text.color.dark}} {{text.xl}} {{text.bold}} {{text.wide-kern}} {{spacing.boxpad.sm}}" class="text--xl">
                               {{page.intro.promo.code}}
                             </td>
                           </tr>
@@ -83,7 +84,7 @@ layout: default
                       </td>
                     </tr>
                     <tr>
-                      <td align="center" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}">
+                      <td align="center" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
                         {{page.intro.promo.post}}
                       </td>
                     </tr>

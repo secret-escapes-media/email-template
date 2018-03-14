@@ -3,6 +3,7 @@ default: >
  border-radius: 4px;
  text-decoration: none;
  text-transform: uppercase;
+ text-align: center;
 
 size:
   lg: >

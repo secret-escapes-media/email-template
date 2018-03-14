@@ -7,8 +7,9 @@ layout: default
 {% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
 {% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
 {% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign title-style-class = "title--xl" %}
 {% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
-
+{% assign text-style-class = "text--md" %}
 
 {% include layout/client/header.html %}
 
@@ -33,12 +34,12 @@ layout: default
 
               <!-- Intro content -->
               <tr>
-                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="mobile-margin">
                   <table {{fluid-table}}>
 
                     <!-- title -->
                     <tr>
-                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};">
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
                         {{page.intro.title}}
                       </td>
                     </tr>
@@ -47,14 +48,14 @@ layout: default
                     {% if page.intro.content-rows %}
                       {% for row in page.intro.content-rows %}
                       <tr>
-                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}">
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
                           {{row.content}}
                         </td>
                       </tr>
                       {% endfor %}
                     {% else %}
                       <tr>
-                        <td align="center" style="{{text-style}}">
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
                           {{page.intro.content}}
                         </td>
                       </tr>
@@ -87,7 +88,9 @@ layout: default
                     {% assign offer-cta-label = page.offers.cta-label %}
                     {% assign offer-height = page.offers.image.height %}
                     {% assign offer-title-style = title.family | append: title.color.dark | append: title.md | append: title.weight %}
+                    {% assign offer-title-style-class = "title--md" %}
                     {% assign offer-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+                    {% assign offer-text-style-class = "text--sm"  %}
 
                     <!-- offer -->
                     <table {{responsive-table}}>
@@ -118,26 +121,26 @@ layout: default
                                       <table {{fluid-table}}>
                                         <!-- offer title -->
                                         <tr>
-                                          <td style="{{offer-title-style}}">
+                                          <td style="{{offer-title-style}}" class="offer-title-style-class">
                                             {{offer.title}}
                                           </td>
                                         </tr>
                                         <!-- offer content -->
                                         <tr>
-                                          <td style="{{offer-text-style}} padding-top: 8px;">
+                                          <td style="{{offer-text-style}} padding-top: 8px;" class="offer-text-style-class">
                                             {{offer.content}}
                                           </td>
                                         </tr>
                                         <!-- offer price -->
                                         <tr>
-                                          <td style="{{offer-text-style}} padding-top: 4px;">
+                                          <td style="{{offer-text-style}} padding-top: 4px;" class={{offer-text-style-class}}>
                                             From <span style="{{text.xl}} {{text.bold}} color: {{color.partner}};">£{{offer.price}}</span> {{offer.price-description}}
                                           </td>
                                         </tr>
                                         <!-- offer call-to-action -->
                                         <tr>
                                           <td style="padding-top: 10px;">
-                                            {% include element/button.html link=offer-link label=offer-cta-label style=button.partner-light size=button.size.sm align="left" %}
+                                            {% include element/button.html link=offer-link label=offer-cta-label style=button.partner-light size=button.size.sm class="button--sm" align="left" %}
                                           </td>
                                         </tr>
                                       </table>

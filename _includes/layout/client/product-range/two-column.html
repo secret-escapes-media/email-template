@@ -35,16 +35,16 @@
 
                   <!-- product image -->
                   <tr>
-                    <td>
+                    <td align="center">
                       <a href="{{product.link}}">
-                        <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block;" />
+                        <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block; max-width: {{column-width}}px !important;" />
                       </a>
                     </td>
                   </tr>
 
                   <!-- product title -->
                   <tr>
-                    <td align="center" style="{{title.family}} {{title.weight}} {{title.color.normal}} {{title.md}} padding-top: 10px;">
+                    <td align="center" style="{{title.family}} {{title.weight}} {{title.color.normal}} {{title.sm}} padding-top: 10px;">
                       {{product.title}}
                     </td>
                   </tr>

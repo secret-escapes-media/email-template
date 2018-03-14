@@ -11,12 +11,12 @@
 
   <!-- offer content -->
   <tr>
-    <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+    <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="offer-one-column-boxpad">
       <table {{fluid-table}}>
 
         <!-- title -->
         <tr>
-          <td colspan="3" style="{{title-core.family}} {{title-core.color.normal}} {{title-core.lg}} {{title-core.weight}} padding-bottom: 10px;">
+          <td colspan="3" style="{{title-core.family}} {{title-core.color.normal}} {{title-core.lg}} {{title-core.weight}} padding-bottom: 10px;" class="title-core--lg">
             {{offer.title}}
           </td>
         </tr>
@@ -31,7 +31,7 @@
                   <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
                 </td>
                 <!-- location text -->
-                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;">
+                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
                   {{offer.location}}
                 </td>
               </tr>
@@ -41,23 +41,23 @@
 
         <!-- description -->
         <tr>
-          <td colspan="3" style="{{text.family}} {{text.color.light}} {{text.md}} {{text.weight}} padding-bottom: 15px;">
+          <td colspan="3" style="{{text.family}} {{text.color.light}} {{text.md}} {{text.weight}} padding-bottom: 15px;" class="text--sm offer-one-column-description">
             {{offer.content}}
           </td>
         </tr>
 
         <tr>
-          <!-- cta button -->
-          <td width="165" align="left" valign="middle">
-            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.sm align="left" %}
-          </td>
           <!-- percentage saving -->
-          <td width="109" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} border-right: 1px solid {{color.grey-lighter}};">
+          <td width="109" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} border-right: 1px solid {{color.grey-lighter}};" class="text--sm offer-one-column-td offer-one-column-percent">
             save up to <span style="{{title-core.color.orange}} {{title-core.md}}">{{offer.saved}}%</span>
           </td>
           <!-- price -->
-          <td width="255" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-left: 10px;">
+          <td width="250" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-left: 15px; padding-right: 5px;" class="text--sm offer-one-column-td offer-one-column-price">
             From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
+          </td>
+          <!-- cta button -->
+          <td width="160" valign="middle" class="offer-one-column-td">
+            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.sm class="button--md" align-class="offer-one-column-button" align="right" %}
           </td>
         </tr>
 

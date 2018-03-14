@@ -7,8 +7,9 @@ layout: default
 {% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
 {% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
 {% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign title-style-class = "title--xl" %}
 {% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
-
+{% assign text-style-class = "text--md" %}
 
 {% include layout/client/header.html %}
 
@@ -33,12 +34,12 @@ layout: default
 
               <!-- Intro content -->
               <tr>
-                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}">
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="mobile-margin">
                   <table {{fluid-table}}>
 
                     <!-- title -->
                     <tr>
-                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};">
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
                         {{page.intro.title}}
                       </td>
                     </tr>
@@ -47,14 +48,14 @@ layout: default
                     {% if page.intro.content-rows %}
                       {% for row in page.intro.content-rows %}
                       <tr>
-                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}">
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
                           {{row.content}}
                         </td>
                       </tr>
                       {% endfor %}
                     {% else %}
                       <tr>
-                        <td align="center" style="{{text-style}}">
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
                           {{page.intro.content}}
                         </td>
                       </tr>
@@ -109,7 +110,9 @@ layout: default
                     {% endif %}
 
                     {% assign feature-title-style = title.family | append: title.color.normal | append: title.lg | append: title.weight %}
+                    {% assign feature-title-style-class = "title--lg" %}
                     {% assign feature-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+                    {% assign feature-text-style-class = "text--sm" %}
                     {% assign feature-height = page.features.image.height %}
 
                     <!-- feature -->
@@ -137,24 +140,24 @@ layout: default
                                 <!-- content-column -->
                                 <table {{table}} class="responsive-table" align="{{content-align}}" width="49.999999%" height="{{feature-height}}" bgcolor="{{color.white}}">
                                   <tr>
-                                    <td align="left" valign="middle" style="{{spacing.boxpad.sm}}">
+                                    <td align="left" valign="middle" style="{{spacing.hpad.sm}} {{spacing.vpad.md}}">
                                       <table {{fluid-table}}>
                                         <!-- feauture title -->
                                         <tr>
-                                          <td style="{{feature-title-style}}">
+                                          <td style="{{feature-title-style}}" class="{{feature-title-style-class}}">
                                             {{feature.title}}
                                           </td>
                                         </tr>
                                         <!-- feauture content -->
                                         <tr>
-                                          <td style="{{feature-text-style}} padding-top: 8px;">
+                                          <td style="{{feature-text-style}} padding-top: 8px;" class="{{feature-text-style-class}}">
                                             {{feature.content}}
                                           </td>
                                         </tr>
                                         <!-- feauture call-to-action -->
                                         <tr>
                                           <td style="padding-top: 10px;">
-                                            {% include element/button.html link=feature-link label=feature-cta-label style=button.partner-light size=button.size.sm align="left" %}
+                                            {% include element/button.html link=feature-link label=feature-cta-label style=button.partner-light size=button.size.sm align="left" class="button--sm" %}
                                           </td>
                                         </tr>
                                       </table>

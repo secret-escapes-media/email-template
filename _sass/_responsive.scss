@@ -19,59 +19,81 @@
     padding-bottom: 25px !important;
   }
 
+
   ////////////////////////////////////////////////////////////////////// content
 
-  /* HIDE ON MOBILE - mostly for the gmail hack at the end of the html */
-  *[class*="mobile-hide"]    { display:none !important; }
-
+  *[class*="mobile-hide"]          { display:none !important; } // this is for the gmail hack at the end of the html
   td[class*="mobile-center-align"] { text-align: center !important; }
-  td[class*="mobile-margin"]       { padding-left: 15px !important; padding-right: 15px !important; }
   br[class*="desktop-break"]       { display: none; }
-  img[class="logo-se"]             { width: 100px; }
-  img[class="logo-partner"]        { width: 100px; }
   td[class*="background-cover"]    { background-size: cover; }
 
-  ////////////////////////////////////////////////////////////// se promo footer
 
-  table[class*="se-promo-table"]{
-    width: 100%!important;
-    max-width: 410px !important;
-    height: auto!important;
-  }
+  //////////////////////////////////////////////////////////////////////// logos
 
-  td[class*="se-promo-td"]{
-    width: 100% !important;
-  }
+  img[class="logo-se"]       { width: 100px; }
+  img[class="logo-partner"]  { width: 90px; }
+  img[class*="logo-combined"] { width: 220px !important; }
 
-  td[class*="se-promo-se-icon-td"]{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 
-  img[class*="se-promo-line"]{
-    height: 1px !important;
-    width: 100% !important;
-  }
+  ////////////////////////////////////////////////////////////////////// spacing
+
+  td[class*="mobile-margin"] { padding-left: 15px !important; padding-right: 15px !important; }
+
 
   /////////////////////////////////////////////////////////////////// typography
 
-  //   .title-h1 { font-size: 24px !important; line-height: 28px !important; }
-  //   .title-h2 { font-size: 18px !important; line-height: 22px !important; }
-  //   .title-h3 { font-size: 17px !important; line-height: 21px !important; }
-  //   .title-h4 { font-size: 15px !important; line-height: 21px !important; }
-  //
-  //   .button {
-  //     font-size: 12px !important;
-  //     border-top-width: 6px !important;
-  //     border-bottom-width: 6px !important;
-  //     border-left-width: 15px !important;
-  //     border-right-width: 15px !important;
-  //   }
-  //
-  //   .paragraph {
-  //     font-size: 14px !important;
-  //     line-height: 21px !important;
-  //     font-weight: 400 !important;
-  //   }
+  .text--xl { font-size: 16px !important; line-height: 24px !important; }
+  .text--lg { font-size: 14px !important; line-height: 21px !important; }
+  .text--md { font-size: 12px !important; line-height: 18px !important; }
+  .text--sm { font-size: 11px !important; line-height: 17px !important; }
+  .text--xs { font-size: 10px !important; line-height: 14px !important; }
+
+  .title--comp { font-size: 38px !important; line-height: 42px !important; }
+  .title--xxxl { font-size: 33px !important; line-height: 40px !important; }
+  .title--xxl  { font-size: 27px !important; line-height: 35px !important; }
+  .title--xl   { font-size: 22px !important; line-height: 27px !important; }
+  .title--lg   { font-size: 18px !important; line-height: 24px !important; }
+  .title--md   { font-size: 16px !important; line-height: 22px !important; }
+  .title--sm   { font-size: 13px !important; line-height: 18px !important; }
+  .title--xs   { font-size: 12px !important; line-height: 16px !important; }
+  .title--xs   { font-size: 10px !important; line-height: 14px !important; }
+
+  .title-core--comp { font-size: 38px !important; line-height: 42px !important; }
+  .title-core--xxxl { font-size: 33px !important; line-height: 40px !important; }
+  .title-core--xxl  { font-size: 27px !important; line-height: 35px !important; }
+  .title-core--xl   { font-size: 22px !important; line-height: 27px !important; }
+  .title-core--lg   { font-size: 18px !important; line-height: 24px !important; }
+  .title-core--md   { font-size: 16px !important; line-height: 22px !important; }
+  .title-core--sm   { font-size: 13px !important; line-height: 18px !important; }
+  .title-core--xs   { font-size: 12px !important; line-height: 16px !important; }
+  .title-core--xs   { font-size: 10px !important; line-height: 14px !important; }
+
+  .button--lg { font-size: 12px !important; line-height: 16px !important; border-width: 20px 38px !important;}
+  .button--md { font-size: 11px !important; line-height: 13px !important; border-width: 18px 30px !important;}
+  .button--sm { font-size: 10px !important; line-height: 12px !important; border-width: 16px 22px !important;}
+  .button--xs { font-size: 9px  !important; line-height: 10px !important; border-width: 14px 18px !important; font-weight: 600 !important;}
+
+
+  /////////////////////////////////////////////////////////////////// hub layout
+
+  td[class*="hub-intro-title"] { padding-top: 85px !important; padding-bottom: 85px !important; }
+
+
+  //////////////////////////////////////////////////////////////////////// offer
+
+  td[class*="offer-one-column-td"]          { display: block !important; width: 100% !important; }
+  td[class*="offer-one-column-percent"]     { border: 0 !important; }
+  td[class*="offer-one-column-price"]       { padding-top: 5px !important; padding-left: 0 !important; padding-right: 0 !important; }
+  td[class*="offer-one-column-button"]      { padding-top: 10px !important; text-align: left !important; }
+  td[class*="offer-one-column-description"] { padding-bottom: 5px !important; }
+  td[class*="offer-one-column-boxpad"]      { padding: 20px 15px !important; }
+
+
+  ////////////////////////////////////////////////////////////// se promo footer
+
+  table[class*="se-promo-table"]   { width: 100% !important; max-width: 410px !important; height: auto !important; }
+  td[class*="se-promo-td"]         { width: 100% !important; }
+  td[class*="se-promo-se-icon-td"] { padding-left: 10px; padding-right: 10px; }
+  img[class*="se-promo-line"]      { height: 1px !important; width: 100% !important;  }
 
 }

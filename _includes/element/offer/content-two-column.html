@@ -16,7 +16,7 @@
 
         <!-- title -->
         <tr>
-          <td style="{{title-core.family}} {{title-core.color.dark}} {{title-core.md}} {{title-core.weight}} padding-bottom: 8px;">
+          <td style="{{title-core.family}} {{title-core.color.dark}} {{title-core.md}} {{title-core.weight}} padding-bottom: 8px;" class="title-core--md">
             {{offer.title}}
           </td>
         </tr>
@@ -31,7 +31,7 @@
                   <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
                 </td>
                 <!-- location text -->
-                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;">
+                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
                   {{offer.location}}
                 </td>
               </tr>
@@ -41,14 +41,14 @@
 
         <!-- description -->
         <tr>
-          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-bottom: 4px;">
+          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-bottom: 4px;" class="text--sm">
             {{offer.content}}
           </td>
         </tr>
 
         <!-- price -->
         <tr>
-          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}">
+          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
             From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
           </td>
         </tr>
@@ -56,7 +56,7 @@
         <!-- call to action -->
         <tr>
           <td style="padding-top: 10px;">
-            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.xs align="left" %}
+            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.xs class="button--sm" align="left" %}
           </td>
         </tr>
 

@@ -52,9 +52,9 @@
 
                         <!-- product image -->
                         <tr>
-                          <td>
+                          <td align="center">
                             <a href="{{product.link}}">
-                              <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block;" />
+                              <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block; max-width: {{column-width}}px !important;" />
                             </a>
                           </td>
                         </tr>
@@ -76,7 +76,7 @@
                         <!-- product cta -->
                         <tr>
                           <td align="center" style="padding-top: 5px;">
-                            {% include element/button.html link=product.link label=category.products.cta-label style=button.partner-subtle size=button.size.sm %}
+                            {% include element/button.html link=product.link label=category.products.cta-label style=button.partner-subtle size=button.size.sm class="button--sm" %}
                           </td>
                         </tr>
 

@@ -5,7 +5,9 @@ layout: default
 {% include variables.html %}
 
 {% assign title-style = title.family | append: title.color.normal | append: title.comp | append: title.weight | append: text.color.white %}
+{% assign title-style-class = "title--comp" %}
 {% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
+{% assign text-style-class = "text--lg"  %}
 {% assign background-color = page.background.color %}
 {% assign background-image = page.background.image %}
 
@@ -36,7 +38,7 @@ layout: default
 
               <!-- title -->
               <tr>
-                <td align="center" style="{{title-style}} padding-top: 80px;">
+                <td align="center" style="{{title-style}} padding-top: 80px;" class="{{title-style-class}}">
                   {{page.title}}
                 </td>
               </tr>
@@ -44,7 +46,7 @@ layout: default
               <!-- enter now - call to action -->
               <tr>
                 <td style=" padding-top: 30px;">
-                  {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg %}
+                  {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg class="button--lg" %}
                 </td>
               </tr>
 
@@ -59,7 +61,7 @@ layout: default
 
               <!-- description -->
               <tr>
-                <td align="center" style="{{text-style}} padding-top: 45px;">
+                <td align="center" style="{{text-style}} padding-top: 45px;" class="{{text-style-class}}">
                   {{page.more-info.content}}
                 </td>
               </tr>
