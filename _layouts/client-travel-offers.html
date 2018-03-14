@@ -85,7 +85,6 @@ layout: default
 
                     {% assign offer-link = offer.link %}
                     {% assign offer-cta-label = page.offers.cta-label %}
-                    {% assign offer-image = offer.image | append: '.jpg' %}
                     {% assign offer-height = page.offers.image.height %}
                     {% assign offer-title-style = title.family | append: title.color.dark | append: title.md | append: title.weight %}
                     {% assign offer-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
@@ -106,7 +105,7 @@ layout: default
                                     <td align="center" valign="middle">
                                       <!-- offer image -->
                                       <a href="{{offer-link}}">
-                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer-image %}" width="{{page.offer.image.width}}" height="{{page.offer.image.height}}" style="display: block;" border="0" />
+                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer.image %}" width="{{page.offer.image.width}}" height="{{page.offer.image.height}}" style="display: block;" border="0" />
                                       </a>
                                     </td>
                                   </tr>

@@ -7,7 +7,7 @@
 <!-- full width section -->
 <table {{fluid-table}}>
   <tr>
-    <!-- background image has to be the same height of the email for consistent rending in outlook -->
+    <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
     <td class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
       <!--[if gte mso 9]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">

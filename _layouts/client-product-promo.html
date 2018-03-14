@@ -110,7 +110,6 @@ layout: default
 
                     {% assign feature-title-style = title.family | append: title.color.normal | append: title.lg | append: title.weight %}
                     {% assign feature-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
-                    {% assign feature-image = feature.image | append: '.jpg' %}
                     {% assign feature-height = page.features.image.height %}
 
                     <!-- feature -->
@@ -129,7 +128,7 @@ layout: default
                                     <td align="center" valign="middle">
                                       <!-- feature image -->
                                       <a href="{{feature-link}}">
-                                        <img class="img-max" src="{% include img-pre.html type="C" name=feature-image %}" width="{{page.features.image.width}}" height="{{page.features.image.height}}" style="display: block;" border="0" />
+                                        <img class="img-max" src="{% include img-pre.html type="C" name=feature.image %}" width="{{page.features.image.width}}" height="{{page.features.image.height}}" style="display: block;" border="0" />
                                       </a>
                                     </td>
                                   </tr>

@@ -1,6 +1,8 @@
 {% assign content = include.content %}
 
-{% assign title = "Save up to 60% on luxury hotels and holidays"  %}
+{% assign title = "Save up to 60% on luxury hotels and holidays" %}
+{% assign link = "https://www.secretescapes.com/current-sales" %}
+{% assign cta-label = "See Current Sales" %}
 {% assign background-color = "#181a28" %}
 {% assign background-image = "se-promo.jpg" %}
 
@@ -8,7 +10,7 @@
 <!-- secret escapes promo -->
 <table {{fluid-table}}>
   <tr>
-    <!-- background image has to be the same height of the email for consistent rending in outlook -->
+    <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
     <td class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="background-position: top center; background-repeat: no-repeat;">
       <!--[if gte mso 9]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
@@ -36,14 +38,14 @@
               <!-- title -->
               <tr>
                 <td colspan="3" align="center" style="{{title-core.family}} {{title-core.light}} {{title-core.xxxl}} {{text.color.white}} padding-top: 25px;">
-                  Save up to 60% on luxury hotels and holidays
+                  {{title}}
                 </td>
               </tr>
 
               <!-- see current sales cta -->
               <tr>
                 <td colspan="3" style="padding-top: 25px;">
-                  {% include element/button.html link="https://www.secretescapes.com/current-sales" label="See Current Sales" style=button.orange size=button.size.sm %}
+                  {% include element/button.html link=link label=cta-label style=button.orange size=button.size.sm %}
                 </td>
               </tr>
 

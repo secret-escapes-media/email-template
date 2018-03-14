@@ -10,11 +10,13 @@
         <tr>
           <td style="{{spacing.vpad.xl}}">
             <table {{fluid-table}}>
-              <tr>
-                <td align="left" style="{{text-style}} {{paragraph-space}}">
-                  Terms and conditions go here - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga nisi atque sint dolor laborum possimus saepe, facilis velit, maiores ipsam! Nisi repudiandae itaque fuga quod magni voluptatum amet omnis incidunt.
-                </td>
-              </tr>
+              {% if page.terms-and-conditions %}
+                <tr>
+                  <td align="left" style="{{text-style}} {{paragraph-space}}">
+                    {{page.terms-and-conditions}}
+                  </td>
+                </tr>
+              {% endif %}
               <tr>
                 <td align="left" style="{{text-style}} {{paragraph-space}}">
                   When we’re not curating luxury escapes, we like to keep an eye out for promotions we think you’ll love – like this one. This email was written by our editorial team in partnership with {{page.partner-name}}. We hope you enjoyed it.

@@ -22,8 +22,6 @@
       {% assign column-align = "right" %}
   {% endcase %}
 
-  {% assign product-image = product.image | append: '.jpg' %}
-
   {% if row-position == "start" %}
     <!-- Three column product range - row start -->
     <table {{table}} align="center" class="responsive-table" width="{{row-width}}">
@@ -56,7 +54,7 @@
                         <tr>
                           <td>
                             <a href="{{product.link}}">
-                              <img class="img-max" src="{% include img-pre.html type="P" name=product-image %}" width="{{column-width}}" border="0" style="display: block;" />
+                              <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block;" />
                             </a>
                           </td>
                         </tr>

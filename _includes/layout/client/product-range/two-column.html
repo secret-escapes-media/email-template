@@ -17,8 +17,6 @@
     {% assign row-position = "end" %}
   {% endif %}
 
-  {% assign product-image = product.image | append: '.jpg' %}
-
 
   {% if row-position == "start" %}
     <!-- Two column product range - row start -->
@@ -39,7 +37,7 @@
                   <tr>
                     <td>
                       <a href="{{product.link}}">
-                        <img class="img-max" src="{% include img-pre.html type="P" name=product-image %}" width="{{column-width}}" border="0" style="display: block;" />
+                        <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block;" />
                       </a>
                     </td>
                   </tr>
