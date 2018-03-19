@@ -16,7 +16,7 @@
 
         <!-- title -->
         <tr>
-          <td style="{{title-core.family}} {{title-core.color.dark}} {{title-core.md}} {{title-core.weight}} padding-bottom: 8px;" class="title-core--md">
+          <td align="left" style="{{title-core.family}} {{title-core.color.dark}} {{title-core.md}} {{title-core.weight}} padding-bottom: 8px;" class="title-core--md">
             {{offer.title}}
           </td>
         </tr>
@@ -27,11 +27,11 @@
             <table {{fluid-table}}>
               <tr>
                 <!-- map pin icon -->
-                <td valign="middle" width="20">
+                <td align="left" valign="middle" width="20">
                   <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
                 </td>
                 <!-- location text -->
-                <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
+                <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
                   {{offer.location}}
                 </td>
               </tr>
@@ -41,14 +41,14 @@
 
         <!-- description -->
         <tr>
-          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-bottom: 4px;" class="text--sm">
+          <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-bottom: 4px;" class="text--sm">
             {{offer.content}}
           </td>
         </tr>
 
         <!-- price -->
         <tr>
-          <td style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
+          <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
             From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
           </td>
         </tr>

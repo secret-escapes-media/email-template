@@ -16,7 +16,7 @@ layout: default
 <!-- Main introduction -->
 <table {{fluid-table}}>
   <tr>
-    <td bgcolor="{{color.grey-lightest}}" style="{{spacing.hpad.sm}} padding-bottom: 80px;">
+    <td align="center" bgcolor="{{color.grey-lightest}}" style="padding-bottom: 80px;" class="mobile-margin">
       <table {{responsive-table}}>
         <tr>
           <td>
@@ -108,16 +108,17 @@ layout: default
                                     <td align="center" valign="middle">
                                       <!-- offer image -->
                                       <a href="{{offer-link}}">
-                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer.image %}" width="{{page.offer.image.width}}" height="{{page.offer.image.height}}" style="display: block;" border="0" />
+                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer.image %}" width="{{page.offers.image.width}}" height="{{page.offers.image.height}}" style="display: block;" border="0" />
                                       </a>
                                     </td>
                                   </tr>
                                 </table>
 
                                 <!-- content-column -->
-                                <table {{table}} class="responsive-table" align="right" width="49.999999%" height="{{offer-height}}" bgcolor="{{color.white}}">
+                                <table {{table}} class="responsive-table" align="right" width="49.9%" height="{{offer-height}}" bgcolor="{{color.white}}">
                                   <tr>
-                                    <td align="left" valign="middle" style="{{spacing.boxpad.sm}}">
+                                    <td align="left" valign="middle" height="{{offer-height | minus:30}}" style="{{spacing.boxpad.sm}}" class="responsive-td"> <!-- outlook needs height set on td, minus the vertical padding -->
+
                                       <table {{fluid-table}}>
                                         <!-- offer title -->
                                         <tr>
@@ -164,7 +165,7 @@ layout: default
 
 
             <!-- call to action -->
-            <table>
+            <table {{fluid-table}}>
               <tr>
                 <td style="padding-top: 60px;">
                   {% include element/button.html link=intro-link label=cta-label style=button.partner %}

@@ -6,7 +6,7 @@
 {% if include.align %}{% assign button-align = include.align %}{% else %}{% assign button-align = "center" %}{% endif %}
 
 <!-- Call to action button -->
-<table {{fluid-table}}>  <!-- style="border-radius: 4px;" - border radius goes here, should have a global option -->
+<table {{fluid-table}}>
   <tr>
     <td align="{{button-align}}"{% if include.align-class %} class="{{include.align-class}}"{% endif %}>
       <a class="{{button-class}}" href="{{button-link}}" style="{{button.default}} {{text.family}} {{button-size}} {{button-style}}">

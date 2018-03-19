@@ -15,72 +15,84 @@ layout: default
 <!-- Main introduction -->
 <table {{fluid-table}}>
   <tr>
-    <!-- background image has to be the same height of the email for consistent rending in outlook -->
-    <td bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} padding-bottom: 80px; background-position: top center; background-repeat: no-repeat;">
-      <!--[if gte mso 9]>
+    <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
+    <td align="center" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} padding-bottom: 80px; background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
         <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
         <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
       <![endif]-->
-      <table {{responsive-table}}>
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
         <tr>
-          <td>
-            <table {{fluid-table}}>
+          <td align="center">
 
-              <!-- logos -->
+            <!-- content container -->
+            <table {{responsive-table}}>
               <tr>
-                <td align="center" style="{{text.color.white}} padding-top: 45px;">
-                  <a href="{{page.link}}">
-                    {% include element/logo/combined.html %}
-                  </a>
+                <td>
+                  <table {{fluid-table}}>
+
+                    <!-- logos -->
+                    <tr>
+                      <td align="center" style="{{text.color.white}} padding-top: 45px;">
+                        <a href="{{page.link}}">
+                          {% include element/logo/combined.html %}
+                        </a>
+                      </td>
+                    </tr>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-top: 80px;" class="{{title-style-class}}">
+                        {{page.title}}
+                      </td>
+                    </tr>
+
+                    <!-- enter now - call to action -->
+                    <tr>
+                      <td style=" padding-top: 30px;">
+                        {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg class="button--lg" %}
+                      </td>
+                    </tr>
+
+                    <!-- feature image -->
+                    <tr>
+                      <td style="padding-top: 100px;">
+                        <a href="{{page.link}}">
+                          <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
+                        </a>
+                      </td>
+                    </tr>
+
+                    <!-- description -->
+                    <tr>
+                      <td align="center" style="{{text-style}} padding-top: 45px;" class="{{text-style-class}}">
+                        {{page.more-info.content}}
+                      </td>
+                    </tr>
+
+                    <!-- find out more - call to action -->
+                    <tr>
+                      <td style="padding-top: 30px;">
+                        {% include element/button.html link=page.more-info.button.link label=page.more-info.button.label style=button.orange %}
+                      </td>
+                    </tr>
+
+                  </table>
                 </td>
               </tr>
-
-              <!-- title -->
-              <tr>
-                <td align="center" style="{{title-style}} padding-top: 80px;" class="{{title-style-class}}">
-                  {{page.title}}
-                </td>
-              </tr>
-
-              <!-- enter now - call to action -->
-              <tr>
-                <td style=" padding-top: 30px;">
-                  {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg class="button--lg" %}
-                </td>
-              </tr>
-
-              <!-- feature image -->
-              <tr>
-                <td style="padding-top: 100px;">
-                  <a href="{{page.link}}">
-                    <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
-                  </a>
-                </td>
-              </tr>
-
-              <!-- description -->
-              <tr>
-                <td align="center" style="{{text-style}} padding-top: 45px;" class="{{text-style-class}}">
-                  {{page.more-info.content}}
-                </td>
-              </tr>
-
-              <!-- find out more - call to action -->
-              <tr>
-                <td style="padding-top: 30px;">
-                  {% include element/button.html link=page.more-info.button.link label=page.more-info.button.label style=button.orange %}
-                </td>
-              </tr>
-
             </table>
+
           </td>
         </tr>
       </table>
-      <!--[if gte mso 9]>
-          </v:textbox>
-        </v:rect>
-        <![endif]-->
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
     </td>
   </tr>
 </table>

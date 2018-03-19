@@ -16,7 +16,7 @@ layout: default
 <!-- Main introduction -->
 <table {{fluid-table}}>
   <tr>
-    <td bgcolor="{{color.grey-lightest}}" style="{{spacing.hpad.sm}} padding-bottom: 80px;">
+    <td align="center" bgcolor="{{color.grey-lightest}}" style="padding-bottom: 80px;" class="mobile-margin">
       <table {{responsive-table}}>
         <tr>
           <td>
@@ -116,12 +116,12 @@ layout: default
                     {% assign feature-height = page.features.image.height %}
 
                     <!-- feature -->
-                    <table {{responsive-table}}>
+                    <table {{fluid-table}}>
                       <tr>
                         <td{% if page.features.space-between and forloop.index != 1 %} style="padding-top: {{page.features.space-between}}px;"{% endif %}>
 
                           <!-- column wrap -->
-                          <table {{responsive-table}}>
+                          <table {{fluid-table}}>
                             <tr>
                               <td valign="middle">
 
@@ -138,9 +138,9 @@ layout: default
                                 </table>
 
                                 <!-- content-column -->
-                                <table {{table}} class="responsive-table" align="{{content-align}}" width="49.999999%" height="{{feature-height}}" bgcolor="{{color.white}}">
+                                <table {{table}} class="responsive-table" align="{{content-align}}" width="49.9%" height="{{feature-height}}" bgcolor="{{color.white}}">
                                   <tr>
-                                    <td align="left" valign="middle" style="{{spacing.hpad.sm}} {{spacing.vpad.md}}">
+                                    <td align="left" valign="middle" height="{{feature-height | minus: 60}}" style="{{spacing.hpad.sm}} {{spacing.vpad.md}}" class="responsive-td"> <!-- outlook needs height set on td, minus the vertical padding -->
                                       <table {{fluid-table}}>
                                         <!-- feauture title -->
                                         <tr>
@@ -181,7 +181,7 @@ layout: default
 
 
             <!-- call to action -->
-            <table>
+            <table {{fluid-table}}>
               <tr>
                 <td style="padding-top: 60px;">
                   {% include element/button.html link=intro-link label=cta-label style=button.partner %}

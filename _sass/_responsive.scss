@@ -8,6 +8,11 @@
     height: auto!important;
   }
 
+  td[class*="responsive-td"]{
+    width: 100%!important;
+    height: auto!important;
+  }
+
   img[class*="img-max"]{
     max-width: 100% !important;
     width: 100% !important;
@@ -81,9 +86,9 @@
 
   //////////////////////////////////////////////////////////////////////// offer
 
-  td[class*="offer-one-column-td"]          { display: block !important; width: 100% !important; }
-  td[class*="offer-one-column-percent"]     { border: 0 !important; }
-  td[class*="offer-one-column-price"]       { padding-top: 5px !important; padding-left: 0 !important; padding-right: 0 !important; }
+  th[class*="offer-one-column-th"]          { display: block !important; width: 100% !important; }
+  th[class*="offer-one-column-percent"]     { border: 0 !important; }
+  th[class*="offer-one-column-price"]       { padding-top: 5px !important; padding-left: 0 !important; padding-right: 0 !important; }
   td[class*="offer-one-column-button"]      { padding-top: 10px !important; text-align: left !important; }
   td[class*="offer-one-column-description"] { padding-bottom: 5px !important; }
   td[class*="offer-one-column-boxpad"]      { padding: 20px 15px !important; }
@@ -91,7 +96,7 @@
 
   ////////////////////////////////////////////////////////////// se promo footer
 
-  table[class*="se-promo-table"]   { width: 100% !important; max-width: 410px !important; height: auto !important; }
+  table[class*="se-promo-table"]   { width: 100% !important; max-width: 410px !important; height: auto !important; table-layout: fixed !important; }
   td[class*="se-promo-td"]         { width: 100% !important; }
   td[class*="se-promo-se-icon-td"] { padding-left: 10px; padding-right: 10px; }
   img[class*="se-promo-line"]      { height: 1px !important; width: 100% !important;  }
