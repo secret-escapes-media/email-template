@@ -1,0 +1,17 @@
+{% assign button-label = include.label %}
+{% assign button-link = include.link %}
+{% assign button-style = include.style %}
+{% if include.size contains "" %}{% assign button-size = include.size %}{% else %}{% assign button-size = button.size.md %}{% endif %}
+{% if include.class %}{% assign button-class = include.class %}{% else %}{% assign button-class = "button--md" %}{% endif %}
+{% if include.align %}{% assign button-align = include.align %}{% else %}{% assign button-align = "center" %}{% endif %}
+
+<!-- Call to action button -->
+<table {{fluid-table}}>
+  <tr>
+    <td align="{{button-align}}"{% if include.align-class %} class="{{include.align-class}}"{% endif %}>
+      <a class="{{button-class}}" href="{{button-link}}" style="{{button.default}} {{text.family}} {{button-size}} {{button-style}}">
+        {{button-label}}
+      </a>
+    </td>
+  </tr>
+</table>

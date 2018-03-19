@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////// reset
+
+  *,
+  *:after,
+  *:before {
+    -webkit-font-smoothing: antialiased;
+       -moz-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration:none;
+    &:hover { text-decoration: underline; }
+  }
+
+  /* Force Outlook to provide a "view in browser" message */
+  #outlook a{padding:0;}
+
+  /* Force Hotmail to display emails at full width */
+  .ReadMsgBody{ width:100%; }
+  .ExternalClass{ width:100%; }
+  /* Force Hotmail to display normal line spacing */
+  .ExternalClass {
+    p, span, font, td, div { line-height: 100%; }
+  }
+
+  /* Prevent WebKit and Windows mobile changing default text sizes & general resets for text */
+  body, table, td, a{
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -webkit-font-smoothing: antialiased !important;
+    mso-line-height-rule: exactly;
+  }
+
+  /* Remove spacing between tables in Outlook 2007 and up */
+  table, td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
+  /* Allow smoother rendering of resized image in Internet Explorer */
+  img{ -ms-interpolation-mode:bicubic; }
+  /* stops apple devices inserting links for phone numbers, dates, etc */
+  a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+  }
+
+  /* RESET STYLES */
+  body{margin:0; padding:0;}
+  img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+  table{border-collapse:collapse!important; margin: 0 auto!important;}
+  body{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+  /* iOS BLUE LINKS FIX */
+  .appleBody a {color:#000000; text-decoration: none;}
+  .appleFooter a {color:#000000; text-decoration: none;}

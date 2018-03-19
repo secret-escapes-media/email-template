@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!-- %%[
 /* ......................... Google Analytics Variables ......................... */
 Set @user= [_SubscriberKey]
 Set @territory='UK'
 Set @CampaignCode = emailname_
-Set @Email = [email]
-Set @EncEmail = SHA1(LowerCase([email]),"UTF-8")
+Set @Email = emailaddr
+Set @EncEmail = SHA1(LowerCase(@Email),"UTF-8")
 Set @Reference = AttributeValue("reference")
 Set @JobID = jobid
 Set @CampaignName = emailname_
@@ -23,27 +22,3 @@ Set @gaContent = @JobID
 SET @gaString = Lowercase(concat("&utm_medium=",@gaMedium,"&utm_source=",@gaSource,"&utm_campaign=",@gaCampaign,"&utm_content=",@gaContent))
 SET @gaString = concat("auth=",@encData, @gaString)
 ]%% -->
-=======
-{% include page/_amp-script/head.html %}
->>>>>>> version-3
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
-  {% include variables.html %}
-
-  <head>
-    {% include page/head.html %}
-  </head>
-
-  <body>
-
-    {% include page/view-online.html %}
-
-    {{ content }}
-
-    {% include page/bottom.html %}
-
-  </body>
-
-</html>

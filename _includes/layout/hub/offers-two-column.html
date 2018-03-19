@@ -1,0 +1,53 @@
+{% assign row-width = 600 %}
+{% assign column-gutter = 30 %}
+{% assign row-gutter = 30 %}
+{% assign column-width = row-width | minus: column-gutter | divided_by: 2 %}
+
+
+{% for offer in page.offers %}
+
+  {% assign odd-or-even = forloop.index | modulo: 2 %}
+  {% if odd-or-even == 1 %}
+    {% assign column-align = "left" %}
+    {% assign row-position = "start" %}
+  {% elsif odd-or-even == 0 %}
+    {% assign column-align = "right" %}
+    {% assign row-position = "end" %}
+  {% endif %}
+
+  {% if row-position == "start" %}
+    <!-- Two columns - row start -->
+    <table {{table}} align="center" class="responsive-table" width="{{row-width}}">
+      <tr>
+        <td class="mobile-margin">
+  {% endif %}
+
+          <!-- column container -->
+          <table {{table}} align="{{column-align}}" class="responsive-table" width="{{column-width}}">
+            <tr>
+              <td style="padding-bottom: {{row-gutter}}px;">
+
+                <!-- column content -->
+                <table {{fluid-table}}>
+
+                  <tr>
+                    <td>
+                      {% include element/offer/content-two-column.html %}
+                    </td>
+                  </tr>
+
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+  {% if row-position == "end" %}
+    <!-- Two columns - row end -->
+        </td>
+      </tr>
+    </table>
+  {% endif %}
+
+
+{% endfor %}

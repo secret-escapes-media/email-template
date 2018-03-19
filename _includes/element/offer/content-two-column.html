@@ -1,0 +1,67 @@
+<table {{fluid-table}}>
+
+  <!-- offer image -->
+  <tr>
+    <td>
+      <a href="{{offer.link}}">
+        <img src="{% include img-pre.html type='O' name=offer.image %}" border="0" alt="{{offer.title}}" width="{{column-width}}" style="display: block;" class="img-max" />
+      </a>
+    </td>
+  </tr>
+
+  <!-- offer content -->
+  <tr>
+    <td bgcolor="{{color.white}}" style="{{spacing.boxpad.sm}}">
+      <table {{fluid-table}}>
+
+        <!-- title -->
+        <tr>
+          <td align="left" style="{{title-core.family}} {{title-core.color.dark}} {{title-core.md}} {{title-core.weight}} padding-bottom: 8px;" class="title-core--md">
+            {{offer.title}}
+          </td>
+        </tr>
+
+        <!-- offer location -->
+        <tr>
+          <td style="padding-bottom: 10px;">
+            <table {{fluid-table}}>
+              <tr>
+                <!-- map pin icon -->
+                <td align="left" valign="middle" width="20">
+                  <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
+                </td>
+                <!-- location text -->
+                <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
+                  {{offer.location}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- description -->
+        <tr>
+          <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-bottom: 4px;" class="text--sm">
+            {{offer.content}}
+          </td>
+        </tr>
+
+        <!-- price -->
+        <tr>
+          <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
+            From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
+          </td>
+        </tr>
+
+        <!-- call to action -->
+        <tr>
+          <td style="padding-top: 10px;">
+            {% include element/button.html link=offer.link label="View Offer" style=button.orange size=button.size.xs class="button--sm" align="left" %}
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+</table>

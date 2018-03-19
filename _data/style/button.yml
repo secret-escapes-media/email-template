@@ -1,0 +1,73 @@
+default: >
+ display: inline-block;
+ border-radius: 4px;
+ text-decoration: none;
+ text-transform: uppercase;
+ text-align: center;
+
+size:
+  lg: >
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: .25em;
+    border-style: solid;
+    border-top-width: 23px;
+    border-left-width: 40px;
+    border-right-width: 40px;
+    border-bottom-width: 23px;
+  md: >
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: .25em;
+    border-style: solid;
+    border-top-width: 20px;
+    border-left-width: 37px;
+    border-right-width: 37px;
+    border-bottom-width: 20px;
+  sm: >
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: .25em;
+    border-style: solid;
+    border-top-width: 18px;
+    border-left-width: 30px;
+    border-right-width: 30px;
+    border-bottom-width: 18px;
+  xs: >
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: .2em;
+    border-style: solid;
+    border-top-width: 16px;
+    border-left-width: 26px;
+    border-right-width: 26px;
+    border-bottom-width: 16px;
+
+orange: >
+  color:            #ffffff;
+  background-color: #ff8c00;
+  border-color:     #ff8c00;
+
+orange-light: >
+  color:            #ff8c00;
+  background-color: #ffe8cc;
+  border-color:     #ffe8cc;
+
+partner: >
+  color:            #ffffff;
+  background-color: #00a8c2;
+  border-color:     #00a8c2;
+
+partner-light: >
+  color:            #00a8c2;
+  background-color: #e3f7fa;
+  border-color:     #e3f7fa;
+
+partner-subtle: >
+  color:            #00a8c2;
+  background-color: #d5ebef;
+  border-color:     #d5ebef;

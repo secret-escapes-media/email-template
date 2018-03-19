@@ -1,0 +1,6 @@
+name: Partner Name
+link: "#partner-link"
+logo:
+  black: logo.png
+  white: logo-wh.png
+  width: 110
