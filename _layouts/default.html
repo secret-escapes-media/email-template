@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- %%[
 /* ......................... Google Analytics Variables ......................... */
 Set @user= [_SubscriberKey]
@@ -23,26 +22,22 @@ Set @gaContent = @JobID
 SET @gaString = Lowercase(concat("&utm_medium=",@gaMedium,"&utm_source=",@gaSource,"&utm_campaign=",@gaCampaign,"&utm_content=",@gaContent))
 SET @gaString = concat("auth=",@encData, @gaString)
 ]%% -->
-=======
-{% include page/_amp-script/head.html %}
->>>>>>> version-3
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
-  {% include variables.html %}
-
   <head>
-    {% include page/head.html %}
+
+    {% include head.html %}
+
   </head>
 
   <body>
 
-    {% include page/view-online.html %}
+    {% include header.html %}
 
     {{ content }}
 
-    {% include page/bottom.html %}
+    {% include footer.html %}
 
   </body>
 

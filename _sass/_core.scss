@@ -1,0 +1,47 @@
+
+/*============================================
+|  Global variables & useful tools
+|============================================*/
+
+$white:       #fff;
+$black:       #000;
+$light-grey:  #eeeeee;
+$dark-grey:  #1a1a1a;
+
+$se-orange:       #ff8c00;
+$se-dark-grey:    #292728;
+
+$primary:   #6dccea;
+$secondary: #50679e;
+
+$text-black:      #0d0d0d;
+$text-heading:    #0d0d0d;
+$text-paragraph:  #5f5f5f;
+
+// -------- breakpoints --------
+
+$xlarge:    850px;
+$large:     600px;
+$medium:    450px;
+$small:     300px;
+
+@mixin bp($width){
+  @if $width == xlarge {
+    @media (max-width:$xlarge) {@content;}
+  }
+  @if $width == large {
+    @media (max-width:$large) {@content;}
+  }
+  @if $width == medium {
+    @media (max-width:$medium) {@content;}
+  }
+  @if $width == small {
+    @media (max-width:$small) {@content;}
+  }
+}
+
+// vertical breakpoint for small screen mobile
+@mixin bp-vertical {
+  @media (max-height:$medium) and (max-width:$large) { @content; }
+}
+

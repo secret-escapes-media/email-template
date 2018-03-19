@@ -1,0 +1,39 @@
+
+{% if include.spacing %}
+  {% assign spacing = include.spacing %}
+{% else %}
+  {% assign spacing = site.data.style.gutter %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% else %}
+  {% assign align = "center" %}
+{% endif %}
+
+{% if include.theme == 'dark' %}
+  {% assign bordercolor = site.data.style.color-bordercolor-dark %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+
+<!-- START - bulletproof hr -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="{{align}}" style="padding: 0 {{site.data.style.gutter}}px;">
+      <table align="{{align}}" width="100" border="0" cellspacing="0" cellpadding="0" style="height:{{spacing | times:2}}px;">
+        <tr>
+          <td align="{{align}}"
+            style="background:none; height: {{spacing}}px; width:100px; margin-top:0; margin-bottom:0; margin-left:auto; margin-right:auto; padding:0; line-height:0; border-bottom: 1px solid #{{bordercolor}};">
+            <div style="width:100px;"></div>
+          </td>
+        </tr>
+        <tr>
+          <td align="{{align}}" style="background:none; height:{{spacing}}px; width:100px; margin:0; padding:0; line-height:0;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END - bulletproof hr -->

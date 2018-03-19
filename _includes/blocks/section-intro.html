@@ -1,0 +1,138 @@
+
+{% assign gutter = site.data.style.gutter %}
+
+
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
+{% endif %}
+
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
+{% else %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
+{% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+{% if include.theme == 'dark' %}
+  {% assign bordercolor = site.data.style.color-bordercolor-dark %}
+  {% assign color-text-title = site.data.style.color-text-title-dark %}
+  {% assign color-text-paragraph = site.data.style.color-text-paragraph-dark %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+  {% assign color-text-title = site.data.style.color-text-title %}
+  {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
+{% endif %}
+
+
+
+<!-- section-intro.html -->
+{% if object.title %}
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" style="padding-bottom: {{gutter | times:2}}px;" align="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
+
+            {% include includes/hr.html %}
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" style="padding: 0 {{gutter | times:2}}px 0px; color: #{{ color-text-title }}; {{ site.data.style.text-h1 }}" class="padding-copy-header">
+                  {{ object.title }}
+                </td>
+              </tr>
+            </table>
+
+            {% if object.subtitle %}
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ site.data.style.text-h5 }}" class="padding-copy-header">
+                    {{ object.subtitle }}
+                  </td>
+                </tr>
+              </table>
+            {% endif %}
+
+            {% include includes/hr.html %}
+
+
+            {% if object.content-rows %}
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                {% for sub_object in object.content-rows %}
+
+                  {% if sub_object.title %}
+                  <tr>
+                    <td align="left" style="padding: {{gutter}}px {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ site.data.style.text-h5 }}">
+                      {{ sub_object.title }}
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  <tr>
+                    <td align="left" style="padding: 0 {{gutter | times:2}}px {{gutter}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                      {% if sub_object.pre %}
+                        <span style="font-weight: 700;font-size:1.1em; margin-right: 6px; color: #{{ site.data.style.color-theme }}">{{ sub_object.pre }}</span>
+                      {% endif %}
+                      {{ sub_object.content }}
+                    </td>
+                  </tr>
+
+                  {% if sub_object.cta %}
+                  <tr>
+                    <td align="left" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px;">
+                      <a
+                        href="{% if sub_object.link %}{{ sub_object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                        style="{% if include.theme == 'dark' %}{{ site.data.style.button-small-invert }}{% else %}{{ site.data.style.button-small }}{% endif %}">
+                        {% if sub_object.cta-label %}{{ sub_object.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
+                      </a>
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                {% endfor %}
+              </table>
+            {% elsif object.content %}
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="left" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                    {{ object.content }}
+                  </td>
+                </tr>
+              </table>
+            {% endif %}
+
+
+            {% if object.cta %}
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px;">
+                  <a
+                    href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                    style="{% if include.theme == 'dark' %}{{ site.data.style.button-small-invert }}{% else %}{{ site.data.style.button-small }}{% endif %}">
+                    {% if object.cta-label %}
+                      {{ object.cta-label }}
+                    {% else %}
+                      {{ page.main-cta-label }}
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+            </table>
+            {% endif %}
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{% endif %}
+
