@@ -1,0 +1,38 @@
+{% assign category = include.content %}
+
+<!-- category Intro -->
+<table {{fluid-table}}>
+  <tr>
+    <td>
+      <!-- title -->
+      <tr>
+        <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
+          {{category.title}}
+        </td>
+      </tr>
+      <!-- content -->
+      <tr>
+        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+          {{category.content}}
+        </td>
+      </tr>
+    </td>
+  </tr>
+</table>
+
+{% include element/space.html height="30" %}
+
+{% if include.columns == "two" %}
+  {% include layout/client/product-range/two-column.html content=category %}
+{% elsif include.columns == "three" %}
+  {% include layout/client/product-range/three-column.html content=category %}
+{% endif %}
+
+<!-- call to action for category -->
+<table {{fluid-table}}>
+  <tr>
+    <td style="padding-top: 20px;">
+      {% include element/button.html link=category.link label=category.cta-label style=button.partner %}
+    </td>
+  </tr>
+</table>

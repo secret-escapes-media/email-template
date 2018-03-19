@@ -1,0 +1,91 @@
+---
+layout: default
+
+
+partner-name:
+email-title:
+subject-line: "Subject line"
+campaign-link: link
+main-cta-label: Click me
+
+
+objects:
+
+  intro:
+    - title: Jekyll email builder
+      subtitle: Style guide/component library
+      image: intro.jpg
+      image-title: title.png
+      image-title-width: 250
+      cta: true
+      cta-label:
+      link:
+      content: This page is to showcase all possible includes and layout options using the builder. Refer to the readme for examples on how to use and configure the includes.
+
+
+  features:
+    - title: Nullam id dolor id nibh ultricies
+      subtitle: Praesent commodo cursus magna
+      image: intro.jpg
+      cta: true
+      cta-label:
+      link:
+      content: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
+      content-rows:
+
+        - title: A trio of limited edition cologne
+          image: subobject.jpg
+          content: Enjoy a complimentary sample from a selection of our most loved scents when you visit any Jo Malone London Boutique in London Heathrow or Gatwick airports. Simply show this email to redeem your sample.*
+          cta: true
+
+        - title: Reserve collect before you fly
+          image: subobject.jpg
+          content: Did you know you could pre-order your Jo Malone London favourites online at and collect in-store before you fly?
+
+  offers-intro:
+    - title: Example offer cards
+      subtitle:
+      content: Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue.
+
+  categories-intro:
+    - title: Looped data file options
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html %}
+{% endfor %}
+
+
+{% for object in page.objects["features"] %}
+  {% include blocks/alternating-content.html %}
+{% endfor %}
+
+
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+
+{% assign offers = site.data.offers %}
+{% for offer in offers limit:2 %}
+  {% include offer/two-column.html %}
+{% endfor %}
+
+
+{% for object in page.objects["categories-intro"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+
+{% assign categories = site.data.categories %}
+{% for object in categories limit:3 %}
+  {% include blocks/full-width.html %}
+{% endfor %}
+
+
+{% include includes/cta.html %}
+

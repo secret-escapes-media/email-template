@@ -1,0 +1,24 @@
+{
+  "name": "email-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-htmltidy": "^0.2.4",
+    "gulp-image": "^4.3.0",
+    "gulp-message": "^1.0.4",
+    "gulp-replace": "^0.6.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-warn-size": "^0.2.0",
+    "gulp-watch": "^5.0.0",
+    "map-stream": "0.0.7"
+  }
+}

@@ -1,0 +1,99 @@
+
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
+{% endif %}
+
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
+{% else %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
+{% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+{% assign offer-image = offer.title | slugify | append: '.jpg' %}
+
+{% assign loopindex = forloop.index | modulo: 2 %}
+{% if forloop.first or loopindex == 1 %}
+
+<!-- 2 COLUMN SALE CARDS -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 15px;">
+        <!-- FIRST ROW -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+          <tr>
+            <td>
+
+{% endif %}
+
+<!-- FIRST COLUMN -->
+<table {% if loopindex == 1 %}align="left"{% else %}align="right"{% endif %} border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="285">
+  <tr>
+    <td style="padding-bottom: 30px;">
+      <!-- CONTENT START -->
+      <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
+              <img src="{% include img-pre.html type='O' name=offer-image %}" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #{{ boxcolor }}; padding: 20px 30px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+            <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" style="padding-bottom: 3px; color: #{{ site.data.style.color-text-title }}; {{ site.data.style.text-h4 }}">
+                  {{ offer.title }}
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding-top: 8px; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p-small }}">
+                  {{ offer.content }}
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding: 10px 0 0 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
+                  From <span style="color: #{{ site.data.style.color-theme }}; font-weight: 400; font-size: 16px;">£{{ offer.price }}</span> {{ offer.price-description }}
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding-top: 15px;">
+                  <a
+                    href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
+                    style="{{ site.data.style.button-small }}">
+                    View offer
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- CONTENT END -->
+
+    </td>
+  </tr>
+</table>
+<!-- FIRST COLUMN END -->
+
+
+
+{% if forloop.last or loopindex != 1 %}
+
+          </td>
+        </tr>
+      </table>
+      <!-- FIRST ROW END -->
+    </td>
+  </tr>
+</table>
+
+{% endif %}
