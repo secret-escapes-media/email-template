@@ -1,0 +1,109 @@
+{% assign category = include.content %}
+
+{% assign row-width = 600 %}
+{% assign column-gutter = 30 %}
+{% assign row-gutter = 45 %}
+{% assign column-width = row-width | minus: column-gutter | minus: column-gutter | divided_by: 3 %}
+{% assign wrap-one-width = column-width | plus: column-width | plus: column-gutter %}
+{% assign wrap-two-width = column-width %}
+
+{% for product in category.products.product-list %}
+
+  {% assign column-id = forloop.index | modulo: 3 %}
+  {% case column-id %}
+    {% when 0 %}
+      {% assign row-position = "end" %}
+      {% assign column-align = "center" %}
+    {% when 1 %}
+      {% assign row-position = "start" %}
+      {% assign column-align = "left" %}
+    {% when 2 %}
+      {% assign row-position = "middle" %}
+      {% assign column-align = "right" %}
+  {% endcase %}
+
+  {% if row-position == "start" %}
+    <!-- Three column product range - row start -->
+    <table {{table}} align="center" class="responsive-table" width="{{row-width}}">
+      <tr>
+        <td>
+
+          <!-- wrap one - contains the first two columns plus gutter -->
+          <table {{table}} align="left" class="responsive-table" width="{{wrap-one-width}}">
+            <tr>
+              <td>
+  {% endif %}
+
+  {% if row-position == "end" %}
+          <!-- wrap two - only contains the third column -->
+          <table {{table}} align="right" class="responsive-table" width="{{wrap-two-width}}">
+            <tr>
+              <td>
+  {% endif %}
+
+
+                <!-- column wrap -->
+                <table {{table}} align="{{column-align}}" class="responsive-table" width="{{column-width}}">
+                  <tr>
+                    <td style="padding-bottom: {{row-gutter}}px;">
+
+                      <!-- column content -->
+                      <table {{fluid-table}}>
+
+                        <!-- product image -->
+                        <tr>
+                          <td align="center">
+                            <a href="{{product.link}}">
+                              <img class="img-max" src="{% include img-pre.html type="P" name=product.image %}" width="{{column-width}}" border="0" style="display: block; max-width: {{column-width}}px !important;" />
+                            </a>
+                          </td>
+                        </tr>
+
+                        <!-- product title -->
+                        <tr>
+                          <td align="center" style="{{title.family}} {{title.weight}} {{title.color.normal}} {{title.sm}} padding-top: 10px;">
+                            {{product.title}}
+                          </td>
+                        </tr>
+
+                        <!-- product price -->
+                        <tr>
+                          <td align="center" style="{{text.family}} {{text.bold}} {{text.lg}} {{text.color.normal}} padding-top: 8px;">
+                            £{{product.price}}
+                          </td>
+                        </tr>
+
+                        <!-- product cta -->
+                        <tr>
+                          <td align="center" style="padding-top: 5px;">
+                            {% include element/button.html link=product.link label=category.products.cta-label style=button.partner-subtle size=button.size.sm class="button--sm" %}
+                          </td>
+                        </tr>
+
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+                <!-- END - COLUMN -->
+
+
+  {% if row-position == "middle" %}
+              </td>
+            </tr>
+          </table>
+          <!-- wrap one end -->
+  {% endif %}
+
+  {% if row-position == "end" %}
+              </td>
+            </tr>
+          </table>
+          <!-- wrap two end -->
+        </td>
+      </tr>
+    </table>
+    <!-- Three column product range - row end -->
+  {% endif %}
+
+{% endfor %}

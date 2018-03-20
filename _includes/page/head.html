@@ -1,0 +1,22 @@
+{% include variables.html %}
+
+<title>{{ page.subject-line }}</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no" />
+{% if text.gfont-link %}{{text.gfont-link}}{% endif %}
+{% if title-core.gfont-link %}{{title-core.gfont-link}}{% endif %}
+{% if title.gfont-link %}{{title.gfont-link}}{% endif %}
+
+<style type="text/css">
+  {% capture include_to_scssify %}
+    {% include page/main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+
+  /* font family hack - stops outlook from always using times new roman  */
+  {% if text.family-hack %}{{text.family-hack}}{% endif %}
+  {% if title-core.family-hack %}{{title-core.family-hack}}{% endif %}
+  {% if title.family-hack %}{{title.family-hack}}{% endif %}
+</style>
