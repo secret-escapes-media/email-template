@@ -19,3 +19,7 @@ color:
   light:   "color: #74787d;"
   normal:  "color: #47484a;"
   dark:    "color: #2e2e2e;"
+
+paragraph-lg: "font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 16px; line-height: 24px; font-weight: 400; color: #74787d;"
+paragraph:    "font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; line-height: 21px; font-weight: 400; color: #74787d;"
+paragraph-sm: "font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 12px; line-height: 18px; font-weight: 400; color: #74787d;"
