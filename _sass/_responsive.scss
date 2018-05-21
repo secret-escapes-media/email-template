@@ -37,7 +37,7 @@
 
   img[class="logo-se"]       { width: 100px; }
   img[class="logo-partner"]  { width: 90px; }
-  img[class*="logo-combined"] { width: 220px !important; }
+  img[class*="logo-combined"] { width: 100% !important; }
 
 
   ////////////////////////////////////////////////////////////////////// spacing
@@ -47,36 +47,36 @@
 
   /////////////////////////////////////////////////////////////////// typography
 
-  .text--xl { font-size: 16px !important; line-height: 24px !important; }
-  .text--lg { font-size: 14px !important; line-height: 21px !important; }
-  .text--md { font-size: 12px !important; line-height: 18px !important; }
-  .text--sm { font-size: 11px !important; line-height: 17px !important; }
-  .text--xs { font-size: 10px !important; line-height: 14px !important; }
+  td[class*="text--xl"] { font-size: 16px !important; line-height: 24px !important; }
+  td[class*="text--lg"] { font-size: 14px !important; line-height: 21px !important; }
+  td[class*="text--md"] { font-size: 12px !important; line-height: 18px !important; }
+  td[class*="text--sm"] { font-size: 11px !important; line-height: 17px !important; }
+  td[class*="text--xs"] { font-size: 10px !important; line-height: 14px !important; }
 
-  .title--comp { font-size: 38px !important; line-height: 42px !important; }
-  .title--xxxl { font-size: 33px !important; line-height: 40px !important; }
-  .title--xxl  { font-size: 27px !important; line-height: 35px !important; }
-  .title--xl   { font-size: 22px !important; line-height: 27px !important; }
-  .title--lg   { font-size: 18px !important; line-height: 24px !important; }
-  .title--md   { font-size: 16px !important; line-height: 22px !important; }
-  .title--sm   { font-size: 13px !important; line-height: 18px !important; }
-  .title--xs   { font-size: 12px !important; line-height: 16px !important; }
-  .title--xs   { font-size: 10px !important; line-height: 14px !important; }
+  td[class*="title--comp"] { font-size: 38px !important; line-height: 42px !important; }
+  td[class*="title--xxxl"] { font-size: 33px !important; line-height: 40px !important; }
+  td[class*="title--xxl"]  { font-size: 27px !important; line-height: 35px !important; }
+  td[class*="title--xl"]   { font-size: 22px !important; line-height: 27px !important; }
+  td[class*="title--lg"]   { font-size: 18px !important; line-height: 24px !important; }
+  td[class*="title--md"]   { font-size: 16px !important; line-height: 22px !important; }
+  td[class*="title--sm"]   { font-size: 13px !important; line-height: 18px !important; }
+  td[class*="title--xs"]   { font-size: 12px !important; line-height: 16px !important; }
+  td[class*="title--xs"]   { font-size: 10px !important; line-height: 14px !important; }
 
-  .title-core--comp { font-size: 38px !important; line-height: 42px !important; }
-  .title-core--xxxl { font-size: 33px !important; line-height: 40px !important; }
-  .title-core--xxl  { font-size: 27px !important; line-height: 35px !important; }
-  .title-core--xl   { font-size: 22px !important; line-height: 27px !important; }
-  .title-core--lg   { font-size: 18px !important; line-height: 24px !important; }
-  .title-core--md   { font-size: 16px !important; line-height: 22px !important; }
-  .title-core--sm   { font-size: 13px !important; line-height: 18px !important; }
-  .title-core--xs   { font-size: 12px !important; line-height: 16px !important; }
-  .title-core--xs   { font-size: 10px !important; line-height: 14px !important; }
+  td[class*="title-core--comp"] { font-size: 38px !important; line-height: 42px !important; }
+  td[class*="title-core--xxxl"] { font-size: 33px !important; line-height: 40px !important; }
+  td[class*="title-core--xxl"]  { font-size: 27px !important; line-height: 35px !important; }
+  td[class*="title-core--xl"]   { font-size: 22px !important; line-height: 27px !important; }
+  td[class*="title-core--lg"]   { font-size: 18px !important; line-height: 24px !important; }
+  td[class*="title-core--md"]   { font-size: 16px !important; line-height: 22px !important; }
+  td[class*="title-core--sm"]   { font-size: 13px !important; line-height: 18px !important; }
+  td[class*="title-core--xs"]   { font-size: 12px !important; line-height: 16px !important; }
+  td[class*="title-core--xs"]   { font-size: 10px !important; line-height: 14px !important; }
 
-  .button--lg { font-size: 12px !important; line-height: 16px !important; border-width: 20px 38px !important;}
-  .button--md { font-size: 11px !important; line-height: 13px !important; border-width: 18px 30px !important;}
-  .button--sm { font-size: 10px !important; line-height: 12px !important; border-width: 16px 22px !important;}
-  .button--xs { font-size: 9px  !important; line-height: 10px !important; border-width: 14px 18px !important; font-weight: 600 !important;}
+  a[class*="button--lg"] { font-size: 12px !important; line-height: 16px !important; border-width: 20px 38px !important;}
+  a[class*="button--md"] { font-size: 11px !important; line-height: 13px !important; border-width: 18px 30px !important;}
+  a[class*="button--sm"] { font-size: 10px !important; line-height: 12px !important; border-width: 16px 22px !important;}
+  a[class*="button--xs"] { font-size: 9px  !important; line-height: 10px !important; border-width: 14px 18px !important; font-weight: 600 !important;}
 
 
   /////////////////////////////////////////////////////////////////// hub layout

@@ -4,3 +4,6 @@ logo:
   black: logo.png
   white: logo-wh.png
   width: 110
+combined-logo:
+  alt: Partner Name & Secret Escapes Logos
+  width: 264
