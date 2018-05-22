@@ -42,7 +42,7 @@
             </tr>
           </table>
 
-  {% if row-position == "end" %}
+  {% if row-position == "end" or forloop.last %}
     <!-- Two columns - row end -->
         </td>
       </tr>

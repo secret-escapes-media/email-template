@@ -69,7 +69,7 @@
             </tr>
           </table>
 
-  {% if row-position == "end" %}
+  {% if row-position == "end" or forloop.last %}
     <!-- Two column product range - row end -->
         </td>
       </tr>
