@@ -9,7 +9,7 @@ Set @Reference = AttributeValue("reference")
 Set @JobID = jobid
 Set @CampaignName = emailname_
 Set @now = FormatDate(Now(), "YYYY-MM-DD", "", "en-US")
-Set @authToken = concat(Base64Encode(@email), ".", @reference, ".", @now)
+SET @authToken = concat(Base64Encode(@email), "..", @now)
 Set @encData=EncryptSymmetric(@authToken, "des;mode=ecb;padding=pkcs7", "EmailEncryptionKey", @null, @null, @null, @null, @null)
 Set @encData = replace(@encData, "+", "-")
 Set @encData = replace(@encData, "/", "_")
@@ -20,5 +20,5 @@ Set @gaCampaign = @CampaignName
 Set @gaContent = @JobID
 
 SET @gaString = Lowercase(concat("&utm_medium=",@gaMedium,"&utm_source=",@gaSource,"&utm_campaign=",@gaCampaign,"&utm_content=",@gaContent))
-SET @gaString = concat("auth=",@encData, @gaString)
+SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
 ]%% -->
