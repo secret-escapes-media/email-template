@@ -10,50 +10,61 @@ var size         = require('gulp-warn-size');
 var watch        = require('gulp-watch');
 var image        = require('gulp-image');
 var message      = require('gulp-message');
-var gulpSequence = require('gulp-sequence');
 var htmltidy     = require('gulp-htmltidy');
 var replace      = require('gulp-replace');
 
 
-// ----------------------------------------------------------------------  build
+/////////////////////////////////////////////////////////////////////  utilities
 
-// build the jekyll site
-gulp.task('build-jekyll', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-  .on('close', done);
-});
-
-// rebuild jekyll site and reload
-gulp.task('rebuild-jekyll', ['build-jekyll'], function () {
-  browserSync.reload();
-});
-
-// serve site with browserSync. also mirrors site to sub-directory
-gulp.task('serve', function() {
+// start browserSync local server and show under site subdirectory
+function browserSyncServe() {
   browserSync.init({
     ui: false,
     server: {
       baseDir: '_site/'
     }
   });
-});
+}
 
-gulp.task('build-images', function(cb) {
+// Reload BrowserSync for when site changes are made
+function browserSyncReload(done) {
+  browserSync.reload();
+  done();
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////  build
+
+// build the jekyll site
+function buildJekyll(done) {
+  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  .on('close', done);
+}
+
+// build for image files
+function buildImages() {
   return gulp.src('./img/**/*.*')
-  .pipe(gulp.dest('./_site/img/'))
-});
+  .pipe(gulp.dest('./_site/img/'));
+}
 
 
-// ----------------------------------------------------------------------  watch
 
-// watch for jekyll rebuild
-gulp.task('watch-jekyll', function () {
-  gulp.watch(['**/*.*', '!_site/**/*','!node_modules/**/*','!.sass-cache/**/*' ], ['rebuild-jekyll']);
-});
+/////////////////////////////////////////////////////////////////////////  watch
 
-// watch for images
-gulp.task('watch-images', ['build-images'], function() {
-  gulp.watch(['img/**/*.*'], ['build-images'])
+// Watch files
+function watchFiles() {
+  gulp.watch( // watch for jekyll
+    [
+      '**/*.*',
+      '!_site/**/*',
+      '!node_modules/**/*',
+      '!.sass-cache/**/*'
+    ],
+    gulp.series(rebuild)
+  );
+  // watch for images
+  gulp.watch('_assets/img/**/*.*', buildImages)
     // updates the compiled folder if an image is deleted
     // modified snippet from https://gulpjs.org/recipes/handling-the-delete-event-on-watch
     .on('change', function (event) {
@@ -63,15 +74,15 @@ gulp.task('watch-images', ['build-images'], function() {
         del.sync(destFilePath);
       }
       browserSync.reload();
-    })
-});
+    });
+}
 
 
-// -------------------------------------------------------------------  compress
+
+//////////////////////////////////////////////////////////////////////  compress
 
 // compress images files for live
-gulp.task('compress-images', function () {
-
+function compressImages() {
   // checks for updated image name id
   vfs.src('img/**/*.*')
     .pipe(map(function (file, cb) {
@@ -96,10 +107,10 @@ gulp.task('compress-images', function () {
     process.exit();
   })
   .pipe(gulp.dest('./_site/img'));
-})
+}
 
 // compress html files for live
-gulp.task('compress-html', function () {
+function compressHtml() {
   return gulp.src('./_site/**/*.html')
     .pipe(htmltidy({
       'indent': true,
@@ -109,32 +120,37 @@ gulp.task('compress-html', function () {
     }))
     // cant stop htmltidy from auto closing this custom element, Exact target wont accept it closed, so need to replace
     .pipe(replace('<custom name="opencounter" type="tracking" />', '<custom name="opencounter" type="tracking">'))
-    .pipe(gulp.dest('./_site'))
-})
+    .pipe(gulp.dest('./_site'));
+}
+
 
 
 ///////////////////////////////////////////////////////////////////  build tasks
 
-// builds jekyll site & watches for changes
-gulp.task('default', gulpSequence(
-    ['build-jekyll'],
-    [
-      'watch-jekyll',
-      'watch-images'
-    ],
-    'serve'
+// define complex tasks
+var rebuild = gulp.series(buildJekyll, browserSyncReload);
+var serve = gulp.series(browserSyncServe);
+var watch = gulp.series(watchFiles);
+var build = gulp.parallel(
+    buildJekyll,
+    buildImages
+  );
+var compress = gulp.parallel(
+  compressImages,
+  compressHtml
+);
+
+// build and watch emails for development
+exports.default = gulp.series(
+  build,
+  gulp.parallel(
+    serve,
+    watch
   )
 );
 
-// builds jekyll site for deploying to live
-gulp.task('build', gulpSequence(
-    [
-      'build-jekyll',
-      'build-images'
-    ],
-    [
-      'compress-images',
-      'compress-html'
-    ]
-  )
+// compress & complie the emails for uploading or packaging for a send
+exports.compile = gulp.series(
+  build,
+  compress
 );
