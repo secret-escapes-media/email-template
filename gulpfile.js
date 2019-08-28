@@ -1,5 +1,4 @@
 var gulp         = require('gulp');
-var fs           = require('fs');
 var cp           = require('child_process');
 var path         = require('path');
 var del          = require('del');
@@ -7,11 +6,11 @@ var vfs          = require('vinyl-fs');
 var map          = require('map-stream');
 var browserSync  = require('browser-sync');
 var size         = require('gulp-warn-size');
-var watch        = require('gulp-watch');
 var image        = require('gulp-image');
 var message      = require('gulp-message');
 var htmltidy     = require('gulp-htmltidy');
 var replace      = require('gulp-replace');
+
 
 
 /////////////////////////////////////////////////////////////////////  utilities
@@ -39,13 +38,13 @@ function browserSyncReload(done) {
 // build the jekyll site
 function buildJekyll(done) {
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-  .on('close', done);
+    .on('close', done);
 }
 
 // build for image files
 function buildImages() {
   return gulp.src('./img/**/*.*')
-  .pipe(gulp.dest('./_site/img/'));
+    .pipe(gulp.dest('./_site/img/'));
 }
 
 
@@ -88,11 +87,11 @@ function compressImages() {
     .pipe(map(function (file, cb) {
       // find filename for each file
       var fullPath = file.path;
-          fullPath = fullPath.split('/');
+      fullPath = fullPath.split('/');
       var fileName = fullPath[fullPath.length-1]; // finds last item in array
       // kill the task if it uses the default image name id
       if (fileName.match(/^projectinitialsMM/g)) {
-        message.error('please update the image name prefix - currently using \"projectinitialsMM\"');
+        message.error('please update the image name prefix - currently using "projectinitialsMM"');
         process.exit();
       }
       cb(null, file); // matidtory callback for map-stream function - .pipe(map)
@@ -100,13 +99,13 @@ function compressImages() {
 
   // process images
   return gulp.src('./_site/img/**/*')
-  .pipe(image())
-  .pipe(size(200000)) // checks image size in bytes - 200kb
-  .on('error', function () {
-    message.error('images need to be under 200kb for exact target');
-    process.exit();
-  })
-  .pipe(gulp.dest('./_site/img'));
+    .pipe(image())
+    .pipe(size(200000)) // checks image size in bytes - 200kb
+    .on('error', function () {
+      message.error('images need to be under 200kb for exact target');
+      process.exit();
+    })
+    .pipe(gulp.dest('./_site/img'));
 }
 
 // compress html files for live
@@ -132,9 +131,9 @@ var rebuild = gulp.series(buildJekyll, browserSyncReload);
 var serve = gulp.series(browserSyncServe);
 var watch = gulp.series(watchFiles);
 var build = gulp.parallel(
-    buildJekyll,
-    buildImages
-  );
+  buildJekyll,
+  buildImages
+);
 var compress = gulp.parallel(
   compressImages,
   compressHtml
