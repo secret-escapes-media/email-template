@@ -1,13 +1,10 @@
 {
   "name": "email-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "npm install --no-audit && gulp",
+    "dev": "gulp",
+    "generate": "gulp compile"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.26.7",
     "del": "^3.0.0",
