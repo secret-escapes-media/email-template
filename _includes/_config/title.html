@@ -1,0 +1,80 @@
+
+
+
+{% if title-style == "xxxl" %}
+  {% assign title-style = title.title-xxxl %}
+  {% assign title-class = "title--xxxl" %}
+
+{% elsif title-style == "xxl" %}
+  {% assign title-style = title.title-xxl %}
+  {% assign title-class = "title--xxl" %}
+
+{% elsif title-style == "xl" %}
+  {% assign title-style = title.title-xl %}
+  {% assign title-class = "title--xl" %}
+
+{% elsif title-style == "lg" %}
+  {% assign title-style = title.title-lg %}
+  {% assign title-class = "title--lg" %}
+
+{% elsif title-style == "md" %}
+  {% assign title-style = title.title-md %}
+  {% assign title-class = "title--md" %}
+
+{% elsif title-style == "sm" %}
+  {% assign title-style = title.title-sm %}
+  {% assign title-class = "title--sm" %}
+
+{% elsif title-style == "xs" %}
+  {% assign title-style = title.title-xs %}
+  {% assign title-class = "title--xs" %}
+
+{% elsif title-style == "xxs" %}
+  {% assign title-style = title.title-xxs %}
+  {% assign title-class = "title--xxs" %}
+
+{% elsif title-style == "core-xxxl" %}
+  {% assign title-style = title-core.title-xxxl %}
+  {% assign title-class = "title-core--xxxl" %}
+
+{% elsif title-style == "core-xxl" %}
+  {% assign title-style = title-core.title-xxl %}
+  {% assign title-class = "title-core--xxl" %}
+
+{% elsif title-style == "core-xl" %}
+  {% assign title-style = title-core.title-xl %}
+  {% assign title-class = "title-core--xl" %}
+
+{% elsif title-style == "core-lg" %}
+  {% assign title-style = title-core.title-lg %}
+  {% assign title-class = "title-core--lg" %}
+
+{% elsif title-style == "core-md" %}
+  {% assign title-style = title-core.title-md %}
+  {% assign title-class = "title-core--md" %}
+
+{% elsif title-style == "core-sm" %}
+  {% assign title-style = title-core.title-sm %}
+  {% assign title-class = "title-core--sm" %}
+
+{% elsif title-style == "core-xs" %}
+  {% assign title-style = title-core.title-xs %}
+  {% assign title-class = "title-core--xs" %}
+
+{% elsif title-style == "core-xxs" %}
+  {% assign title-style = title-core.title-xxs %}
+  {% assign title-class = "title-core--xxs" %}
+
+{% else %}
+  {% assign title-style = title.title %}
+  {% assign title-class = "title" %}
+
+{% endif %}
+
+
+
+{% if theme == "dark" %}
+  {% assign title-style = title-style | append: title.color.white %}
+{% endif %}
+
+

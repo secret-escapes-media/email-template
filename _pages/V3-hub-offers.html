@@ -1,0 +1,309 @@
+---
+layout: default
+subject-line: Hub Offers
+preheader: Email Title
+link: "#hub-offer-page"
+cta-label: View All Offers
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+
+background:
+  image: hub.jpg
+  color: "#1a1b25"
+
+title:
+  alt: this is the title text
+  image: hub.png
+  max-width: 480
+
+intro:
+  content-rows:
+    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
+    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+
+hub-content:
+  image:
+    width: 300
+    height: 300
+  space-between: 45
+
+  content-list:
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      image: section.jpg
+      cta-label: See Content
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      image: section.jpg
+      cta-label: See Content
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      image: section.jpg
+      cta-label: See Content
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      image: section.jpg
+      cta-label: See Content
+      link: "#link-for-specific-content"
+
+
+offers:
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
+    location: destination name, country name
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    price: 99999
+    price-description: per person for 99 nights
+    saved: 60
+    image: offer.jpg
+    link: "#link-for-offer"
+
+---
+{% include _config/variables.html %}
+
+
+
+{% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
+{% assign text-style-class = "text--lg" %}
+{% assign background-color = page.background.color %}
+{% assign background-image = page.background.image %}
+
+
+<!-- Introduction section -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image wrapper - image has to be the same height of the email for consistent rending in outlook -->
+    <td align="center" class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center">
+
+            <!-- content container -->
+            <table {{responsive-table}}>
+
+              <!-- combined logo -->
+              <tr>
+                <td align="center" style="padding-top: 45px;">
+                  <a href="{{page.link}}" style="{{text.family}} {{text.weight}} {{text.color.white}}">
+                    {% include element/logo/combined.html %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- title image -->
+              <tr>
+                <td align="center" style="padding-top: 130px; padding-bottom: 130px;" class="hub-intro-title">
+                  <a href="{{intro-link}}" style="{{text.family}} {{text.weight}} {{text.color.white}}">
+                    <img class="img-max" src="{% include img-pre.html type="T" name=page.title.image %}" width="{{page.title.max-width}}" border="0" style="display: block; max-width: {{page.title.max-width}}px !important;" alt="{{page.title.alt}}" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- intro section stuck to bottom -->
+              <tr>
+                <td align="center" style="{{spacing.vpad.lg}} {{spacing.hpad.md}} {{text-style}} background-color: #090A1F; background-color: rgba(9,10,31,.66);" class="mobile-margin">
+                  <table {{fluid-table}}>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 30px;">
+                        {% include element/button.html link=page.link label=page.cta-label style=button.partner size=button.size.lg class="button--lg" align="center" %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+
+
+<!-- Hub Offers -->
+<table {{fluid-table}} bgcolor="{{color.grey-lightest}}">
+  <tr>
+    <td align="center" style="{{spacing.vpad.xl}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+
+            {% for offer in page.offers %}
+              <!-- column container -->
+              <table {{fluid-table}}>
+                <tr>
+                  <td class="mobile-margin" style="padding-bottom: 30px;">
+                    <!-- column content -->
+                    <table {{fluid-table}}>
+                      <tr>
+                        <td>
+                          <table {{fluid-table}}>
+
+                            <!-- offer image -->
+                            <tr>
+                              <td align="left">
+                                <a href="{{offer.link}}">
+                                  <img src="{% include img-pre.html type='O' name=offer.image %}" border="0" alt="{{offer.title}}" width="600" style="display: block;" class="img-max" />
+                                </a>
+                              </td>
+                            </tr>
+
+                            <!-- offer content -->
+                            <tr>
+                              <td align="left" bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="offer-one-column-boxpad">
+                                <table {{fluid-table}}>
+
+                                  <!-- title -->
+                                  <tr>
+                                    <td align="left" colspan="3" style="{{title-core.family}} {{title-core.color.normal}} {{title-core.lg}} {{title-core.weight}} padding-bottom: 10px;" class="title-core--lg">
+                                      {{offer.title}}
+                                    </td>
+                                  </tr>
+
+                                  <!-- offer location -->
+                                  <tr>
+                                    <td align="left" colspan="3" style="padding-bottom: 12px;">
+                                      <table {{fluid-table}}>
+                                        <tr>
+                                          <!-- map pin icon -->
+                                          <td align="left" valign="middle" width="20">
+                                            <img src="{% include img-pre.html type="I" name="pin.png" %}" border="0" alt="Map pin icon" width="12" height="16" style="display: inline-block;">
+                                          </td>
+                                          <!-- location text -->
+                                          <td align="left" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.bold}} {{text.upper}} {{text.wide-kern}} line-height: 16px;" class="text--sm">
+                                            {{offer.location}}
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+
+                                  <!-- description -->
+                                  <tr>
+                                    <td align="left" colspan="3" style="{{text.family}} {{text.color.light}} {{text.md}} {{text.weight}} padding-bottom: 15px;" class="text--sm offer-one-column-description">
+                                      {{offer.content}}
+                                    </td>
+                                  </tr>
+
+                                  <tr><!-- using <th> in this row as iOS wont allow display block on <td> -->
+                                    <!-- percentage saving -->
+                                    <th width="109" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} border-right: 1px solid {{color.grey-lighter}};" class="text--sm offer-one-column-th offer-one-column-percent">
+                                      save up to <span style="{{title-core.color.orange}} {{title-core.md}}">{{offer.saved}}%</span>
+                                    </th>
+                                    <!-- price -->
+                                    <th width="250" align="left" valign="middle" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}} padding-left: 15px; padding-right: 5px;" class="text--sm offer-one-column-th offer-one-column-price">
+                                      From <span style="{{title-core.color.orange}} {{title-core.md}}">£{{offer.price}}</span> {{offer.price-description}}
+                                    </th>
+                                    <!-- cta button -->
+                                    <th width="160" valign="middle" class="offer-one-column-th">
+                                      {% include element/button.html link=offer.link label="View Offer" style="orange" size="sm" class="button--md" align-class="offer-one-column-button" align="right" %}
+                                    </th>
+                                  </tr>
+
+                                </table>
+                              </td>
+                            </tr>
+
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            {% endfor %}
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% include page/se-promo.html %}
+
+

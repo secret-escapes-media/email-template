@@ -1,66 +1,79 @@
 ---
-layout: client-travel-offers
-subject-line: Client Travel offers
-preheader: Email Title
-link: "#all-offers-link"
-cta-label: View All Offers
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: client
 
-intro:
-  image: intro.jpg
-  title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
-  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+
+
+main:
+  style:
+    row-gutter: 30
+    align: center
+    title: xl
+  content:
+    - image: intro.jpg
+    - title: Praesent commodo cursus magna
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - paragraph: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    - button: Intro button
+
+
 
 offers:
-
-  cta-label: View Offer
-  image:
-    width: 300
+  style:
+    row-gutter: 30
+    box-color: "#ffffff"
+    align: left
+    title: lg
+    text: sm
     height: 300
-  space-between: 30
+  objects:
 
-  offer-list:
+    - content:
+      - image: 1-1.jpg
+      - title: Offer
+      - location: Location name
+      - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - price: 100
+        description: per person per night
+      - button: Book now
 
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
+    - content:
+      - image: 1-1.jpg
+      - title: Offer
+      - location: Location name
+      - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - price: 100
+        description: per person per night
+      - button: Book now
 
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
+    - content:
+      - image: 1-1.jpg
+      - title: Offer
+      - location: Location name
+      - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - price: 100
+        description: per person per night
+      - button: Book now
 
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
+    - content:
+      - image: 1-1.jpg
+      - title: Offer
+      - location: Location name
+      - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - price: 100
+        description: per person per night
+      - button: Book now
 
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
-
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
-
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      price: 9999
-      price-description: per person per night
-      image: external.jpg
-      link: "#specific-offer-link"
 
 ---
+{% include _config/variables.html %}
+
+
+{% include module/loop/image-text-row.html content=page.offers %}
+

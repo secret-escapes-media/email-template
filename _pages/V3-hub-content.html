@@ -1,0 +1,221 @@
+---
+layout: default
+subject-line: Hub Content
+preheader: Email Title
+link: "#hub-overview-page"
+cta-label: Discover More
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+
+background:
+  image: hub.jpg
+  color: "#1a1b25"
+
+title:
+  alt: Long Campaign Headline
+  image: hub.png
+  max-width: 480
+
+intro:
+  content-rows:
+    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
+    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+
+hub-content:
+  space-between: 60
+
+  content-list:
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      image: 16-9.jpg
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      image: 16-9.jpg
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      image: 16-9.jpg
+      link: "#link-for-specific-content"
+
+    - title: Content section
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      image: 16-9.jpg
+      link: "#link-for-specific-content"
+
+---
+{% include _config/variables.html %}
+
+
+
+{% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
+{% assign text-style-class = "text--lg" %}
+{% assign background-color = page.background.color %}
+{% assign background-image = page.background.image %}
+
+
+<!-- Introduction section -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image wrapper - image has to be the same height of the email for consistent rending in outlook -->
+    <td align="center" class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center">
+
+            <!-- content container -->
+            <table {{responsive-table}}>
+
+              <!-- combined logo -->
+              <tr>
+                <td align="center" style="padding-top: 45px;">
+                  <a href="{{page.link}}" style="{{text.family}} {{text.weight}} {{text.color.white}}">
+                    {% include element/logo/combined.html %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- title image -->
+              <tr>
+                <td align="center" style="padding-top: 130px; padding-bottom: 130px;" class="hub-intro-title">
+                  <a href="{{intro-link}}" style="{{text.family}} {{text.weight}} {{text.color.white}}">
+                    <img class="img-max" src="{% include img-pre.html type="T" name=page.title.image %}" width="{{page.title.max-width}}" border="0" style="display: block; max-width: {{page.title.max-width}}px !important;" alt="{{page.title.alt}}" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- intro section stuck to bottom -->
+              <tr>
+                <td align="center" style="{{spacing.vpad.lg}} {{spacing.hpad.md}} {{text-style}} background-color: #090A1F; background-color: rgba(9,10,31,.66);" class="mobile-margin">
+                  <table {{fluid-table}}>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 30px;">
+                        {% include element/button.html link=page.link label=page.cta-label style=button.partner size=button.size.lg class="button--lg" align="center" %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+
+
+<!-- hub content -->
+<table {{fluid-table}} bgcolor="{{color.white}}">
+  <tr>
+    <td align="center" style="{{spacing.vpad.xl}} {{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+{% for hub-content in page.hub-content.content-list %}
+
+  {% if hub-content.link %}
+    {% assign hub-content-link = hub-content.link %}
+  {% elsif page.hub-content.link %}
+    {% assign hub-content-link = page.hub-content.link %}
+  {% else %}
+    {% assign hub-content-link = page.link %}
+  {% endif %}
+
+  {% if hub-content.cta-label %}
+    {% assign hub-content-cta-label = hub-content.cta-label %}
+  {% elsif page.hub-content.cta-label %}
+    {% assign hub-content-cta-label = page.hub-content.cta-label %}
+  {% else %}
+    {% assign hub-content-cta-label = page.cta-label %}
+  {% endif %}
+
+  {% assign hub-content-title-style = title.family | append: title.color.normal | append: title.xxl | append: title.weight %}
+  {% assign hub-content-title-style-class = "title--xxl"  %}
+  {% assign hub-content-text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+  {% assign hub-content-text-style-class = "text--md"  %}
+  {% assign hub-content-image = hub-content.image %}
+  {% assign hub-content-height = page.hub-content.image.height %}
+
+  <!-- hub content -->
+
+  <table {{fluid-table}}>
+    <!-- content image -->
+    <tr>
+      <td align="center">
+        <a href="{{hub-content-link}}">
+          <img src="{% include img-pre.html type="C" name=hub-content-image %}" border="0" width="600" alt="{{hub-content.title}}" style="display: block;" class="img-max" />
+        </a>
+      </td>
+    </tr>
+    <!-- content container -->
+    <tr>
+      <td align="center" style="{{spacing.boxpad.sm}} padding-bottom: {{page.hub-content.space-between}}px;">
+        <table {{fluid-table}}>
+          <!-- feauture title -->
+          <tr>
+            <td align="center" style="{{hub-content-title-style}}" class="{{hub-content-title-style-class}}">
+              {{hub-content.title}}
+            </td>
+          </tr>
+          <!-- feauture content -->
+          <tr>
+            <td align="center" style="{{hub-content-text-style}} padding-top: 8px;" class="{{hub-content-text-style-class}}">
+              {{hub-content.content}}
+            </td>
+          </tr>
+          <!-- feauture call-to-action -->
+          <tr>
+            <td style="padding-top: 20px;">
+              {% include element/button.html link=hub-content-link label=hub-content-cta-label style=button.partner %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+{% endfor %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% include page/se-promo.html %}

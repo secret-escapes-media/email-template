@@ -1,37 +1,73 @@
 ---
-layout: client-product-promo
-subject-line: Client Product Promo
-preheader: Email Title
-link: "#product-link"
-cta-label: Find Out More
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: client
 
-intro:
-  image: intro.jpg
-  title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
-  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+main:
+  style:
+    row-gutter: 30
+    align: center
+    title: xxl
+  content:
+    - image: intro.jpg
+    - title: Title
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - paragraph: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    - button: Intro button
+
+
 
 features:
-
-  cta-label: More info
   link: "#same-link-for-all"
-  image:
-    width: 300
+  style:
+    row-gutter: 0
+    alternating: true
     height: 400
-  space-between: 0
+    button:
+      style: partner-light
+  objects:
+    - content:
+        - image: 3-4.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: More info
 
-  feature-list:
+    - content:
+        - image: 3-4.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: More info
 
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: feature.jpg
-
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: feature.jpg
-
-    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: feature.jpg
+    - content:
+        - image: 3-4.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: More info
 
 ---
+{% include _config/variables.html %}
+
+
+
+{% include module/loop/image-text-row.html content=page.features %}
+{% include element/space.html height="60" color=color.background %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td align="center">
+            {% include element/button.html label="View all offers" align="center" style="orange" size="md" %}
+            {% include element/space.html height="60" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

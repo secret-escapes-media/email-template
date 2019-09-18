@@ -1,0 +1,45 @@
+
+
+
+{% if button-size == "lg" %}
+  {% assign button-size = button.size.lg %}
+  {% assign button-class = "button--lg" %}
+
+{% elsif button-size == "md" %}
+  {% assign button-size = button.size.md %}
+  {% assign button-class = "button--md" %}
+
+{% elsif button-size == "sm" %}
+  {% assign button-size = button.size.sm %}
+  {% assign button-class = "button--sm" %}
+
+{% elsif button-size == "xs" %}
+  {% assign button-size = button.size.xs %}
+  {% assign button-class = "button--xs" %}
+
+{% else %}
+  {% assign button-size = button.size.sm %}
+  {% assign button-class = "button--sm" %}
+
+{% endif %}
+
+
+
+{% if button-style == "orange" %}
+  {% assign button-style = button.style.orange %}
+
+{% elsif button-style == "orange-light" %}
+  {% assign button-style = button.style.orange-light %}
+
+{% elsif button-style == "partner" %}
+  {% assign button-style = button.style.partner %}
+
+{% elsif button-style == "partner-light" %}
+  {% assign button-style = button.style.partner-light %}
+
+{% else %}
+  {% assign button-style = button.style.default %}
+
+{% endif %}
+
+

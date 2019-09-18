@@ -1,0 +1,82 @@
+<!-- Banner -->
+
+{% include _config/variables.html %}
+
+
+{% assign this        = include.content %}
+{% assign rows        = this.content %}
+{% assign style       = this.style %}
+{% assign banner      = this.banner %}
+{% assign background  = this.background %}
+
+
+
+{% assign link = page.page-link %}
+{% if this.link %}
+  {% assign link = this.link %}
+{% endif %}
+
+{% if style.background-color %}
+  {% assign bgcolor = style.background-color %}
+{% else %}
+  {% assign bgcolor = color.background %}
+{% endif %}
+
+{% if style.box-color %}
+  {% assign boxcolor = style.box-color %}
+{% else %}
+  {% assign boxcolor = color.box %}
+{% endif %}
+
+{% if style.row-gutter %}
+  {% assign row-gutter = "padding-bottom:" | append: style.row-gutter | append:"px;" %}
+{% else %}
+  {% assign row-gutter = "padding-bottom: 30px;" %}
+{% endif %}
+
+
+
+<table {{fluid-table}}>
+  <tr>
+    <td style="{{row-gutter}}" bgcolor={{bgcolor}}>
+
+      <table {{fluid-table}} height="300">
+        <tr>
+          <td align="center" background="{% include img-pre.html type='BG' name=background.image %}" bgcolor="{{background.color}}" valign="middle" style="vertical-align: middle; background-position: center; -webkit-background-size: cover; background-size: cover;">
+            <!--[if gte mso 9]>
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:300px;">
+              <v:fill type="frame" src="{% include img-pre.html type='BG' name=background.image %}" color="{{background.color}}" />
+              <v:textbox inset="0,0,0,0">
+            <![endif]-->
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" height="350">
+              <tr>
+                <td style="padding: 140px {{ spacing-gutter }}px;"><!-- top & bottom padding is total height - image height fallback is needed for clients that dont support vertical align -->
+                  <table align="center" cellspacing="0" cellpadding="0" border="0" width="570" class="responsive-table">
+                    <tr>
+                      <td valign="middle" style="vertical-align:middle;" align="center">
+
+                        {% if banner.image-title %}
+                          <a href="{{link}}">
+                            <img src="{% include img-pre.html name=banner.image-title %}" width="{{ banner.image-title-width }}" style="max-width: {{ banner.image-title-width }}px !important;" class="img-max" />
+                          </a>
+                        {% else %}
+
+                          {% include module/_content/content.html %}
+
+                        {% endif %}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if gte mso 9]>
+                </v:textbox>
+              </v:rect>
+              <![endif]-->
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

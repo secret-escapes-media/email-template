@@ -1,112 +1,64 @@
 ---
-layout: hub-offers
-subject-line: Hub Offers
-preheader: Email Title
-link: "#hub-offer-page"
-cta-label: View All Offers
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: hub
 
-background:
-  image: hub.jpg
-  color: "#1a1b25"
+subject-line: Subject line
+preheader: Email preheader
 
-title:
-  alt: this is the title text
-  image: hub.png
-  max-width: 480
-
-intro:
-  content-rows:
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
-
-hub-content:
-  image:
-    width: 300
-    height: 300
-  space-between: 45
-
-  content-list:
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
 
 
-offers:
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
+main:
+  style:
+    row-gutter: 60
+    box-color: rgba(0,0,0,0.6)
+    theme: dark
+    align: center
+    text: lg
+    button:
+      size: lg
+  banner:
+    title: Alt title
+    title-image: hub.png
+    title-image-width: 480
+  background:
+    image: intro.jpg
+    color: "#191c26"
+  content:
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+    - button: Discover more
+      link: "#intro-link"
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
-
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
-
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
-
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
-
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    saved: 60
-    image: offer.jpg
-    link: "#link-for-offer"
 
 ---
+{% include _config/variables.html %}
+
+
+
+{% for offer in site.data.offers %}
+  {% include offers/offer.html layout="one-column" %}
+{% endfor %}
+
+{% for offer in site.data.offers %}
+  {% include offers/offer.html layout="two-column" %}
+{% endfor %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td align="center">
+            {% include element/button.html label="View all offers" style="orange" size="md" align="center" %}
+            {% include element/space.html height="60" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+

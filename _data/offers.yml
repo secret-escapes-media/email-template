@@ -1,0 +1,71 @@
+
+- title: Hotel Indigo Dundee
+  id: hotel-indigo-dundee
+  location: Dundee, Scotland
+  description: Chic design-led digs in the heart of Dundee
+  price: 114
+  price-description: per room per night
+  saved: 43
+  expires: 2019/03/26
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/87758/77a284cc_4983_4afd_adc6_dd9f545561f4.jpg
+  link: https://www.secretescapes.com/hotel-indigo-dundee-dundee-scotland/sale
+
+
+- title: Ardoe House Hotel & Spa
+  id: ardoe-house-hotel-and-spa
+  location: Aberdeen, Scotland
+  description: An opulent Victorian country escape near Aberdeen
+  price: 109
+  price-description: per room per night
+  saved: 47
+  expires: 2019/03/26
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/79163/d9d2f35b_e00b_468f_8a70_20cc16d813e7.jpg
+  link: https://www.secretescapes.com/ardoe-house-hotel-and-spa-aberdeen-scotland/sale
+
+
+- title: Loch Lomond Waterfront
+  id: loch-lomond-waterfront
+  location: The Trossachs National Park, Scotland
+  description: Escape to a five-star self-catering abode overlooking Loch Lomond National Park
+  price: 93
+  price-description: per room per night
+  saved: 30
+  expires: 2019/03/22
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/71756/990bf09c_66ba_46ad_8b17_b0a00e89cc2b.jpg
+  link: https://www.secretescapes.com/loch-lomond-waterfront-the-trossachs-national-park-scotland/sale
+
+
+- title: Shieldaig Lodge
+  id: shieldaig-lodge
+  location: West Highlands, Scotland
+  description: Stay lochside at a converted Victorian lodge in Scotland's West Highlands
+  price: 159
+  price-description: per room per night
+  saved: 50
+  expires: 2019/03/26
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/88537/773c42b4_a72e_4ed1_b218_44393d944679.jpg
+  link: https://www.secretescapes.com/shieldaig-lodge-west-highlands-scotland/sale
+
+
+- title: RiverBeds Luxury Wee Lodges with Hot Tubs
+  id: riverbeds-luxury-wee-lodges-with-hot-tubs
+  location: Glencoe Valley, Scotland
+  description: A boutique-style lodge stay with hot tub in Scotland’s Glencoe Valley
+  price: 195
+  price-description: per lodge per night
+  saved: 45
+  expires: 2019/03/26
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/80622/e5399b51_4acd_4a55_abf1_f195ba0911b0.jpg
+  link: https://www.secretescapes.com/riverbeds-luxury-wee-lodges-glencoe-valley-scotland/sale
+
+
+- title: Forss House
+  id: forss-house
+  location: Thurso, Scottish Highlands
+  description: A charming hotel in the Scottish Highlands
+  price: 116
+  price-description: per room per night
+  saved: 30
+  expires: 2019/03/26
+  image: https://d1x3cbuht6sy0f.cloudfront.net/sales/77674/0cd16993_7231_4afa_8ca6_96a4f672ea39.jpg
+  link: https://www.secretescapes.com/forss-house-thurso-scottish-highlands/sale

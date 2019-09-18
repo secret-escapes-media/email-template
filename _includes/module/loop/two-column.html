@@ -1,0 +1,112 @@
+<!-- Two column -->
+
+{% include _config/variables.html %}
+
+{% assign this = include.content %}
+{% assign objects = this.objects %}
+{% assign style = this.style %}
+
+
+
+{% assign link = page.page-link %}
+{% if this.link %}
+  {% assign link = this.link %}
+{% endif %}
+
+{% assign align = center %}
+{% if style.align %}
+  {% assign align = style.align %}
+{% endif %}
+
+{% assign bgcolor = color.background %}
+{% if style.background-color %}
+  {% assign bgcolor = style.background-color %}
+{% endif %}
+
+{% assign boxcolor = color.box %}
+{% if style.box-color %}
+  {% assign boxcolor = style.box-color %}
+{% endif %}
+
+{% assign row-gutter = "padding-bottom: 30px;" %}
+{% if style.row-gutter %}
+  {% assign row-gutter = "padding-bottom:" | append: style.row-gutter | append:"px;" %}
+{% endif %}
+
+{% assign column-gutter = 30 %}
+{% if style.column-gutter %}
+  {% assign column-gutter = style.column-gutter %}
+{% endif %}
+{% assign column-width = 600 | minus: column-gutter | divided_by:2 %}
+
+
+
+{% for object in objects %}
+  {% assign rows = object.content %}
+
+  {% assign column-id = forloop.index | modulo: 2 %}
+  {% if forloop.last and column-id == 1 %}
+    {% assign column-align = "center" %}
+    {% assign row-position = "end" %}
+  {% elsif column-id == 1 %}
+    {% assign column-align = "left" %}
+    {% assign row-position = "start" %}
+  {% elsif column-id == 0 %}
+    {% assign column-align = "right" %}
+    {% assign row-position = "end" %}
+  {% endif %}
+
+  {% if forloop.first %}
+  <table {{fluid-table}}>
+    <tr>
+      <td bgcolor="{{bgcolor}}" align="center" style="{{spacing.hpad.sm}}">
+  {% endif %}
+
+  {% if row-position == "start" %}
+  <table {{responsive-table}} align="center">
+    <tr>
+      <td>
+  {% endif %}
+
+  <table align="{{column-align}}" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="{{column-width}}">
+    <tr>
+      <td style="{{row-gutter}};">
+        <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+          {% for row in rows %}
+            {% if row.image %}
+              <tr>
+                <td>
+                  {% if row.link %} {% assign link = row.link %} {% endif %}
+                  <a href="{{link}}">
+                    <img src="{% include img-pre.html type='C' name=row.image %}" alt="" width="{{column-width}}" class="img-max" />
+                  </a>
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr>
+            <td bgcolor="{{boxcolor}}" style="{{spacing.boxpad.sm}}">
+              {% include module/_content/content.html %}
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  {% if row-position == "end" %}
+      </td>
+    </tr>
+  </table>
+  {% endif %}
+
+  {% if forloop.last %}
+      </td>
+    </tr>
+  </table>
+  {% endif %}
+
+{% endfor %}

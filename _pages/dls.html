@@ -1,0 +1,293 @@
+---
+layout: default
+
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+
+
+main:
+  style:
+    row-gutter: 0
+    box-color: "#F1F1F1"
+    align: center
+    title: xxxl
+  content:
+    - title: Design System
+
+
+
+---
+{% include _config/variables.html %}
+
+
+
+{% include element/space.html height="30" color=color.background %}
+
+{% include module/single/one-column.html content=page.main %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}">
+<!-- Start outer wrap -->
+
+
+
+<!-- BUTTONS -->
+<table {{responsive-table}}>
+  <tr>
+    <td align="center" bgcolor="#ffffff">
+
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center" style="{{spacing.boxpad.md}}">
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center"">
+                  {% include element/title.html title="Buttons" style="xl" align="center" %}
+                  {% include element/hr.html height="1" color=color.grey-lighter align="center" %}
+                  {% include element/space.html height="15" %}
+                </td>
+              </tr>
+            </table>
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange" size="xs" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange" size="sm" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange" size="md" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange" size="lg" %}
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange-subtle" size="xs" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange-subtle" size="sm" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange-subtle" size="md" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="orange-subtle" size="lg" %}
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary" size="xs" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary" size="sm" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary" size="md" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary" size="lg" %}
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary-subtle" size="xs" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary-subtle" size="sm" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary-subtle" size="md" %}
+                </td>
+                <td align="center">
+                  {% include element/button.html label="Button" link="#single-button-link" style="secondary-subtle" size="lg" %}
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+{% include element/space.html height="30" color=color.background %}
+
+
+
+<!-- COLORS -->
+<table {{responsive-table}}>
+  <tr>
+    <td align="center" bgcolor="#ffffff">
+
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center" style="{{spacing.boxpad.md}}">
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center"">
+                  {% include element/title.html title="Brand colours" style="xl" align="center" %}
+                  {% include element/hr.html height="1" color=color.grey-lighter align="center" %}
+                  {% include element/space.html height="15" %}
+                </td>
+              </tr>
+            </table>
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center" bgcolor="{{color.orange-lightest}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange-lightest}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.orange-lighter}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange-lighter}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.orange-light}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange-light}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.orange}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.orange-dark}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange-dark}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.orange-darker}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.orange-darker}}</p>
+                </td>
+              </tr>
+            </table>
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center" bgcolor="{{color.turq-lightest}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq-lightest}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.turq-lighter}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq-lighter}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.turq-light}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq-light}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.turq}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.turq-dark}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq-dark}}</p>
+                </td>
+                <td align="center" bgcolor="{{color.turq-darker}}">
+                  <p style="{{text.text-xs}} {{text.bold}} {{text.mono}} color: #ffffff;">{{color.turq-darker}}</p>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+{% include element/space.html height="30" color=color.background %}
+
+
+
+<!-- TITLES -->
+<table {{responsive-table}}>
+  <tr>
+    <td align="center" bgcolor="#ffffff">
+
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center" style="{{spacing.boxpad.md}}">
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center"">
+                  {% include element/title.html title="Titles" style="xl" align="center" %}
+                  {% include element/hr.html height="1" color=color.grey-lighter align="center" %}
+                  {% include element/space.html height="15" %}
+                </td>
+              </tr>
+            </table>
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center">
+                  {% include element/title.html title="Title" style="xxxl" %}
+                  {% include element/title.html title="Title" style="xxl" %}
+                  {% include element/title.html title="Title" style="xl" %}
+                  {% include element/title.html title="Title" style="lg" %}
+                  {% include element/title.html title="Title" style="md" %}
+                  {% include element/title.html title="Title" style="sm" %}
+                  {% include element/title.html title="Title" style="xs" %}
+                  {% include element/title.html title="Title" style="xxs" %}
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{% include element/space.html height="30" color=color.background %}
+
+
+
+<!-- PARAGRAPHS -->
+<table {{responsive-table}}>
+  <tr>
+    <td align="center" bgcolor="#ffffff">
+
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center" style="{{spacing.boxpad.md}}">
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center"">
+                  {% include element/title.html title="Paragraphs" style="xl" align="center" %}
+                  {% include element/hr.html height="1" color=color.grey-lighter align="center" %}
+                  {% include element/space.html height="15" %}
+                </td>
+              </tr>
+            </table>
+
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center">
+                  {% include element/paragraph.html paragraph="Sed posuere consectetur est at lobortis." style="xl" %}
+                  {% include element/paragraph.html paragraph="Sed posuere consectetur est at lobortis." style="lg" %}
+                  {% include element/paragraph.html paragraph="Sed posuere consectetur est at lobortis." style="md" %}
+                  {% include element/paragraph.html paragraph="Sed posuere consectetur est at lobortis." style="sm" %}
+                  {% include element/paragraph.html paragraph="Sed posuere consectetur est at lobortis." style="xs" %}
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+{% include element/space.html height="30" color=color.background %}
+<!-- End outer wrap -->
+    </td>
+  </tr>
+</table>

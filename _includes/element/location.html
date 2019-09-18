@@ -1,0 +1,30 @@
+<!-- Location -->
+
+{% include _config/variables.html %}
+
+{% assign theme         = include.theme %}
+{% assign text-style    = text.family | append: text.bold | append: text.sm | append: text.upper | append: text.color.light %}
+{% assign location-data = include.location %}
+
+{% if theme == "dark" %}
+  {% assign text-style = text-style | append: text.color.white %}
+{% endif %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="left" colspan="3" style="padding-bottom: 12px;">
+      <table {{fluid-table}}>
+        <tr>
+          <!-- map pin icon -->
+          <td align="left" valign="middle" width="20">
+            <img src="{% include img-pre.html type='I' name='pin.png' %}" border="0" alt="Location icon" width="12" height="16" style="display: inline-block;">
+          </td>
+          <!-- location text -->
+          <td align="left" style="{{text-style}} line-height: 16px;" class="text--sm">
+            {{location-data}}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

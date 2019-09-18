@@ -1,48 +1,73 @@
 ---
-layout: hub-content
-subject-line: Hub Content
-preheader: Email Title
-link: "#hub-overview-page"
-cta-label: Discover More
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: hub
 
-background:
-  image: hub.jpg
-  color: "#1a1b25"
+subject-line: Subject line
+preheader: Email preheader
 
-title:
-  alt: Long Campaign Headline
-  image: hub.png
-  max-width: 480
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
 
-intro:
-  content-rows:
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+
+
+main:
+  style:
+    row-gutter: 60
+    box-color: rgba(0,0,0,0.6)
+    background-color: "#ffffff"
+    theme: dark
+    align: center
+    text: lg
+    button:
+      size: md
+  banner:
+    title: Alt title
+    title-image: hub.png
+    title-image-width: 480
+  background:
+    image: intro.jpg
+    color: "#191c26"
+  content:
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+    - space: 10
+    - button: Discover more
+      link: "#intro-link"
+
+
 
 hub-content:
-  space-between: 60
+  style:
+    row-gutter: 30
+    background-color: "#ffffff"
+    box-color: "#ffffff"
+    height: 300
+    align: center
+    title: xl
+  objects:
 
-  content-list:
+    - content:
+        - image: 16-9.jpg
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: Button label
 
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: section-lg.jpg
-      link: "#link-for-specific-content"
+    - content:
+        - image: 16-9.jpg
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: Button label
 
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: section-lg.jpg
-      link: "#link-for-specific-content"
+    - content:
+        - image: 16-9.jpg
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - button: Button label
 
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: section-lg.jpg
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      image: section-lg.jpg
-      link: "#link-for-specific-content"
 
 ---
+{% include _config/variables.html %}
+
+
+{% include module/loop/one-column.html content=page.hub-content %}
+

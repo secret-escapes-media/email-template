@@ -1,0 +1,149 @@
+<!-- Three column -->
+
+{% include _config/variables.html %}
+
+{% assign this = include.content %}
+{% assign objects = this.objects %}
+{% assign style = this.style %}
+
+
+
+{% assign link = page.page-link %}
+{% if this.link %}
+  {% assign link = this.link %}
+{% endif %}
+
+{% assign align = center %}
+{% if style.align %}
+  {% assign align = style.align %}
+{% endif %}
+
+{% assign bgcolor = color.background %}
+{% if style.background-color %}
+  {% assign bgcolor = style.background-color %}
+{% endif %}
+
+{% assign boxcolor = color.box %}
+{% if style.box-color %}
+  {% assign boxcolor = style.box-color %}
+{% endif %}
+
+{% assign row-gutter = "padding-bottom: 30px;" %}
+{% if style.row-gutter %}
+  {% assign row-gutter = "padding-bottom:" | append: style.row-gutter | append:"px;" %}
+{% endif %}
+
+{% assign column-gutter = 30 %}
+{% if style.column-gutter %}
+  {% assign column-gutter = style.column-gutter %}
+{% endif %}
+{% assign column-width = 600 | minus: column-gutter | minus: column-gutter | divided_by: 3 %}
+{% assign wrap-one-width = column-width | plus: column-width | plus: column-gutter %}
+{% assign wrap-two-width = column-width %}
+
+
+{% for object in objects %}
+  {% assign rows = object.content %}
+
+  {% assign column-id = forloop.index | modulo: 3 %}
+  {% case column-id %}
+    {% when 0 %}
+      {% assign row-position = "end" %}
+      {% assign column-align = "center" %}
+    {% when 1 %}
+      {% assign row-position = "start" %}
+      {% assign column-align = "left" %}
+    {% when 2 %}
+      {% assign row-position = "middle" %}
+      {% assign column-align = "right" %}
+  {% endcase %}
+
+
+
+  {% if forloop.first %}
+  <table {{fluid-table}}>
+    <tr>
+      <td bgcolor="{{bgcolor}}" align="center" style="{{spacing.hpad.sm}}">
+  {% endif %}
+
+  {% if row-position == "start" %}
+  <!-- three column layout - row start -->
+  <table {{responsive-table}} align="center" class="responsive-table">
+    <tr>
+      <td style="{{row-gutter}}">
+
+        <!-- wrap one - contains the first two columns plus gutter -->
+        <table {{table}} align="left" class="responsive-table" width="{{wrap-one-width}}">
+          <tr>
+            <td>
+  {% endif %}
+
+  {% if row-position == "end" %}
+  <!-- wrap two - only contains the third column -->
+  <table {{table}} align="right" class="responsive-table" width="{{wrap-two-width}}">
+    <tr>
+      <td>
+  {% endif %}
+
+
+  <!-- column wrap -->
+  <table {{table}} align="{{column-align}}" class="responsive-table" width="{{column-width}}">
+    <tr>
+      <td>
+
+        <!-- column content -->
+        <table {{fluid-table}}>
+
+
+          {% for row in rows %}
+            {% if row.image %}
+              <tr>
+                <td>
+                  {% if row.link %} {% assign link = row.link %} {% endif %}
+                  <a href="{{link}}">
+                    <img src="{% include img-pre.html type='C' name=row.image %}" alt="" width="{{column-width}}" class="img-max" />
+                  </a>
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr>
+            <td bgcolor="{{boxcolor}}" style="{{spacing.boxpad.sm}}">
+              {% include module/_content/content.html %}
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+  <!-- end - column -->
+
+
+  {% if row-position == "middle" %}
+      </td>
+    </tr>
+  </table>
+  <!-- wrap one end -->
+  {% endif %}
+
+  {% if row-position == "end" %}
+            </td>
+          </tr>
+        </table>
+        <!-- wrap two end -->
+      </td>
+    </tr>
+  </table>
+  <!-- three column layout - row end -->
+  {% endif %}
+
+  {% if forloop.last %}
+      </td>
+    </tr>
+  </table>
+  {% endif %}
+
+{% endfor %}

@@ -1,22 +1,32 @@
-{% include variables.html %}
+
+{% include _config/variables.html %}
+{% assign fonts = site.data.style.fonts %}
 
 <title>{{ page.subject-line }}</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no" />
-{% if text.gfont-link %}{{text.gfont-link}}{% endif %}
-{% if title-core.gfont-link %}{{title-core.gfont-link}}{% endif %}
-{% if title.gfont-link %}{{title.gfont-link}}{% endif %}
+
+{% capture googlefonts %}
+  {% for font in fonts %}
+    {{font.gfont}}:
+    {% for weight in font.weights %}
+      {{weight.weight}}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    {% unless forloop.last %}|{% endunless %}
+  {% endfor %}
+{% endcapture %}
+<link href='https://fonts.googleapis.com/css?family={{googlefonts|strip_newlines|remove:" "}}' rel='stylesheet' type='text/css' />
 
 <style type="text/css">
-  {% capture include_to_scssify %}
-    {% include page/main.scss %}
-  {% endcapture %}
-  {{ include_to_scssify | scssify }}
 
-  /* font family hack - stops outlook from always using times new roman  */
-  {% if text.family-hack %}{{text.family-hack}}{% endif %}
-  {% if title-core.family-hack %}{{title-core.family-hack}}{% endif %}
-  {% if title.family-hack %}{{title.family-hack}}{% endif %}
+  {% for font in fonts %}
+  [style*="{{font.name}}"] { font-family: '{{font.name}}', {{font.family}} !important; }
+  {% endfor %}
+
+  {% capture scss %}
+    {% include _config/main.scss %}
+  {% endcapture %}
+  {{ scss | scssify }}
 </style>

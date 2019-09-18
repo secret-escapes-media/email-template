@@ -1,0 +1,6 @@
+{% if include.theme == "dark" %}
+  {% assign image = site.logo.white %}
+{% else %}
+  {% assign image = site.logo.black %}
+{% endif %}
+<img alt="{{site.client.name}} Logo" class="logo-partner" width="{{site.logo.width}}" style="display:block;" border="0" src="{% include img-pre.html type='L' name=image %}">

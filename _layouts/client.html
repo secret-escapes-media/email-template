@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% include _config/variables.html %}
+
+{% include page/header.html %}
+
+{% if page.main %}
+  {% include module/single/one-column.html content=page.main %}
+{% endif %}
+
+{{content}}
+
+{% include page/footer.html %}

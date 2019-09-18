@@ -1,17 +1,38 @@
 ---
-layout: client-promo-code
-subject-line: Client Promo Code
-preheader: Email Title
-link: "#promo-link"
-cta-label: Claim Now
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: client
 
-intro:
-  image: intro.jpg
-  title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
-  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
-  promo:
-    pre: "Lorem ipsum dolor sit amet, consectetur <br class=\"desktop-break\" />adipisicing elit, sed do eiusmod"
-    code: PROMO-CODE-1234
-    post: Lorem ipsum dolor sit amet, consectetur adipisicing
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+
+
+main:
+  style:
+    row-gutter: 30
+    align: center
+    title: xxl
+  content:
+    - image: intro.jpg
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing.
+    - space: 10
+    - hr: 1
+      color: "#28B8C7"
+    - space: 20
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - paragraph: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    - space: 20
+    - before: Enter code for 50% off
+      promo: PROMOCODE
+      after: Terms and conditions apply
+    - space: 20
+    - button: Intro button
+
+
 ---
+{% include _config/variables.html %}
+
+

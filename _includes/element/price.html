@@ -1,0 +1,34 @@
+<!-- Price -->
+
+{% include _config/variables.html %}
+
+{% assign theme            = include.theme %}
+{% assign text-style       = include.style %}
+{% assign data-price       = include.price %}
+{% assign data-description = include.description %}
+
+{% assign data-from        = "From" %}
+{% if include.from %}
+  {% assign data-unit = include.from %}
+{% endif %}
+
+{% assign data-unit = "£" %}
+{% if include.unit %}
+  {% assign data-unit = include.unit %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+
+
+{% include _config/paragraph.html %}
+<table {{fluid-table}}>
+  <tr>
+    <td class="{{text-class}}" align="{{align}}" style="{{text.text-md}}; padding-bottom: {{spacing.p}};">
+      {{data-from}} <span style="{{text.xl}} color: {{color.turq}};">{{data-unit}}{{data-price}}</span> {{data-description}}
+    </td>
+  </tr>
+</table>
+

@@ -1,0 +1,54 @@
+{% for row in rows %}
+
+  {% if row.link %} {% assign link = row.link %} {% endif %}
+
+  {% if row.title %}
+    {% include element/title.html
+      title=row.title
+      style=include.content.style.title
+      theme=include.content.style.theme %}
+
+  {% elsif row.paragraph %}
+    {% include element/paragraph.html
+      paragraph=row.paragraph
+      style=include.content.style.text
+      theme=include.content.style.theme %}
+
+  {% elsif row.button %}
+    {% include element/button.html
+      size=include.content.style.button.size
+      style=include.content.style.button.style
+      label=row.button
+      link=link %}
+
+  {% elsif row.price %}
+    {% include element/price.html
+      price=row.price
+      unit=row.unit
+      description=row.description
+      from=row.from %}
+
+  {% elsif row.promo %}
+    {% include element/promo.html
+      promo=row.promo
+      before=row.before
+      after=row.after %}
+
+  {% elsif row.location %}
+    {% include element/location.html
+      location=row.location
+      style=include.content.style.text
+      theme=include.content.style.theme %}
+
+  {% elsif row.space %}
+    {% include element/space.html
+      height=row.space
+      color=row.color %}
+
+  {% elsif row.hr %}
+    {% include element/hr.html
+      height=row.hr
+      color=row.color %}
+
+  {% endif %}
+{% endfor %}

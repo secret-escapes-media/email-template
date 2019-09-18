@@ -1,0 +1,249 @@
+---
+layout: client
+subject-line: Client Travel offers
+preheader: Email Title
+link: "#all-offers-link"
+cta-label: View All Offers
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+
+intro:
+  image: intro.jpg
+  title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
+
+offers:
+
+  cta-label: View Offer
+  image:
+    width: 300
+    height: 300
+  space-between: 30
+
+  offer-list:
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+    - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      price: 9999
+      price-description: per person per night
+      image: external.jpg
+      link: "#specific-offer-link"
+
+---
+{% include _config/variables.html %}
+
+
+
+{% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
+{% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
+{% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign title-style-class = "title--xl" %}
+{% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+{% assign text-style-class = "text--md" %}
+
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.grey-lightest}}" style="padding-bottom: 90px;" class="mobile-margin">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+
+            <!-- Intro section -->
+            <table {{fluid-table}}>
+              <!-- Main image -->
+              <tr>
+                <td>
+                  <a href="{{intro-link}}">
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block;" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- Intro content -->
+              <tr>
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="mobile-margin">
+                  <table {{fluid-table}}>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
+                        {{page.intro.title}}
+                      </td>
+                    </tr>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 20px;">
+                        {% include element/button.html link=intro-link label=cta-label style=button.partner %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+
+            {% include element/space.html height="60" %}
+
+
+            <!-- travel offers section -->
+            <table {{fluid-table}}>
+              <tr>
+                <td>
+
+                  {% for offer in page.offers.offer-list %}
+
+                    {% assign offer-link = offer.link %}
+                    {% assign offer-cta-label = page.offers.cta-label %}
+                    {% assign offer-height = page.offers.image.height %}
+                    {% assign offer-title-style = title.family | append: title.color.dark | append: title.md | append: title.weight %}
+                    {% assign offer-title-style-class = "title--md" %}
+                    {% assign offer-text-style = text.family | append: text.color.light | append: text.sm | append: text.weight %}
+                    {% assign offer-text-style-class = "text--sm"  %}
+
+                    <!-- offer -->
+                    <table {{responsive-table}}>
+                      <tr>
+                        <td{% if page.offers.space-between and forloop.index != 1 %} style="padding-top: {{page.offers.space-between}}px;"{% endif %}>
+
+                          <!-- column wrap -->
+                          <table {{responsive-table}}>
+                            <tr>
+                              <td valign="middle">
+
+                                <!-- image-column -->
+                                <table {{table}} class="responsive-table" align="left" width="50%" height="{{offer-height}}">
+                                  <tr>
+                                    <td align="center" valign="middle">
+                                      <!-- offer image -->
+                                      <a href="{{offer-link}}">
+                                        <img class="img-max" src="{% include img-pre.html type="O" name=offer.image %}" width="{{page.offers.image.width}}" height="{{page.offers.image.height}}" style="display: block;" border="0" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                                <!-- content-column -->
+                                <table {{table}} class="responsive-table" align="right" width="49.9%" height="{{offer-height}}" bgcolor="{{color.white}}">
+                                  <tr>
+                                    <td align="left" valign="middle" height="{{offer-height | minus:30}}" style="{{spacing.boxpad.sm}}" class="responsive-td"> <!-- outlook needs height set on td, minus the vertical padding -->
+
+                                      <table {{fluid-table}}>
+                                        <!-- offer title -->
+                                        <tr>
+                                          <td style="{{offer-title-style}}" class="offer-title-style-class">
+                                            {{offer.title}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer content -->
+                                        <tr>
+                                          <td style="{{offer-text-style}} padding-top: 8px;" class="offer-text-style-class">
+                                            {{offer.content}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer price -->
+                                        <tr>
+                                          <td style="{{offer-text-style}} padding-top: 4px;" class={{offer-text-style-class}}>
+                                            From <span style="{{text.xl}} {{text.bold}} color: {{color.partner}};">£{{offer.price}}</span> {{offer.price-description}}
+                                          </td>
+                                        </tr>
+                                        <!-- offer call-to-action -->
+                                        <tr>
+                                          <td style="padding-top: 10px;">
+                                            {% include element/button.html link=offer-link label=offer-cta-label style=button.partner-light size=button.size.sm class="button--sm" align="left" %}
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                              </td>
+                            </tr>
+                          </table>
+
+                        </td>
+                      </tr>
+                    </table>
+
+                  {% endfor %}
+
+                </td>
+              </tr>
+            </table>
+
+
+            <!-- call to action -->
+            <table {{fluid-table}}>
+              <tr>
+                <td style="padding-top: 60px;">
+                  {% include element/button.html link=intro-link label=cta-label style=button.partner %}
+                </td>
+              </tr>
+            </table>
+
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+{% include page/footer.html %}

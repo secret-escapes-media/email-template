@@ -1,3 +1,10 @@
+
+xl: "60px"
+lg: "45px"
+md: "30px"
+sm: "15px"
+xs: "10px"
+
 vpad:
   xl: "padding-top: 60px; padding-bottom: 60px;"
   lg: "padding-top: 45px; padding-bottom: 45px;"
@@ -19,7 +26,6 @@ boxpad:
   sm: "padding: 15px;"
   xs: "padding: 10px;"
 
-
 # standard content spacing
-title: "15px"
-p:     "10px"
+title: "6px"
+p:     "4px"

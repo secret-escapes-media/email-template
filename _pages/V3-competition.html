@@ -1,0 +1,197 @@
+---
+layout: default
+subject-line: Competition
+preheader: Email Title
+link: "#entry-form-page"
+cta-label: Enter Now
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+
+background:
+  image: competition.jpg
+  color: "#1b1b2a"
+
+title: Win an amazing prize to destination with five star hotel
+image: comp.jpg
+
+more-info:
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid qui, recusandae numquam quam odit in, pariatur id at sit omnis eligendi expedita explicabo porro reprehenderit perspiciatis ipsam odio consequuntur facere?
+  button:
+    label: Find Out More
+    link: "#find-out-more-section"
+
+promo:
+  title: Long promotional title
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vel tempora, dolorum laboriosam veritatis deserunt sunt ullam doloribus et dolores impedit eveniet labore quaerat, cupiditate in! Molestias iure, praesentium doloremque.
+  button:
+    label: promo call to action
+    link: "#promo-link"
+  background:
+    image: promo.jpg
+    color: "#0b1825"
+---
+{% include _config/variables.html %}
+
+
+
+{% assign title-style = title.family | append: title.color.normal | append: title.comp | append: title.weight | append: text.color.white %}
+{% assign title-style-class = "title--comp" %}
+{% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
+{% assign text-style-class = "text--lg"  %}
+{% assign background-color = page.background.color %}
+{% assign background-image = page.background.image %}
+
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
+    <td align="center" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} padding-bottom: 90px; background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center">
+
+            <!-- content container -->
+            <table {{responsive-table}}>
+              <tr>
+                <td>
+                  <table {{fluid-table}}>
+
+                    <!-- logos -->
+                    <tr>
+                      <td align="center" style="{{text.color.white}} padding-top: 45px;">
+                        <a href="{{page.link}}">
+                          {% include element/logo/combined.html %}
+                        </a>
+                      </td>
+                    </tr>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-top: 80px;" class="{{title-style-class}}">
+                        {{page.title}}
+                      </td>
+                    </tr>
+
+                    <!-- enter now - call to action -->
+                    <tr>
+                      <td style=" padding-top: 30px;">
+                        {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg class="button--lg" align="center" %}
+                      </td>
+                    </tr>
+
+                    <!-- feature image -->
+                    <tr>
+                      <td style="padding-top: 100px;">
+                        <a href="{{page.link}}">
+                          <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
+                        </a>
+                      </td>
+                    </tr>
+
+                    <!-- description -->
+                    <tr>
+                      <td align="center" style="{{text-style}} padding-top: 45px;" class="{{text-style-class}}">
+                        {{page.more-info.content}}
+                      </td>
+                    </tr>
+
+                    <!-- find out more - call to action -->
+                    <tr>
+                      <td style="padding-top: 30px;">
+                        {% include element/button.html link=page.more-info.button.link label=page.more-info.button.label style=button.orange align="center" %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+
+
+{% assign comp-promo = page.promo %}
+{% assign background-color = comp-promo.background.color %}
+{% assign background-image = comp-promo.background.image %}
+
+
+
+<!-- full width section -->
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
+    <td align="center" class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center">
+
+            <!-- content container -->
+            <table {{responsive-table}}>
+              <tr>
+                <td align="center" style="padding-top: 120px; padding-bottom: 120px;">
+                  <table {{fluid-table}}>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title.family}} {{title.color.normal}} {{title.xxl}} {{title.weight}} {{text.color.white}}" class="title--xxl">
+                        {{comp-promo.title}}
+                      </td>
+                    </tr>
+
+                    <!-- description -->
+                    <tr>
+                      <td align="center" style="{{text.family}} {{text.color.light}} {{text.lg}} {{text.weight}} {{text.color.white}} padding-top: 10px;" class="text--lg">
+                        Three aspiring photographers from Secret Escapes discovered three irresistibly photogenic destinations with Nikon – discover their journey here
+                      </td>
+                    </tr>
+
+                    <!-- find out more - call to action -->
+                    <tr>
+                      <td style="padding-top: 20px;">
+                        {% include element/button.html link=comp-promo.button.link label=comp-promo.button.label style=button.orange size=button.size.sm class="button--sm" %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+
+{% include page/footer.html %}
+

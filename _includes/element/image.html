@@ -1,0 +1,19 @@
+<!-- Image -->
+
+{% assign link = page.page-link %}
+{% if include.link %}
+  {% assign link = include.link %}
+{% endif %}
+
+{% assign image = row.image %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td>
+      <a href="{{link}}{{site.url-tracking}}">
+        <img class="img-max" src="{% include img-pre.html type="C" name=image %}" width="600" border="0" style="display: block;" />
+      </a>
+    </td>
+  </tr>
+</table>
+

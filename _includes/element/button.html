@@ -1,17 +1,34 @@
-{% assign button-label = include.label %}
-{% assign button-link = include.link %}
-{% assign button-style = include.style %}
-{% if include.size contains "" %}{% assign button-size = include.size %}{% else %}{% assign button-size = button.size.md %}{% endif %}
-{% if include.class %}{% assign button-class = include.class %}{% else %}{% assign button-class = "button--md" %}{% endif %}
-{% if include.align %}{% assign button-align = include.align %}{% else %}{% assign button-align = "center" %}{% endif %}
+<!-- Button -->
 
-<!-- Call to action button -->
+{% include _config/variables.html %}
+
+{% assign link = page.page-link %}
+{% if include.link %}
+  {% assign link = include.link %}
+{% endif %}
+
+{% assign label = page.main-button-label %}
+{% if include.label %}
+  {% assign label = include.label %}
+{% endif %}
+
+{% assign button-style = include.style %}
+{% assign button-size  = include.size %}
+
+{% if include.align %}
+  {% assign align  = include.align %}
+{% endif %}
+
+{% include _config/button.html %}
+
 <table {{fluid-table}}>
   <tr>
-    <td align="{{button-align}}"{% if include.align-class %} class="{{include.align-class}}"{% endif %}>
-      <a class="{{button-class}}" href="{{button-link}}" style="{{button.default}} {{text.family}} {{button-size}} {{button-style}}">
-        {{button-label}}
+    <td style="{{spacing.vpad-sm}} padding-top: {{spacing.p}}" align="{{align}}">
+      <a href="{{link}}{% include tracking/url-tracking.html %}" class="{{button-class}}" style="{{button.default}} {{button-size}} {{button-style}}">
+        {{label}}
       </a>
     </td>
   </tr>
 </table>
+
+

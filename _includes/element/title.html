@@ -1,0 +1,20 @@
+<!-- Title -->
+
+{% include _config/variables.html %}
+
+{% assign theme       = include.theme %}
+{% assign title-style = include.style %}
+{% assign title-data  = include.title %}
+
+{% if include.align %}
+  {% assign align  = include.align %}
+{% endif %}
+
+{% include _config/title.html %}
+<table {{fluid-table}}>
+  <tr>
+    <td class="{{title-class}}" align="{{align}}" style="{{title-style}} padding-bottom: {{spacing.title}};">
+      {{title-data}}
+    </td>
+  </tr>
+</table>

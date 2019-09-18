@@ -1,5 +1,14 @@
-{% assign space-height = include.height %}
-{% assign space-color = include.color %}
+<!-- Space -->
+
+{% assign space-height = "30" %}
+{% if space-height %}
+  {% assign space-height = include.height %}
+{% endif %}
+
+{% assign space-color = color.background %}
+{% if space-color %}
+  {% assign space-color = include.color %}
+{% endif %}
 
 <table {{fluid-table}} bgcolor="{{space-color}}">
   <tr>

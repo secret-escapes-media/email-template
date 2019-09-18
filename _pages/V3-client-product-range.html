@@ -1,0 +1,257 @@
+---
+layout: client
+subject-line: Client Product Range
+preheader: Email Title
+link: "#general-shop-link"
+cta-label: Shop Now
+terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+
+intro:
+  image: intro.jpg
+  title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
+
+
+
+one:
+  style:
+    title: xxl
+    align: center
+    box-color: "#F1F1F1"
+  content:
+    - title: Category One
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ipsum assumenda quam voluptatibus ratione repellat veritatis mollitia, nobis nesciunt explicabo, autem laudantium excepturi ducimus recusandae iusto, dicta nostrum corrupti voluptatum.
+    - button: Shop Category One
+      link: "#shop-category-one-link"
+
+one-products:
+  style:
+    title: md
+    button:
+      style: partner
+      size: xs
+    align: center
+    box-color: "#F1F1F1"
+  objects:
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 1-1.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+
+
+
+two:
+  style:
+    title: xxl
+    align: center
+    box-color: "#F1F1F1"
+  content:
+    - title: Category Two
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ipsum assumenda quam voluptatibus ratione repellat veritatis mollitia, nobis nesciunt explicabo, autem laudantium excepturi ducimus recusandae iusto, dicta nostrum corrupti voluptatum.
+    - button: Shop Category Two
+      link: "#shop-category-two-link"
+
+two-products:
+  style:
+    title: md
+    align: center
+    box-color: "#F1F1F1"
+    button:
+      style: partner
+      size: xs
+  objects:
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+    - content:
+        - image: 3-2.jpg
+        - title: Lorem ipsum dolor sit amet consectetur adipisicing elit
+        - price: 99999
+        - button: Buy Now
+          link: "#product-link"
+
+
+---
+{% include _config/variables.html %}
+
+
+
+{% if page.intro.link %} {% assign intro-link = page.intro.link %} {% else %} {% assign intro-link = page.link %} {% endif %}
+{% if page.intro.cta-label %} {% assign cta-label = page.intro.cta-label %} {% else %} {% assign cta-label = page.cta-label %} {% endif %}
+{% assign title-style = title.family | append: title.color.normal | append: title.xl | append: title.weight %}
+{% assign title-style-class = "title--xl" %}
+{% assign text-style = text.family | append: text.color.light | append: text.md | append: text.weight %}
+{% assign text-style-class = "text--md" %}
+
+
+<!-- Main introduction -->
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="padding-bottom: 30px;" class="mobile-margin">
+      <table {{responsive-table}}>
+        <tr>
+          <td>
+
+            <!-- Intro section -->
+            <table {{fluid-table}}>
+              <!-- Main image -->
+              <tr>
+                <td>
+                  <a href="{{intro-link}}">
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block;" />
+                  </a>
+                </td>
+              </tr>
+
+              <!-- Intro content -->
+              <tr>
+                <td bgcolor="{{color.white}}" style="{{spacing.boxpad.md}}" class="mobile-margin">
+                  <table {{fluid-table}}>
+
+                    <!-- title -->
+                    <tr>
+                      <td align="center" style="{{title-style}} padding-bottom: {{spacing.title}};" class="{{title-style-class}}">
+                        {{page.intro.title}}
+                      </td>
+                    </tr>
+
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <!-- call to action -->
+                    <tr>
+                      <td style="padding-top: 20px;">
+                        {% include element/button.html link=intro-link label=cta-label style=button.partner align="center" %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+{% include module/single/one-column.html content=page.one %}
+{% include module/loop/three-column.html content=page.one-products %}
+
+{% include element/space.html height="60" color=color.background %}
+
+{% include module/single/one-column.html content=page.two %}
+{% include module/loop/two-column.html content=page.two-products %}
+
+
+
+<!-- call to action -->
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td align="center">
+            {% include element/button.html label="View all offers" align="center" style="orange" size="md" %}
+            {% include element/space.html height="60" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+{% include page/footer.html %}
+

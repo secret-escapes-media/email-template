@@ -1,3 +1,20 @@
 # Build settings
 markdown: kramdown
-exclude: [node_modules, gulpfile.js, package-lock.json, package.json]
+exclude: [node_modules, gulpfile.js, package-lock.json, package.json, bower_components, bower.json, README.md]
+url-tracking: "?%%=v(@gaString)=%%"
+
+image-prefix: projectinitialsMM
+
+client:
+  name: Partner Name
+  link: "#partner-link"
+
+logo:
+  black: logo.png
+  white: logo-wh.png
+  width: 110
+
+combined-logo:
+  alt: Partner Name & Secret Escapes Logos
+  width: 264
+  link: "#combined-link"

@@ -1,0 +1,38 @@
+<!-- Paragraph -->
+
+{% include _config/variables.html %}
+
+{% assign promo-code    = include.promo %}
+{% assign promo-before  = include.before %}
+{% assign promo-after   = include.after %}
+
+
+
+
+<table {{fluid-table}}>
+  {% if promo-before %}
+  <tr>
+    <td align="center" style="{{text.family}} {{text.color.light}} {{text.xl}} {{text.weight}}" class="text--xl">
+      {{promo-before}}
+    </td>
+  </tr>
+  {% endif %}
+  <tr>
+    <td align="center" style="{{spacing.vpad.xs}}">
+      <table {{fluid-table}} style="border: 1px solid {{color.partner}};">
+        <tr>
+          <td align="center" style="{{text.family}} {{text.color.dark}} {{text.xl}} {{text.bold}} {{text.wide-kern}} {{spacing.boxpad.sm}}" class="text--xl">
+            {{promo-code}}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  {% if promo-after %}
+  <tr>
+    <td align="center" style="{{text.family}} {{text.color.light}} {{text.sm}} {{text.weight}}" class="text--sm">
+      {{promo-after}}
+    </td>
+  </tr>
+  {% endif %}
+</table>

@@ -1,0 +1,108 @@
+<!-- Main banner -->
+
+{% include _config/variables.html %}
+
+{% assign this        = include.content %}
+{% assign rows        = this.content %}
+{% assign style       = this.style %}
+{% assign banner      = this.banner %}
+{% assign background  = this.background %}
+
+
+
+{% assign link = page.page-link %}
+{% if this.link %}
+  {% assign link = this.link %}
+{% endif %}
+
+{% assign align = center %}
+{% if style.align %}
+  {% assign align = style.align %}
+{% endif %}
+
+{% assign bgcolor = color.background %}
+{% if style.background-color %}
+  {% assign bgcolor = style.background-color %}
+{% endif %}
+
+{% assign boxcolor = color.box %}
+{% if style.box-color %}
+  {% assign boxcolor = style.box-color %}
+{% endif %}
+
+{% if background.color %}
+  {% assign bannercolor = background.color %}
+{% else %}
+  {% assign bannercolor = color.grey-darkest %}
+{% endif %}
+
+{% if style.row-gutter %}
+  {% assign space-after = style.row-gutter %}
+{% else %}
+  {% assign space-after = "30" %}
+{% endif %}
+
+
+
+<table {{fluid-table}}>
+  <tr>
+    <!-- background image wrapper - image has to be the same height of the email for consistent rending in outlook -->
+    <td align="center" class="background-cover" bgcolor="{{bannercolor}}" background="{% include img-pre.html type='BG' name=background.image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="{% include img-pre.html type="BG" name=background.image %}" color="{{bannercolor}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{fluid-table}}>
+        <tr>
+          <td align="center">
+
+            <!-- content container -->
+            <table {{responsive-table}}>
+
+              <!-- combined logo -->
+              <tr>
+                <td align="center" style="padding-top: 45px;">
+                  <a href="{{site.combined-logo.link}}" style="{{text.text-lg}}">
+                    {% include element/logo/combined.html %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- title image -->
+              <tr>
+                <td align="center" style="padding-top: 130px; padding-bottom: 130px;" class="hub-intro-title">
+                  <a href="{{link}}" style="{{title.banner}} text-decoration: none;">
+                  {% if banner.title-image %}
+                    <img class="img-max" src="{% include img-pre.html type='T' name=banner.title-image %}" width="{{banner.title-image-width}}" border="0" style="display: block; max-width: {{banner.title-image-width}}px !important;" alt="{{banner.title}}" />
+                  {% else %}
+                    {{banner.title}}
+                  {% endif %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- intro section stuck to bottom -->
+              <tr>
+                <td bgcolor="{{color.grey-darkest}}" style="{{spacing.vpad.lg}} {{spacing.hpad.md}} background-color: {{boxcolor}};" class="mobile-margin">
+                  {% include module/_content/content.html %}
+                </td>
+              </tr>
+
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+
+{% include element/space.html height=space-after color=bgcolor %}

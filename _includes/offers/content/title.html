@@ -1,0 +1,18 @@
+
+{% if include.size == "title-lg" %}
+  {% assign title-size = title-core.lg %}
+  {% assign title-class = "title--lg" %}
+
+{% else %}
+  {% assign title-size = title-core.md %}
+  {% assign title-class = "title-md" %}
+
+{% endif %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="left" colspan="3" style="{{title-core.family}} {{title-core.color.normal}} {{title-size}} {{title-core.weight}} padding-bottom: 10px;" class="{{title-class}}">
+      {{offer.title}}
+    </td>
+  </tr>
+</table>

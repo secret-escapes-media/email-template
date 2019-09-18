@@ -1,106 +1,138 @@
 ---
-layout: hub-overview
-subject-line: Hub Overview
-preheader: Email Title
-link: "#hub-overview-page"
-cta-label: Discover More
-terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet."
+layout: hub
 
-background:
-  image: hub.jpg
-  color: "#1a1b25"
+subject-line: Subject line
+preheader: Email preheader
 
-title:
-  alt: Long Campaign Headline
-  image: hub.png
-  max-width: 480
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
 
-intro:
-  content-rows:
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
-    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
 
-hub-content:
-  image:
-    width: 300
+
+main:
+  link: "#intro-link"
+  style:
+    row-gutter: 60
+    box-color: rgba(0,0,0,0.6)
+    theme: dark
+    align: center
+    text: lg
+    button:
+      size: lg
+  banner:
+    title: Alt title
+    title-image: hub.png
+    title-image-width: 480
+  background:
+    image: intro.jpg
+    color: "#191c26"
+  content:
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.
+    - space: 10
+    - button: Discover more
+
+
+
+alternating-content:
+  style:
+    row-gutter: 0
+    box-color: "#ffffff"
     height: 300
-  space-between: 45
+    alternating: true
+  objects:
+    - content:
+        - image: 1-1.jpg
+          link: "#content-link"
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#button-link"
 
-  content-list:
+    - content:
+        - image: 1-1.jpg
+          link: "#content-link"
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#button-link"
 
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
-
-    - title: Content section
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      image: section.jpg
-      cta-label: See Content
-      link: "#link-for-specific-content"
+    - content:
+        - image: 1-1.jpg
+          link: "#content-link"
+        - title: Content section
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#button-link"
 
 
-offers:
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
+offer-section:
+  style:
+    row-gutter: 0
+    box-color: "#f2f5f7"
+    title: xxl
+    text: text-lg
+    align: center
+  content:
+    - title: Offer section
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - button: Offer intro button
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
+promo:
+  style:
+    row-gutter: 60
+    theme: dark
+    align: center
+    title: xl
+  background:
+    image: promo.jpg
+    color: "#000000"
+  content:
+    - title: Promo box
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - button: Promo button label
+      link: "#promo-link"
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
 
-  - title: Lorem ipsum dolor sit amet consecr adipisicing elit
-    location: destination name, country name
-    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    price: 99999
-    price-description: per person for 99 nights
-    image: offer.jpg
-    link: "#link-for-offer"
 
 ---
+{% include _config/variables.html %}
+
+
+
+{% include module/loop/image-text-row.html content=page.alternating-content %}
+
+
+
+{% include element/space.html height="30" color=color.background %}
+{% include module/single/one-column.html content=page.offer-section %}
+
+
+
+{% for offer in site.data.offers %}
+  {% include offers/offer.html layout="two-column" %}
+{% endfor %}
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td align="center">
+            {% include element/button.html label="View all offers" align="center" style="orange" size="md" %}
+            {% include element/space.html height="60" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+{% include module/single/promo.html content=page.promo %}
+

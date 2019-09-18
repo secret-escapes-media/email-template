@@ -1,0 +1,203 @@
+---
+layout: default
+
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+
+
+
+main:
+  style:
+    row-gutter: 30
+    box-color: "#ffffff"
+    align: center
+    title: xxxl
+  content:
+    - hr: 1
+      color: "#dadcdf"
+    - space: 15
+    - title: Components
+
+
+
+item-one:
+  style:
+    row-gutter: 30
+    align:
+    title: xl
+    text: lg
+    button:
+      size: md
+  content:
+    - image: 16-9.jpg
+    - title: Title is here!
+    - subtitle: Subtitle
+      color: tertiary8
+    - paragraph: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    - paragraph: >
+        Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.
+    - button: One col button label
+      link: "#one-col-button-link"
+
+
+item-two:
+  style:
+    row-gutter: 30
+    align:
+    title: xl
+    text: lg
+    button:
+      size: md
+  content:
+    - title: Title is here!
+    - subtitle: Subtitle
+      color: tertiary7
+    - paragraph: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    - paragraph: >
+        Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.
+    - button: One col button label
+      link: "#one-col-button-link"
+
+
+looped-content:
+  style:
+    row-gutter: 30
+    box-color: "#ffffff"
+    height: 300
+    align: left
+    title: md
+    text: sm
+    button:
+      size: sm
+  objects:
+
+    - content:
+        - image: 16-9.jpg
+          link: "#content-image-link"
+        - title: Content section 1
+        - subtitle: Subtitle
+          color: tertiary1
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+    - content:
+        - image: 16-9.jpg
+          link: "#alternating-content-image-link"
+        - title: Content section 2
+        - subtitle: Subtitle
+          color: tertiary2
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+    - content:
+        - image: 16-9.jpg
+          link: "#content-image-link"
+        - title: Content section 1
+        - subtitle: Subtitle
+          color: tertiary3
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+    - content:
+        - image: 16-9.jpg
+          link: "#alternating-content-image-link"
+        - title: Content section 2
+        - subtitle: Subtitle
+          color: tertiary4
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+    - content:
+        - image: 16-9.jpg
+          link: "#content-image-link"
+        - title: Content section 1
+        - subtitle: Subtitle
+          color: tertiary5
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+    - content:
+        - image: 16-9.jpg
+          link: "#alternating-content-image-link"
+        - title: Content section 2
+        - subtitle: Subtitle
+          color: tertiary6
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - button: Button label
+          link: "#alternating-content-button-link"
+
+
+
+promo:
+  style:
+    row-gutter: 30
+    theme: dark
+    align: center
+    title: xl
+  background:
+    image: promo.jpg
+    color: "#333333"
+  content:
+    - title: Promo box
+    - paragraph: Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    - button: Promo button label
+      link: "#promo-button-link"
+
+
+
+---
+{% include _config/variables.html %}
+
+
+
+{% include element/space.html height="30" color=color.background %}
+
+
+
+{% include module/single/one-column.html content=page.item-one %}
+{% include module/single/one-column.html content=page.item-two %}
+
+{% include module/loop/two-column.html content=page.looped-content %}
+
+
+{% include module/loop/three-column.html content=page.looped-content %}
+
+
+
+{% include module/single/promo.html content=page.promo %}
+
+
+
+{% for offer in site.data.offers %}
+  {% include offers/offer.html layout="two-column" %}
+{% endfor %}
+
+{% for offer in site.data.offers %}
+  {% include offers/offer.html layout="one-column" %}
+{% endfor %}
+
+
+
+<table {{fluid-table}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background}}" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <tr>
+          <td align="center">
+            {% include element/button.html label="Go go go" align="center" size="lg" %}
+            {% include element/space.html height="75" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+

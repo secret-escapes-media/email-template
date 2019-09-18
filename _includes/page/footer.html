@@ -1,0 +1,72 @@
+
+{% if include.theme == "dark" %}
+  {% assign bgcolor = color.grey-darkest %}
+  {% assign textcolor = text.color.white %}
+  {% assign hrcolor = color.grey-darker %}
+  {% assign trustpilot = "_dark" %}
+  {% assign bordercolor = color.grey-darker %}
+{% else %}
+  {% assign bgcolor = color.white %}
+  {% assign hrcolor = color.grey-lighter %}
+  {% assign textcolor = text.color.normal %}
+  {% assign bordercolor = color.grey-lighter %}
+{% endif %}
+
+<!-- footer -->
+<table {{fluid-table}}>
+  <tr>
+    <td bgcolor="{{bgcolor}}" align="center">
+      <table {{responsive-table}}>
+        <tr>
+          <td style="{{spacing.vpad.lg}} {{spacing.hpad.sm}}">
+
+            <!-- sign off message -->
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center" style="{{text.family}} {{text.weight}} {{text.sm}} {{textcolor}}">
+                  Best wishes,
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="{{text.family}} {{text.weight}} {{text.xl}} {{textcolor}} padding-top: 1px; padding-bottom: 3px;">
+                  The Secret Escapes Team
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="{{text.family}} {{text.weight}} {{text.sm}} {{textcolor}}">
+                  Any questions? See our<a href="http://www.secretescapes.com/faq?{% include tracking/url-tracking.html %}" style="{{text.bold}} {{textcolor}} text-decoration: none;"> FAQs</a> here.
+                </td>
+              </tr>
+            </table>
+
+            {% include element/hr.html color=hrcolor height="45" %}
+
+            <!-- Trustpilot images -->
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center" valign="top" style="line-height: 28px;">
+                  <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                    <img style="max-height: 18px;" alt="Human score" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text1{{trustpilot}}.png" height="18" border="0">
+                  </a> &nbsp;&nbsp;
+                  <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                    <img style="max-height: 20px;" alt="Trustpilot Stars" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/stars.png" height="20" border="0">
+                  </a> &nbsp;&nbsp;
+                  <span style="display: inline-block">
+                    <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                      <img style="max-height: 18px;" alt="number of reviews" src="https://emailsignature.trustpilot.com/newsletter/en-GB/1/4da4e36a00006400050f7f39/text2{{trustpilot}}.png" height="18" border="0">
+                    </a> &nbsp;&nbsp;
+                    <a href="https://uk.trustpilot.com/review/www.secretescapes.com?utm_medium=Trustbox&utm_source=EmailNewsletter1" style="text-decoration:none;">
+                      <img style="max-height: 16px; display: inline-block" alt="Trustpilot Logo" src="https://emailsignature.trustpilot.com/logo/n/1/logo@2x{{trustpilot}}.png" height="16" border="0">
+                    </a>
+                  </span>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
