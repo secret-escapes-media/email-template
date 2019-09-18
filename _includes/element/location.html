@@ -6,6 +6,13 @@
 {% assign text-style    = text.family | append: text.bold | append: text.sm | append: text.upper | append: text.color.light %}
 {% assign location-data = include.location %}
 
+{% assign pin = "http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se19..pin.png" %}
+{% if include.pin == "white" %}
+  {% assign pin = "http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se19..pin-wh.png" %}
+{% elsif include.pin == "black" %}
+  {% assign pin = "http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se19..pin-bl.png" %}
+{% endif %}
+
 {% if theme == "dark" %}
   {% assign text-style = text-style | append: text.color.white %}
 {% endif %}
@@ -17,7 +24,7 @@
         <tr>
           <!-- map pin icon -->
           <td align="left" valign="middle" width="20">
-            <img src="{% include img-pre.html type='I' name='pin.png' %}" border="0" alt="Location icon" width="12" height="16" style="display: inline-block;">
+            <img src="http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se19..pin.png" border="0" alt="Location icon" width="12" height="16" style="display: inline-block;">
           </td>
           <!-- location text -->
           <td align="left" style="{{text-style}} line-height: 16px;" class="text--sm">
