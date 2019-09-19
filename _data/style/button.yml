@@ -59,12 +59,22 @@ style:
     background-color: #FFD2B2;
     border-color:     #FFD2B2;
 
-  partner: >
+  turq: >
     color:            #ffffff;
     background-color: #099AAA;
     border-color:     #099AAA;
 
-  partner-light: >
+  turq-light: >
     color:            #099AAA;
     background-color: #A2F2FA;
     border-color:     #A2F2FA;
+
+  partner: >
+    color:            #ffffff;
+    background-color: #B34764;
+    border-color:     #B34764;
+
+  partner-light: >
+    color:            #B34764;
+    background-color: #F1D0D9;
+    border-color:     #F1D0D9;
