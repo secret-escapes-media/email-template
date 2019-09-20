@@ -4,5 +4,3 @@ exclude: [node_modules, gulpfile.js, package-lock.json, package.json]
 
 img-url: img/
 # img-url: http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/
-
-img-prefix: templateMM
