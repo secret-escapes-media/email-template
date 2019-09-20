@@ -14,18 +14,18 @@ sm:          "font-size: 16px; line-height: 22px;"
 xs:          "font-size: 13px; line-height: 18px;"
 xxs:         "font-size: 12px; line-height: 16px;"
 color:
-  normal:    "color: #47484a;"
-  orange:    "color: #ff8c00;"
+  normal:    "color: #313136;"
+  orange:    "color: #FF791A;"
 
 
 
-title-xxxl:  "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 36px; line-height: 41px; font-weight: 600; color: #2e2e2e;"
-title-xxl:   "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 33px; line-height: 40px; font-weight: 600; color: #2e2e2e;"
-title-xl:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 27px; line-height: 35px; font-weight: 600; color: #2e2e2e;"
-title-lg:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 22px; line-height: 27px; font-weight: 600; color: #2e2e2e;"
-title-md:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 18px; line-height: 24px; font-weight: 600; color: #2e2e2e;"
-title-sm:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 16px; line-height: 22px; font-weight: 600; color: #2e2e2e;"
-title-xs:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 13px; line-height: 18px; font-weight: 600; color: #2e2e2e;"
-title-xxs:   "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 12px; line-height: 16px; font-weight: 600; color: #2e2e2e;"
+title-xxxl:  "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 36px; line-height: 41px; font-weight: 600; color: #313136;"
+title-xxl:   "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 33px; line-height: 40px; font-weight: 600; color: #313136;"
+title-xl:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 27px; line-height: 35px; font-weight: 600; color: #313136;"
+title-lg:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 22px; line-height: 27px; font-weight: 600; color: #313136;"
+title-md:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 18px; line-height: 24px; font-weight: 600; color: #313136;"
+title-sm:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 16px; line-height: 22px; font-weight: 600; color: #313136;"
+title-xs:    "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 13px; line-height: 18px; font-weight: 600; color: #313136;"
+title-xxs:   "font-family: Georgia, serif, 'Source Serif Pro'; font-size: 12px; line-height: 16px; font-weight: 600; color: #313136;"
 
 
