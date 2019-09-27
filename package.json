@@ -3,7 +3,8 @@
   "scripts": {
     "init": "npm install --no-audit && gulp",
     "dev": "gulp",
-    "generate": "gulp compile"
+    "generate": "gulp compile",
+    "et": "gulp et"
   },
   "dependencies": {
     "browser-sync": "^2.26.7",

@@ -124,6 +124,95 @@ function compressHtml() {
 
 
 
+/////////////////////////////////////////////////  cache buster for exact target
+
+// random string generator
+function makeRandomString(length) {
+  let result = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let charactersLength = characters.length;
+  for ( let i = 0; i < length; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+// creates Exact Target version of the email files for upload
+function createEtVersion() {
+  // set global variables
+  const prefix = 'projectid-';
+  const maxCharacters = 36;
+  const remainingCharacters = maxCharacters - prefix.length;
+  const etUrl = 'http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/';
+  const imgFolder = 'img/';
+  const imgDataMap = [];
+  // loop through images
+  return gulp.src('./img/**/*')
+    .pipe(map(function (file, cb,) {
+      // capture file names
+      const imgFilename = file.basename;
+      const imgNewFilename = prefix + makeRandomString(remainingCharacters) + file.extname;
+      // loop through html & map where each images is used
+      gulp.src('./_site/*.html')
+        .pipe(map(function (file, cb,) {
+          const htmlContent = file.contents.toString();
+          // add html to data map
+          if (htmlContent.includes(imgFilename)) { // does image appear in HTML?
+            if (!imgDataMap.find(item => item.htmlFile === file.basename)) { // does HTML already appear in data map?
+              imgDataMap.push(
+                {
+                  htmlFile: file.basename,
+                  images: [],
+                }
+              );
+            }
+            // add images used in html to data map
+            for (const item of imgDataMap) {
+              if (item.htmlFile === file.basename) {
+                if (!item.images.find(image => image.original === imgFilename)) { // does image already appear in data map?
+                  item.images.push(
+                    {
+                      'original': imgFilename,
+                      'new': imgNewFilename,
+                    }
+                  );
+                }
+              }
+            }
+          }
+          cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+        }));
+      file.basename = imgNewFilename; // change image file to new cachebusted name
+      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+    }))
+    .pipe(gulp.dest('./_site/_et-version/_upload-these'))
+    .on('finish', function(){
+      // find & replace all image names in html using the generated data map
+      gulp.src('./_site/*.html')
+        .pipe(map(function (file, cb,) {
+          imgDataMap.filter(item => { // get data for current html file
+            if (item.htmlFile === file.basename){
+              let htmlContent = file.contents.toString();
+              // loop each image in map, find & replace full path with url
+              item.images.map(image => {
+                const imgFilenameRegexEscaped = image.original.replace(/\./g, '\\.');
+                const imgPath = imgFolder + imgFilenameRegexEscaped;
+                const imgPathFileRegex = new RegExp(imgPath, 'gm');
+                const imgNewPath = etUrl + image.new;
+                htmlContent = htmlContent.replace(imgPathFileRegex, imgNewPath);
+              });
+              // after all find & replaces, write to the actual file
+              file.contents = new Buffer.from(htmlContent);
+            }
+          });
+          cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+        }))
+        .pipe(gulp.dest('./_site/_et-version'));
+    });
+}
+
+
+
 ///////////////////////////////////////////////////////////////////  build tasks
 
 // define complex tasks
@@ -148,8 +237,15 @@ exports.default = gulp.series(
   )
 );
 
-// compress & complie the emails for uploading or packaging for a send
+// compile & compress the emails
 exports.compile = gulp.series(
   build,
   compress
+);
+
+// compile, compress & cachebust images for uploading to Exact Target
+exports.et = gulp.series(
+  build,
+  compress,
+  createEtVersion
 );
