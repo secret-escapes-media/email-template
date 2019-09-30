@@ -147,7 +147,7 @@ function createEtVersion() {
   const imgFolder = 'img/';
   const imgDataMap = [];
   // loop through images
-  return gulp.src('./img/**/*')
+  return gulp.src('./_site/img/**/*')
     .pipe(map(function (file, cb,) {
       // capture file names
       const imgFilename = file.basename;
