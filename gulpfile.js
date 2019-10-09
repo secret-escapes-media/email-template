@@ -2,7 +2,6 @@ var gulp         = require('gulp');
 var cp           = require('child_process');
 var path         = require('path');
 var del          = require('del');
-var vfs          = require('vinyl-fs');
 var map          = require('map-stream');
 var browserSync  = require('browser-sync');
 var size         = require('gulp-warn-size');
@@ -80,29 +79,25 @@ function watchFiles() {
 
 //////////////////////////////////////////////////////////////////////  compress
 
-// compress images files for live
-function compressImages() {
-  // checks for updated image name id
-  vfs.src('img/**/*.*')
-    .pipe(map(function (file, cb) {
-      // find filename for each file
-      var fullPath = file.path;
-      fullPath = fullPath.split('/');
-      var fileName = fullPath[fullPath.length-1]; // finds last item in array
-      // kill the task if it uses the default image name id
-      if (fileName.match(/^projectinitialsMM/g)) {
-        message.error('please update the image name prefix - currently using "projectinitialsMM"');
-        process.exit();
-      }
-      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
-    }));
-
-  // process images
-  return gulp.src('./_site/img/**/*')
+// compress & check all jpgs
+function compressJpgs() {
+  return gulp.src('./_site/img/**/*.jpg')
     .pipe(image())
     .pipe(size(200000)) // checks image size in bytes - 200kb
     .on('error', function () {
       message.error('images need to be under 200kb for exact target');
+      process.exit();
+    })
+    .pipe(gulp.dest('./_site/img'));
+}
+
+// compress & check other image formats that aren't jpgs
+function compressOtherImages() {
+  return gulp.src(['./_site/img/**/*', '!./_site/img/**/*.jpg'])
+    .pipe(image())
+    .pipe(size(5000000)) // checks image size in bytes - 5mb
+    .on('error', function () {
+      message.error('image is too large for email');
       process.exit();
     })
     .pipe(gulp.dest('./_site/img'));
@@ -224,7 +219,8 @@ var build = gulp.parallel(
   buildImages
 );
 var compress = gulp.parallel(
-  compressImages,
+  compressJpgs,
+  compressOtherImages,
   compressHtml
 );
 
