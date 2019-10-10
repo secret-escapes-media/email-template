@@ -4,10 +4,14 @@
 {% assign column-width = row-width | minus: column-gutter | divided_by: 2 %}
 
 
-{% for offer in page.offers %}
+{% assign page-offers = page.offers | sort: 'price' %}
+{% for offer in page-offers %}
 
   {% assign odd-or-even = forloop.index | modulo: 2 %}
-  {% if odd-or-even == 1 %}
+  {% if odd-or-even == 1 and forloop.last %}
+    {% assign column-align = "center" %}
+    {% assign row-position = "start" %}
+  {% elsif odd-or-even == 1 %}
     {% assign column-align = "left" %}
     {% assign row-position = "start" %}
   {% elsif odd-or-even == 0 %}

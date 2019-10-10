@@ -25,9 +25,9 @@ layout: default
 
               <!-- Main image -->
               <tr>
-                <td>
+                <td align="center">
                   <a href="{{intro-link}}">
-                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block;" />
+                    <img class="img-max" src="{% include img-pre.html type="C" name=page.intro.image %}" width="600" border="0" style="display: block; {{text-style}}"{% if page.intro.image-alt %} alt="{{page.intro.image-alt}}"{% endif %} />
                   </a>
                 </td>
               </tr>

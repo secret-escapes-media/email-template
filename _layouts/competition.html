@@ -4,19 +4,19 @@ layout: default
 
 {% include variables.html %}
 
-{% assign title-style = title.family | append: title.color.normal | append: title.comp | append: title.weight | append: text.color.white %}
+{% assign title-style = title.family | append: title.comp | append: title.weight | append: text.color.white %}
 {% assign title-style-class = "title--comp" %}
-{% assign text-style = text.family | append: text.color.light | append: text.lg | append: text.weight | append: text.color.white %}
-{% assign text-style-class = "text--lg"  %}
+{% assign text-style = text.family | append: text.color.normal | append: text.lg | append: text.weight %}
+{% assign text-style-class = "text--lg" %}
 {% assign background-color = page.background.color %}
 {% assign background-image = page.background.image %}
 
 
-<!-- Main introduction -->
+<!-- Introduction -->
 <table {{fluid-table}}>
   <tr>
-    <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
-    <td align="center" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} padding-bottom: 90px; background-position: top center; background-repeat: no-repeat;">
+    <!-- background image wrapper - image has to be the same height of intro section for consistent rending in outlook -->
+    <td align="center" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="{{spacing.hpad.sm}} background-position: top center; background-repeat: no-repeat;">
       <!--[if (gt mso 9)&(lt mso 16)]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
         <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
@@ -30,53 +30,49 @@ layout: default
 
             <!-- content container -->
             <table {{responsive-table}}>
+
+              <!-- combined logo -->
               <tr>
-                <td>
+                <td align="center" style="padding-top: 45px;">
+                  <a href="{{locale.link.microsite}}" style="{{text.family}} {{text.weight}} {{text.color.white}}">
+                    {% include element/logo/combined.html %}
+                  </a>
+                </td>
+              </tr>
+
+              <!-- title -->
+              <tr>
+                <td align="center" style="{{title-style}} padding-top: 80px; padding-bottom: 100px;" class="{{title-style-class}}">
+                  {{page.title}}
+                </td>
+              </tr>
+
+              <!-- intro section stuck to bottom -->
+              <tr>
+                <td align="center" style="{{spacing.vpad.lg}} {{spacing.hpad.md}} {{text-style}} background-color: {{page.intro.bg-color.solid}}; background-color: {{page.intro.bg-color.transparent}}" class="mobile-margin">
                   <table {{fluid-table}}>
 
-                    <!-- logos -->
-                    <tr>
-                      <td align="center" style="{{text.color.white}} padding-top: 45px;">
-                        <a href="{{page.link}}">
-                          {% include element/logo/combined.html %}
-                        </a>
-                      </td>
-                    </tr>
+                    <!-- content -->
+                    {% if page.intro.content-rows %}
+                      {% for row in page.intro.content-rows %}
+                      <tr>
+                        <td align="center" style="{{text-style}} {% unless forloop.index == 1 %}padding-top: {{spacing.p}};{% endunless %}" class="{{text-style-class}}">
+                          {{row.content}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                      <tr>
+                        <td align="center" style="{{text-style}}" class="{{text-style-class}}">
+                          {{page.intro.content}}
+                        </td>
+                      </tr>
+                    {% endif %}
 
-                    <!-- title -->
+                    <!-- call to action -->
                     <tr>
-                      <td align="center" style="{{title-style}} padding-top: 80px;" class="{{title-style-class}}">
-                        {{page.title}}
-                      </td>
-                    </tr>
-
-                    <!-- enter now - call to action -->
-                    <tr>
-                      <td style=" padding-top: 30px;">
-                        {% include element/button.html link=page.link label="Enter Now" style=button.orange size=button.size.lg class="button--lg" %}
-                      </td>
-                    </tr>
-
-                    <!-- feature image -->
-                    <tr>
-                      <td style="padding-top: 100px;">
-                        <a href="{{page.link}}">
-                          <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
-                        </a>
-                      </td>
-                    </tr>
-
-                    <!-- description -->
-                    <tr>
-                      <td align="center" style="{{text-style}} padding-top: 45px;" class="{{text-style-class}}">
-                        {{page.more-info.content}}
-                      </td>
-                    </tr>
-
-                    <!-- find out more - call to action -->
-                    <tr>
-                      <td style="padding-top: 30px;">
-                        {% include element/button.html link=page.more-info.button.link label=page.more-info.button.label style=button.orange %}
+                      <td style="padding-top: 15px;">
+                        {% include element/button.html link=page.link label=page.cta-label style=button.partner %}
                       </td>
                     </tr>
 
@@ -97,6 +93,33 @@ layout: default
   </tr>
 </table>
 
-{% include layout/competition/full-width-promo.html content=page.promo %}
+<!-- image & final CTA -->
+<table {{fluid-table}} bgcolor="{{page.background.color}}">
+  <tr>
+    <td align="center" style="{{spacing.hpad.sm}}">
+      <table {{responsive-table}}>
+        <!-- feature image -->
+        <tr>
+          <td>
+            <a href="{{page.link}}">
+              <img class="img-max" src="{% include img-pre.html type="C" name=page.image %}" width="600" border="0" style="display: block;" />
+            </a>
+          </td>
+        </tr>
+        <!-- call to action -->
+        <tr>
+          <td style="padding-top: 45px;">
+            {% include element/button.html link=page.link label=page.cta-label style=button.partner size=button.size.lg class="button--lg" %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% include element/space.html height="60" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
 {% include layout/competition/footer.html %}

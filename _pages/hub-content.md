@@ -16,6 +16,9 @@ title:
   max-width: 480
 
 intro:
+  bg-color:
+    solid: "#090A1F"
+    transparent: rgba(9,10,31,.66)
   content-rows:
     - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur a quibusdam et unde, molestias similique perferendis neque impedit ab atque facere modi blanditiis debitis incidunt aliquid officiis doloremque perspiciatis eaque praesentium cupiditate quisquam reiciendis consequuntur rerum! Minus, cum possimus voluptatibus!
     - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, harum vel! Obcaecati reprehenderit, maiores non officia, fuga consequatur dignissimos assumenda.

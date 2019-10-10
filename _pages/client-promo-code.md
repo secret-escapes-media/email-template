@@ -8,8 +8,10 @@ terms-and-conditions: "Terms and conditions. Nullam id dolor id nibh ultricies v
 
 intro:
   image: intro.jpg
+  # image-alt: optional intro image alt text
   title: Lorem ipsum dolor sit amet consectetur adipisicing elit Nobis assumenda
-  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id totam, unde vel libero. Debitis, adipisci modi! Nobis accusantium est earum, quos pariatur quae distinctio ratione quidem, tenetur vitae deserunt ullam similique veniam repellendus delectus non quia obcaecati a? Alias minus incidunt, id maiores est mollitia. Numquam deserunt et quidem, dicta.
+  content-rows:
+    - content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic modi aut mollitia neque sapiente necessitatibus sed id incidunt nisi placeat doloribus harum et quasi voluptatum alias officiis voluptates, iste delectus? Repellendus at placeat quidem doloribus, saepe animi magni reiciendis repudiandae earum sint odit magnam maiores facere, accusantium? Cupiditate, repellat, debitis?
   promo:
     pre: "Lorem ipsum dolor sit amet, consectetur <br class=\"desktop-break\" />adipisicing elit, sed do eiusmod"
     code: PROMO-CODE-1234
