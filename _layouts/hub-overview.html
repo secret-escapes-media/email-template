@@ -109,23 +109,22 @@ layout: default
   </tr>
 </table>
 
-
-<!-- Hub Offers -->
-<table {{fluid-table}} bgcolor="{{color.grey-lightest}}">
-  <tr>
-    <td align="center" style="{{spacing.vpad.xl}}">
-      <table {{responsive-table}}>
-        <tr>
-          <td>
-
-            {% include layout/hub/offers-two-column.html %}
-
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+{% if page.offers %}
+  <!-- Hub Offers -->
+  <table {{fluid-table}} bgcolor="{{color.grey-lightest}}">
+    <tr>
+      <td align="center" style="{{spacing.vpad.xl}}">
+        <table {{responsive-table}}>
+          <tr>
+            <td>
+              {% include layout/hub/offers-two-column.html %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+{% endif %}
 
 {% include element/se-promo.html %}
 
