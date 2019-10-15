@@ -1,12 +1,7 @@
-
-# BUILD SETTINGS
+# Build settings
 markdown: kramdown
-exclude: [node_modules, gulpfile.js, package-lock.json, package.json, bower_components, bower.json, README.md]
-url-tracking: "?%%=v(@gaString)=%%"
+exclude: [node_modules, gulpfile.js, package-lock.json, package.json]
 
-image-prefix: emailidMM
-# image-url: img/
-image-url: http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/
 
 # CLIENT
 client:
