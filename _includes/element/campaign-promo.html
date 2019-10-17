@@ -1,0 +1,71 @@
+{% assign promo-width = 600 %}
+{% assign promo-hpad = 30 %}
+{% assign promo-vpad = 60 %}
+{% assign background-color = "#2e2e2e" %}
+{% assign background-image = "hub.jpg" %}
+
+
+<!-- full width section -->
+<table {{fluid-table}} bgcolor="{{color.white}}">
+  <tr>
+    <td align="center" class="mobile-margin">
+      <table {{responsive-table}}>
+        <tr>
+          <!-- background image has to be the same height of the email with fallback fonts for consistent rending in outlook -->
+          <td align="center" width="{{background-width}}" class="background-cover" bgcolor="{{background-color}}" background="{% include img-pre.html type="BG" name=background-image %}" style="background-position: top center; background-repeat: no-repeat;">
+            <!--[if (gt mso 9)&(lt mso 16)]>
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
+              <v:fill type="frame" src="{% include img-pre.html type="BG" name=background-image %}" color="{{background-color}}" />
+              <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+            <![endif]-->
+
+            <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+            <table {{fluid-table}}>
+              <tr>
+                <td align="center">
+
+                  <!-- content container -->
+                  <table {{responsive-table}}>
+                    <tr>
+                      <td align="center" style="padding: {{promo-vpad}}px {{promo-hpad}}px;" class="mobile-margin">
+                        <table {{fluid-table}}>
+
+                          <!-- title -->
+                          <tr>
+                            <td align="center" style="{{title.family}} {{title.weight}} {{title.xxl}} {{title.bolder}} {{text.color.white}}" class="title--xxl">
+                              Campaign promotional title
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="center" style="{{text.family}} {{text.color.light}} {{text.md}} {{text.bold}} {{text.color.white}} padding-top: 10px;" class="text--md">
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, ipsam omnis rem sed voluptate dolores assumenda similique consectetur accusamus deserunt esse laudantium voluptates.
+                            </td>
+                          </tr>
+
+                          <!-- find out more - call to action -->
+                          <tr>
+                            <td style="padding-top: 15px;">
+                              {% include element/button.html link="#camaign-promo-link" label="Find Out More" style=button.partner size=button.size.sm class="button--sm" %}
+                            </td>
+                          </tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+
+            <!--[if (gt mso 9)&(lt mso 16)]>
+              </v:textbox>
+            </v:rect>
+            <![endif]-->
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
