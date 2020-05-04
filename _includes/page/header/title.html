@@ -5,6 +5,7 @@
 
 {% assign link = page.title-banner.config.link %}
 
+{% if page.title-banner.title %}
 <table {{table.outer}}>
   <tr>
     <td bgcolor="{{color.black}}" style="padding-bottom: {{spacing.md}}; {{spacing.gutter}} color: {{color.white}};">
@@ -16,3 +17,4 @@
     </td>
   </tr>
 </table>
+{% endif %}

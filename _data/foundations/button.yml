@@ -25,8 +25,8 @@ style:
 
   outline:
     text-color: "#1E1F26"
-    background: "#F1F2F5"
-    background-css: "border: 1px solid #1E1F26;"
+    background: "#ffffff"
+    background-css: "border: 1px solid #43444C;"
 
 
 

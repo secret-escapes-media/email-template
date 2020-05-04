@@ -5,13 +5,13 @@ bold:     "font-weight: 600;"
 
 text:
   default:  "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 16px; line-height: 22px; font-weight: 400; padding-bottom: 8px;"
-  xxxl:     "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 24px; line-height: 34px; font-weight: 400; padding-bottom: 12px;"
-  xxl:      "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 22px; line-height: 31px; font-weight: 400; padding-bottom: 11x;"
-  xl:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 20px; line-height: 28px; font-weight: 400; padding-bottom: 10px;"
-  lg:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 18px; line-height: 25px; font-weight: 400; padding-bottom: 9px;"
-  md:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 16px; line-height: 22px; font-weight: 400; padding-bottom: 8px;"
-  sm:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 14px; line-height: 20px; font-weight: 400; padding-bottom: 7px;"
-  xs:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 12px; line-height: 18px; font-weight: 400; padding-bottom: 6px;"
+  xxxl:     "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 24px; line-height: 36px; font-weight: 400; padding-bottom: 12px;"
+  xxl:      "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 22px; line-height: 33px; font-weight: 400; padding-bottom: 11x;"
+  xl:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 20px; line-height: 30px; font-weight: 400; padding-bottom: 10px;"
+  lg:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 18px; line-height: 27px; font-weight: 400; padding-bottom: 9px;"
+  md:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 16px; line-height: 25px; font-weight: 400; padding-bottom: 8px;"
+  sm:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 14px; line-height: 22px; font-weight: 400; padding-bottom: 7px;"
+  xs:       "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 13px; line-height: 19px; font-weight: 400; padding-bottom: 7px;"
   subt:     "font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; font-size: 16px; line-height: 18px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding-bottom: 8px;"
 
 title:

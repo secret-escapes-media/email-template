@@ -7,6 +7,12 @@
 {% assign link         = config.link %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
+{% assign height       = "300" %}
+
+
+{% if page.hero-banner.image.height %}
+  {% assign height = page.hero-banner.image.height %}
+{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -20,10 +26,10 @@
 <table {{table.outer}}>
   <tr>
     <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-    <td bgcolor="{{color.black}}" background="img/{{page.hero-banner.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
+    <td bgcolor="{{color.black}}" background="img/{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
       <!--[if (gt mso 9)&(lt mso 16)]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-        <v:fill type="frame" src="img/{{page.hero-banner.image}}" color="{{color.black}}" />
+        <v:fill type="frame" src="img/{{page.hero-banner.image.file}}" color="{{color.black}}" />
         <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
       <![endif]-->
 
@@ -31,16 +37,15 @@
       <table {{table.outer}}>
         <tr>
           <td align="center" style="{{spacing.gutter}}">
-            <table {{table.inner}}>
+            <table {{table.fluid}} height="{{height}}"> <!-- extra table to apply height as responsive class removes it on table.inner -->
               <tr>
-                <td align="center">
-                  <table {{table.fluid}} height="300"> <!-- extra table to apply height as responsive class removes it on table.inner -->
-                    <tr>
-                      <td align="center" valign="bottom" height="32">
-                        <img src="img/se20..intro-overlap.png" class="img-max">
-                      </td>
-                    </tr>
-                  </table>
+                <td align="center" valign="bottom" height="{{height | minus: 32}}">
+                  <a href="{{link}}" style="display: block; height: 100%; width: 100%;"></a>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="bottom" height="32">
+                  <img src="img/se20..intro-overlap.png" class="img-max">
                 </td>
               </tr>
             </table>
@@ -65,7 +70,7 @@
     <td align="center" bgcolor="{{color.grey.lightest}}" style="{{spacing.gutter}}">
       <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.white}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.md}}">
+          <td bgcolor="{{color.white}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
 
             <table {{table.default}}>
               <tr>

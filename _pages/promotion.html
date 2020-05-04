@@ -24,7 +24,9 @@ hero-banner:
   config:
     link: "#hero-link"
     row-gutter: 30
-  image: BG..header.jpg
+  image: 
+    file: BG..header.jpg
+    height: 300
   content:
     - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
       style: lg
@@ -138,21 +140,13 @@ image-text-row:
 {% include system/helpers.html %}
 
 
+{% include component/one-col.html content=page.one-col %}
 
-<table {{table.outer}}>
-  <tr>
-    <td bgcolor="{{color.grey.lightest}}" style="{{spacing.gutter}}">
+{% include component/row.html content=page.image-text-row %}
 
-      {% include component/one-col.html content=page.one-col %}
+{% include component/two-col.html content=page.two-col %}
 
-      {% include component/row.html content=page.image-text-row %}
-
-      {% include component/two-col.html content=page.two-col %}
-
-      <table>
-        {% include element/space.html height="30" %}
-      </table>
-
-    </td>
-  </tr>
+<table>
+  {% include element/space.html height="30" %}
 </table>
+

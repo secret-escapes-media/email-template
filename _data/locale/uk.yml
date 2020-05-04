@@ -7,7 +7,7 @@
 offer:
   cta: View sale
   currency: £
-  from: From 
+  from: From
 
 link:
   current-sales: https://www.secretescapes.com/current-sales
@@ -26,9 +26,8 @@ footer:
     view-online: "View online"
     fewer-emails: "Get fewer emails"
     unsubscribe: "Unsubscribe"
+  partnership: When we’re not curating luxury escapes, we like to keep an eye out for promotions we think you’ll love – like this one. This email was written by our editorial team in partnership with 
   legal:
-    - paragraph: >
-        When we’re not curating luxury escapes, we like to keep an eye out for promotions we think you’ll love – like this one.
     - paragraph: >
         Clicking our emails will log you into Secret Escapes. To tell friends about the sales it's best to use the share buttons on the site. To get in contact, please access <a href="https://www.secretescapes.com/contact" style="font-weight: 600; text-decoration: none;">secretescapes.com/contact</a>.
     - paragraph: >

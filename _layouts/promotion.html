@@ -6,8 +6,12 @@ layout: default
 {% include page/header/logo.html %}
 {% include page/header/title.html %}
 {% include page/header/image.html %}
-
-{{content}}
-
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.grey.lightest}}" style="{{spacing.gutter}}">
+      {{content}}
+    </td>
+  </tr>
+</table>
 {% include page/footer/promo.html %}
 {% include page/footer/quicklinks.html %}

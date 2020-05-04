@@ -16,6 +16,13 @@
                   </td>
                 </tr>
               {% endif %}
+              {% if site.partner.name %}
+                <tr>
+                  <td align="left" style="{{text.xs}} padding-bottom: {{spacing.p}};" class="text--xs">
+                    {{locale.footer.partnership}} {{site.partner.name}}
+                  </td>
+                </tr>
+              {% endif %}
               {% for paragraph in locale.footer.legal %}
                 <tr>
                   <td align="left" style="{{text.xs}}{% unless forloop.last %} padding-bottom: {{spacing.paragraph}};{% endunless %}" class="text--xs">
