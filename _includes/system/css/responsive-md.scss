@@ -1,0 +1,14 @@
+
+/*
+  if SCREEN WIDTH less than MD BREAKPOINT
+*/
+
+table[class*="responsive-table-md"]{
+  width: 100%!important;
+  height: auto!important;
+}
+
+
+img[class="logo-icon__line"]{
+  display: none !important;
+}

@@ -1,0 +1,46 @@
+
+<!-- Loop over possible element includes, to construct content from front-matter -->
+{% for row in include.content %}
+
+  {% if row.link %}
+    {% assign link = row.link %}
+  {% elsif item.link %}
+    {% assign link = item.link %}
+  {% else %}
+    {% assign link = page.link %}
+  {% endif %}
+
+  {% if row.title %}
+    {% include element/title.html
+      title=row.title
+      style=row.style
+      color=row.color
+      align=include.align %}
+
+  {% elsif row.paragraph %}
+    {% include element/paragraph.html
+      paragraph=row.paragraph
+      style=row.style
+      color=row.color
+      align=include.align %}
+
+  {% elsif row.hr %}
+    {% include element/hr.html
+      height=row.hr
+      width=row.width
+      color=row.color
+      align=include.align %}
+
+  {% elsif row.button %}
+    {% include element/button/primary.html
+      label=row.button
+      link=link
+      align=include.align %}
+
+  {% elsif row.space %}
+    {% include element/space.html
+      height=row.space
+      color=row.color %}
+
+  {% endif %}
+{% endfor %}

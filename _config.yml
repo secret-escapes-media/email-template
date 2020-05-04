@@ -2,18 +2,15 @@
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, package-lock.json, package.json]
 
+locale: uk
 
-# CLIENT
-client:
-  name: Partner Name
-  link: "#partner-link"
+ampscript:
+  gastring: "?%%=v(@gaString)=%%"
+  emailaddr: "%%emailaddr%%"
+  view-online: "%%view_email_url%%"
 
-logo:
-  black: logo.png
-  white: logo-wh.png
-  width: 110
-
-combined-logo:
-  alt: Partner Name & Secret Escapes Logos
-  width: 264
-  link: "#combined-link"
+# Partner
+partner:
+  # name: Partner Name
+  # link: "#partner-link"
+  # logo-width: 110

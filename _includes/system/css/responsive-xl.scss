@@ -1,0 +1,17 @@
+
+/*
+  if SCREEN WIDTH less than XL BREAKPOINT
+*/
+
+table[class*="responsive-table-xl"]{
+  width: 100%!important;
+  height: auto!important;
+}
+
+img[class*="img-max-xl"]{
+  max-width: 100% !important;
+  width: 100% !important;
+  height:auto !important;
+}
+
+

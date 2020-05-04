@@ -1,0 +1,5 @@
+
+default: "border-radius: 3px;"
+sm:      "border-radius: 2px;"
+md:      "border-radius: 3px;"
+lg:      "border-radius: 5px;"

@@ -1,0 +1,26 @@
+
+{% include system/helpers.html %}
+
+
+<!-- header -->
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.white}}">
+      <table {{table.inner}}>
+        <tr>
+          {% if site.partner %}
+            <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
+              <table {{table.default}}>
+                {% include element/logo/combined-white.html %}
+              </table>
+            </td>
+          {% else %}
+            <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
+              {% include element/logo/secret-escapes.html size="lg" invert="true" %}
+            </td>
+          {% endif %}
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

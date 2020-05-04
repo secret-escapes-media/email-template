@@ -1,25 +1,40 @@
 <!-- HR -->
 
-{% if include.width %}{% assign hr-width = include.width %}{% else %}{% assign hr-width = 100 %}{% endif %}
-{% if include.height %}{% assign hr-total-height = include.height %}{% else %}{% assign hr-total-height = 60 %}{% endif %}
-{% assign hr-height = hr-total-height | divided_by: 2 %}
-{% assign hr-color = include.color %}
+{% if include.width %}
+  {% assign width = include.width %}
+{% else %}
+  {% assign width = 100 %}
+{% endif %}
 
-<table {{fluid-table}}>
-  <tr>
-    <td align="center">
-      <table {{table}} width="{{hr-width}}" height="{{hr-total-height}}">
-        <tr>
-          <td height="{{hr-height}}" style="border-bottom: 1px solid {{hr-color}}; line-height: 0;">
-            &nbsp;
-          </td>
-        </tr>
-        <tr>
-          <td height="{{hr-height}}" style="line-height: 0;">
-            &nbsp;
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+{% if include.height %}
+  {% assign height = include.height %}
+{% else %}
+  {% assign height = 60 %}
+{% endif %}
+
+{% assign align = "center" %}
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+{% if include.color %}
+  {% assign color = include.color %}
+{% else %}
+  {% assign color = color.grey.lighter %}
+{% endif %}
+
+{% assign padding = height | divided_by: 2 %}
+
+<tr>
+  <td align="{{align}}">
+    <table {{table.default}} width="{{width}}" height="{{height}}">
+      <tr>
+        <td height="{{padding}}" style="border-bottom: 1px solid {{color}}; line-height: 0;"></td>
+      </tr>
+      <tr>
+        <td height="{{padding}}" style="line-height: 0;"></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+

@@ -1,0 +1,49 @@
+---
+layout: trading
+
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+hero:
+  content:
+    - paragraph: Test subtitle
+      style: subt
+      color: "#ffffff"
+    - title: Test title
+      style: xxxl
+      color: "#ffffff"
+    - paragraph: Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+      color: "#ffffff"
+    - paragraph: Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      color: "#ffffff"
+
+
+---
+{% include system/helpers.html %}
+
+
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.grey.lightest}}" style="{{spacing.vpad.md}} {{spacing.gutter}}">
+
+      <table {{table.inner}}>
+        <tr>
+          <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
+
+            Offers
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+
+
+

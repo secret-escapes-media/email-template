@@ -1,0 +1,51 @@
+
+{% assign config       = include.content.config %}
+{% assign items        = include.content.items %}
+{% assign row-gutter   = "30" %}
+{% assign text-align   = "center" %}
+{% assign width        = layout.width.lg | divided_by: 2 %}
+
+{% if config.align %}
+  {% assign text-align = config.align %}
+{% endif %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
+{% endif %}
+
+
+
+
+{% for item in items %}
+  {% assign link = item.link %}
+
+  <table {{table.inner}}>
+    <tr>
+      <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.md}}">
+
+        <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
+          <tr>
+            <td>
+              <a href="{{link}}">
+                <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
+              </a>
+            </td>
+          </tr>
+        </table>
+
+        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
+          <tr>
+            <td style="{{spacing.hpad.sm}}" height="300" valign="middle">
+              <table {{table.default}}>
+                {% include component/_content.html content=item.content align=text-align %}
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    {% include element/space.html height=row-gutter %}
+  </table>
+
+{% endfor %}

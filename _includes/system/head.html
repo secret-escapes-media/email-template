@@ -1,0 +1,53 @@
+<head>
+
+  {% include system/helpers.html %}
+
+  <title>{{ page.subject-line }}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no" />
+
+  {% capture googlefonts %}
+    {% for font in foundations.fonts %}
+      {{font.gfont}}:
+      {% for weight in font.weights %}
+        {{weight.weight}}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {% unless forloop.last %}|{% endunless %}
+    {% endfor %}
+  {% endcapture %}
+  <link href='https://fonts.googleapis.com/css?family={{googlefonts|strip_newlines|remove:" "}}' rel='stylesheet' type='text/css' />
+
+  <style type="text/css">
+
+    {% for font in foundations.fonts %}
+    [style*="{{font.name}}"] { font-family: '{{font.name}}', {{font.family}} !important; }
+    {% endfor %}
+
+    {% include system/css/reset.css %}
+
+    @media (max-width: {{layout.breakpoints.md}} ) {
+      {% capture md-scss %}
+        {% include system/css/responsive-md.scss %}
+      {% endcapture %}
+      {{ md-scss | scssify }}
+    }
+
+    @media (max-width: {{layout.breakpoints.lg}} ) {
+      {% capture lg-scss %}
+        {% include system/css/responsive-lg.scss %}
+      {% endcapture %}
+      {{ lg-scss | scssify }}
+    }
+
+    @media (max-width: {{layout.breakpoints.xl}} ) {
+      {% capture xl-scss %}
+        {% include system/css/responsive-xl.scss %}
+      {% endcapture %}
+      {{ xl-scss | scssify }}
+    }
+
+  </style>
+
+</head>

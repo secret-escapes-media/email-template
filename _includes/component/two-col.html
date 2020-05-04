@@ -1,0 +1,83 @@
+
+{% assign config       = include.content.config %}
+{% assign items        = include.content.items %}
+{% assign row-gutter   = "30" %}
+{% assign col-gutter   = "30" %}
+{% assign text-align   = "center" %}
+
+{% if config.align %}
+  {% assign text-align = config.align %}
+{% endif %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
+{% endif %}
+
+{% if config.col-gutter %}
+  {% assign col-gutter = config.col-gutter %}
+{% endif %}
+
+
+
+{% for item in items %}
+  {% assign link = item.link %}
+
+  <!-- Widths and gutters -->
+  {% assign width = layout.width.lg | minus: col-gutter | divided_by: 2 %}
+
+  <!-- Alignment -->
+  {% capture pos %}{% cycle "one", "two" %}{% endcapture %}
+  {% if pos == "one" and forloop.last %}
+    {% assign align = "center" %}
+  {% elsif pos == "one" %}
+    {% assign align = "left" %}
+  {% elsif pos == "two" %}
+    {% assign align = "right" %}
+  {% endif %}
+
+  {% if pos == 'one' %}
+  <table {{table.inner}}>
+    <tr>
+      <td>
+  {% endif %}
+
+        <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
+          <tr>
+            <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.md}}">
+              <table {{table.default}}>
+
+                <tr>
+                  <td>
+                    <a href="{{link}}">
+                      <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;" />
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="{{spacing.vpad.md}} {{spacing.hpad.sm}}">
+                    <table {{table.default}}>
+                      {% include component/_content.html content=item.content align=text-align %}
+                    </table>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+          {% include element/space.html height=row-gutter %}
+        </table>
+
+        {% if pos == 'one' %}
+        <!-- Spacer -->
+        <table {{table.default}} class="responsive-table-lg" align="center" width="{{col-gutter}}">
+          <tr><td></td></tr>
+        </table>
+        {% endif %}
+
+  {% if pos == 'two' or forloop.last %}
+      </td>
+    </tr>
+  </table>
+  {% endif %}
+{% endfor %}

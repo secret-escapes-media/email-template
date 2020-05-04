@@ -1,0 +1,18 @@
+
+<!-- Header/Title -->
+
+{% include system/helpers.html %}
+
+{% assign link = page.hero.config.link %}
+
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.black}}" style="padding-bottom: {{spacing.md}}; {{spacing.gutter}} color: {{color.white}};">
+      <table {{table.inner}}>
+
+        {% include component/_content.html content=page.hero.title %}
+
+      </table>
+    </td>
+  </tr>
+</table>

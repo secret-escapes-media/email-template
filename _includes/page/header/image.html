@@ -1,0 +1,88 @@
+
+<!-- Header/Image -->
+{% include system/helpers.html %}
+
+{% assign config       = page.hero.config %}
+{% assign text-content = page.hero.content %}
+{% assign link         = config.link %}
+{% assign row-gutter   = "30" %}
+{% assign text-align   = "center" %}
+
+{% if config.align %}
+  {% assign text-align = config.align %}
+{% endif %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
+{% endif %}
+
+
+<table {{table.outer}}>
+  <tr>
+    <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
+    <td bgcolor="{{color.black}}" background="img/{{page.hero.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
+      <!--[if (gt mso 9)&(lt mso 16)]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+        <v:fill type="frame" src="img/{{page.hero.image}}" color="{{color.black}}" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+      <![endif]-->
+
+      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+      <table {{table.outer}}>
+        <tr>
+          <td align="center" style="{{spacing.gutter}}">
+            <table {{table.inner}}>
+              <tr>
+                <td align="center">
+                  <table {{table.fluid}} height="300"> <!-- extra table to apply height as responsive class removes it on table.inner -->
+                    <tr>
+                      <td align="center" valign="bottom" height="32">
+                        <img src="img/se20..intro-overlap.png" class="img-max">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gt mso 9)&(lt mso 16)]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+
+    </td>
+  </tr>
+</table>
+
+
+
+<!-- CONTENT -->
+<table {{table.outer}}>
+  <tr>
+    <td align="center" bgcolor="{{color.grey.lightest}}" style="{{spacing.gutter}}">
+      <table {{table.inner}}>
+        <tr>
+          <td bgcolor="{{color.white}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.md}}">
+
+            <table {{table.default}}>
+              <tr>
+                <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.md}};">
+                  <table {{table.default}}>
+                    {% include component/_content.html content=text-content align=text-align %}
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+        {% include element/space.html height=row-gutter %}
+      </table>
+
+    </td>
+  </tr>
+</table>
+

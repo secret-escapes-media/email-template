@@ -1,0 +1,46 @@
+
+white:         "#FFFFFF"
+black:         "#1E1F26"
+
+grey:
+  lightest:    "#F1F2F5"
+  lighter:     "#D7D8DD"
+  light:       "#B5B6BC"
+  medium:      "#737582"
+  dark:        "#5B5D67"
+  darker:      "#43444C"
+  darkest:     "#33343E"
+
+primary:
+  default:     "#FA8C38"
+  lightest:    "#FDF3ED"
+  lighter:     "#F9D2B4"
+  light:       "#F8AF77"
+  medium:      "#FA8C38"
+  dark:        "#F56A00"
+  darker:      "#C25400"
+  darkest:     "#8F3E00"
+
+secondary:
+  default:     "#00818F"
+  lightest:    "#EDFBFD"
+  lighter:     "#B4F2F9"
+  light:       "#77EBF8"
+  medium:      "#00AEC2"
+  dark:        "#00818F"
+  darker:      "#006772"
+  darkest:     "#005058"
+
+partner:
+  default:     "#DB1726"
+
+background:
+  outer:       "#D7D8DD"
+  inner:       "#F1F2F5"
+  box:         "#FFFFFF"
+  hr:          "#D7D8DD"
+
+gradient:
+  primary:    "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
+  secondary:  "background: linear-gradient(180deg, #2194A1 12.52%, #0C7F8C 87.48%);"
+

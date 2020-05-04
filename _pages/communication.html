@@ -1,0 +1,50 @@
+---
+layout: communication
+
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+main:
+  - title: We have an update on your booking
+    style: xxxl
+  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+    style: lg
+  - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    style: lg
+  - hr: 60
+  - title: For more information
+  - paragraph: Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna.
+  - space: 15
+  - button: Read more
+
+
+
+---
+{% include system/helpers.html %}
+
+
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.white}}" style="{{spacing.gutter}}">
+
+      <table {{table.inner}}>
+
+        {% include component/_content.html content=page.main %}
+        {% include element/space.html height=spacing.lg %}
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+{% include page/footer/best-wishes.html %}
+{% include page/footer/quicklinks.html %}
+
+
+
+

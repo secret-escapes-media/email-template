@@ -1,0 +1,58 @@
+
+/*
+  if SCREEN WIDTH less than LG BREAKPOINT
+*/
+
+table[class*="responsive-table-lg"]{
+  width: 100%!important;
+  height: auto!important;
+}
+
+img[class*="img-max"]{
+  max-width: 100% !important;
+  width: 100% !important;
+  height:auto !important;
+}
+
+td[class="header-padding"]{
+  // padding-top:    10px !important;
+  // padding-bottom: 10px !important;
+}
+
+///////////////////////// LOGOS
+
+img[class="logo-se-lg"]    { width: 170px; }
+img[class="logo-se-md"]    { width: 135px; }
+img[class="logo-se-sm"]    { width: 100px; }
+img[class="logo-se"]       { width: 100px; }
+img[class="logo-partner"]  { width: 90px; }
+
+///////////////////////// CONTENT
+
+*[class*="mobile-hide"]          { display:none !important; } // this is for the gmail hack at the end of the html
+td[class*="mobile-center-align"] { text-align: center !important; }
+
+///////////////////////// TYPOGRAPHY
+
+td[class*="text"]      { font-size: 14px !important; line-height: 21px !important; }
+td[class*="text-xxxl"] { font-size: 16px !important; line-height: 24px !important; }
+td[class*="text-xxl"]  { font-size: 16px !important; line-height: 24px !important; }
+td[class*="text-xl"]   { font-size: 16px !important; line-height: 24px !important; }
+td[class*="text-lg"]   { font-size: 14px !important; line-height: 21px !important; }
+td[class*="text-md"]   { font-size: 12px !important; line-height: 18px !important; }
+td[class*="text-sm"]   { font-size: 12px !important; line-height: 18px !important; }
+td[class*="text-xs"]   { font-size: 12px !important; line-height: 18px !important; }
+
+td[class*="title"]      { font-size: 16px !important; line-height: 22px !important; }
+td[class*="title-xxxl"] { font-size: 30px !important; line-height: 36px !important; }
+td[class*="title-xxl"]  { font-size: 27px !important; line-height: 32px !important; }
+td[class*="title-xl"]   { font-size: 24px !important; line-height: 28px !important; }
+td[class*="title-lg"]   { font-size: 18px !important; line-height: 24px !important; }
+td[class*="title-md"]   { font-size: 16px !important; line-height: 22px !important; }
+td[class*="title-sm"]   { font-size: 16px !important; line-height: 22px !important; }
+td[class*="title-xs"]   { font-size: 16px !important; line-height: 22px !important; }
+
+a[class*="button-lg"] { font-size: 12px !important; line-height: 16px !important; border-width: 20px 38px !important;}
+a[class*="button-md"] { font-size: 11px !important; line-height: 13px !important; border-width: 18px 30px !important;}
+a[class*="button-sm"] { font-size: 10px !important; line-height: 12px !important; border-width: 16px 22px !important;}
+

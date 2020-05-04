@@ -1,0 +1,33 @@
+
+
+<!-- footer -->
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.black}}" align="center">
+      <table {{table.inner}}>
+        <tr>
+          <td style="{{spacing.vpad.lg}} {{spacing.hpad.sm}}">
+
+            <table {{table.fluid}}>
+              {% include element/logo/icon.html %}
+              <tr>
+                <td colspan="5" align="center" style="{{title.xl}} padding-top: {{spacing.sm}}; color: {{color.white}};">
+                  {{locale.footer.best-wishes}}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" style="{{text.md}} color: {{color.white}};">
+                  <a href="{{locale.link.faq}}{{site.ampscript.gastring}}" style="{{typography.bold}} color: {{color.white}}; text-decoration: none;">
+                    {{locale.footer.faq}}
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+

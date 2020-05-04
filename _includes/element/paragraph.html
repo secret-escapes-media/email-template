@@ -1,20 +1,30 @@
 <!-- Paragraph -->
 
-{% include _config/variables.html %}
+{% include system/helpers.html %}
 
-{% assign theme       = include.theme %}
-{% assign text-style  = include.style %}
-{% assign paragraph-data   = include.paragraph %}
+{% assign align      = "center" %}
+{% assign style      = "default" %}
+{% assign textcolor  = color.grey.dark %}
+{% assign space      = spacing.paragraph %}
 
 {% if include.align %}
-  {% assign align  = include.align %}
+  {% assign align = include.align %}
 {% endif %}
 
-{% include _config/paragraph.html %}
-<table {{fluid-table}}>
-  <tr>
-    <td class="{{text-class}}" align="{{align}}" style="{{text-style}}; padding-bottom: {{spacing.p}};">
-      {{paragraph-data}}
-    </td>
-  </tr>
-</table>
+{% if include.style %}
+  {% assign style = include.style %}
+{% endif %}
+
+{% if include.color %}
+  {% assign textcolor = include.color %}
+{% endif %}
+
+{% if include.space %}
+  {% assign space = include.space %}
+{% endif %}
+
+<tr>
+  <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %}">
+    {{include.paragraph}}
+  </td>
+</tr>

@@ -1,20 +1,30 @@
 <!-- Title -->
 
-{% include _config/variables.html %}
+{% include system/helpers.html %}
 
-{% assign theme       = include.theme %}
-{% assign title-style = include.style %}
-{% assign title-data  = include.title %}
+{% assign align      = "center" %}
+{% assign style      = "default" %}
+{% assign textcolor  = color.grey.dark %}
+{% assign space      = spacing.paragraph %}
 
 {% if include.align %}
-  {% assign align  = include.align %}
+  {% assign align = include.align %}
 {% endif %}
 
-{% include _config/title.html %}
-<table {{fluid-table}}>
-  <tr>
-    <td class="{{title-class}}" align="{{align}}" style="{{title-style}} padding-bottom: {{spacing.title}};">
-      {{title-data}}
-    </td>
-  </tr>
-</table>
+{% if include.style %}
+  {% assign style = include.style %}
+{% endif %}
+
+{% if include.color %}
+  {% assign textcolor = include.color %}
+{% endif %}
+
+{% if include.space %}
+  {% assign space = include.space %}
+{% endif %}
+
+<tr>
+  <td align="{{align}}" class="title{% if include.style %}-{{include.style}}{% endif %}" style="{{title.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0;{% endunless %}">
+    {{include.title}}
+  </td>
+</tr>

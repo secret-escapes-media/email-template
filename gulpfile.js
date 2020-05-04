@@ -1,9 +1,9 @@
 var gulp         = require('gulp');
-var cp           = require('child_process');
 var path         = require('path');
 var del          = require('del');
-var map          = require('map-stream');
+var cp           = require('child_process');
 var browserSync  = require('browser-sync');
+var map          = require('map-stream');
 var size         = require('gulp-warn-size');
 var image        = require('gulp-image');
 var message      = require('gulp-message');
@@ -135,7 +135,7 @@ function makeRandomString(length) {
 // creates Exact Target version of the email files for upload
 function createEtVersion() {
   // set global variables
-  const prefix = 'projectid-';
+  const prefix = 'media-'+(new Date().getFullYear())+(new Date().getMonth()+1)+(new Date().getDate())+'-'; // current date in name for identification
   const maxCharacters = 36;
   const remainingCharacters = maxCharacters - prefix.length;
   const etUrl = 'http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/';
