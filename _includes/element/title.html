@@ -4,8 +4,7 @@
 
 {% assign align      = "center" %}
 {% assign style      = "default" %}
-{% assign textcolor  = color.grey.dark %}
-{% assign space      = spacing.paragraph %}
+{% assign textcolor  = color.grey.darker %}
 
 {% if include.align %}
   {% assign align = include.align %}
@@ -17,10 +16,6 @@
 
 {% if include.color %}
   {% assign textcolor = include.color %}
-{% endif %}
-
-{% if include.space %}
-  {% assign space = include.space %}
 {% endif %}
 
 <tr>

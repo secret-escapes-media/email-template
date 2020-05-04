@@ -3,6 +3,11 @@
 # Germany
 #
 
+offer:
+  cta: Jetzt angebote
+  currency: €
+  from: Ab 
+
 link:
   current-sales: https://www.secretescapes.de/aktuelle-angebote
   contact: https://www.secretescapes.de/kontakt-und-impressum

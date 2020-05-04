@@ -1,0 +1,47 @@
+<!-- Button -->
+
+{% include system/helpers.html %}
+
+{% assign link       = page.page-link %}
+{% assign label      = page.main-button-label %}
+{% assign align      = "center" %}
+{% assign scale       = "md" %}
+{% assign style      = "primary" %}
+
+
+{% if include.link %}
+  {% assign link = include.link %}
+{% endif %}
+
+{% if include.label %}
+  {% assign label = include.label %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+{% if include.style %}
+  {% assign style = include.style %}
+{% endif %}
+
+{% if include.scale %}
+  {% assign scale = include.scale %}
+{% endif %}
+
+
+<tr>
+  <td>
+    <table {{table.default}} align="{{align}}" style="border-collapse: separate !important; border-spacing: 0;">
+      <tr>
+        <td bgcolor="{{button.style.[style].background}}" style="background-color: {{button.style.[style].background}}; {{button.style.[style].background-css}} {{rounded.md}}">
+          <a href="{{link}}" class="button" style="display: inline-block; text-decoration: none; text-transform: uppercase; text-align: center; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; letter-spacing: .1em; color: {{button.style.[style].text-color}}; border-style: solid; border-color: transparent; border-top-width: {{button.scale.[scale].padding}}px; border-bottom-width: {{button.scale.[scale].padding}}px; border-left-width: {{button.scale.[scale].padding | times: 2}}px; border-right-width: {{button.scale.[scale].padding | times: 2}}px; font-size: {{button.scale.[scale].font-size}}px; line-height: {{button.scale.[scale].font-size}}px;">
+            {{label}}
+          </a>
+        </td>
+      </tr>
+    </table>
+
+  </td>
+</tr>
+

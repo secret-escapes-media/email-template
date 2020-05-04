@@ -2,8 +2,8 @@
 <!-- Header/Image -->
 {% include system/helpers.html %}
 
-{% assign config       = page.hero.config %}
-{% assign text-content = page.hero.content %}
+{% assign config       = page.hero-banner.config %}
+{% assign text-content = page.hero-banner.content %}
 {% assign link         = config.link %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
@@ -20,10 +20,10 @@
 <table {{table.outer}}>
   <tr>
     <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-    <td bgcolor="{{color.black}}" background="img/{{page.hero.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
+    <td bgcolor="{{color.black}}" background="img/{{page.hero-banner.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
       <!--[if (gt mso 9)&(lt mso 16)]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-        <v:fill type="frame" src="img/{{page.hero.image}}" color="{{color.black}}" />
+        <v:fill type="frame" src="img/{{page.hero-banner.image}}" color="{{color.black}}" />
         <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
       <![endif]-->
 

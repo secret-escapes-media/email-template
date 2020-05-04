@@ -1,0 +1,130 @@
+
+{% assign config       = include.content.config %}
+{% assign items        = include.content.items %}
+{% assign row-gutter   = "30" %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
+{% endif %}
+
+
+
+{% for item in items %}
+  {% assign link = item.link %}
+
+  <table {{table.inner}}>
+    <tr>
+      <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.default}}">
+
+
+        <table {{table.fluid}}>
+          <tr>
+            <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
+            <td bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+              <!--[if (gt mso 9)&(lt mso 16)]>
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+                <v:fill type="frame" src="{{item.image}}" color="{{color.black}}" />
+                <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+              <![endif]-->
+
+              <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
+              <table {{table.fluid}} height="330">
+                <tr>
+                  <td align="center">
+                    <!-- Top -->
+                    <table {{table.fluid}} height="45">
+                      <tr>
+                        <td valign="top" style="{{spacing.hpad.sm}} padding-top: {{spacing.sm}};">
+                          <table {{table.fluid}}>
+                            <tr>
+                              <td align="left" class="text-md" style="{{text.md}} {{typography.bold}} color: {{color.white}};">
+                                Sale ends {{item.expires | date: "%B %d"}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- Link -->
+                    <table {{table.fluid}} height="{% if item.attribute %}240{% else %}285{% endif %}">
+                      <tr>
+                        <td>
+                          <a href="{{item.link}}" style="height: 100%; width: 100%; display: block;"></a>
+                        </td>
+                      </tr>
+                    </table>
+                    {% if item.attribute %}
+                    <!-- Bottom -->
+                    <table {{table.fluid}} height="45">
+                      <tr>
+                        <td valign="bottom" style="{{spacing.hpad.sm}} padding-bottom: {{spacing.sm}};">
+                          <table {{table.fluid}}>
+                            {% include element/badge.html label=item.attribute %}
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    {% endif %}
+                  </td>
+                </tr>
+              </table>
+
+              <!--[if (gt mso 9)&(lt mso 16)]>
+                </v:textbox>
+              </v:rect>
+              <![endif]-->
+
+
+            </td>
+          </tr>
+          <tr>
+            <td align="left" style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
+              <table {{table.fluid}}>
+                <!-- Location -->
+                <tr>
+                  <td align="left" style="padding-bottom: 8px;">
+                    <table {{table.default}} align="left">
+                      <tr>
+                        <td align="left" valign="middle" style="padding-right: 8px">
+                          <img src="img/se20..location.png" width="11">
+                        </td>
+                        <td align="left" valign="middle" class="text-md" style="{{text.md}} color: {{color.grey.dark}}; padding-bottom: 0;">
+                          {{item.location}}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Title -->
+                {% include element/title.html title=item.title align="left" %}
+                <!-- Description -->
+                {% include element/paragraph.html paragraph=item.description align="left" %}
+                <!-- Price + CTA -->
+
+                <tr>
+                  <td style="padding-top: 15px;">
+                    <table {{table.fluid}}>
+                      <tr>
+                        <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
+                          {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
+                        </td>
+                        <td align="right">
+                          <table {{table.fluid}}>
+                            {% include element/button.html label=locale.offer.cta align="right" %}
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    {% include element/space.html height=row-gutter %}
+  </table>
+
+{% endfor %}

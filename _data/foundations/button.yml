@@ -1,0 +1,49 @@
+
+style:
+  default:
+    text-color: "#ffffff"
+    background: "#FA8C38"
+    background-css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
+
+  primary:
+    text-color: "#ffffff"
+    background: "#FA8C38"
+    background-css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
+
+  secondary:
+    text-color: "#ffffff"
+    background: "#00818F"
+    background-css: "background: linear-gradient(180deg, #2194A1 12.52%, #0C7F8C 87.48%);"
+
+  light:
+    text-color: "#1E1F26"
+    background: "#D7D8DD"
+
+  partner:
+    text-color: "#ffffff"
+    background: "#DB1726"
+
+  outline:
+    text-color: "#1E1F26"
+    background: "#F1F2F5"
+    background-css: "border: 1px solid #1E1F26;"
+
+
+
+
+scale:
+  xs:
+    font-size:  "14"
+    padding:    "14"
+  sm:
+    font-size:  "15"
+    padding:    "15"
+  md:
+    font-size:  "16"
+    padding:    "16"
+  lg:
+    font-size:  "17"
+    padding:    "17"
+  xl:
+    font-size:  "18"
+    padding:    "18"

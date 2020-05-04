@@ -1,0 +1,31 @@
+<!-- Button -->
+
+{% include system/helpers.html %}
+
+{% assign label      = "Label" %}
+{% assign align      = "left" %}
+{% assign background = "#00818F" %}
+
+
+{% if include.label %}
+  {% assign label = include.label %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+
+<tr>
+  <td>
+    <table {{table.default}} align="{{align}}" style="border-collapse: separate !important; border-spacing: 0;">
+      <tr>
+        <td bgcolor="{{background}}" style="background-color: {{background}}; {{rounded.md}} display: inline-block; text-decoration: none; text-transform: uppercase; text-align: center; font-size: 14px; line-height: 14px; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; letter-spacing: .1em; color: {{color.white}}; border-style: solid; border-color: transparent; border-top-width: 7px; border-bottom-width: 7px; border-left-width: 14px; border-right-width: 14px;">
+          {{label}}
+        </td>
+      </tr>
+    </table>
+
+  </td>
+</tr>
+

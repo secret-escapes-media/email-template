@@ -4,6 +4,11 @@
 # United Kingdom
 #
 
+offer:
+  cta: View sale
+  currency: £
+  from: From 
+
 link:
   current-sales: https://www.secretescapes.com/current-sales
   contact: https://www.secretescapes.com/contact

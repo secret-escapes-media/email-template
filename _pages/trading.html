@@ -8,8 +8,10 @@ page-link: "#page-link"
 main-button-label: Default button text
 terms-and-conditions: "Terms and conditions."
 
-hero:
-  content:
+title-banner:
+  config:
+  image:
+  title:
     - paragraph: Test subtitle
       style: subt
       color: "#ffffff"
@@ -22,6 +24,45 @@ hero:
       color: "#ffffff"
 
 
+
+offers:
+  config:
+  items:
+
+    - title: Soak in Slovenia's thermal springs
+      attribute: Editors pick
+      location: Slovenia
+      description: Discover Slovenia from the 4-star Riske Terme thermal resort. Incl. half board, car rental, luxury spa entry, thermal baths & return flights!
+      price: 389
+      price-description: per room per night
+      saved: 40%
+      expires: 2019/10/26
+      image: https://travelbird-images.imgix.net/4c/2a/4c2a5de4b4fd3ce9d3a5b23840afb7aa?auto=compress%2Cformat&crop=faces%2Cedges%2Ccenter&dpr=2&fit=crop&h=700&w=1050
+      link: https://co.uk.sales.secretescapes.com/115743/thermal-slovenia/
+
+    - title: Ardoe House Hotel & Spa
+      id: ardoe-house-hotel-and-spa
+      location: Aberdeen, Scotland
+      description: An opulent Victorian country escape near Aberdeen
+      price: 109
+      price-description: per room per night
+      saved: 47
+      expires: 2019/03/26
+      image: https://d1x3cbuht6sy0f.cloudfront.net/sales/79163/d9d2f35b_e00b_468f_8a70_20cc16d813e7.jpg
+      link: https://www.secretescapes.com/ardoe-house-hotel-and-spa-aberdeen-scotland/sale
+
+    - title: Loch Lomond Waterfront
+      id: loch-lomond-waterfront
+      location: The Trossachs National Park, Scotland
+      description: Escape to a five-star self-catering abode overlooking Loch Lomond National Park
+      price: 93
+      price-description: per room per night
+      saved: 30
+      expires: 2019/03/22
+      image: https://d1x3cbuht6sy0f.cloudfront.net/sales/71756/990bf09c_66ba_46ad_8b17_b0a00e89cc2b.jpg
+      link: https://www.secretescapes.com/loch-lomond-waterfront-the-trossachs-national-park-scotland/sale
+
+
 ---
 {% include system/helpers.html %}
 
@@ -30,15 +71,7 @@ hero:
   <tr>
     <td bgcolor="{{color.grey.lightest}}" style="{{spacing.vpad.md}} {{spacing.gutter}}">
 
-      <table {{table.inner}}>
-        <tr>
-          <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
-
-            Offers
-
-          </td>
-        </tr>
-      </table>
+      {% include component/one-col-offer.html content=page.offers %}
 
     </td>
   </tr>

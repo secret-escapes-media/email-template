@@ -5,7 +5,6 @@
 {% assign align      = "center" %}
 {% assign style      = "default" %}
 {% assign textcolor  = color.grey.dark %}
-{% assign space      = spacing.paragraph %}
 
 {% if include.align %}
   {% assign align = include.align %}
@@ -19,12 +18,8 @@
   {% assign textcolor = include.color %}
 {% endif %}
 
-{% if include.space %}
-  {% assign space = include.space %}
-{% endif %}
-
 <tr>
-  <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %}">
+  <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}};">
     {{include.paragraph}}
   </td>
 </tr>

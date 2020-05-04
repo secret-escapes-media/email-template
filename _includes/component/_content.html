@@ -32,10 +32,12 @@
       align=include.align %}
 
   {% elsif row.button %}
-    {% include element/button/primary.html
+    {% include element/button.html
       label=row.button
       link=link
-      align=include.align %}
+      style=row.style
+      scale=row.scale 
+      align=include.align%}
 
   {% elsif row.space %}
     {% include element/space.html

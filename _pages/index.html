@@ -43,6 +43,7 @@ one-col:
           style: lg
         - space: 15
         - button: Read more
+          scale: xl
 
 
 
@@ -118,6 +119,11 @@ three-col:
     <td bgcolor="{{color.grey.lightest}}" style="{{spacing.vpad.md}} {{spacing.gutter}}">
 
       <table {{table.inner}}>
+
+        {% include element/space.html height="30" %}
+        {% include element/title.html title="Elements / Logos" style="xl" %}
+        {% include element/space.html height="30" %}
+
         <tr>
           <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
             <table {{table.default}}>
@@ -126,23 +132,52 @@ three-col:
               {% include element/logo/secret-escapes.html invert="true" size="md" %}
               {% include element/logo/secret-escapes.html invert="true" size="sm" %}
 
-              {% include element/space.html height="60" %}
-
-              {% include element/button/primary.html %}
-              {% include element/button/secondary.html %}
-              {% include element/button/partner.html %}
-
             </table>
           </td>
         </tr>
 
-        {% include element/space.html height="60" %}
+        {% include element/space.html height="30" %}
+        {% include element/title.html title="Elements / Buttons" style="xl" %}
+        {% include element/space.html height="30" %}
+
+        <tr>
+          <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
+            <table {{table.fluid}}>
+
+              {% include element/paragraph.html paragraph="primary + xs" style="subt" %}
+              {% include element/button.html label="Read more" link="#button-link" style="primary" scale="xs" %}
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="secondary + sm" style="subt" %}
+              {% include element/button.html label="Read more" link="#button-link" style="secondary" scale="sm" %}
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="partner + md" style="subt" %}
+              {% include element/button.html label="Read more" link="#button-link" style="partner" scale="md" %}
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="light + lg" style="subt" %}
+              {% include element/button.html label="Read more" link="#button-link" style="light" scale="lg" %}
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="outline + xl" style="subt" %}
+              {% include element/button.html label="Read more" link="#button-link" style="outline" scale="xl" %}
+
+            </table>
+          </td>
+        </tr>
       </table>
 
-        {% include component/one-col.html content=page.one-col %}
-        {% include component/two-col.html content=page.two-col %}
-        {% include component/three-col.html content=page.three-col %}
-        {% include component/row.html content=page.image-text-row %}
+      <table>
+        {% include element/space.html height="30" %}
+        {% include element/title.html title="Components" style="xl" %}
+        {% include element/space.html height="30" %}
+      </table>
+
+      {% include component/one-col.html content=page.one-col %}
+      {% include component/two-col.html content=page.two-col %}
+      {% include component/three-col.html content=page.three-col %}
+      {% include component/row.html content=page.image-text-row %}
 
     </td>
   </tr>
