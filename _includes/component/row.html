@@ -3,6 +3,8 @@
 {% assign items        = include.content.items %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
+{% assign background   = color.background.box %}
+{% assign theme        = config.theme %}
 {% assign width        = layout.width.lg | divided_by: 2 %}
 
 {% if config.align %}
@@ -13,6 +15,10 @@
   {% assign row-gutter = config.row-gutter %}
 {% endif %}
 
+{% if config.background %}
+  {% assign background = config.background %}
+{% endif %}
+
 
 
 
@@ -21,7 +27,7 @@
 
   <table {{table.inner}}>
     <tr>
-      <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.default}}">
+      <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
 
         <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
           <tr>
@@ -35,9 +41,9 @@
 
         <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
           <tr>
-            <td style="{{spacing.hpad.sm}}" height="300" valign="middle">
+            <td style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-td-lg">
               <table {{table.default}}>
-                {% include component/_content.html content=item.content align=text-align %}
+                {% include component/_content.html content=item.content align=text-align theme=theme %}
               </table>
             </td>
           </tr>

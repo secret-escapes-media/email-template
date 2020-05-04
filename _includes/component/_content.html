@@ -15,6 +15,7 @@
       title=row.title
       style=row.style
       color=row.color
+      theme=include.theme
       align=include.align %}
 
   {% elsif row.paragraph %}
@@ -22,6 +23,7 @@
       paragraph=row.paragraph
       style=row.style
       color=row.color
+      theme=include.theme
       align=include.align %}
 
   {% elsif row.hr %}
@@ -36,7 +38,7 @@
       label=row.button
       link=link
       style=row.style
-      scale=row.scale 
+      scale=row.scale
       align=include.align%}
 
   {% elsif row.space %}

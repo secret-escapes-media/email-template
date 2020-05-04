@@ -5,4 +5,20 @@ layout: default
 
 {% include page/header/logo-white.html %}
 
-{{content}}
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.background.box}}" style="{{spacing.gutter}}">
+
+      <table {{table.inner}}>
+
+        {% include component/_content.html content=page.main %}
+        {% include element/space.html height=spacing.lg %}
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+{% include page/footer/best-wishes.html %}
+{% include page/footer/quicklinks.html %}

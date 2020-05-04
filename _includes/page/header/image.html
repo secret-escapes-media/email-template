@@ -43,11 +43,13 @@
                   <a href="{{link}}" style="display: block; height: 100%; width: 100%;"></a>
                 </td>
               </tr>
+              {% if text-content %}
               <tr>
                 <td align="center" valign="bottom" height="32">
                   <img src="img/se20..intro-overlap.png" class="img-max">
                 </td>
               </tr>
+              {% endif %}
             </table>
           </td>
         </tr>
@@ -64,13 +66,14 @@
 
 
 
+{% if text-content %}
 <!-- CONTENT -->
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.grey.lightest}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
       <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.white}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
+          <td bgcolor="{{color.background.box}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
 
             <table {{table.default}}>
               <tr>
@@ -90,4 +93,5 @@
     </td>
   </tr>
 </table>
+{% endif %}
 

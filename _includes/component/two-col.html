@@ -4,6 +4,8 @@
 {% assign row-gutter   = "30" %}
 {% assign col-gutter   = "30" %}
 {% assign text-align   = "center" %}
+{% assign background   = color.background.box %}
+{% assign theme        = config.theme %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -15,6 +17,10 @@
 
 {% if config.col-gutter %}
   {% assign col-gutter = config.col-gutter %}
+{% endif %}
+
+{% if config.background %}
+  {% assign background = config.background %}
 {% endif %}
 
 
@@ -43,7 +49,7 @@
 
         <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
           <tr>
-            <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.default}}">
+            <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
               <table {{table.default}}>
 
                 <tr>
@@ -57,7 +63,7 @@
                 <tr>
                   <td style="{{spacing.vpad.md}} {{spacing.hpad.sm}}">
                     <table {{table.default}}>
-                      {% include component/_content.html content=item.content align=text-align %}
+                      {% include component/_content.html content=item.content align=text-align theme=theme %}
                     </table>
                   </td>
                 </tr>

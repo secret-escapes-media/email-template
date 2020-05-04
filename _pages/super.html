@@ -1,0 +1,144 @@
+---
+layout: super
+
+subject-line: Subject line
+preheader: Email preheader
+
+page-link: "#page-link"
+main-button-label: Default button text
+terms-and-conditions: "Terms and conditions."
+
+hero-banner:
+  config:
+    link: "#hero-link"
+    row-gutter: 30
+    theme: dark
+  image:
+    file: BG..hero.jpg
+    height: 600
+  content:
+    - title: A riot of spice & colour
+      style: xxxl
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+      style: lg
+    - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      style: lg
+
+
+
+
+one-col:
+  config:
+    row-gutter: 30
+    align: center
+  items:
+    - link: "#one-col-link"
+      image: C..16-9.jpg
+      content:
+        - title: Your guide to Manchester's markets
+          style: xl
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+          style: lg
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          style: lg
+        - space: 8
+        - button: Read more
+
+
+
+two-col:
+  config:
+    row-gutter: 30
+    col-gutter: 30
+    align: center
+  items:
+
+    - link: "#two-col-link"
+      image: C..16-9.jpg
+      content:
+        - title: Your guide to Manchester's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        - button: Read more
+          link: "#two-col-button-link"
+
+    - link: "#two-col-link"
+      image: C..16-9.jpg
+      content:
+        - title: Your guide to Manchester's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        - button: Read more
+
+
+
+three-col:
+  config:
+    row-gutter: 30
+    col-gutter: 15
+    align: left
+  items:
+
+    - link: "#three-col-link"
+      image: C..4-3.jpg
+      content:
+        - title: Manchester
+          style: sm
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: sm
+
+    - link: "#three-col-link"
+      image: C..4-3.jpg
+      content:
+        - title: Manchester
+          style: sm
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: sm
+
+    - link: "#three-col-link"
+      image: C..4-3.jpg
+      content:
+        - title: Manchester
+          style: sm
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: sm
+
+
+
+image-text-row:
+  config:
+    row-gutter: 30
+    align: left
+  items:
+
+    - link: "#image-text-row-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Manchester's markets
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+        - space: 8
+        - button: Read more
+
+    - link: "#image-text-row-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Manchester's markets
+        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+        - space: 8
+        - button: Read more
+
+
+---
+{% include system/helpers.html %}
+
+
+{% include component/one-col.html content=page.one-col %}
+
+{% include component/row.html content=page.image-text-row %}
+
+{% include component/two-col.html content=page.two-col %}
+
+<table>
+  {% include element/space.html height="30" %}
+</table>
+

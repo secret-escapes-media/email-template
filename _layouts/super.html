@@ -3,10 +3,13 @@ layout: default
 ---
 {% include system/helpers.html %}
 
-{% include page/header/default.html %}
-
-Intro
-
-{{content}}
-
-{% include page/footer/best-wishes.html %}
+{% include page/header/hero.html %}
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+      {{content}}
+    </td>
+  </tr>
+</table>
+{% include page/footer/promo.html %}
+{% include page/footer/quicklinks.html %}

@@ -38,7 +38,6 @@ background:
   outer:       "#D7D8DD"
   inner:       "#F1F2F5"
   box:         "#FFFFFF"
-  hr:          "#D7D8DD"
 
 gradient:
   primary:    "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"

@@ -16,6 +16,8 @@
 
 {% if include.color %}
   {% assign textcolor = include.color %}
+{% elsif include.theme == 'dark' %}
+  {% assign textcolor = color.white %}
 {% endif %}
 
 <tr>
