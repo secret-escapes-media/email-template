@@ -78,17 +78,15 @@
             <table {{table.default}}>
               <tr>
                 <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.md}};">
-                  <table {{table.default}}>
-                    {% include component/_content.html content=text-content align=text-align %}
-                  </table>
+                  {% include component/_content.html content=text-content align=text-align %}
                 </td>
               </tr>
             </table>
 
           </td>
         </tr>
-        {% include element/space.html height=row-gutter %}
       </table>
+      {% include element/space.html height=row-gutter %}
 
     </td>
   </tr>

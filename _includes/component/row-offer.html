@@ -2,7 +2,7 @@
 {% assign config       = include.content.config %}
 {% assign items        = include.content.items %}
 {% assign row-gutter   = "30" %}
-{% assign height       = "330" %}
+{% assign height       = "250" %}
 
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
@@ -11,17 +11,16 @@
 
 
 {% for item in items %}
-  {% assign link = item.link %}
+  {% assign link = link %}
 
   <table {{table.inner}}>
     <tr>
-      <td bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.default}}">
+      <td bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}}">
 
-
-        <table {{table.fluid}}>
+        <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
           <tr>
             <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-            <td bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+            <td bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
               <!--[if (gt mso 9)&(lt mso 16)]>
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
                 <v:fill type="frame" src="{{item.image}}" color="{{color.black}}" />
@@ -50,7 +49,7 @@
                     <table class="offer__image" {{table.fluid}} height="{% if item.attribute %}{{height | minus: 45 | minus: 45}}{% else %}{{height | minus: 45}}{% endif %}">
                       <tr>
                         <td>
-                          <a href="{{item.link}}" style="height: 100%; width: 100%; display: block;"></a>
+                          <a href="{{link}}" style="height: 100%; width: 100%; display: block;"></a>
                         </td>
                       </tr>
                     </table>
@@ -72,12 +71,13 @@
                 </v:textbox>
               </v:rect>
               <![endif]-->
-
-
             </td>
           </tr>
+        </table>
+
+        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
           <tr>
-            <td align="left" style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
+            <td style="{{spacing.hpad.sm}}" height="{{height}}" valign="middle" class="responsive-td-lg">
               <table {{table.fluid}}>
                 <!-- Location -->
                 <tr>
@@ -96,23 +96,21 @@
                 </tr>
               </table>
               <!-- Title -->
-              {% include element/title.html title=item.title align="left" %}
-              <!-- Description -->
-              {% include element/paragraph.html paragraph=item.description align="left" %}
-              <!-- Price + CTA -->
+              {% include element/title.html title=item.title align="left" style="md" %}
+              {% include element/space.html height="15" %}
+              <!-- Price -->
               <table {{table.fluid}}>
                 <tr>
-                  <td style="padding-top: 15px;">
-                    <table {{table.fluid}}>
-                      <tr>
-                        <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
-                          {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
-                        </td>
-                        <td align="right">
-                          {% include element/button.html label=locale.offer.cta align="right" %}
-                        </td>
-                      </tr>
-                    </table>
+                  <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
+                    {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
+                  </td>
+                </tr>
+              </table>
+              <!-- CTA -->
+              <table {{table.fluid}}>
+                <tr>
+                  <td align="left" style="padding-top: 8px;">
+                    {% include element/button.html link=link label=locale.offer.cta align="left" %}
                   </td>
                 </tr>
               </table>

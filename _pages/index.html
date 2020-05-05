@@ -144,6 +144,23 @@ three-col:
 
 
 
+image-text-row:
+  config:
+    row-gutter: 30
+    align: left
+  items:
+    - link: "#one-col-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: lg
+        - button: Read more
+          scale: md
+
+
+
 offer:
   items:
 
@@ -171,24 +188,27 @@ offer:
     <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
 
       <table {{table.inner}}>
-        {% include element/space.html height="30" %}
-        {% include element/title.html title="Foundations / Typography" style="xl" %}
-        {% include element/space.html height="30" %}
         <tr>
           <td>
+            {% include element/space.html height="30" %}
+            {% include element/title.html title="Foundations / Typography" style="xl" %}
+            {% include element/space.html height="30" %}
             {% include component/one-col.html content=page.typography %}
           </td>
         </tr>
+      </table>
 
-        {% include element/space.html height="60" %}
-        {% include element/title.html title="Foundations / Colours" style="xl" %}
-        {% include element/space.html height="30" %}
+      {% include element/space.html height="60" %}
+      {% include element/title.html title="Foundations / Colours" style="xl" %}
+      {% include element/space.html height="30" %}
+
+      <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{shadow.md}}">
-            <table {{table.fluid}}>
+          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
 
-              {% include element/paragraph.html paragraph="Neutrals" style="subt" %}
-              {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="Neutrals" style="subt" %}
+            {% include element/space.html height="15" %}
+            <table {{table.fluid}}>
               <tr>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.white}}"></td>
@@ -201,10 +221,12 @@ offer:
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darkest}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.black}}"></td>
               </tr>
+            </table>
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="Primary" style="subt" %}
-              {% include element/space.html height="15" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="Primary" style="subt" %}
+            {% include element/space.html height="15" %}
+            <table {{table.fluid}}>
               <tr>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.default}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lightest}}"></td>
@@ -215,10 +237,12 @@ offer:
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darker}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darkest}}"></td>
               </tr>
+            </table>
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="Secondary" style="subt" %}
-              {% include element/space.html height="15" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="Secondary" style="subt" %}
+            {% include element/space.html height="15" %}
+            <table {{table.fluid}}>
               <tr>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.default}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lightest}}"></td>
@@ -229,67 +253,68 @@ offer:
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darker}}"></td>
                 <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darkest}}"></td>
               </tr>
+            </table>
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="Gradient" style="subt" %}
-              {% include element/space.html height="15" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="Gradient" style="subt" %}
+            {% include element/space.html height="15" %}
+            <table {{table.fluid}}>
               <tr>
                 <td style="{{spacing.boxpad.sm}} {{color.gradient.primary}}"></td>
                 <td style="{{spacing.boxpad.sm}} {{color.gradient.secondary}}"></td>
               </tr>
-
             </table>
+
           </td>
         </tr>
+      </table>
 
-        {% include element/space.html height="60" %}
-        {% include element/title.html title="Foundations / Buttons" style="xl" %}
-        {% include element/space.html height="30" %}
+      {% include element/space.html height="60" %}
+      {% include element/title.html title="Foundations / Buttons" style="xl" %}
+      {% include element/space.html height="30" %}
 
+      <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{shadow.md}}">
-            <table {{table.default}}>
+          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
 
-              {% include element/paragraph.html paragraph="primary + xs" style="subt" %}
-              {% include element/space.html height="15" %}
-              {% include element/button.html label="Read more" link="#button-link" style="primary" scale="xs" %}
+            {% include element/paragraph.html paragraph="primary + xs" style="subt" %}
+            {% include element/space.html height="15" %}
+            {% include element/button.html label="Read more" link="#button-link" style="primary" scale="xs" %}
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="secondary + sm" style="subt" %}
-              {% include element/space.html height="15" %}
-              {% include element/button.html label="Read more" link="#button-link" style="secondary" scale="sm" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="secondary + sm" style="subt" %}
+            {% include element/space.html height="15" %}
+            {% include element/button.html label="Read more" link="#button-link" style="secondary" scale="sm" %}
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="partner + md" style="subt" %}
-              {% include element/space.html height="15" %}
-              {% include element/button.html label="Read more" link="#button-link" style="partner" scale="md" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="partner + md" style="subt" %}
+            {% include element/space.html height="15" %}
+            {% include element/button.html label="Read more" link="#button-link" style="partner" scale="md" %}
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="light + lg" style="subt" %}
-              {% include element/space.html height="15" %}
-              {% include element/button.html label="Read more" link="#button-link" style="light" scale="lg" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="light + lg" style="subt" %}
+            {% include element/space.html height="15" %}
+            {% include element/button.html label="Read more" link="#button-link" style="light" scale="lg" %}
 
-              {% include element/space.html height="15" %}
-              {% include element/paragraph.html paragraph="outline + xl" style="subt" %}
-              {% include element/space.html height="15" %}
-              {% include element/button.html label="Read more" link="#button-link" style="outline" scale="xl" %}
+            {% include element/space.html height="15" %}
+            {% include element/paragraph.html paragraph="outline + xl" style="subt" %}
+            {% include element/space.html height="15" %}
+            {% include element/button.html label="Read more" link="#button-link" style="outline" scale="xl" %}
 
-            </table>
           </td>
         </tr>
       </table>
 
-      <table>
-        {% include element/space.html height="30" %}
-        {% include element/title.html title="Components" style="xl" %}
-        {% include element/space.html height="30" %}
-      </table>
+      {% include element/space.html height="30" %}
+      {% include element/title.html title="Components" style="xl" %}
+      {% include element/space.html height="30" %}
 
       {% include component/one-col.html content=page.one-col %}
       {% include component/two-col.html content=page.two-col %}
       {% include component/three-col.html content=page.three-col %}
       {% include component/row.html content=page.image-text-row %}
       {% include component/one-col-offer.html content=page.offer %}
+      {% include component/row-offer.html content=page.offer %}
 
     </td>
   </tr>
@@ -298,11 +323,9 @@ offer:
 <table {{table.outer}}>
   <tr>
     <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
-      <table {{table.fluid}}>
-        {% include element/space.html height="30" %}
-        {% include element/title.html title="Page Blocks" style="xl" %}
-        {% include element/space.html height="30" %}
-      </table>
+      {% include element/space.html height="30" %}
+      {% include element/title.html title="Page Blocks" style="xl" %}
+      {% include element/space.html height="30" %}
     </td>
   </tr>
 </table>

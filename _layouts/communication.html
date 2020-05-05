@@ -10,10 +10,14 @@ layout: default
     <td bgcolor="{{color.background.box}}" style="{{spacing.gutter}}">
 
       <table {{table.inner}}>
+        <tr>
+          <td>
 
-        {% include component/_content.html content=page.main %}
-        {% include element/space.html height=spacing.lg %}
-
+            {% include component/_content.html content=page.main %}
+            {% include element/space.html height=spacing.lg %}
+            
+          </td>
+        </tr>
       </table>
 
     </td>

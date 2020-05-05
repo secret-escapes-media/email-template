@@ -42,16 +42,14 @@
         <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
           <tr>
             <td style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-td-lg">
-              <table {{table.default}}>
-                {% include component/_content.html content=item.content align=text-align theme=theme %}
-              </table>
+              {% include component/_content.html content=item.content align=text-align theme=theme %}
             </td>
           </tr>
         </table>
 
       </td>
     </tr>
-    {% include element/space.html height=row-gutter %}
   </table>
+  {% include element/space.html height=row-gutter %}
 
 {% endfor %}

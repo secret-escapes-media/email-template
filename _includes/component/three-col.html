@@ -46,35 +46,37 @@
     <tr>
       <td>
   {% endif %}
-
         <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
           <tr>
-            <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
-              <table {{table.default}}>
-
-                {% if item.image %}
+            <td style="padding-bottom: {{row-gutter}}px;">
+              <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
                 <tr>
-                  <td>
-                    <a href="{{link}}">
-                      <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
-                    </a>
-                  </td>
-                </tr>
-                {% endif %}
-                {% if item.content %}
-                <tr>
-                  <td style="{{spacing.vpad.sm}} {{spacing.hpad.xs}}">
+                  <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
                     <table {{table.default}}>
-                      {% include component/_content.html content=item.content align=text-align theme=theme %}
+
+                      {% if item.image %}
+                      <tr>
+                        <td>
+                          <a href="{{link}}">
+                            <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                          </a>
+                        </td>
+                      </tr>
+                      {% endif %}
+                      {% if item.content %}
+                      <tr>
+                        <td style="{{spacing.vpad.sm}} {{spacing.hpad.xs}}">
+                          {% include component/_content.html content=item.content align=text-align theme=theme %}
+                        </td>
+                      </tr>
+                      {% endif %}
+
                     </table>
                   </td>
                 </tr>
-                {% endif %}
-
               </table>
             </td>
           </tr>
-          {% include element/space.html height=row-gutter %}
         </table>
 
         {% if pos == 'one' or pos == 'two' %}

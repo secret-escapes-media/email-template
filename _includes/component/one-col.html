@@ -40,9 +40,7 @@
           {% if item.content %}
           <tr>
             <td style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
-              <table {{table.default}}>
-                {% include component/_content.html content=item.content align=text-align theme=theme %}
-              </table>
+              {% include component/_content.html content=item.content align=text-align theme=theme %}
             </td>
           </tr>
           {% endif %}
@@ -50,7 +48,7 @@
 
       </td>
     </tr>
-    {% include element/space.html height=row-gutter %}
   </table>
+  {% include element/space.html height=row-gutter %}
 
 {% endfor %}

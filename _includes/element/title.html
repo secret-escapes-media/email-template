@@ -20,8 +20,10 @@
   {% assign textcolor = color.white %}
 {% endif %}
 
-<tr>
-  <td align="{{align}}" class="title{% if include.style %}-{{include.style}}{% endif %}" style="{{title.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0;{% endunless %}">
-    {{include.title}}
-  </td>
-</tr>
+<table {{table.fluid}}>
+  <tr>
+    <td align="{{align}}" class="title{% if include.style %}-{{include.style}}{% endif %}" style="{{title.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0;{% endunless %}">
+      {{include.title}}
+    </td>
+  </tr>
+</table>

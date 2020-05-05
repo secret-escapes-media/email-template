@@ -10,9 +10,7 @@
         <tr>
           {% if site.partner %}
             <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
-              <table {{table.default}}>
-                {% include element/logo/combined.html %}
-              </table>
+              {% include element/logo/combined.html %}
             </td>
           {% else %}
             <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">

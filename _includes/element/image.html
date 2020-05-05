@@ -12,11 +12,13 @@
   {% assign link = include.link %}
 {% endif %}
 
-<tr>
-  <td>
-    <a href="{{link}}">
-      <img class="img-max" src="img/{{image}}" width="100%" style="display: block;" />
-    </a>
-  </td>
-</tr>
+<table {{table.fluid}}>
+  <tr>
+    <td>
+      <a href="{{link}}">
+        <img class="img-max" src="img/{{image}}" width="100%" style="display: block;" />
+      </a>
+    </td>
+  </tr>
+</table>
 

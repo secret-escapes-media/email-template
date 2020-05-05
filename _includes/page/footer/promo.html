@@ -21,28 +21,22 @@
             <table {{table.fluid}} width="480" style="width: 480px;" class="responsive-table-md">
               <tr>
                 <td align="center" style="{{spacing.hpad.sm}} padding-top: 90px; padding-bottom: 90px;">
+
+                  {% include element/logo/icon.html %}
+                  
                   <table {{table.default}}>
-
-                    {% include element/logo/icon.html %}
-
-                    <!-- title -->
+                    <!-- Promo line -->
                     <tr>
                       <td colspan="5" align="center" style="{{title.xxl}} padding-top: {{spacing.md}}; color: {{color.white}};" class="title-xxl">
                         {{locale.footer.promo}}
                       </td>
                     </tr>
-
-                    <!-- cta -->
-                    <tr>
-                      <td colspan="5" align="center">
-                        <table {{table.default}}>
-                          {% assign button-link = locale.link.current-sales | append: site.ampscript.gastring %}
-                          {% include element/button.html label=locale.footer.promo-button link=button-link %}
-                        </table>
-                      </td>
-                    </tr>
-
                   </table>
+
+                  <!-- CTA -->
+                  {% assign button-link = locale.link.current-sales | append: site.ampscript.gastring %}
+                  {% include element/button.html label=locale.footer.promo-button link=button-link %}
+
                 </td>
               </tr>
             </table>

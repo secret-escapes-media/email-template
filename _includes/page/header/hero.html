@@ -51,9 +51,7 @@
                     <tr>
                       <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
                         {% if site.partner %}
-                          <table {{table.default}}>
-                            {% include element/logo/combined.html %}
-                          </table>
+                          {% include element/logo/combined.html %}
                         {% else %}
                           {% include element/logo/secret-escapes.html size="lg" %}
                         {% endif %}
@@ -101,9 +99,7 @@
       <table {{table.inner}}>
         <tr>
           <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.lg}};">
-            <table {{table.default}}>
-              {% include component/_content.html content=text-content align=text-align theme="dark" %}
-            </table>
+            {% include component/_content.html content=text-content align=text-align theme="dark" %}
           </td>
         </tr>
       </table>
