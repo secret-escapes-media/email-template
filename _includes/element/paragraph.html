@@ -21,7 +21,7 @@
 {% endif %}
 
 <tr>
-  <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}};">
+  <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0;{% endunless %}">
     {{include.paragraph}}
   </td>
 </tr>

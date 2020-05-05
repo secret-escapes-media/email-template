@@ -52,14 +52,16 @@
             <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
               <table {{table.default}}>
 
+                {% if item.image %}
                 <tr>
                   <td>
                     <a href="{{link}}">
-                      <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;" />
+                      <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
                     </a>
                   </td>
                 </tr>
-
+                {% endif %}
+                {% if item.content %}
                 <tr>
                   <td style="{{spacing.vpad.sm}} {{spacing.hpad.xs}}">
                     <table {{table.default}}>
@@ -67,6 +69,7 @@
                     </table>
                   </td>
                 </tr>
+                {% endif %}
 
               </table>
             </td>

@@ -1,29 +1,67 @@
 ---
 layout: default
 
-subject-line: Subject line
-preheader: Email preheader
+subject-line: Component Library
 
-page-link: "#page-link"
-main-button-label: Default button text
-terms-and-conditions: "Terms and conditions."
-
-hero:
+title-banner:
   config:
-    link: "#hero-link"
     row-gutter: 30
-  image: C..21-9.jpg
+    theme: dark
+  title:
+    - title: Component Library
+      style: xxxl
+
+hero-banner:
+  config:
+    row-gutter: 30
+    theme: dark
+  image:
+    file: BG..hero.jpg
+    height: 600
   content:
-    - paragraph: Test subtitle
-      style: subt
-      color: "#ffffff"
-    - title: Test title
-      style: xxl
-      color: "#ffffff"
-    - paragraph: Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-      color: "#ffffff"
-    - paragraph: Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-      color: "#ffffff"
+    - title: A riot of spice & colour
+      style: xxxl
+    - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
+      style: lg
+    - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      style: lg
+
+
+
+
+typography:
+  config:
+    row-gutter: 0
+  items:
+    - content:
+      - title: Title XXXL
+        style: xxxl
+      - paragraph: Paragraph XXXL
+        style: xxxl
+      - title: Title XXL
+        style: xxl
+      - paragraph: Paragraph XXL
+        style: xxl
+      - title: Title XL
+        style: xl
+      - paragraph: Paragraph XL
+        style: xl
+      - title: Title LG
+        style: lg
+      - paragraph: Paragraph LG
+        style: lg
+      - title: Title MD
+        style: md
+      - paragraph: Paragraph MD
+        style: md
+      - title: Title SM
+        style: sm
+      - paragraph: Paragraph SM
+        style: sm
+      - title: Title XS
+        style: xs
+      - paragraph: Paragraph XS
+        style: xs
 
 
 
@@ -105,62 +143,135 @@ three-col:
           style: sm
 
 
+
+offer:
+  items:
+
+    - title: Soak in Slovenia's thermal springs
+      attribute: Editors pick
+      location: Slovenia
+      description: Discover Slovenia from the 4-star Riske Terme thermal resort. Incl. half board, car rental, luxury spa entry, thermal baths & return flights!
+      price: 389
+      price-description: per room per night
+      saved: 40%
+      expires: 2019/10/26
+      image: https://travelbird-images.imgix.net/4c/2a/4c2a5de4b4fd3ce9d3a5b23840afb7aa?auto=compress%2Cformat&crop=faces%2Cedges%2Ccenter&dpr=2&fit=crop&h=700&w=1050
+      link: https://co.uk.sales.secretescapes.com/115743/thermal-slovenia/
+
+
 ---
 {% include system/helpers.html %}
 
 
 
-{% include page/header/logo-white.html %}
 {% include page/header/logo.html %}
 {% include page/header/title.html %}
-
 <table {{table.outer}}>
   <tr>
-    <td bgcolor="{{color.grey.lightest}}" style="{{spacing.vpad.md}} {{spacing.gutter}}">
+    <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
 
       <table {{table.inner}}>
-
         {% include element/space.html height="30" %}
-        {% include element/title.html title="Elements / Logos" style="xl" %}
+        {% include element/title.html title="Foundations / Typography" style="xl" %}
         {% include element/space.html height="30" %}
-
         <tr>
-          <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
-            <table {{table.default}}>
+          <td>
+            {% include component/one-col.html content=page.typography %}
+          </td>
+        </tr>
 
-              {% include element/logo/secret-escapes.html invert="true" size="lg" %}
-              {% include element/logo/secret-escapes.html invert="true" size="md" %}
-              {% include element/logo/secret-escapes.html invert="true" size="sm" %}
+        {% include element/space.html height="60" %}
+        {% include element/title.html title="Foundations / Colours" style="xl" %}
+        {% include element/space.html height="30" %}
+        <tr>
+          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{shadow.md}}">
+            <table {{table.fluid}}>
+
+              {% include element/paragraph.html paragraph="Neutrals" style="subt" %}
+              {% include element/space.html height="15" %}
+              <tr>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.white}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lightest}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lighter}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.light}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.dark}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darker}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darkest}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.black}}"></td>
+              </tr>
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="Primary" style="subt" %}
+              {% include element/space.html height="15" %}
+              <tr>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.default}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lightest}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lighter}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.light}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.medium}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.dark}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darker}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darkest}}"></td>
+              </tr>
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="Secondary" style="subt" %}
+              {% include element/space.html height="15" %}
+              <tr>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.default}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lightest}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lighter}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.light}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.medium}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.dark}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darker}}"></td>
+                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darkest}}"></td>
+              </tr>
+
+              {% include element/space.html height="15" %}
+              {% include element/paragraph.html paragraph="Gradient" style="subt" %}
+              {% include element/space.html height="15" %}
+              <tr>
+                <td style="{{spacing.boxpad.sm}} {{color.gradient.primary}}"></td>
+                <td style="{{spacing.boxpad.sm}} {{color.gradient.secondary}}"></td>
+              </tr>
 
             </table>
           </td>
         </tr>
 
-        {% include element/space.html height="30" %}
-        {% include element/title.html title="Elements / Buttons" style="xl" %}
+        {% include element/space.html height="60" %}
+        {% include element/title.html title="Foundations / Buttons" style="xl" %}
         {% include element/space.html height="30" %}
 
         <tr>
-          <td bgcolor="{{color.white}}" style="{{spacing.hpad.md}} {{spacing.vpad.md}} {{rounded.md}} {{shadow.md}}">
-            <table {{table.fluid}}>
+          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{shadow.md}}">
+            <table {{table.default}}>
 
               {% include element/paragraph.html paragraph="primary + xs" style="subt" %}
+              {% include element/space.html height="15" %}
               {% include element/button.html label="Read more" link="#button-link" style="primary" scale="xs" %}
 
               {% include element/space.html height="15" %}
               {% include element/paragraph.html paragraph="secondary + sm" style="subt" %}
+              {% include element/space.html height="15" %}
               {% include element/button.html label="Read more" link="#button-link" style="secondary" scale="sm" %}
 
               {% include element/space.html height="15" %}
               {% include element/paragraph.html paragraph="partner + md" style="subt" %}
+              {% include element/space.html height="15" %}
               {% include element/button.html label="Read more" link="#button-link" style="partner" scale="md" %}
 
               {% include element/space.html height="15" %}
               {% include element/paragraph.html paragraph="light + lg" style="subt" %}
+              {% include element/space.html height="15" %}
               {% include element/button.html label="Read more" link="#button-link" style="light" scale="lg" %}
 
               {% include element/space.html height="15" %}
               {% include element/paragraph.html paragraph="outline + xl" style="subt" %}
+              {% include element/space.html height="15" %}
               {% include element/button.html label="Read more" link="#button-link" style="outline" scale="xl" %}
 
             </table>
@@ -178,10 +289,29 @@ three-col:
       {% include component/two-col.html content=page.two-col %}
       {% include component/three-col.html content=page.three-col %}
       {% include component/row.html content=page.image-text-row %}
+      {% include component/one-col-offer.html content=page.offer %}
 
     </td>
   </tr>
 </table>
+
+<table {{table.outer}}>
+  <tr>
+    <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+      <table {{table.fluid}}>
+        {% include element/space.html height="30" %}
+        {% include element/title.html title="Page Blocks" style="xl" %}
+        {% include element/space.html height="30" %}
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% include page/header/logo-white.html %}
+{% include page/header/logo.html %}
+
+{% include page/header/hero.html %}
+{% include page/header/image.html %}
 
 {% include page/footer/promo.html %}
 {% include page/footer/best-wishes.html %}
