@@ -4,12 +4,21 @@
 
 {% assign config       = page.hero-banner.config %}
 {% assign text-content = page.hero-banner.content %}
-{% assign theme        = config.theme %}
+{% assign theme        = "dark" %}
 {% assign link         = config.link %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
 {% assign height       = "300" %}
+{% assign background   = color.black %}
 
+
+{% if config.background %}
+  {% assign background = config.background %}
+{% endif %}
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
 
 {% if page.hero-banner.image.height %}
   {% assign height = page.hero-banner.image.height %}
@@ -27,7 +36,7 @@
 <table {{table.outer}}>
   <tr>
     <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-    <td bgcolor="{{color.black}}" background="img/{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
+    <td bgcolor="{{background}}" background="img/{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
       <!--[if (gt mso 9)&(lt mso 16)]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
         <v:fill type="frame" src="img/{{page.hero-banner.image.file}}" color="{{color.black}}" />
@@ -95,11 +104,11 @@
 <!-- CONTENT -->
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.black}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{background}}" style="{{spacing.gutter}}">
       <table {{table.inner}}>
         <tr>
           <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.lg}};">
-            {% include component/_content.html content=text-content align=text-align theme="dark" %}
+            {% include component/_content.html content=text-content align=text-align theme=theme %}
           </td>
         </tr>
       </table>
