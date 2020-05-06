@@ -6,7 +6,7 @@
 offer:
   cta: Jetzt angebote
   currency: €
-  from: Ab 
+  from: Ab
 
 link:
   current-sales: https://www.secretescapes.de/aktuelle-angebote
@@ -29,7 +29,7 @@ footer:
     - paragraph: >
         Für Sie finden wir Luxushotels und exklusive Urlaubsziele sowie außergewöhnliche Extras, die Ihnen bestimmt gefallen.
     - paragraph: >
-        Möchten Sie Ihren Freunden eines unserer Angebote empfehlen? Dann nutzen Sie einfach einen der Social Media-Buttons auf unserer Website. Um uns zu kontaktieren, senden Sie uns bitte eine E-Mail an <a href="mailto:service@secretescapes.de" style="font-weight: 600; text-decoration: none;">service@secretescapes.de</a> oder rufen Sie uns unter <a href="tel:030221531830" style="font-weight: 600; text-decoration: none;">+49 (0)30 221 53 18 30</a> an.
+        Möchten Sie Ihren Freunden eines unserer Angebote empfehlen? Dann nutzen Sie einfach einen der Social Media-Buttons auf unserer Website. Um uns zu kontaktieren, senden Sie uns bitte eine E-Mail an <a href="mailto:service@secretescapes.de" style="font-weight: 600; text-decoration: none; color: #5B5D67;">service@secretescapes.de</a> oder rufen Sie uns unter <a href="tel:030221531830" style="font-weight: 600; text-decoration: none; color: #5B5D67;">+49 (0)30 221 53 18 30</a> an.
     - paragraph: >
         Secret Esca‌pes Ltd. ist ein Unterne‌hmen, das in Eng‌land & Wal‌es unter der Nummer 07026107 und der Adresse 12‌0 Holb‌‌orn, Lon‌‌don, EC‌‌1N ‌2T‌D, Verei‌ni‌gtes Kön‌i‌greich regis‌triert i‌st.
 

@@ -68,17 +68,18 @@ typography:
 one-col:
   config:
     row-gutter: 30
-    align: left
+    align: center
   items:
     - link: "#one-col-link"
       image: C..16-9.jpg
       content:
         - title: Your guide to Marrakech's markets
           style: xl
-        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.
-          style: lg
         - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           style: lg
+        - promo: SECRET20
+          before: Apply this code at checkout to claim your 20% discount
+          after: Terms & conditions apply
         - space: 15
         - button: Read more
           scale: xl
@@ -185,11 +186,11 @@ offer:
 {% include page/header/title.html %}
 <table {{table.outer}}>
   <tr>
-    <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
 
       <table {{table.inner}}>
         <tr>
-          <td>
+          <td align="center">
             {% include element/space.html height="30" %}
             {% include element/title.html title="Foundations / Typography" style="xl" %}
             {% include element/space.html height="30" %}
@@ -204,7 +205,7 @@ offer:
 
       <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
+          <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
 
             {% include element/paragraph.html paragraph="Neutrals" style="subt" %}
             {% include element/space.html height="15" %}
@@ -275,7 +276,7 @@ offer:
 
       <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
+          <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
 
             {% include element/paragraph.html paragraph="primary + xs" style="subt" %}
             {% include element/space.html height="15" %}
@@ -313,8 +314,8 @@ offer:
       {% include component/two-col.html content=page.two-col %}
       {% include component/three-col.html content=page.three-col %}
       {% include component/row.html content=page.image-text-row %}
-      {% include component/one-col-offer.html content=page.offer %}
       {% include component/row-offer.html content=page.offer %}
+      {% include component/one-col-offer.html content=page.offer %}
 
     </td>
   </tr>
@@ -322,7 +323,7 @@ offer:
 
 <table {{table.outer}}>
   <tr>
-    <td bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
       {% include element/space.html height="30" %}
       {% include element/title.html title="Page Blocks" style="xl" %}
       {% include element/space.html height="30" %}

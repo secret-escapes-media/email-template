@@ -1,10 +1,10 @@
 
 
-xl: "60px"
-lg: "45px"
-md: "30px"
-sm: "15px"
-xs: "10px"
+xl: "60"
+lg: "45"
+md: "30"
+sm: "15"
+xs: "10"
 
 # grid spacing
 gutter: "padding-left: 15px; padding-right: 15px;"

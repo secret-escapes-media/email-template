@@ -1,0 +1,61 @@
+<!-- Promo -->
+
+{% include system/helpers.html %}
+
+{% assign align      = "center" %}
+{% assign style      = "default" %}
+{% assign textcolor  = color.grey.darker %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+{% if include.style %}
+  {% assign style = include.style %}
+{% endif %}
+
+{% if include.color %}
+  {% assign textcolor = include.color %}
+{% endif %}
+
+{% assign promo-code    = include.promo %}
+{% assign promo-before  = include.before %}
+{% assign promo-after   = include.after %}
+
+
+
+<table {{table.fluid}}>
+  <tr>
+    <td align="center">
+
+      <table {{table.fluid}}>
+        {% if promo-before %}
+        <tr>
+          <td align="{{align}}" style="{{text.xl}}" class="text--xl">
+            {{promo-before}}
+          </td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td align="center" style="{{spacing.vpad.xs}}">
+            <table {{table.fluid}} style="border: 1px solid {{color.primary.default}};">
+              <tr>
+                <td align="{{align}}" style="{{text.xxl}} {{spacing.boxpad.sm}} {{typography.bold}}" class="text--xxl">
+                  {{promo-code}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        {% if promo-after %}
+        <tr>
+          <td align="{{align}}" style="{{text.sm}}" class="text--sm">
+            {{promo-after}}
+          </td>
+        </tr>
+        {% endif %}
+      </table>
+
+    </td>
+  </tr>
+</table>

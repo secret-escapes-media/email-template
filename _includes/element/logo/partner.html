@@ -1,9 +1,9 @@
 
 
 {% if include.invert == "true" %}
-  {% assign image = "img/L..partner.png" %}
+  {% assign image = "{{site.image}}L..partner.png" %}
 {% else %}
-  {% assign image = "img/L..partner-wh.png" %}
+  {% assign image = "{{site.image}}L..partner-wh.png" %}
 {% endif %}
 
 <a href="{{site.partner.link}}" style="{{text.md}}">

@@ -14,3 +14,7 @@ partner:
   # name: Partner Name
   # link: "#partner-link"
   # logo-width: 110
+
+
+# image: "img/" # dev
+image: "http://m-stg.secretescapes.com/uk/templates/email-2020/img/" # live

@@ -8,10 +8,10 @@
 {% if page.title-banner.title %}
 <table {{table.outer}}>
   <tr>
-    <td bgcolor="{{color.black}}" style="padding-bottom: {{spacing.lg}}; {{spacing.gutter}} color: {{color.white}};">
+    <td align="center" bgcolor="{{color.black}}" style="padding-bottom: {{spacing.lg}}px; {{spacing.gutter}} color: {{color.white}};">
       <table {{table.inner}}>
         <tr>
-          <td>
+          <td align="center">
           {% include component/_content.html content=page.title-banner.title theme="dark" %}
           </td>
         </tr>

@@ -2,7 +2,8 @@
 {% assign config       = include.content.config %}
 {% assign items        = include.content.items %}
 {% assign row-gutter   = "30" %}
-{% assign height       = "250" %}
+{% assign image-height = "250" %}
+{% assign width        = layout.width.lg | divided_by: 2 %}
 
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
@@ -15,41 +16,40 @@
 
   <table {{table.inner}}>
     <tr>
-      <td bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}}">
 
         <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
           <tr>
             <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-            <td bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
-              <!--[if (gt mso 9)&(lt mso 16)]>
-              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-                <v:fill type="frame" src="{{item.image}}" color="{{color.black}}" />
-                <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+            <td align="center" bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" height="{{image-height}}">
+              <!--[if mso | ie]>
+              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{width}}; height: {{image-height}}px;" src="{{item.image}}" />
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{width}}; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
+              <v:fill type="frame" size="100%,100%"  src="{{item.image}}" />
+              <v:textbox inset="0,0,0,0">
               <![endif]-->
-
-              <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
-              <table {{table.fluid}} height="{{height}}">
+              <table align="center" {{table.fluid}} height="{{height}}">
                 <tr>
                   <td align="center">
                     <!-- Top -->
                     <table {{table.fluid}} height="45">
                       <tr>
-                        <td valign="top" style="{{spacing.hpad.sm}} padding-top: {{spacing.sm}};">
-                          <table {{table.fluid}}>
-                            <tr>
-                              <td align="left" class="text-md" style="{{text.md}} {{typography.bold}} color: {{color.white}};">
-                                Sale ends {{item.expires | date: "%B %d"}}
-                              </td>
-                            </tr>
-                          </table>
+                        <td width="{{spacing.sm}}"></td>
+                        <td align="center" valign="top" style="padding-top: {{spacing.sm}}px; {{text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
+                          Sale ends {{item.expires | date: "%B %d"}}
                         </td>
                       </tr>
                     </table>
                     <!-- Link -->
-                    <table class="offer__image" {{table.fluid}} height="{% if item.attribute %}{{height | minus: 45 | minus: 45}}{% else %}{{height | minus: 45}}{% endif %}">
+                    {% if item.attribute %}
+                      {% assign link-height = image-height | minus: 90 %}
+                    {% else %}
+                      {% assign link-height = image-height | minus: 45 %}
+                    {% endif %}
+                    <table class="offer__image" {{table.fluid}} height="{{link-height}}">
                       <tr>
-                        <td>
-                          <a href="{{link}}" style="height: 100%; width: 100%; display: block;"></a>
+                        <td align="center" height="{{link-height}}">
+                          <a href="{{item.link}}" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
                         </td>
                       </tr>
                     </table>
@@ -57,7 +57,8 @@
                     <!-- Bottom -->
                     <table {{table.fluid}} height="45">
                       <tr>
-                        <td valign="bottom" style="{{spacing.hpad.sm}} padding-bottom: {{spacing.sm}};">
+                        <td width="{{spacing.sm}}"></td>
+                        <td align="center" valign="bottom" style="padding-bottom: {{spacing.sm}}px;">
                           {% include element/badge.html label=item.attribute %}
                         </td>
                       </tr>
@@ -75,26 +76,11 @@
           </tr>
         </table>
 
-        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
+        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width | minus: 5}}">
           <tr>
-            <td style="{{spacing.hpad.sm}}" height="{{height}}" valign="middle" class="responsive-td-lg">
-              <table {{table.fluid}}>
-                <!-- Location -->
-                <tr>
-                  <td align="left" style="padding-bottom: 8px;">
-                    <table {{table.default}} align="left">
-                      <tr>
-                        <td align="left" valign="middle" style="padding-right: 8px">
-                          <img src="img/se20..location.png" width="11">
-                        </td>
-                        <td align="left" valign="middle" class="text-md" style="{{text.md}} color: {{color.grey.dark}}; padding-bottom: 0;">
-                          {{item.location}}
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
+            <td style="{{spacing.hpad.sm}}" height="{{image-height}}" valign="middle" class="responsive-td-lg">
+              <!-- Location -->
+              {% include element/location.html location=item.location %}
               <!-- Title -->
               {% include element/title.html title=item.title align="left" style="md" %}
               {% include element/space.html height="15" %}

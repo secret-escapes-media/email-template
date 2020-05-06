@@ -44,21 +44,21 @@
   {% if pos == 'one' %}
   <table {{table.inner}}>
     <tr>
-      <td>
+      <td align="center">
   {% endif %}
         <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
           <tr>
-            <td style="padding-bottom: {{row-gutter}}px;">
+            <td align="center" style="padding-bottom: {{row-gutter}}px;">
               <table {{table.default}}>
                 <tr>
-                  <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+                  <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
                     <table {{table.default}}>
 
                       {% if item.image %}
                       <tr>
-                        <td>
+                        <td align="center">
                           <a href="{{link}}">
-                            <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                            <img class="img-max" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
                           </a>
                         </td>
                       </tr>

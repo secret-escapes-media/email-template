@@ -7,15 +7,15 @@ layout: default
 
 <table {{table.outer}}>
   <tr>
-    <td bgcolor="{{color.background.box}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.gutter}}">
 
       <table {{table.inner}}>
         <tr>
-          <td>
+          <td align="center">
 
             {% include component/_content.html content=page.main %}
             {% include element/space.html height=spacing.lg %}
-            
+
           </td>
         </tr>
       </table>

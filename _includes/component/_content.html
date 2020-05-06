@@ -26,6 +26,20 @@
       theme=include.theme
       align=include.align %}
 
+  {% elsif row.location %}
+    {% include element/location.html
+      location=row.location
+      theme=include.theme %}
+
+  {% elsif row.promo %}
+    {% include element/promo.html
+      promo=row.promo
+      before=row.before
+      after=row.after
+      color=row.color
+      theme=include.theme
+      align=include.align %}
+
   {% elsif row.hr %}
     {% include element/hr.html
       height=row.hr

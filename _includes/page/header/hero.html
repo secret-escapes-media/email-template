@@ -8,7 +8,7 @@
 {% assign link         = config.link %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
-{% assign height       = "300" %}
+{% assign image-height       = "300" %}
 {% assign background   = color.black %}
 
 
@@ -21,7 +21,7 @@
 {% endif %}
 
 {% if page.hero-banner.image.height %}
-  {% assign height = page.hero-banner.image.height %}
+  {% assign image-height = page.hero-banner.image.height %}
 {% endif %}
 
 {% if config.align %}
@@ -36,27 +36,21 @@
 <table {{table.outer}}>
   <tr>
     <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
-    <td bgcolor="{{background}}" background="img/{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
-      <!--[if (gt mso 9)&(lt mso 16)]>
-      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-        <v:fill type="frame" src="img/{{page.hero-banner.image.file}}" color="{{color.black}}" />
-        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+    <td align="center" bgcolor="{{background}}" background="{{site.image}}{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
+      <!--[if mso | ie]>
+      <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}; height: {{image-height}}px;" src="{{site.image}}{{page.hero-banner.image.file}}" />
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.xl}}; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
+      <v:fill type="frame" size="100%,100%"  src="{{site.image}}{{page.hero-banner.image.file}}" />
+      <v:textbox inset="0,0,0,0">
       <![endif]-->
-
-      <!-- center table - alignment is lost when the above vml hack is applied, need an extra table to center the content -->
-      <table {{table.outer}}>
+      <table align="center" {{table.outer}}>
         <tr>
           <td align="center">
             <table {{table.fluid}}> <!-- extra table to apply height as responsive class removes it on table.inner -->
               <!-- Logo -->
               <tr>
-                <td align="center" valign="top" height="120" background="img/se20..hero-fade-top.png" style="background-position: top center; background-repeat: no-repeat; background-size: cover;">
-                  <!--[if (gt mso 9)&(lt mso 16)]>
-                  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-                    <v:fill type="frame" src="img/se20..hero-fade-top.png" color="{{color.black}}" />
-                    <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
-                  <![endif]-->
-                  <table {{table.default}}>
+                <td align="center" valign="top" height="120" background="{{site.image}}se20..hero-fade-top.png" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="120">
+                  <table align="center" {{table.default}}>
                     <tr>
                       <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
                         {% if site.partner %}
@@ -67,34 +61,31 @@
                       </td>
                     </tr>
                   </table>
-                  <!--[if (gt mso 9)&(lt mso 16)]>
-                    </v:textbox>
-                  </v:rect>
-                  <![endif]-->
                 </td>
               </tr>
               <!-- Link -->
+              {% assign link-height = image-height | minus: 180 %}
               <tr>
-                <td class="hero__link" align="center" valign="bottom" height="{{height | minus: 180}}">
-                  <a href="{{link}}" style="display: block; height: 100%; width: 100%;"></a>
+                <td class="hero__link" align="center" valign="bottom" height="{{link-height}}">
+                  <a href="{{link}}" style="display: block; height: {{link-height}}px; width: 100%;"></a>
                 </td>
               </tr>
               <!-- Bottom fade -->
               <tr>
-                <td align="center" valign="bottom" height="60">
-                  <img src="img/se20..hero-fade-bottom.png" class="img-max" width="100%" style="width: 100%;">
+                <td align="center" valign="bottom" height="60" style="vertical-align: bottom;">
+                  <img src="{{site.image}}se20..hero-fade-bottom.png" class="img-max" width="100%" style="width: 100%; display: block;">
                 </td>
               </tr>
             </table>
           </td>
         </tr>
       </table>
-
-      <!--[if (gt mso 9)&(lt mso 16)]>
-        </v:textbox>
+      <!--[if mso | ie]>
+      </v:textbox>
+      </v:fill>
       </v:rect>
+      </v:image>
       <![endif]-->
-
     </td>
   </tr>
 </table>
@@ -107,7 +98,7 @@
     <td align="center" bgcolor="{{background}}" style="{{spacing.gutter}}">
       <table {{table.inner}}>
         <tr>
-          <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.lg}};">
+          <td align="center" style="{{spacing.hpad.md}} padding-bottom: {{spacing.lg}}px;">
             {% include component/_content.html content=text-content align=text-align theme=theme %}
           </td>
         </tr>

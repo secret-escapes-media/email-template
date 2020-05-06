@@ -1,7 +1,7 @@
 ---
 layout: trading
 
-subject-line: Subject line
+subject-line: Trading
 preheader: Email preheader
 
 page-link: "#page-link"
@@ -66,17 +66,5 @@ offers:
 ---
 {% include system/helpers.html %}
 
-
-<table {{table.fluid}}>
-  <tr>
-    <td style="{{spacing.vpad.md}}">
-
-      {% include component/one-col-offer.html content=page.offers %}
-
-    </td>
-  </tr>
-</table>
-
-
-
+{% include component/one-col-offer.html content=page.offers %}
 

@@ -27,21 +27,21 @@
 
   <table {{table.inner}}>
     <tr>
-      <td bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
 
         <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
           <tr>
-            <td>
+            <td align="center">
               <a href="{{link}}">
-                <img class="img-max" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
+                <img class="img-max" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
               </a>
             </td>
           </tr>
         </table>
 
-        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width}}">
+        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width | minus: 5}}">
           <tr>
-            <td style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-td-lg">
+            <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-td-lg">
               {% include component/_content.html content=item.content align=text-align theme=theme %}
             </td>
           </tr>

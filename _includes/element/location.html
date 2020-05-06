@@ -1,0 +1,30 @@
+<!-- Location -->
+
+{% include system/helpers.html %}
+
+{% assign textcolor  = color.grey.dark %}
+{% assign marker     = "se20..location.png" %}
+
+{% if include.color %}
+  {% assign textcolor = include.color %}
+{% elsif include.theme == 'dark' %}
+  {% assign textcolor = color.white %}
+  {% assign marker = "se20..location-wh.png" %}
+{% endif %}
+
+<table {{table.fluid}}>
+  <tr>
+    <td align="left" style="padding-bottom: 8px;">
+      <table {{table.default}} align="left">
+        <tr>
+          <td align="left" valign="middle" style="padding-right: 8px">
+            <img src="{{site.image}}{{marker}}" width="11">
+          </td>
+          <td align="left" valign="middle" class="text-md" style="{{text.md}} color: {{textcolor}}; padding-bottom: 0;">
+            {{include.location}}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
