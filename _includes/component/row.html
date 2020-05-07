@@ -27,9 +27,10 @@
 
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
 
-        <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;" class="no_width">
+        <table {{table.default}} class="responsive-lg" align="left" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td align="center">
               <a href="{{link}}">
@@ -38,14 +39,17 @@
             </td>
           </tr>
         </table>
+        </div>
 
-        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width | minus: 5}}">
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;" class="no_width">
+        <table {{table.default}} class="responsive-lg" align="right" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
-            <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-td-lg">
+            <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-lg">
               {% include component/_content.html content=item.content align=text-align theme=theme %}
             </td>
           </tr>
         </table>
+        </div>
 
       </td>
     </tr>

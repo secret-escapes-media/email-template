@@ -35,7 +35,7 @@ title:
 
 #=== Breakpoint: 600px+
 lg:
-  text:           "font-size: 16px !important; line-height: 24px !important; padding-bottom: 8px !important;"
+  text:           "font-size: 16px !important; line-height: 24px !important; padding-bottom: 8px !important; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
   text-xxxl:      "font-size: 20px !important; line-height: 30px !important; padding-bottom: 10px !important;"
   text-xxl:       "font-size: 19px !important; line-height: 29px !important; padding-bottom: 10px !important;"
   text-xl:        "font-size: 18px !important; line-height: 27px !important; padding-bottom: 9px !important;"
@@ -44,7 +44,7 @@ lg:
   text-sm:        "font-size: 15px !important; line-height: 23px !important; padding-bottom: 8px !important;"
   text-xs:        "font-size: 14px !important; line-height: 21px !important; padding-bottom: 7px !important;"
 
-  title:          "font-size: 26px !important; line-height: 32px !important; padding-bottom: 6px !important;"
+  title:          "font-size: 26px !important; line-height: 32px !important; padding-bottom: 6px !important; font-family: Georgia, serif, 'Source Serif Pro';"
   title-xxxl:     "font-size: 42px !important; line-height: 52px !important; padding-bottom: 10px !important;"
   title-xxl:      "font-size: 36px !important; line-height: 45px !important; padding-bottom: 9px !important;"
   title-xl:       "font-size: 32px !important; line-height: 40px !important; padding-bottom: 8px !important;"
