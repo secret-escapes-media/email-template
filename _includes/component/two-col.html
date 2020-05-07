@@ -44,14 +44,18 @@
   {% if pos == 'one' %}
   <table {{table.inner}}>
     <tr>
-      <td align="center">
+      <td align="center" style="font-size:0;">
   {% endif %}
-        <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
+
+        <div class="responsive-lg" style="display:inline-block; vertical-align:top; max-width:50%; min-width:{{width}}px; width:100%;">
+        <table {{table.default}} class="responsive-lg" align="{{align}}" width="100%" style="width: 100%; max-width: {{width}}px;">
           <tr>
             <td align="center" style="padding-bottom: {{row-gutter}}px;">
+
               <table {{table.default}}>
                 <tr>
                   <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+
                     <table {{table.default}}>
 
                       {% if item.image %}
@@ -78,13 +82,7 @@
             </td>
           </tr>
         </table>
-
-        {% if pos == 'one' %}
-        <!-- Spacer -->
-        <table {{table.default}} class="responsive-table-lg" align="center" width="{{col-gutter}}">
-          <tr><td></td></tr>
-        </table>
-        {% endif %}
+        </div>
 
   {% if pos == 'two' or forloop.last %}
       </td>

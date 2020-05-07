@@ -1,0 +1,36 @@
+---
+layout: default
+
+
+component:
+  config:
+    row-gutter: 30
+    align: center
+  items:
+    - link: "#one-col-link"
+      image: C..16-9.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: xl
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          style: lg
+        - space: 15
+        - button: Read more
+          scale: xl
+
+    - link: "#one-col-link"
+      image: C..16-9.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: xl
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          style: lg
+        - space: 15
+        - button: Read more
+          scale: xl
+
+
+---
+{% include system/helpers.html %}
+
+{% include component/two-col.html content=page.component %}

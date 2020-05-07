@@ -4,9 +4,15 @@
 
   <title>{{ page.subject-line }}</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark only">
+  <meta name="supported-color-schemes" content="light dark only">
 
   {% capture googlefonts %}
     {% for font in foundations.fonts %}
@@ -18,6 +24,14 @@
     {% endfor %}
   {% endcapture %}
   <link href='https://fonts.googleapis.com/css?family={{googlefonts|strip_newlines|remove:" "}}' rel='stylesheet' type='text/css' />
+
+  <!-- // FIX: DPI Scaling in Outlook 2007-2013 -->
+  <!--[if gte mso 9]><xml>
+   <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+   </o:OfficeDocumentSettings>
+  </xml><![endif]-->
 
   <style type="text/css">
 

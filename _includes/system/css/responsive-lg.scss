@@ -3,18 +3,25 @@
   if SCREEN WIDTH less than LG BREAKPOINT
 */
 
-table[class*="responsive-table-lg"]{
+table[class*="responsive-lg"]{
   width: 100%!important;
+  max-width: 100%!important;
   height: auto!important;
 }
-td[class*="responsive-td-lg"]{
+div[class*="responsive-lg"]{
   width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
+td[class*="responsive-lg"]{
+  width: 100%!important;
+  max-width: 100%!important;
   height: auto!important;
 }
 
 img[class*="img-max"]{
-  max-width: 100% !important;
   width: 100% !important;
+  max-width: 100% !important;
   height:auto !important;
 }
 
