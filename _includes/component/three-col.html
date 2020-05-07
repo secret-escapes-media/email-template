@@ -28,28 +28,29 @@
 {% for item in items %}
   {% assign link = item.link %}
 
-  <!-- Widths and gutters -->
   {% assign width = layout.width.lg | minus: col-gutter | minus: col-gutter | divided_by: 3 %}
 
-  <!-- Alignment -->
   {% capture pos %}{% cycle "one", "two", "three" %}{% endcapture %}
   {% if pos == "one" %}
     {% assign align = "left" %}
   {% elsif pos == "two" %}
-    {% assign align = "left" %}
+    {% assign align = "center" %}
   {% elsif pos == "three" %}
-    {% assign align = "left" %}
+    {% assign align = "right" %}
   {% endif %}
 
   {% if pos == 'one' %}
   <table {{table.inner}}>
     <tr>
-      <td align="center">
+      <td align="center" style="font-size:0;">
   {% endif %}
-        <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
+
+        <div class="responsive-lg" style="display:inline-block; vertical-align:top; max-width:33.33%; min-width:{{width}}px; width:100%;">
+        <table {{table.default}} class="responsive-lg" align="{{align}}" width="100%" style="width: 100%; max-width: {{width}}px;">
+
           <tr>
             <td align="center" style="padding-bottom: {{row-gutter}}px;">
-              <table {{table.default}} class="responsive-table-lg" align="{{align}}" width="{{width}}">
+              <table {{table.default}} class="responsive-lg" align="{{align}}" width="{{width}}">
                 <tr>
                   <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
                     <table {{table.default}}>
@@ -58,7 +59,7 @@
                       <tr>
                         <td align="center">
                           <a href="{{link}}">
-                            <img class="img-max" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                            <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
                           </a>
                         </td>
                       </tr>
@@ -78,13 +79,7 @@
             </td>
           </tr>
         </table>
-
-        {% if pos == 'one' or pos == 'two' %}
-        <!-- Spacer -->
-        <table {{table.default}} class="responsive-table-lg" align="left" width="{{col-gutter}}">
-          <tr><td>&nbsp;</td></tr>
-        </table>
-        {% endif %}
+        </div>
 
   {% if pos == 'three' or forloop.last %}
       </td>

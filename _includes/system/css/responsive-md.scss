@@ -3,11 +3,26 @@
   if SCREEN WIDTH less than MD BREAKPOINT
 */
 
-table[class*="responsive-table-md"]{
+table[class*="responsive-md"]{
   width: 100%!important;
+  max-width: 100%!important;
   height: auto!important;
 }
-
+div[class*="responsive-md"]{
+  width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
+td[class*="responsive-md"]{
+  width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
+img[class*="responsive-md"]{
+  width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
 
 img[class="logo-icon__line"]{
   display: none !important;

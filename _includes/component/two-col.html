@@ -28,10 +28,8 @@
 {% for item in items %}
   {% assign link = item.link %}
 
-  <!-- Widths and gutters -->
   {% assign width = layout.width.lg | minus: col-gutter | divided_by: 2 %}
 
-  <!-- Alignment -->
   {% capture pos %}{% cycle "one", "two" %}{% endcapture %}
   {% if pos == "one" and forloop.last %}
     {% assign align = "center" %}
@@ -62,7 +60,7 @@
                       <tr>
                         <td align="center">
                           <a href="{{link}}">
-                            <img class="img-max" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                            <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
                           </a>
                         </td>
                       </tr>

@@ -1,9 +1,9 @@
 
 width:
-  sm: "360px"
-  md: "480px"
-  lg: "600px"
-  xl: "720px"
+  sm: "360"
+  md: "480"
+  lg: "600"
+  xl: "720"
 
 breakpoints:
   sm: "360px"

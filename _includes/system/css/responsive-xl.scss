@@ -3,12 +3,21 @@
   if SCREEN WIDTH less than XL BREAKPOINT
 */
 
-table[class*="responsive-table-xl"]{
+table[class*="responsive-xl"]{
   width: 100%!important;
   height: auto!important;
 }
-
-img[class*="img-max-xl"]{
+div[class*="responsive-xl"]{
+  width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
+td[class*="responsive-xl"]{
+  width: 100%!important;
+  max-width: 100%!important;
+  height: auto!important;
+}
+img[class*="responsive-xl"]{
   max-width: 100% !important;
   width: 100% !important;
   height:auto !important;

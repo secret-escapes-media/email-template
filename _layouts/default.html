@@ -31,8 +31,18 @@ SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
     <table {{table.fluid}}>
       <tr>
         <td align="center" bgcolor="{{color.background.outer}}">
+          <!--[if (gte mso 9)|(IE)]>
+          <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.xl}}">
+          <tr>
+          <td align="center" valign="top" width="{{layout.width.xl}}">
+          <![endif]-->
           {{ content }}
           {% include page/footer/legal.html %}
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
         </td>
       </tr>
     </table>

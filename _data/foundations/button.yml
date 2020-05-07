@@ -32,6 +32,9 @@ style:
 
 
 scale:
+  default:
+    font-size:  "15"
+    padding:    "15"
   xs:
     font-size:  "14"
     padding:    "14"

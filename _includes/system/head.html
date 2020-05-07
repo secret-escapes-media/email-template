@@ -41,6 +41,10 @@
 
     {% include system/css/reset.css %}
 
+    /*
+      MEDIA QUERIES
+      Responsive layouts based on classes
+    */
     @media (max-width: {{layout.breakpoints.md}} ) {
       {% capture md-scss %}
         {% include system/css/responsive-md.scss %}
@@ -60,6 +64,23 @@
         {% include system/css/responsive-xl.scss %}
       {% endcapture %}
       {{ xl-scss | scssify }}
+    }
+
+    /*
+      PROGRESSIVE ENHANCEMENT
+      For large screens and devices that support media queries
+    */
+    @media (min-width: {{layout.breakpoints.lg}} ) {
+      {% for item in typography.lg %}
+        td[class*="{{item[0]}}"] { {{item[1]}} }
+      {% endfor %}
+      /* all buttons show at default scale below this breakpoint */
+      {% for item in button.scale %}
+        td[class*="button-{{item[0]}}"] {
+          padding: {{item[1].padding}}px {{item[1].padding | times: 2}}px !important;
+        }
+        a[class*="button-label-{{item[0]}}"] { font-size: {{item[1].font-size}}px !important; line-height: {{item[1].font-size}}px !important; }
+      {% endfor %}
     }
 
   </style>
