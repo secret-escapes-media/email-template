@@ -18,7 +18,13 @@
         <tr>
           <td align="center" height="{{promo-height}}" valign="middle" style="{{spacing.hpad.sm}}">
 
-            <table {{table.default}} width="480" style="width: 480px;" class="responsive-table-md">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.md}}">
+            <tr>
+            <td align="center" valign="top" width="{{layout.width.md}}">
+            <![endif]-->
+
+            <table {{table.default}} width="{{layout.width.md}}" width="{{layout.width.md}}" style="max-width: {{layout.width.md}}px;" class="responsive-table-md">
               <tr>
                 <td align="center">
 
@@ -40,6 +46,11 @@
                 </td>
               </tr>
             </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
 
           </td>
         </tr>

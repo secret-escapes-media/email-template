@@ -1,26 +1,31 @@
 
-{% assign config       = include.content.config %}
 {% assign items        = include.content.items %}
 {% assign row-gutter   = "30" %}
 {% assign image-height = "250" %}
 {% assign width        = layout.width.lg | divided_by: 2 %}
-
-{% if config.row-gutter %}
-  {% assign row-gutter = config.row-gutter %}
-{% endif %}
 
 
 
 {% for item in items %}
   {% assign link = link %}
 
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
 
-        <table {{table.default}} class="responsive-table-lg" align="left" width="{{width}}">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+        <tr>
+        <td align="left" valign="top" width="{{width}}">
+        <![endif]-->
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
+        <table {{table.default}} class="responsive-lg" align="left" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
-            <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
             <td align="center" bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" height="{{image-height}}">
               <!--[if mso | ie]>
               <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{width}}px; height: {{image-height}}px;" src="{{item.image}}" />
@@ -67,16 +72,23 @@
                   </td>
                 </tr>
               </table>
-
-              <!--[if (gt mso 9)&(lt mso 16)]>
-                </v:textbox>
+              <!--[if mso | ie]>
+              </v:textbox>
+              </v:fill>
               </v:rect>
+              </v:image>
               <![endif]-->
             </td>
           </tr>
         </table>
+        </div>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
 
-        <table {{table.default}} class="responsive-table-lg" align="right" width="{{width | minus: 5}}">
+        <td align="right" valign="top" width="{{width}}">
+        <![endif]-->
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
+        <table {{table.default}} class="responsive-lg" align="right" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td style="{{spacing.hpad.sm}}" height="{{image-height}}" valign="middle" class="responsive-td-lg">
               <!-- Location -->
@@ -103,10 +115,21 @@
             </td>
           </tr>
         </table>
+        </div>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
 
       </td>
     </tr>
   </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
   {% include element/space.html height=row-gutter %}
 
 {% endfor %}

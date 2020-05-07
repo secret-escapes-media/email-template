@@ -9,6 +9,12 @@
 <table {{table.outer}}>
   <tr>
     <td align="center" bgcolor="{{color.black}}" style="padding-bottom: {{spacing.lg}}px; {{spacing.gutter}} color: {{color.white}};">
+
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}}>
         <tr>
           <td align="center">
@@ -16,6 +22,11 @@
           </td>
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
     </td>
   </tr>
 </table>

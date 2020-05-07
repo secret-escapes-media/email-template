@@ -5,27 +5,32 @@
 <table {{table.outer}}>
   <tr>
     <td align="center" bgcolor="{{color.white}}">
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}} align="center">
         <tr>
           <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}">
             <table {{table.fluid}}>
               {% if page.terms-and-conditions %}
                 <tr>
-                  <td align="left" style="{{text.xs}} padding-bottom: {{spacing.p}};" class="text-xs">
+                  <td align="left" style="{{text.xxs}} padding-bottom: {{spacing.p}};" class="text-xxs">
                     {{page.terms-and-conditions}}
                   </td>
                 </tr>
               {% endif %}
               {% if site.partner.name %}
                 <tr>
-                  <td align="left" style="{{text.xs}} padding-bottom: {{spacing.p}};" class="text-xs">
+                  <td align="left" style="{{text.xxs}} padding-bottom: {{spacing.p}};" class="text-xxs">
                     {{locale.footer.partnership}} {{site.partner.name}}
                   </td>
                 </tr>
               {% endif %}
               {% for paragraph in locale.footer.legal %}
                 <tr>
-                  <td align="left" style="{{text.xs}}{% unless forloop.last %} padding-bottom: {{spacing.paragraph}};{% endunless %}" class="text-xs">
+                  <td align="left" style="{{text.xxs}}{% unless forloop.last %} padding-bottom: {{spacing.paragraph}};{% endunless %}" class="text-xxs">
                     {{paragraph.paragraph}}
                   </td>
                 </tr>
@@ -34,6 +39,11 @@
           </td>
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
     </td>
   </tr>
 </table>

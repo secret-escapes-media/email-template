@@ -4,6 +4,12 @@
 <table {{table.outer}}>
   <tr>
     <td bgcolor="{{color.black}}" align="center">
+
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}}>
         <tr>
           <td align="center" style="{{spacing.vpad.lg}} {{spacing.hpad.sm}}">
@@ -16,7 +22,7 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="5" align="center" class="text-md" style="{{text.md}} color: {{color.white}};">
+                <td colspan="5" align="center" class="text-lg" style="{{text.lg}} color: {{color.white}};">
                   <a href="{{locale.link.faq}}{{site.ampscript.gastring}}" style="{{typography.bold}} text-decoration: none; color: {{color.white}};">
                     {{locale.footer.faq}}
                   </a>
@@ -27,6 +33,12 @@
           </td>
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+
     </td>
   </tr>
 </table>

@@ -7,6 +7,7 @@
 {% assign background   = color.background.box %}
 {% assign theme        = config.theme %}
 
+
 {% if config.align %}
   {% assign text-align = config.align %}
 {% endif %}
@@ -40,9 +41,19 @@
   {% endif %}
 
   {% if pos == 'one' %}
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
   <table {{table.inner}}>
     <tr>
       <td align="center" style="font-size:0;">
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="{{align}}" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{width}}">
+      <![endif]-->
   {% endif %}
 
         <div class="responsive-lg" style="display:inline-block; vertical-align:top; max-width:33.33%; min-width:{{width}}px; width:100%;">
@@ -50,7 +61,7 @@
 
           <tr>
             <td align="center" style="padding-bottom: {{row-gutter}}px;">
-              <table {{table.default}} class="responsive-lg" align="{{align}}" width="{{width}}">
+              <table {{table.default}} class="responsive-lg" width="100%" style="max-width: {{width}}px;">
                 <tr>
                   <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
                     <table {{table.default}}>
@@ -59,7 +70,7 @@
                       <tr>
                         <td align="center">
                           <a href="{{link}}">
-                            <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                            <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
                           </a>
                         </td>
                       </tr>
@@ -81,9 +92,32 @@
         </table>
         </div>
 
+        {% if pos == 'one' or pos == 'two' %}
+        <!--[if mso | ie]>
+        </td>
+        <td width="{{col-gutter}}" style="font-size: 1px;">&nbsp;</td>
+        <td align="{{align}}" valign="top" width="{{width}}">
+        <![endif]-->
+        {% endif %}
+
   {% if pos == 'three' or forloop.last %}
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
       </td>
     </tr>
   </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
   {% endif %}
 {% endfor %}
+
+
+
+
+

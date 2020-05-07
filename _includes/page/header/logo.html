@@ -2,10 +2,17 @@
 {% include system/helpers.html %}
 
 
-<!-- header -->
+<!-- Header Logo -->
+
 <table {{table.outer}}>
   <tr>
     <td align="center" bgcolor="{{color.black}}">
+
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}}>
         <tr>
           {% if site.partner %}
@@ -19,6 +26,11 @@
           {% endif %}
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
     </td>
   </tr>
 </table>

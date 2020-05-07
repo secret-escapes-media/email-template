@@ -22,6 +22,7 @@ img[class*="responsive-lg"]{
   width: 100% !important;
   max-width: 100% !important;
   height:auto !important;
+  border-radius: 0 !important;
 }
 
 
@@ -29,6 +30,7 @@ img[class*="responsive-lg"]{
 
 td[class="hero__link"]{ height: 300px !important; }
 table[class="offer__image"]{ height: 220px !important; }
+td[class="header__image-content"]{ border-radius: 0 !important; box-shadow: none !important; }
 
 ///////////////////////// LOGOS
 

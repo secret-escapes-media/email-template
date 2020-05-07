@@ -1,0 +1,33 @@
+<!-- Paragraph -->
+
+{% include system/helpers.html %}
+
+{% assign link       = page.page-link %}
+{% assign align      = "center" %}
+{% assign style      = "default" %}
+{% assign textcolor  = color.primary.default %}
+
+
+{% if include.link %}
+  {% assign link = include.link %}
+{% endif %}
+
+{% if include.align %}
+  {% assign align = include.align %}
+{% endif %}
+
+{% if include.style %}
+  {% assign style = include.style %}
+{% endif %}
+
+{% if include.color %}
+  {% assign textcolor = include.color %}
+{% endif %}
+
+<table {{table.fluid}}>
+  <tr>
+    <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{text.[style]}} color: {{textcolor}}; font-weight: 600; {% if forloop.last %}padding-bottom: 0 !important;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0 !important;{% endunless %}">
+      <a href="{{link}}" style="text-decoration: none; color: {{textcolor}};">{{include.text-link}}</a>
+    </td>
+  </tr>
+</table>

@@ -35,7 +35,6 @@
 
 <table {{table.outer}}>
   <tr>
-    <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
     <td align="center" bgcolor="{{background}}" background="{{site.image}}{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
       <!--[if mso | ie]>
       <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="{{site.image}}{{page.hero-banner.image.file}}" />
@@ -73,7 +72,7 @@
               <!-- Bottom fade -->
               <tr>
                 <td align="center" valign="bottom" height="60" style="vertical-align: bottom;">
-                  <img src="{{site.image}}se20..hero-fade-bottom.png" class="responsive-lg" width="100%" style="width: 100%; display: block;">
+                  <img src="{{site.image}}se20..hero-fade-bottom.png" class="responsive-lg" width="{{layout.width.xl}}" style="max-width: 100%; display: block;">
                 </td>
               </tr>
             </table>

@@ -3,7 +3,13 @@
 {% include system/helpers.html %}
 
 {% assign textcolor  = color.grey.dark %}
+{% assign text-align = "left" %}
 {% assign marker     = "se20..location.png" %}
+
+
+{% if config.align %}
+  {% assign text-align = config.align %}
+{% endif %}
 
 {% if include.color %}
   {% assign textcolor = include.color %}
@@ -14,13 +20,13 @@
 
 <table {{table.fluid}}>
   <tr>
-    <td align="left" style="padding-bottom: 8px;">
-      <table {{table.default}} align="left">
+    <td align="{{text-align}}" style="padding-bottom: 8px;">
+      <table {{table.default}} align="{{text-align}}">
         <tr>
           <td align="left" valign="middle" style="padding-right: 8px">
             <img src="{{site.image}}{{marker}}" width="11">
           </td>
-          <td align="left" valign="middle" class="text-md" style="{{text.md}} color: {{textcolor}}; padding-bottom: 0;">
+          <td align="left" valign="middle" class="text-md" style="{{text.md}} color: {{textcolor}}; padding-bottom: 0 !important;">
             {{include.location}}
           </td>
         </tr>

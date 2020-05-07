@@ -26,6 +26,15 @@
       theme=include.theme
       align=include.align %}
 
+  {% elsif row.text-link %}
+    {% include element/text-link.html
+      text-link=row.text-link
+      link=row.link
+      style=row.style
+      color=row.color
+      theme=include.theme
+      align=include.align %}
+
   {% elsif row.location %}
     {% include element/location.html
       location=row.location

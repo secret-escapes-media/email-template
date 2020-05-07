@@ -10,9 +10,6 @@
 {% assign image-height       = "300" %}
 
 
-{% if page.hero-banner.image.height %}
-  {% assign image-height = page.hero-banner.image.height %}
-{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -25,7 +22,6 @@
 
 <table {{table.outer}}>
   <tr>
-    <!-- background image has to be the same height of the email with fallback typefaces for consistent rending in outlook -->
     <td align="center" bgcolor="{{color.black}}" background="{{site.image}}{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
       <!--[if mso | ie]>
       <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="{{site.image}}{{page.hero-banner.image.file}}" />
@@ -33,27 +29,42 @@
       <v:fill type="frame" size="100%,100%"  src="{{site.image}}{{page.hero-banner.image.file}}" />
       <v:textbox inset="0,0,0,0">
       <![endif]-->
-      <table align="center" {{table.outer}}>
+      <table align="center" {{table.fluid}}><!-- Link -->
         <tr>
-          <td align="center" style="{{spacing.gutter}}">
-            <table {{table.fluid}} height="{{height}}"> <!-- extra table to apply height as responsive class removes it on table.inner -->
-              <!-- Link -->
-              <tr>
-                {% assign link-height = image-height | minus: 32 %}
-                <td align="center" valign="bottom" height="{{link-height}}">
-                  <a href="{{link}}" style="display: block; height: {{link-height}}px; width: 100%;"></a>
-                </td>
-              </tr>
-              {% if text-content %}
-              <tr>
-                <td align="center" valign="bottom" height="32" style="vertical-align: bottom;">
-                  <img src="{{site.image}}se20..intro-overlap.png" class="responsive-lg" style="display: block;">
-                </td>
-              </tr>
-              {% endif %}
-            </table>
+          {% assign link-height = image-height | minus: 30 %}
+          <td align="center" valign="bottom" height="{{link-height}}">
+            <a href="{{link}}" style="display: block; height: {{link-height}}px; width: 100%;"></a>
           </td>
         </tr>
+        {% if text-content %}
+        <tr>
+          <td align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+            <tr>
+            <td align="center" valign="top" width="{{layout.width.lg}}">
+            <![endif]-->
+            <table {{table.inner}} class="responsive-lg">
+              <tr>
+                <td align="center" valign="bottom" height="30" style="vertical-align: bottom;">
+                  <table {{table.default}}>
+                    <tr>
+                      <td align="center">
+                        <img src="{{site.image}}se20..intro-overlap.png" class="responsive-lg"  width="100%" style="display: block; max-width: {{layout.width.lg}}px; margin: auto;">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+          </td>
+        </tr>
+        {% endif %}
       </table>
       <!--[if mso | ie]>
       </v:textbox>
@@ -68,13 +79,19 @@
 
 
 {% if text-content %}
-<!-- CONTENT -->
+<!-- Content -->
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.inner}}">
+
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}}>
         <tr>
-          <td bgcolor="{{color.background.box}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
+          <td class="header__image-content" bgcolor="{{color.background.box}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
 
             <table {{table.default}}>
               <tr>
@@ -87,6 +104,11 @@
           </td>
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
       {% include element/space.html height=row-gutter %}
 
     </td>

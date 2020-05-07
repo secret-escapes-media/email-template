@@ -1,18 +1,17 @@
 
-{% assign config       = include.content.config %}
 {% assign items        = include.content.items %}
 {% assign row-gutter   = "30" %}
 {% assign image-height       = "330" %}
-
-{% if config.row-gutter %}
-  {% assign row-gutter = config.row-gutter %}
-{% endif %}
-
 
 
 {% for item in items %}
   {% assign link = item.link %}
 
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
   <table {{table.inner}}>
     <tr>
       <td align="center" bgcolor="{{color.white}}" style="{{rounded.md}} {{depth.default}}">
@@ -76,11 +75,9 @@
           </tr>
           <tr>
             <td align="left" style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
-              <!-- Location -->
               {% include element/location.html location=item.location %}
-              <!-- Title -->
               {% include element/title.html title=item.title align="left" %}
-              <!-- Description -->
+              {% include element/space.html height="10" %}
               {% include element/paragraph.html paragraph=item.description align="left" %}
               <!-- Price + CTA -->
               <table {{table.fluid}}>
@@ -91,6 +88,7 @@
                         <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
                           {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
                         </td>
+                        <td style="font-size:1px;" width="15"></td>
                         <td align="right">
                           {% include element/button.html label=locale.offer.cta align="right" %}
                         </td>
@@ -106,6 +104,11 @@
       </td>
     </tr>
   </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
   {% include element/space.html height=row-gutter %}
 
 {% endfor %}

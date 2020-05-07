@@ -25,35 +25,73 @@
 {% for item in items %}
   {% assign link = item.link %}
 
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
   <table {{table.inner}}>
     <tr>
       <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
 
-        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;" class="no_width">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+        <tr>
+        <td align="left" valign="top" width="{{width}}">
+        <![endif]-->
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
         <table {{table.default}} class="responsive-lg" align="left" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td align="center">
-              <a href="{{link}}">
-                <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
-              </a>
+              <table {{table.default}} class="responsive-lg" align="left" width="100%" style="max-width:{{width}}px;">
+                <tr>
+                  <td align="center">
+                    <a href="{{link}}">
+                      <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
         </div>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
 
-        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;" class="no_width">
+        <td align="right" valign="top" width="{{width}}">
+        <![endif]-->
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
         <table {{table.default}} class="responsive-lg" align="right" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-lg">
-              {% include component/_content.html content=item.content align=text-align theme=theme %}
+              <table {{table.default}} class="responsive-lg" align="left" width="100%" style="max-width:{{width}}px;">
+                <tr>
+                  <td align="center">
+                    {% include element/space.html height=spacing.sm %}
+                    {% include component/_content.html content=item.content align=text-align theme=theme %}
+                    {% include element/space.html height=spacing.sm %}
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
         </div>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
 
       </td>
     </tr>
   </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
   {% include element/space.html height=row-gutter %}
 
 {% endfor %}

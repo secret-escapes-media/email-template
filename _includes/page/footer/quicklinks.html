@@ -3,21 +3,31 @@
 <table {{table.outer}}>
   <tr>
     <td align="center" bgcolor="{{color.grey.darkest}}">
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{layout.width.lg}}">
+      <![endif]-->
       <table {{table.inner}}>
         <tr>
-          <td align="center" style="{{text.md}} {{typography.upper}} color: {{color.white}}; {{spacing.boxpad.xs}}">
+          <td align="center" class="text-md" style="{{text.md}} {{typography.upper}} color: {{color.white}}; padding-top: {{spacing.xs}}px !important; padding-bottom: {{spacing.xs}}px !important;">
             <a href="{{site.ampscript.view-online}}" style="text-decoration: none; color: {{color.white}};">{{locale.footer.quicklinks.view-online}}</a>
           </td>
           <td width="1" bgcolor="{{color.grey.dark}}"></td>
-          <td align="center" style="{{text.md}} {{typography.upper}} color: {{color.white}}; {{spacing.boxpad.xs}}">
+          <td align="center" class="text-md" style="{{text.md}} {{typography.upper}} color: {{color.white}}; padding-top: {{spacing.xs}}px !important; padding-bottom: {{spacing.xs}}px !important;">
             <a href="{{locale.link.subscriptions}}{{site.ampscript.gastring}}" style="text-decoration: none; color: {{color.white}};">{{locale.footer.quicklinks.fewer-emails}}</a>
           </td>
           <td width="1" bgcolor="{{color.grey.dark}}"></td>
-          <td align="center" style="{{text.md}} {{typography.upper}} color: {{color.white}}; {{spacing.boxpad.xs}}">
+          <td align="center" class="text-md" style="{{text.md}} {{typography.upper}} color: {{color.white}}; padding-top: {{spacing.xs}}px !important; padding-bottom: {{spacing.xs}}px !important;">
             <a href="{{locale.link.subscriptions}}{{site.ampscript.gastring}}" style="text-decoration: none; color: {{color.white}};">{{locale.footer.quicklinks.unsubscribe}}</a>
           </td>
         </tr>
       </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
     </td>
   </tr>
 </table>
