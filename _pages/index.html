@@ -145,6 +145,21 @@ three-col:
 
 
 
+article:
+  config:
+    row-gutter: 30
+  items:
+    - link: "#one-col-link"
+      image: C..16-9.jpg
+      content:
+        - location: Slovenia
+        - title: Your guide to Marrakech's markets
+          style: lg
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.
+        - text-link: Read more
+
+
+
 image-text-row:
   config:
     row-gutter: 30
@@ -313,6 +328,7 @@ offer:
       {% include component/one-col.html content=page.one-col %}
       {% include component/two-col.html content=page.two-col %}
       {% include component/three-col.html content=page.three-col %}
+      {% include component/article.html content=page.article %}
       {% include component/row.html content=page.image-text-row %}
       {% include component/row-offer.html content=page.offer %}
       {% include component/one-col-offer.html content=page.offer %}
