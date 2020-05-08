@@ -32,9 +32,11 @@ style:
 
 
 scale:
+  # Fallback at small sizes, and devices that require inline styling
   default:
     font-size:  "15"
     padding:    "15"
+  # Progressive enhancement
   xs:
     font-size:  "14"
     padding:    "14"

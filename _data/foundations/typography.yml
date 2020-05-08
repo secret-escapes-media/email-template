@@ -34,7 +34,7 @@ title:
   subtitle: "font-size: 16px; line-height: 18px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding-bottom: 8px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
 
 
-#=== Breakpoint: 600px+
+#=== Modern email clients / Breakpoint: 600px+
 lg:
   text:           "font-size: 16px !important; line-height: 24px !important; padding-bottom: 8px !important; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
   text-xxxl:      "font-size: 20px !important; line-height: 30px !important; padding-bottom: 10px !important;"

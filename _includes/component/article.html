@@ -4,15 +4,10 @@
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "left" %}
 {% assign background   = color.background.box %}
-{% assign theme        = config.theme %}
 {% assign width        = layout.width.lg | divided_by: 1.5 %}
 
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
-{% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
 {% endif %}
 
 
@@ -53,13 +48,13 @@
                 <td align="left" valign="bottom">
                 <![endif]-->
 
-                  <table {{table.default}} align="right" width="100%" bgcolor="#FFFFFF" style="max-width:{{width}}px; border-top-left-radius:3px; background-color: rgba(255,255,255,0.9);">
+                  <table {{table.default}} align="right" width="100%" bgcolor="{{background}}" style="max-width:{{width}}px; border-top-left-radius:3px; background-color: rgba(255,255,255,0.9);">
                     <tr>
                       <td align="center">
                         <table {{table.default}} align="center" width="90%">
                           <tr>
                             <td align="center" style="{{spacing.vpad.md}}">
-                              {% include component/_content.html content=item.content align=text-align theme=theme %}
+                              {% include component/_content.html content=item.content align=text-align %}
                             </td>
                           </tr>
                         </table>

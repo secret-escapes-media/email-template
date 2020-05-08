@@ -7,6 +7,8 @@
 {% assign theme        = config.theme %}
 {% assign width        = layout.width.lg | divided_by: 2 %}
 {% assign link         = page.page-link %}
+{% assign align-image  = "left" %}
+{% assign align-text   = "right" %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -31,6 +33,17 @@
     {% assign link = config.link %}
   {% endif %}
 
+  {% if config.alternating %}
+    {% capture pos %}{% cycle "one", "two" %}{% endcapture %}
+    {% if pos == "one" %}
+      {% assign align-image = "left" %}
+      {% assign align-text  = "right" %}
+    {% else %}
+      {% assign align-image = "right" %}
+      {% assign align-text  = "left" %}
+    {% endif %}
+  {% endif %}
+
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
   <tr>
@@ -43,13 +56,13 @@
         <!--[if (gte mso 9)|(IE)]>
         <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
         <tr>
-        <td align="left" valign="top" width="{{width}}">
+        <td align="{{align-image}}" valign="top" width="{{width}}">
         <![endif]-->
-        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
-        <table {{table.default}} class="responsive-lg" align="left" width="100%" style="width: 100%; max-width:{{width}}px;">
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%; float: {{align-image}};">
+        <table {{table.default}} class="responsive-lg" align="{{align-image}}" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td align="center">
-              <table {{table.default}} class="responsive-lg" align="left" width="100%" style="max-width:{{width}}px;">
+              <table {{table.default}} class="responsive-lg" align="{{align-image}}" width="100%" style="max-width:{{width}}px;">
                 <tr>
                   <td align="center">
                     <a href="{{link}}">
@@ -65,13 +78,13 @@
         <!--[if (gte mso 9)|(IE)]>
         </td>
 
-        <td align="right" valign="top" width="{{width}}">
+        <td align="{{align-text}}" valign="top" width="{{width}}">
         <![endif]-->
-        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%;">
-        <table {{table.default}} class="responsive-lg" align="right" width="100%" style="width: 100%; max-width:{{width}}px;">
+        <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%; float: {{align-text}};">
+        <table {{table.default}} class="responsive-lg" align="{{align-text}}" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-lg">
-              <table {{table.default}} class="responsive-lg" align="left" width="100%" style="max-width:{{width}}px;">
+              <table {{table.default}} class="responsive-lg" align="{{align-text}}" width="100%" style="max-width:{{width}}px;">
                 <tr>
                   <td align="center">
                     {% include element/space.html height=spacing.sm %}

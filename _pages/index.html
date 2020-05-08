@@ -10,7 +10,6 @@ hero:
   config:
     link: "#hero-link"
     row-gutter: 30
-    theme: dark
   title:
     - title: Component Library
       style: xxxl
@@ -72,7 +71,6 @@ typography:
 
 one-col:
   config:
-    link: "#config-link"
     row-gutter: 30
     align: center
   items:
@@ -88,28 +86,25 @@ one-col:
         - space: 15
         - button: Read more
           scale: xl
-          link: "#button-link"
 
 
 
 two-col:
   config:
+    link: "#config-link"
     row-gutter: 30
     col-gutter: 30
     align: center
   items:
 
-    - link: "#two-col-link"
-      image: C..16-9.jpg
+    - image: C..16-9.jpg
       content:
         - title: Your guide to Marrakech's markets
           style: md
         - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         - button: Read more
-          link: "#two-col-button-link"
 
-    - link: "#two-col-link"
-      image: C..16-9.jpg
+    - image: C..16-9.jpg
       content:
         - title: Your guide to Marrakech's markets
           style: md
@@ -121,7 +116,7 @@ two-col:
 three-col:
   config:
     row-gutter: 30
-    col-gutter: 15
+    col-gutter: 45
     align: left
   items:
 
@@ -153,10 +148,10 @@ three-col:
 
 article:
   config:
+    link: "#config-link"
     row-gutter: 30
   items:
-    - link: "#one-col-link"
-      image: C..4-3.jpg
+    - image: C..4-3.jpg
       content:
         - location: Slovenia
         - title: Your guide to Marrakech's markets
@@ -170,8 +165,20 @@ image-text-row:
   config:
     row-gutter: 30
     align: left
+    alternating: true
+    theme: dark
+    background: "#070707"
   items:
-    - link: "#one-col-link"
+    - link: "#item-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: lg
+        - button: Read more
+          scale: md
+    - link: "#item-link"
       image: C..1-1.jpg
       content:
         - title: Your guide to Marrakech's markets
