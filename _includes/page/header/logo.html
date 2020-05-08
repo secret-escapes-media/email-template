@@ -2,12 +2,20 @@
 {% include system/helpers.html %}
 
 
-<!-- Header Logo -->
+{% if include.theme == 'dark' %}
+  <!-- black background / light logos -->
+  {% assign logo-theme = 'light' %}
+  {% assign background = color.black %}
+{% else %}
+  <!-- light background / black logos -->
+  {% assign logo-theme = 'dark' %}
+  {% assign background = color.white %}
+{% endif %}
 
+<!-- Header Logo -->
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.black}}">
-
+    <td align="center" bgcolor="{{background}}">
       <!--[if (gte mso 9)|(IE)]>
       <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
       <tr>
@@ -17,11 +25,11 @@
         <tr>
           {% if site.partner %}
             <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
-              {% include element/logo/combined.html %}
+              {% include element/logo/combined.html logo-theme=logo-theme %}
             </td>
           {% else %}
             <td align="center" style="{{spacing.vpad.md}} {{spacing.hpad.sm}}" class="header-padding">
-              {% include element/logo/secret-escapes.html size="lg" %}
+              {% include element/logo/secret-escapes.html size="lg" logo-theme=logo-theme %}
             </td>
           {% endif %}
         </tr>

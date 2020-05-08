@@ -6,6 +6,7 @@
 {% assign background   = color.background.box %}
 {% assign theme        = config.theme %}
 {% assign width        = layout.width.lg | divided_by: 2 %}
+{% assign link         = page.page-link %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -23,7 +24,12 @@
 
 
 {% for item in items %}
-  {% assign link = item.link %}
+
+  {% if item.link %}
+    {% assign link = item.link %}
+  {% elsif config.link %}
+    {% assign link = config.link %}
+  {% endif %}
 
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -47,7 +53,7 @@
                 <tr>
                   <td align="center">
                     <a href="{{link}}">
-                      <img class="responsive-lg" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; border-top-left-radius: 3px; border-bottom-left-radius: 3px;" />
+                      <img class="responsive-lg rounded-left-md" src="{{site.image}}{{item.image}}" width="{{width}}" style="display: block; {{rounded.left.md}}" />
                     </a>
                   </td>
                 </tr>

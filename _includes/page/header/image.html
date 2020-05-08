@@ -2,14 +2,32 @@
 <!-- Header/Image -->
 {% include system/helpers.html %}
 
-{% assign config       = page.hero-banner.config %}
-{% assign text-content = page.hero-banner.content %}
-{% assign link         = config.link %}
+{% assign this         = include.content %}
+{% assign config       = this.config %}
+{% assign image        = this.image %}
+{% assign text-content = this.content %}
+{% assign link         = page.page-link %}
+{% assign background   = color.black %}
+{% assign theme        = "dark" %}
 {% assign row-gutter   = "30" %}
 {% assign text-align   = "center" %}
-{% assign image-height       = "300" %}
+{% assign image-height = "300" %}
 
+{% if config.link %}
+  {% assign link = config.link %}
+{% endif %}
 
+{% if config.background %}
+  {% assign background = config.background %}
+{% endif %}
+
+{% if config.theme == "light" %}
+  {% assign theme = "light" %}
+{% endif %}
+
+{% if image.height %}
+  {% assign image-height = image.height %}
+{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -22,11 +40,11 @@
 
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.black}}" background="{{site.image}}{{page.hero-banner.image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
+    <td align="center" bgcolor="{{color.black}}" background="{{site.image}}{{image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
       <!--[if mso | ie]>
-      <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="{{site.image}}{{page.hero-banner.image.file}}" />
+      <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="{{site.image}}{{image.file}}" />
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.xl}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
-      <v:fill type="frame" size="100%,100%"  src="{{site.image}}{{page.hero-banner.image.file}}" />
+      <v:fill type="frame" size="100%,100%"  src="{{site.image}}{{image.file}}" />
       <v:textbox inset="0,0,0,0">
       <![endif]-->
       <table align="center" {{table.fluid}}><!-- Link -->

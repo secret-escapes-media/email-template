@@ -6,6 +6,8 @@
     {% assign link = row.link %}
   {% elsif item.link %}
     {% assign link = item.link %}
+  {% elsif config.link %}
+    {% assign link = config.link %}
   {% else %}
     {% assign link = page.link %}
   {% endif %}
@@ -29,11 +31,19 @@
   {% elsif row.text-link %}
     {% include element/text-link.html
       text-link=row.text-link
-      link=row.link
+      link=link
       style=row.style
       color=row.color
       theme=include.theme
       align=include.align %}
+
+  {% elsif row.button %}
+    {% include element/button.html
+      label=row.button
+      link=link
+      style=row.style
+      scale=row.scale
+      align=include.align%}
 
   {% elsif row.location %}
     {% include element/location.html
@@ -55,14 +65,6 @@
       width=row.width
       color=row.color
       align=include.align %}
-
-  {% elsif row.button %}
-    {% include element/button.html
-      label=row.button
-      link=link
-      style=row.style
-      scale=row.scale
-      align=include.align%}
 
   {% elsif row.space %}
     {% include element/space.html

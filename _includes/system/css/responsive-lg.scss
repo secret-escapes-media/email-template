@@ -22,7 +22,7 @@ img[class*="responsive-lg"]{
   width: 100% !important;
   max-width: 100% !important;
   height:auto !important;
-  border-radius: 0 !important;
+  // border-radius: 0 !important;
 }
 
 
@@ -45,3 +45,9 @@ img[class="logo-partner"]  { width: 100px; }
 *[class*="mobile-hide"]          { display:none !important; } // this is for the gmail hack at the end of the html
 td[class*="mobile-center-align"] { text-align: center !important; }
 
+///////////////////////// ROUNDED CORNER SWAP
+
+*[class*="rounded-top"]{}
+*[class*="rounded-bottom"]{}
+*[class*="rounded-left"]{ border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-left-radius: 0px !important; }
+*[class*="rounded-right"]{ border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 0px !important; }

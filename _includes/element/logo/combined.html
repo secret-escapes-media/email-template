@@ -1,13 +1,22 @@
 
+{% if include.logo-theme == "light" %}
+  <!-- black background / light logos -->
+  {% assign divider-color = color.grey.dark %}
+  {% assign divider-rgba = "rgba(255,255,255,0.5)" %}
+{% else %}
+  <!-- light background / black logos -->
+  {% assign divider-color = color.grey.lighter %}
+  {% assign divider-rgba = "rgba(0,0,0,0.25)" %}
+{% endif %}
 
 <table {{table.fluid}}>
   <tr>
     <td align="center" style="{{spacing.hpad.md}} {{spacing.vpad.xs}}">
-      {% include element/logo/secret-escapes.html size="sm" %}
+      {% include element/logo/secret-escapes.html size="sm" logo-theme=include.logo-theme %}
     </td>
-    <td width="1" bgcolor="{{color.grey.dark}}" style="background-color: rgba(255,255,255,0.5);"></td>
+    <td width="1" bgcolor="{{divider-color}}" style="background-color: {{divider-rgba}};"></td>
     <td align="center" style="{{spacing.hpad.md}} {{spacing.vpad.xs}}">
-      {% include element/logo/partner.html %}
+      {% include element/logo/partner.html logo-theme=include.logo-theme %}
     </td>
   </tr>
 </table>

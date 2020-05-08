@@ -19,6 +19,7 @@
 
 {% for item in items %}
   {% assign link = item.link %}
+  {% assign image = item.image %}
 
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -27,21 +28,21 @@
   <![endif]-->
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{background}}" class="rounded-md" style="{{rounded.md}} {{depth.default}}">
         <!-- T ONLINE -->
         <!--[if false]>
         <table width="{{layout.width.lg}}" cellpadding="0" cellspacing="0" border="0" role="presentation">
         <tr>
-        <td valign="top" align="center" background="https://www.secretescapes.com/magazine-uk/wp-content/uploads/2019/04/banner-Berlin-1920x768.jpg" height="370px" style="background-repeat: no-repeat;">
+        <td valign="top" align="center" background="{{site.image}}{{image}}" height="370px" style="background-repeat: no-repeat;">
         <![endif]-->
 
         <table cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width:{{layout.width.lg}}px;">
           <tr>
-            <td valign="top" background="https://www.secretescapes.com/magazine-uk/wp-content/uploads/2019/04/banner-Berlin-1920x768.jpg"  style="text-align: center; background-position: center center !important; background-size: cover !important; background-image:url(https://www.secretescapes.com/magazine-uk/wp-content/uploads/2019/04/banner-Berlin-1920x768.jpg); vertical-align:bottom;" height="370" align="center" class="se_boxshadow">
+            <td valign="top" background="{{site.image}}{{image}}"  style="text-align: center; background-position: center center !important; background-size: cover !important; background-image:url({{site.image}}{{image}}); vertical-align:bottom;" height="370" align="center" class="se_boxshadow">
               <!--[if mso | ie]>
-              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: 370px;" src="https://www.secretescapes.com/magazine-uk/wp-content/uploads/2019/04/banner-Berlin-1920x768.jpg" />
+              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: 370px;" src="{{site.image}}{{image}}" />
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:{{layout.width.lg}}px; height:370px; border: 0;display:inline-block;position:absolute;">
-              <v:fill type="frame" size="100%,100%"  src="https://www.secretescapes.com/magazine-uk/wp-content/uploads/2019/04/banner-Berlin-1920x768.jpg" />
+              <v:fill type="frame" size="100%,100%"  src="{{site.image}}{{image}}" />
               <v:textbox inset="0,0,0,0">
               <![endif]-->
 

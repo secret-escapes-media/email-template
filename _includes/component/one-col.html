@@ -5,6 +5,8 @@
 {% assign text-align   = "center" %}
 {% assign background   = color.background.box %}
 {% assign theme        = config.theme %}
+{% assign link         = page.page-link %}
+
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -21,7 +23,12 @@
 
 
 {% for item in items %}
-  {% assign link = item.link %}
+
+  {% if item.link %}
+    {% assign link = item.link %}
+  {% elsif config.link %}
+    {% assign link = config.link %}
+  {% endif %}
 
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">

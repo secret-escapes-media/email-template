@@ -3,3 +3,24 @@ default: "border-radius: 3px;"
 sm:      "border-radius: 2px;"
 md:      "border-radius: 3px;"
 lg:      "border-radius: 5px;"
+
+top:
+  sm: "border-top-left-radius: 2px; border-top-right-radius: 2px;"
+  md: "border-top-left-radius: 3px; border-top-right-radius: 3px;"
+  lg: "border-top-left-radius: 5px; border-top-right-radius: 5px;"
+
+left:
+  sm: "border-top-left-radius: 2px; border-bottom-left-radius: 2px;"
+  md: "border-top-left-radius: 3px; border-bottom-left-radius: 3px;"
+  lg: "border-top-left-radius: 5px; border-bottom-left-radius: 5px;"
+
+bottom:
+  sm: "border-bottom-left-radius: 2px; border-bottom-right-radius: 2px;"
+  md: "border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;"
+  lg: "border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"
+
+right:
+  sm: "border-bottom-right-radius: 2px; border-top-right-radius: 2px;"
+  md: "border-bottom-right-radius: 3px; border-top-right-radius: 3px;"
+  lg: "border-bottom-right-radius: 5px; border-top-right-radius: 5px;"
+

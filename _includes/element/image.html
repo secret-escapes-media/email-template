@@ -1,13 +1,14 @@
 <!-- Image -->
 
 {% assign image = include.image %}
-
 {% assign align = "center" %}
+{% assign link = page.page-link %}
+
+
 {% if include.align %}
   {% assign align = include.align %}
 {% endif %}
 
-{% assign link = page.page-link %}
 {% if include.link %}
   {% assign link = include.link %}
 {% endif %}

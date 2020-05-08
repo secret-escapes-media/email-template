@@ -6,6 +6,7 @@
 {% assign text-align   = "center" %}
 {% assign background   = color.background.box %}
 {% assign theme        = config.theme %}
+{% assign link         = page.page-link %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -26,7 +27,12 @@
 
 
 {% for item in items %}
-  {% assign link = item.link %}
+
+  {% if item.link %}
+    {% assign link = item.link %}
+  {% elsif config.link %}
+    {% assign link = config.link %}
+  {% endif %}
 
   {% assign width = layout.width.lg | minus: col-gutter | divided_by: 2 %}
 
