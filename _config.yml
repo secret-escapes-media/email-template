@@ -16,5 +16,5 @@ partner:
   # logo-width: 110
 
 
-# image: "img/" # dev
-image: "http://m-stg.secretescapes.com/uk/templates/email-2020/img/" # live
+# image: "img/" # local
+# image: "http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8" # remote
