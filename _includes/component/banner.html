@@ -1,0 +1,89 @@
+
+{% assign config       = include.content.config %}
+{% assign items        = include.content.items %}
+{% assign row-gutter   = "30" %}
+{% assign text-align   = "center" %}
+{% assign background   = color.background.box %}
+{% assign image-height = "330" %}
+{% assign theme        = "light" %}
+
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
+
+{% if config.align %}
+  {% assign text-align = config.align %}
+{% endif %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
+{% endif %}
+
+{% if config.background %}
+  {% assign background = config.background %}
+{% endif %}
+
+{% if config.height %}
+  {% assign image-height = config.height %}
+{% endif %}
+
+
+{% for item in items %}
+  {% assign link = item.link %}
+
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
+  <table {{table.inner}}>
+    <tr>
+      <td align="center" bgcolor="{{color.white}}" class="rounded-md" style="{{rounded.md}} {{depth.default}}">
+
+
+        <table {{table.fluid}}>
+          <tr>
+            <td align="center" bgcolor="{{color.black}}" background="img/{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.md}}" class="rounded-md" height="{{image-height}}">
+              <!--[if mso | ie]>
+              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: {{image-height}}px;" src="img/{{item.image}}" />
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.lg}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
+              <v:fill type="frame" size="100%,100%"  src="img/{{item.image}}" />
+              <v:textbox inset="0,0,0,0">
+              <![endif]-->
+              <table align="center" {{table.fluid}}>
+                <tr>
+                  <td align="center">
+                    <table class="offer__image" {{table.fluid}} height="{{image-height}}">
+                      {% if item.content %}
+                      <tr>
+                        <td align="center" style="{{spacing.hpad.md}} {{spacing.vpad.md}}" height="{{image-height}}">
+                          {% include component/_content.html content=item.content align=text-align theme=theme %}
+                        </td>
+                      </tr>
+                      {% endif %}
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <!--[if mso | ie]>
+              </v:textbox>
+              </v:fill>
+              </v:rect>
+              </v:image>
+              <![endif]-->
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+  {% include element/space.html height=row-gutter %}
+
+{% endfor %}

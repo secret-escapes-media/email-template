@@ -33,6 +33,8 @@
     {% assign link = item.link %}
   {% elsif config.link %}
     {% assign link = config.link %}
+  {% else %}
+    {% assign link = page.page-link %}
   {% endif %}
 
   {% assign width = layout.width.lg | minus: col-gutter | minus: col-gutter | divided_by: 3 %}

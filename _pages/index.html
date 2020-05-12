@@ -161,32 +161,51 @@ article:
 
 
 
-image-text-row:
+banner:
   config:
+    link: "#hero-link"
     row-gutter: 30
-    align: left
-    alternating: true
     theme: dark
-    background: "#070707"
+    height: 200
   items:
-    - link: "#item-link"
-      image: C..1-1.jpg
+    - image: BG..super-hero.jpg
       content:
-        - title: Your guide to Marrakech's markets
-          style: md
+        - title: Title
+          style: xxl
         - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          style: lg
-        - button: Read more
-          scale: md
-    - link: "#item-link"
-      image: C..1-1.jpg
-      content:
-        - title: Your guide to Marrakech's markets
-          style: md
-        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          style: lg
-        - button: Read more
-          scale: md
+          style: xxl
+        - space: 8
+        - button: Find out more
+          scale: sm
+
+
+
+  row:
+    config:
+      row-gutter: 0
+      align: left
+      alternating: true
+      theme: dark
+      background: "#070707"
+    items:
+      - link: "#item-link"
+        image: C..1-1.jpg
+        content:
+          - title: Your guide to Marrakech's markets
+            style: md
+          - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            style: lg
+          - button: Read more
+            scale: md
+      - link: "#item-link"
+        image: C..1-1.jpg
+        content:
+          - title: Your guide to Marrakech's markets
+            style: md
+          - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            style: lg
+          - button: Read more
+            scale: md
 
 
 
@@ -344,7 +363,10 @@ offer:
       {% include component/two-col.html content=page.two-col %}
       {% include component/three-col.html content=page.three-col %}
       {% include component/article.html content=page.article %}
-      {% include component/row.html content=page.image-text-row %}
+      {% include component/banner.html content=page.banner %}
+      {% include component/row.html content=page.row %}
+      {% include element/space.html height="30" %}
+
       {% include component/row-offer.html content=page.offer %}
       {% include component/one-col-offer.html content=page.offer %}
 

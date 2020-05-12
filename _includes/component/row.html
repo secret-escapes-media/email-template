@@ -31,6 +31,8 @@
     {% assign link = item.link %}
   {% elsif config.link %}
     {% assign link = config.link %}
+  {% else %}
+    {% assign link = page.page-link %}
   {% endif %}
 
   {% if config.alternating %}
@@ -51,7 +53,11 @@
   <![endif]-->
   <table {{table.inner}}>
     <tr>
+      {% if config.alternating %}
+      <td align="center" bgcolor="{{background}}" style="{% if forloop.first %}{{rounded.top.md}}{% elsif forloop.last %}{{rounded.bottom.md}}{% endif %} {{depth.default}} font-size:0;">
+      {% else %}
       <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
+      {% endif %}
 
         <!--[if (gte mso 9)|(IE)]>
         <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -66,7 +72,14 @@
                 <tr>
                   <td align="center">
                     <a href="{{link}}">
-                      <img class="responsive-lg rounded-left-md" src="img/{{item.image}}" width="{{width}}" style="display: block; {{rounded.left.md}}" />
+                      {% if config.alternating %}
+                        <img class="responsive-lg" src="img/{{item.image}}" width="{{width}}" style="display: block;
+                        {% if forloop.first %}border-top-left-radius: 3px;
+                        {% elsif forloop.last and pos == 'two' %}border-bottom-right-radius: 3px;
+                        {% elsif forloop.last and pos == 'one' %}border-bottom-left-radius: 3px;{% endif %}" />
+                      {% else %}
+                        <img class="responsive-lg rounded-left" src="img/{{item.image}}" width="{{width}}" style="display: block; {{rounded.left.md}}" />
+                      {% endif %}
                     </a>
                   </td>
                 </tr>

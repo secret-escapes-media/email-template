@@ -28,6 +28,8 @@
     {% assign link = item.link %}
   {% elsif config.link %}
     {% assign link = config.link %}
+  {% else %}
+    {% assign link = page.page-link %}
   {% endif %}
 
   <!--[if (gte mso 9)|(IE)]>
