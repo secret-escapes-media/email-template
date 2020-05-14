@@ -71,16 +71,23 @@
       For large screens and devices that support media queries
     */
     @media (min-width: {{layout.breakpoints.lg}} ) {
+      /* Typography */
       {% for item in typography.lg %}
         td[class*="{{item[0]}}"] { {{item[1]}} }
       {% endfor %}
-      /* all buttons show at default scale below this breakpoint */
+      /* Buttons */
       {% for item in button.scale %}
         td[class*="button-{{item[0]}}"] {
           padding: {{item[1].padding}}px {{item[1].padding | times: 2}}px !important;
         }
         a[class*="button-label-{{item[0]}}"] { font-size: {{item[1].font-size}}px !important; line-height: {{item[1].font-size}}px !important; }
       {% endfor %}
+      /* Logos */
+      img[class="logo-se-lg"]    { width: 220px; }
+      img[class="logo-se-md"]    { width: 180px; }
+      img[class="logo-se-sm"]    { width: 150px; }
+      img[class="logo-se"]       { width: 180px; }
+      img[class="logo-partner"]  { width: {{site.partner.logo-width}}px; }
     }
 
   </style>

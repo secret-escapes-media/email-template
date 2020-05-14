@@ -11,10 +11,8 @@ ampscript:
 
 # Partner
 partner:
-  # name: Partner Name
-  # link: "#partner-link"
-  # logo-width: 110
+  name: Partner Name
+  link: "#partner-link"
+  logo-width: 110
+  logo-min-width: 90 # mobile & fallback
 
-
-# image: "img/" # local
-# image: "http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8" # remote

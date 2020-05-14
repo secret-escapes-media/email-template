@@ -16,21 +16,21 @@
             <table {{table.fluid}}>
               {% if page.terms-and-conditions %}
                 <tr>
-                  <td align="left" style="{{text.xxs}} padding-bottom: {{spacing.p}};" class="text-xxs">
+                  <td align="left" style="{{text.xxs}}" class="text-xxs">
                     {{page.terms-and-conditions}}
                   </td>
                 </tr>
               {% endif %}
               {% if site.partner.name %}
                 <tr>
-                  <td align="left" style="{{text.xxs}} padding-bottom: {{spacing.p}};" class="text-xxs">
+                  <td align="left" style="{{text.xxs}}" class="text-xxs">
                     {{locale.footer.partnership}} {{site.partner.name}}
                   </td>
                 </tr>
               {% endif %}
               {% for paragraph in locale.footer.legal %}
                 <tr>
-                  <td align="left" style="{{text.xxs}}{% unless forloop.last %} padding-bottom: {{spacing.paragraph}};{% endunless %}" class="text-xxs">
+                  <td align="left" style="{{text.xxs}}" class="text-xxs">
                     {{paragraph.paragraph}}
                   </td>
                 </tr>
