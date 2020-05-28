@@ -28,6 +28,7 @@ SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
   {% include system/helpers.html %}
   {% include system/head.html %}
   <body>
+    {% include system/preheader.html %}
     <table {{table.fluid}}>
       <tr>
         <td align="center" bgcolor="{{color.background.outer}}">
