@@ -8,13 +8,17 @@
 {% assign image        = this.image %}
 {% assign text-content = this.content %}
 
-{% assign link         = config.link %}
+{% assign link         = page.page-link %}
 {% assign theme        = "dark" %}
 {% assign text-align   = "center" %}
 {% assign row-gutter   = "30" %}
 {% assign image-height = "300" %}
 
 
+
+{% if config.link %}
+  {% assign link = config.link %}
+{% endif %}
 
 {% if image.height %}
   {% assign image-height = image.height %}
