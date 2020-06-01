@@ -106,34 +106,34 @@ two-col:
 ##### Component config options
 The config settings will apply to all items in the loop so we can define things like spacing, styles and links.
 
-key | values | description
-- | - | -
-config.link | url | Applies the URL to applicable elements
-config.row-gutter | px value | Space below component
-config.col-gutter | px value | Space between columns
-config.align | center, left, right | Aligns text & buttons
-config.height | px value | Sets height on a row for vertical alignment
-config.background | hex value | Sets background colour of component
-config.theme | dark, light | Changes the text colour to suit
-config.alternating | true | Makes a row.html component alternate text/image sides
+| key | values | description |
+| --- | --- | ---
+| config.link | url | Applies the URL to applicable elements |
+| config.row-gutter | px value | Space below component |
+| config.col-gutter | px value | Space between columns |
+| config.align | center, left, right | Aligns text & buttons |
+| config.height | px value | Sets height on a row for vertical alignment |
+| config.background | hex value | Sets background colour of component |
+| config.theme | dark, light | Changes the text colour to suit |
+| config.alternating | true | Makes a row.html component alternate text/image sides |
 
 ##### Component items
 When this data is applied to an HTML include, it will loop over the items, applying the config settings and item content & styles. In writing the data for an item the first level defines the object link, image, and content. Content is an array of rows, with each row being an element.
 
-key | values | description
-- | - | -
-item.link | url | Applies link to applicable elements in the item
-item.image | filename + filetype | Places the image into chosen component block
-item.content | array of elements | List of content elements with styles
+| key | values | description |
+| --- | --- | ---
+| item.link | url | Applies link to applicable elements in the item |
+| item.image | filename + filetype | Places the image into chosen component block |
+| item.content | array of elements | List of content elements with styles |
 
-item.content | description
-- | -
-title & paragraph | These can receive `style` and `color` attributes
-text-link | `text-link` is displayed text, `link` is the URL. This can receive `style` and `color` attributes
-button | `button` is the label, `link` is the URL, `style` is colouring, `scale` is size
-promo | `promo` is the code, `before` displays text before, `after` displays text after, `color` sets the border colour
-hr | `hr` sets the total height of the element, `width` sets the width, `color` sets the border colour
-space | `space` sets the height, `color` sets the background colour
+| item.content | description |
+| - | -
+| title & paragraph | These can receive `style` and `color` attributes |
+| text-link | `text-link` is displayed text, `link` is the URL. This can receive `style` and `color` attributes |
+| button | `button` is the label, `link` is the URL, `style` is colouring, `scale` is size |
+| promo | `promo` is the code, `before` displays text before, `after` displays text after, `color` sets the border colour |
+| hr | `hr` sets the total height of the element, `width` sets the width, `color` sets the border colour |
+| space | `space` sets the height, `color` sets the background colour |
 
 
 
