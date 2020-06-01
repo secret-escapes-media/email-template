@@ -56,12 +56,12 @@ Examples of the foundations in use can be seen [here](http://m-stg.secretescapes
 
 ## Content management
 
-#### Locales
+### Locales
 Within the `/data/locale` directory we have `.yml` files for all available territories. These can be applied to a template by changing the locale variable. To add a new locale to the builder create a new file within this folder, and it will be accessible within your templates by setting the locale to the name of your new file.
 
 If any strings need to be changed or updated for languages it can be done directly within these `.yml` files.
 
-#### Project setup
+### Project setup
 Initial steps need to be taken when you begin a new project in the `config.yml`. Choose your locale, and if this is a partnership campaign fill in the variables. If it's not a partnership simply delete or comment the partner variables out.
 
 ```yaml
@@ -73,7 +73,7 @@ partner:
   logo-min-width: 90 # mobile & fallback
 ```
 
-#### Page front matter
+### Page front matter
 All emails should begin with the following setup:
 
 ```yaml
@@ -84,7 +84,7 @@ page-link: # default link if not set within the components
 terms-and-conditions: # this will load into the footer/legal.html component
 ```
 
-#### Components
+### Components
 To populate components with data we create objects in the page front-matter which consist of config and an array of items. For example:
 
 ```yaml
@@ -103,7 +103,7 @@ two-col:
         - button: Read more
 ```
 
-##### Component config options
+#### Component config options
 The config settings will apply to all items in the loop so we can define things like spacing, styles and links.
 
 | key | values | description |
@@ -117,7 +117,7 @@ The config settings will apply to all items in the loop so we can define things 
 | config.theme | dark, light | Changes the text colour to suit |
 | config.alternating | true | Makes a row.html component alternate text/image sides |
 
-##### Component items
+#### Component items
 When this data is applied to an HTML include, it will loop over the items, applying the config settings and item content & styles. In writing the data for an item the first level defines the object link, image, and content. Content is an array of rows, with each row being an element.
 
 | key | values | description |
