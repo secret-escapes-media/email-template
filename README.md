@@ -65,28 +65,68 @@ The template consists of:
 
 ## Foundations
 
-Created with consideration of the Secret Escapes Design Language System, this is built on fundamental styles and variables which ensure designs are visually consistent and on-brand.
+Created with consideration of the Secret Escapes DLS, this is built on fundamental styles and variables which ensure designs are visually consistent and on-brand.
 
-Examples of the foundations in use can be seen here:
-
-#### Typography
-
-#### Colours
-
-#### Depth
-
-#### Spacing
+Examples of the foundations in use can be seen [here](http://m-stg.secretescapes.com/uk/templates/email-2020/)
 
 
 
 ## Components
 
-#### Columns
-
 #### Sale cards
+The sale card components are designed in-line with the core site styles to build brand recognition and inspire confidence through familiarity.
+
+![Offer image](http://m-stg.secretescapes.com/uk/templates/email-2020/example-images/offer.jpg)
+
+Data for a sale needs to be input in the following format which will populate the component includes.
+```yaml
+- title: Soak in Slovenia's thermal springs
+  attribute: Editors pick
+  location: Slovenia
+  description: Discover Slovenia from the 4-star Riske Terme thermal resort. Incl. half board, car rental, luxury spa entry, thermal baths & return flights!
+  price: 389
+  price-description: per room per night
+  saved: 40%
+  expires: 2019/10/26
+  image: https://travelbird-images.imgix.net/4c/2a/4c2a5de4b4fd3ce9d3a5b23840afb7aa?auto=compress%2Cformat&crop=faces%2Cedges%2Ccenter&dpr=2&fit=crop&h=700&w=1050
+  link: https://co.uk.sales.secretescapes.com/115743/thermal-slovenia/
+```
 
 #### Articles
-This component is reserved for links to hero content such as posts on Escapist magazine or dedicated campaign content pieces
+This component is reserved for links to hero content such as posts on Escapist magazine or dedicated campaign content pieces.
+
 
 
 ## Progressive enhancement
+Built following the hybrid email methodology, these templates will be fully responsive across all email clients and devices. The framework is built mobile first, with a foundation that is strong and reliable on all necessary email clients including Outlook 2007+, Windows 10 Mail and Gmail.
+
+Through progressive enhancement based on classes and styles in `<head>`, we can improve the appearance in supported email clients. This means typography scales up depending on breakpoints, buttons have different scaling for better hierarchy and small stylistic additions like shadows and rounded corners can be applied.
+
+
+## Content management
+
+#### Project setup
+Initial steps need to be taken when you begin a new project in the `config.yml`. Choose your locale, and if this is a partnership campaign fill in the variables. If it's not a partnership simply delete or comment the partner variables out.
+
+```yaml
+locale: "uk | de"
+partner:
+  name: Partner Name
+  link: "#partner-link"
+  logo-width: 110
+  logo-min-width: 90 # mobile & fallback
+```
+
+#### Page front matter
+All emails should begin with the following setup:
+
+```yaml
+layout: "communication | trading | promotion | super"
+subject-line:
+preheader:
+```
+
+#### Locales
+Within the `/data/locale` directory we have `.yml` files for all available territories. These can be applied to a template by changing the locale variable. To add a new locale to the builder simply create a new file within this folder, and it will be accessible within your templates by setting the locale to the name of your new file.
+
+If any strings need to be changed or updated for languages it can be done directly within these `.yml` files.
