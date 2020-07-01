@@ -128,7 +128,8 @@ When this data is applied to an HTML include, it will loop over the items, apply
 
 | item.content | description |
 | - | -
-| title & paragraph | These can receive `style` and `color` attributes |
+| title | `title` is the content, `style` and `color` attributes available |
+| paragraph | `paragraph` is the content, `style` and `color` attributes available |
 | text-link | `text-link` is displayed text, `link` is the URL. This can receive `style` and `color` attributes |
 | button | `button` is the label, `link` is the URL, `style` is colouring, `scale` is size |
 | promo | `promo` is the code, `before` displays text before, `after` displays text after, `color` sets the border colour |

@@ -7,8 +7,13 @@
 {% assign theme        = config.theme %}
 {% assign width        = layout.width.lg | divided_by: 2 %}
 {% assign link         = page.page-link %}
+{% assign row-height   = "300" %}
 {% assign align-image  = "left" %}
 {% assign align-text   = "right" %}
+
+{% if config.height %}
+  {% assign row-height = config.height %}
+{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -96,7 +101,7 @@
         <div class="responsive-lg" style="display:inline-block; max-width:50%; min-width:{{width}}px; vertical-align:top; width:100%; float: {{align-text}};">
         <table {{table.default}} class="responsive-lg" align="{{align-text}}" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
-            <td align="center" style="{{spacing.hpad.sm}}" height="300" valign="middle" class="responsive-lg">
+            <td align="center" style="{{spacing.hpad.sm}}" height="{{row-height}}" valign="middle" class="responsive-lg">
               <table {{table.default}} class="responsive-lg" align="{{align-text}}" width="100%" style="max-width:{{width}}px;">
                 <tr>
                   <td align="center">
