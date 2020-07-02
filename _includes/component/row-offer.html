@@ -40,7 +40,7 @@
                     <table {{table.fluid}} height="45">
                       <tr>
                         <td width="{{spacing.sm}}"></td>
-                        <td align="center" valign="top" style="padding-top: {{spacing.sm}}px; {{text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
+                        <td align="center" valign="top" class="text-md" style="padding-top: {{spacing.sm}}px; {{default.text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
                           Sale ends {{item.expires | date: "%B %d"}}
                         </td>
                       </tr>
@@ -91,6 +91,7 @@
         <table {{table.default}} class="responsive-lg" align="right" width="100%" style="width: 100%; max-width:{{width}}px;">
           <tr>
             <td style="{{spacing.hpad.sm}}" height="{{image-height}}" valign="middle" class="responsive-td-lg">
+              {% include element/space.html height=spacing.sm %}
               <!-- Location -->
               {% include element/location.html location=item.location %}
               <!-- Title -->
@@ -99,7 +100,7 @@
               <!-- Price -->
               <table {{table.fluid}}>
                 <tr>
-                  <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
+                  <td align="left" class="text-md" style="{{default.text.md}} color: {{color.grey.dark}};">
                     {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
                   </td>
                 </tr>
@@ -108,10 +109,11 @@
               <table {{table.fluid}}>
                 <tr>
                   <td align="left" style="padding-top: 8px;">
-                    {% include element/button.html link=link label=locale.offer.cta align="left" %}
+                    {% include element/button.html link=link label=locale.offer.cta align="left" scale="sm" %}
                   </td>
                 </tr>
               </table>
+              {% include element/space.html height=spacing.sm %}
             </td>
           </tr>
         </table>

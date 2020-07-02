@@ -1,0 +1,31 @@
+
+
+text:
+  default:  "font-size: 14px; line-height: 21px; font-weight: 400; padding-bottom: 8px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  xxxl:     "font-size: 18px; line-height: 29px; font-weight: 400; padding-bottom: 10px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  xxl:      "font-size: 17px; line-height: 27px; font-weight: 400; padding-bottom: 10px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  xl:       "font-size: 16px; line-height: 25px; font-weight: 400; padding-bottom: 9px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  lg:       "font-size: 15px; line-height: 23px; font-weight: 400; padding-bottom: 8px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  md:       "font-size: 14px; line-height: 21px; font-weight: 400; padding-bottom: 7px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  sm:       "font-size: 13px; line-height: 19px; font-weight: 400; padding-bottom: 7px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  xs:       "font-size: 12px; line-height: 18px; font-weight: 400; padding-bottom: 6px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+  xxs:      "font-size: 12px; line-height: 18px; font-weight: 400; padding-bottom: 6px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+
+title:
+  default:  "font-size: 18px; line-height: 23px; font-weight: 700; padding-bottom: 5px; font-family: Georgia, serif, 'Source Serif Pro';"
+  xxxl:     "font-size: 26px; line-height: 33px; font-weight: 700; padding-bottom: 6px; font-family: Georgia, serif, 'Source Serif Pro';"
+  xxl:      "font-size: 24px; line-height: 30px; font-weight: 700; padding-bottom: 6px; font-family: Georgia, serif, 'Source Serif Pro';"
+  xl:       "font-size: 22px; line-height: 28px; font-weight: 700; padding-bottom: 5px; font-family: Georgia, serif, 'Source Serif Pro';"
+  lg:       "font-size: 20px; line-height: 25px; font-weight: 700; padding-bottom: 5px; font-family: Georgia, serif, 'Source Serif Pro';"
+  md:       "font-size: 18px; line-height: 23px; font-weight: 700; padding-bottom: 4px; font-family: Georgia, serif, 'Source Serif Pro';"
+  sm:       "font-size: 16px; line-height: 20px; font-weight: 700; padding-bottom: 4px; font-family: Georgia, serif, 'Source Serif Pro';"
+  xs:       "font-size: 14px; line-height: 18px; font-weight: 700; padding-bottom: 3px; font-family: Georgia, serif, 'Source Serif Pro';"
+  subtitle: "font-size: 14px; line-height: 18px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding-bottom: 8px; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro';"
+
+
+button:
+  font-size:  "15"
+  padding:    "15"
+
+
+

@@ -1,17 +1,18 @@
 {% assign foundations   = site.data.foundations %}
-{% assign color         = site.data.foundations.color %}
-{% assign spacing       = site.data.foundations.spacing %}
-{% assign depth         = site.data.foundations.depth %}
-{% assign rounded       = site.data.foundations.rounded %}
-{% assign button        = site.data.foundations.button %}
 
-{% assign typography    = site.data.foundations.typography %}
-{% assign text          = site.data.foundations.typography.text %}
-{% assign title         = site.data.foundations.typography.title %}
+{% assign default       = foundations.default %}
 
-{% assign layout        = site.data.foundations.layout %}
-{% assign container     = site.data.foundations.layout.container %}
-{% assign breakpoint    = site.data.foundations.layout.breakpoint %}
-{% assign table         = site.data.foundations.layout.table %}
+{% assign color         = foundations.color %}
+{% assign spacing       = foundations.spacing %}
+{% assign depth         = foundations.depth %}
+{% assign rounded       = foundations.rounded %}
+{% assign button        = foundations.button %}
+
+{% assign typography    = foundations.typography %}
+
+{% assign layout        = foundations.layout %}
+{% assign container     = foundations.layout.container %}
+{% assign breakpoint    = foundations.layout.breakpoint %}
+{% assign table         = foundations.layout.table %}
 
 {% assign locale = site.data.locale.[site.locale] %}

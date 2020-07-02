@@ -3,7 +3,12 @@
 {% assign image = include.image %}
 {% assign align = "center" %}
 {% assign link = page.page-link %}
+{% assign width = "100%" %}
 
+
+{% if include.width %}
+  {% assign width = include.width %}
+{% endif %}
 
 {% if include.align %}
   {% assign align = include.align %}
@@ -17,7 +22,7 @@
   <tr>
     <td align="center">
       <a href="{{link}}">
-        <img class="responsive-lg" src="img/{{image}}" width="100%" style="display: block;" />
+        <img class="responsive-lg" src="img/{{image}}" alt="{{include.alt}}" width="{{width}}" style="display: block;" />
       </a>
     </td>
   </tr>

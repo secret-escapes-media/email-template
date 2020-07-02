@@ -33,7 +33,7 @@
                     <table {{table.fluid}} height="45">
                       <tr>
                         <td width="{{spacing.sm}}"></td>
-                        <td align="center" valign="top" style="padding-top: {{spacing.sm}}px; {{text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
+                        <td align="center" valign="top" class="text-md" style="padding-top: {{spacing.sm}}px; {{default.text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
                           Sale ends {{item.expires | date: "%B %d"}}
                         </td>
                       </tr>
@@ -78,14 +78,14 @@
               {% include element/location.html location=item.location %}
               {% include element/title.html title=item.title align="left" %}
               {% include element/space.html height="10" %}
-              {% include element/paragraph.html paragraph=item.description align="left" %}
+              {% include element/paragraph.html paragraph=item.description align="left" style="lg" %}
               <!-- Price + CTA -->
               <table {{table.fluid}}>
                 <tr>
                   <td align="left" style="padding-top: 15px;">
                     <table {{table.fluid}}>
                       <tr>
-                        <td align="left" class="text-md" style="{{text.md}} color: {{color.grey.dark}};">
+                        <td align="left" class="text-md" style="{{default.text.md}} color: {{color.grey.dark}};">
                           {{locale.offer.from}} <span style="font-weight: 700; font-size: 20px; color: {{color.primary.default}};">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
                         </td>
                         <td style="font-size:1px;" width="15"></td>
