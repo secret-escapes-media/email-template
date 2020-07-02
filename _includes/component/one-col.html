@@ -1,12 +1,26 @@
 
-{% assign config       = include.content.config %}
-{% assign items        = include.content.items %}
-{% assign row-gutter   = "30" %}
-{% assign text-align   = "center" %}
-{% assign background   = color.background.box %}
-{% assign theme        = config.theme %}
-{% assign link         = page.page-link %}
+{% assign config           = include.content.config %}
+{% assign items            = include.content.items %}
+{% assign link             = page.page-link %}
+{% assign row-gutter       = "30" %}
+{% assign text-align       = "center" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
 
+
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
+
+{% if config.background-color %}
+  {% assign background-color = config.background-color %}
+{% endif %}
+
+{% if config.box-color %}
+  {% assign box-color = config.box-color %}
+{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -14,10 +28,6 @@
 
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
-{% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
 {% endif %}
 
 
@@ -32,6 +42,12 @@
     {% assign link = page.page-link %}
   {% endif %}
 
+  <!-- one-col.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
+
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
   <tr>
@@ -39,14 +55,14 @@
   <![endif]-->
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{box-color}}" style="{{rounded.md}} {{depth.default}}">
 
         <table {{table.default}}>
           {% if item.image %}
           <tr>
             <td align="center">
               <a href="{{link}}">
-                <img class="responsive-lg" src="img/{{item.image}}" width="{{layout.width.lg}}" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
+                <img class="responsive-lg" src="img/{{item.image}}" width="100%" style="display: block; border-top-left-radius: 3px; border-top-right-radius: 3px;{% unless item.content %} border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;{% endunless %}" />
               </a>
             </td>
           </tr>
@@ -69,5 +85,10 @@
   </table>
   <![endif]-->
   {% include element/space.html height=row-gutter %}
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
 
 {% endfor %}

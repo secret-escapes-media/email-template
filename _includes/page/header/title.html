@@ -1,32 +1,22 @@
 
-<!-- Hero/Title -->
+<!-- header/title.html -->
 
 {% include system/helpers.html %}
 
-{% assign this         = include.content %}
-{% assign config       = this.config %}
-{% assign text-content = this.title %}
-{% assign link         = page.page-link %}
-{% assign background   = color.black %}
-{% assign theme        = "dark" %}
+{% assign this             = include.content %}
+{% assign config           = this.config %}
+{% assign link             = page.page-link %}
+{% assign background-color = color.black %}
 
 {% if config.link %}
   {% assign link = config.link %}
-{% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
-{% endif %}
-
-{% if config.theme == "light" %}
-  {% assign theme = "light" %}
 {% endif %}
 
 
 
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{background}}" style="padding-bottom: {{spacing.lg}}px; {{spacing.gutter}} color: {{color.white}};">
+    <td align="center" bgcolor="{{background-color}}" style="padding-bottom: {{spacing.md}}px; {{spacing.gutter}} color: {{color.white}};">
 
       <!--[if (gte mso 9)|(IE)]>
       <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -36,7 +26,7 @@
       <table {{table.inner}}>
         <tr>
           <td align="center">
-          {% include component/_content.html content=text-content theme=theme %}
+          {% include component/_content.html content=this.title theme="dark" %}
           </td>
         </tr>
       </table>

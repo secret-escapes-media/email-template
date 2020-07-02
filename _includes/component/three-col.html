@@ -1,13 +1,27 @@
 
-{% assign config       = include.content.config %}
-{% assign items        = include.content.items %}
-{% assign row-gutter   = "30" %}
-{% assign col-gutter   = "15" %}
-{% assign text-align   = "center" %}
-{% assign background   = color.background.box %}
-{% assign theme        = config.theme %}
-{% assign link         = page.page-link %}
+{% assign config           = include.content.config %}
+{% assign items            = include.content.items %}
+{% assign link             = page.page-link %}
+{% assign row-gutter       = "30" %}
+{% assign col-gutter       = "15" %}
+{% assign text-align       = "center" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
 
+
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
+
+{% if config.background-color %}
+  {% assign background-color = config.background-color %}
+{% endif %}
+
+{% if config.box-color %}
+  {% assign box-color = config.box-color %}
+{% endif %}
 
 {% if config.align %}
   {% assign text-align = config.align %}
@@ -19,10 +33,6 @@
 
 {% if config.col-gutter %}
   {% assign col-gutter = config.col-gutter %}
-{% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
 {% endif %}
 
 
@@ -49,6 +59,13 @@
   {% endif %}
 
   {% if pos == 'one' %}
+
+  <!-- three-col.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
+
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
   <tr>
@@ -71,7 +88,7 @@
             <td align="center" style="padding-bottom: {{row-gutter}}px;">
               <table {{table.default}} class="responsive-lg" width="100%" style="max-width: {{width}}px;">
                 <tr>
-                  <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}}">
+                  <td align="center" bgcolor="{{box-color}}" style="{{rounded.md}} {{depth.default}}">
                     <table {{table.default}}>
 
                       {% if item.image %}
@@ -122,6 +139,11 @@
   </tr>
   </table>
   <![endif]-->
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
   {% endif %}
 {% endfor %}
 

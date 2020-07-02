@@ -1,18 +1,17 @@
 
+<!-- header/logo.html -->
+
 {% include system/helpers.html %}
 
 
 {% if include.theme == 'dark' %}
-  <!-- black background / light logos -->
   {% assign logo-theme = 'light' %}
   {% assign background = color.black %}
 {% else %}
-  <!-- light background / black logos -->
   {% assign logo-theme = 'dark' %}
   {% assign background = color.white %}
 {% endif %}
 
-<!-- Header Logo -->
 <table {{table.outer}}>
   <tr>
     <td align="center" bgcolor="{{background}}">

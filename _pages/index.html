@@ -10,7 +10,7 @@ page-link: "#page-link"
 hero:
   config:
     link: "#hero-link"
-    row-gutter: 30
+    row-gutter: 0
   title:
     - title: Component Library
       style: xxxl
@@ -42,6 +42,7 @@ example-hero:
 typography:
   config:
     row-gutter: 0
+    background-color: "#D7D8DD"
   items:
     - content:
       - title: >
@@ -86,6 +87,9 @@ one-col:
   config:
     row-gutter: 30
     align: center
+    background-color: "#33343E"
+    box-color: "#43444C"
+    theme: dark
   items:
     - image: C..16-9.jpg
       content:
@@ -178,7 +182,6 @@ banner:
   config:
     link: "#hero-link"
     row-gutter: 30
-    theme: dark
     height: 200
   items:
     - image: BG..super-hero.jpg
@@ -193,32 +196,33 @@ banner:
 
 
 
-  row:
-    config:
-      row-gutter: 0
-      align: left
-      alternating: true
-      theme: dark
-      background: "#070707"
-    items:
-      - link: "#item-link"
-        image: C..1-1.jpg
-        content:
-          - title: Your guide to Marrakech's markets
-            style: md
-          - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            style: lg
-          - button: Read more
-            scale: md
-      - link: "#item-link"
-        image: C..1-1.jpg
-        content:
-          - title: Your guide to Marrakech's markets
-            style: md
-          - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            style: lg
-          - button: Read more
-            scale: md
+row:
+  config:
+    row-gutter: 30
+    align: center
+    alternating: true
+    theme: dark
+    background-color: "#33343E"
+    box-color: "#43444C"
+  items:
+    - link: "#item-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: lg
+        - button: Read more
+          scale: md
+    - link: "#item-link"
+      image: C..1-1.jpg
+      content:
+        - title: Your guide to Marrakech's markets
+          style: md
+        - paragraph: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          style: lg
+        - button: Read more
+          scale: md
 
 
 
@@ -245,147 +249,135 @@ offer:
 
 
 
+{% include element/space.html height="30" %}
+{% include element/title.html title="Foundations / Typography" style="xl" %}
+{% include element/space.html height="30" %}
+{% include component/one-col.html content=page.typography %}
 
-<table {{table.outer}}>
+
+{% include element/space.html height="60" %}
+{% include element/title.html title="Foundations / Colours" style="xl" %}
+{% include element/space.html height="30" %}
+
+<table {{table.inner}}>
   <tr>
-    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
+    <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
 
-      <table {{table.inner}}>
+      {% include element/title.html title="Neutrals" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      <table {{table.fluid}}>
         <tr>
-          <td align="center">
-            {% include element/space.html height="30" %}
-            {% include element/title.html title="Foundations / Typography" style="xl" %}
-            {% include element/space.html height="30" %}
-            {% include component/one-col.html content=page.typography %}
-          </td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.white}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lightest}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lighter}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.light}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.dark}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darker}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darkest}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.black}}"></td>
         </tr>
       </table>
 
-      {% include element/space.html height="60" %}
-      {% include element/title.html title="Foundations / Colours" style="xl" %}
-      {% include element/space.html height="30" %}
-
-      <table {{table.inner}}>
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="Primary" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      <table {{table.fluid}}>
         <tr>
-          <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
-
-            {% include element/title.html title="Neutrals" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            <table {{table.fluid}}>
-              <tr>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.white}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lightest}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.lighter}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.light}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.medium}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.dark}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darker}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.grey.darkest}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.black}}"></td>
-              </tr>
-            </table>
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="Primary" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            <table {{table.fluid}}>
-              <tr>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.default}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lightest}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lighter}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.light}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.medium}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.dark}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darker}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darkest}}"></td>
-              </tr>
-            </table>
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="Secondary" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            <table {{table.fluid}}>
-              <tr>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.default}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lightest}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lighter}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.light}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.medium}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.dark}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darker}}"></td>
-                <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darkest}}"></td>
-              </tr>
-            </table>
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="Gradient" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            <table {{table.fluid}}>
-              <tr>
-                <td style="{{spacing.boxpad.sm}} {{color.gradient.primary}}"></td>
-                <td style="{{spacing.boxpad.sm}} {{color.gradient.secondary}}"></td>
-              </tr>
-            </table>
-
-          </td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.default}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lightest}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.lighter}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.light}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.medium}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.dark}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darker}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.primary.darkest}}"></td>
         </tr>
       </table>
 
-      {% include element/space.html height="60" %}
-      {% include element/title.html title="Foundations / Buttons" style="xl" %}
-      {% include element/space.html height="30" %}
-
-      <table {{table.inner}}>
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="Secondary" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      <table {{table.fluid}}>
         <tr>
-          <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
-
-            {% include element/title.html title="primary + xs" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            {% include element/button.html label="Read more" style="primary" scale="xs" %}
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="secondary + sm" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            {% include element/button.html label="Read more" style="secondary" scale="sm" %}
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="partner + md" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            {% include element/button.html label="Read more" style="partner" scale="md" %}
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="light + lg" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            {% include element/button.html label="Read more" style="light" scale="lg" %}
-
-            {% include element/space.html height="15" %}
-            {% include element/title.html title="outline + xl" style="subtitle" %}
-            {% include element/space.html height="15" %}
-            {% include element/button.html label="Read more" style="outline" scale="xl" %}
-
-          </td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.default}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lightest}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.lighter}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.light}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.medium}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.dark}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darker}}"></td>
+          <td style="{{spacing.boxpad.sm}}" bgcolor="{{color.secondary.darkest}}"></td>
         </tr>
       </table>
 
-      {% include element/space.html height="30" %}
-      {% include element/title.html title="Components" style="xl" %}
-      {% include element/space.html height="30" %}
-
-      {% include component/one-col.html content=page.one-col %}
-      {% include component/two-col.html content=page.two-col %}
-      {% include component/three-col.html content=page.three-col %}
-      {% include component/article.html content=page.article %}
-      {% include component/banner.html content=page.banner %}
-      {% include component/row.html content=page.row %}
-      {% include element/space.html height="30" %}
-
-      {% include component/row-offer.html content=page.offer %}
-      {% include component/one-col-offer.html content=page.offer %}
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="Gradient" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      <table {{table.fluid}}>
+        <tr>
+          <td style="{{spacing.boxpad.sm}} {{color.gradient.primary}}"></td>
+          <td style="{{spacing.boxpad.sm}} {{color.gradient.secondary}}"></td>
+        </tr>
+      </table>
 
     </td>
   </tr>
 </table>
+
+{% include element/space.html height="60" %}
+{% include element/title.html title="Foundations / Buttons" style="xl" %}
+{% include element/space.html height="30" %}
+
+<table {{table.inner}}>
+  <tr>
+    <td align="center" bgcolor="{{color.background.box}}" style="{{spacing.boxpad.md}} {{rounded.md}} {{depth.md}}">
+
+      {% include element/title.html title="primary + xs" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      {% include element/button.html label="Read more" style="primary" scale="xs" %}
+
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="secondary + sm" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      {% include element/button.html label="Read more" style="secondary" scale="sm" %}
+
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="partner + md" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      {% include element/button.html label="Read more" style="partner" scale="md" %}
+
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="light + lg" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      {% include element/button.html label="Read more" style="light" scale="lg" %}
+
+      {% include element/space.html height="15" %}
+      {% include element/title.html title="outline + xl" style="subtitle" %}
+      {% include element/space.html height="15" %}
+      {% include element/button.html label="Read more" style="outline" scale="xl" %}
+
+    </td>
+  </tr>
+</table>
+
+{% include element/space.html height="30" %}
+{% include element/title.html title="Components" style="xl" %}
+{% include element/space.html height="30" %}
+
+{% include component/one-col.html content=page.one-col %}
+{% include component/two-col.html content=page.two-col %}
+{% include component/three-col.html content=page.three-col %}
+{% include component/article.html content=page.article %}
+{% include component/banner.html content=page.banner %}
+{% include component/row.html content=page.row %}
+{% include element/space.html height="30" %}
+
+{% include component/offer-row.html content=page.offer %}
+{% include component/offer-one-col.html content=page.offer %}
+
+
 
 <table {{table.outer}}>
   <tr>

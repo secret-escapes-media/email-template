@@ -1,28 +1,35 @@
 
-<!-- Header/Image -->
+<!-- header/image.html -->
+
 {% include system/helpers.html %}
 
-{% assign this         = include.content %}
-{% assign config       = this.config %}
-{% assign image        = this.image %}
-{% assign text-content = this.content %}
-{% assign link         = page.page-link %}
-{% assign background   = color.black %}
-{% assign theme        = "dark" %}
-{% assign row-gutter   = "30" %}
-{% assign text-align   = "center" %}
-{% assign image-height = "300" %}
+{% assign this             = include.content %}
+{% assign config           = this.config %}
+{% assign image            = this.image %}
+{% assign link             = page.page-link %}
+{% assign row-gutter       = "30" %}
+{% assign text-align       = "center" %}
+{% assign image-height     = "300" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
+
+
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
+
+{% if config.background-color %}
+  {% assign background-color = config.background-color %}
+{% endif %}
+
+{% if config.box-color %}
+  {% assign box-color = config.box-color %}
+{% endif %}
 
 {% if config.link %}
   {% assign link = config.link %}
-{% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
-{% endif %}
-
-{% if config.theme == "light" %}
-  {% assign theme = "light" %}
 {% endif %}
 
 {% if image.height %}
@@ -36,6 +43,7 @@
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
 {% endif %}
+
 
 
 <table {{table.outer}}>
@@ -54,7 +62,7 @@
             <a href="{{link}}" style="display: block; height: {{link-height}}px; width: 100%;"></a>
           </td>
         </tr>
-        {% if text-content %}
+        {% if this.content %}
         <tr>
           <td align="center">
             <!--[if (gte mso 9)|(IE)]>
@@ -96,11 +104,14 @@
 
 
 
-{% if text-content %}
+
+
+
+{% if this.content %}
 <!-- Content -->
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.background.inner}}">
+    <td align="center" bgcolor="{{background-color}}">
 
       <!--[if (gte mso 9)|(IE)]>
       <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -109,12 +120,12 @@
       <![endif]-->
       <table {{table.inner}}>
         <tr>
-          <td class="header__image-content" bgcolor="{{color.background.box}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
+          <td class="header__image-content" bgcolor="{{box-color}}" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; {{depth.sm}}">
 
             <table {{table.default}}>
               <tr>
                 <td style="{{spacing.hpad.md}} padding-bottom: {{spacing.md}}px;">
-                  {% include component/_content.html content=text-content align=text-align %}
+                  {% include component/_content.html content=this.content align=text-align %}
                 </td>
               </tr>
             </table>

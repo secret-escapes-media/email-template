@@ -1,11 +1,20 @@
 
-{% assign items        = include.content.items %}
-{% assign row-gutter   = "30" %}
-{% assign image-height       = "330" %}
+{% assign items            = include.content.items %}
+{% assign row-gutter       = "30" %}
+{% assign image-height     = "330" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
+
 
 
 {% for item in items %}
-  {% assign link = item.link %}
+
+  <!-- offer-one-col.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
 
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -14,7 +23,7 @@
   <![endif]-->
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{color.white}}" class="rounded-md" style="{{rounded.md}} {{depth.default}}">
+      <td align="center" bgcolor="{{box-color}}" class="rounded-md" style="{{rounded.md}} {{depth.default}}">
 
 
         <table {{table.fluid}}>
@@ -75,7 +84,7 @@
           </tr>
           <tr>
             <td align="left" style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
-              {% include element/location.html location=item.location %}
+              {% include element/location.html location=item.location align="left" %}
               {% include element/title.html title=item.title align="left" %}
               {% include element/space.html height="10" %}
               {% include element/paragraph.html paragraph=item.description align="left" style="lg" %}
@@ -110,5 +119,10 @@
   </table>
   <![endif]-->
   {% include element/space.html height=row-gutter %}
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
 
 {% endfor %}

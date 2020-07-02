@@ -1,13 +1,21 @@
 
-{% assign items        = include.content.items %}
-{% assign row-gutter   = "30" %}
-{% assign image-height = "250" %}
-{% assign width        = layout.width.lg | divided_by: 2 %}
+{% assign items            = include.content.items %}
+{% assign row-gutter       = "30" %}
+{% assign image-height     = "250" %}
+{% assign width            = layout.width.lg | divided_by: 2 %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
 
 
 
 {% for item in items %}
-  {% assign link = link %}
+
+  <!-- offer-row.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
 
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -16,7 +24,7 @@
   <![endif]-->
   <table {{table.inner}}>
     <tr>
-      <td align="center" bgcolor="{{color.background.box}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
+      <td align="center" bgcolor="{{box-color}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
 
         <!--[if (gte mso 9)|(IE)]>
         <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
@@ -93,7 +101,7 @@
             <td style="{{spacing.hpad.sm}}" height="{{image-height}}" valign="middle" class="responsive-td-lg">
               {% include element/space.html height=spacing.sm %}
               <!-- Location -->
-              {% include element/location.html location=item.location %}
+              {% include element/location.html location=item.location align="left" %}
               <!-- Title -->
               {% include element/title.html title=item.title align="left" style="md" %}
               {% include element/space.html height="15" %}
@@ -133,5 +141,10 @@
   </table>
   <![endif]-->
   {% include element/space.html height=row-gutter %}
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
 
 {% endfor %}

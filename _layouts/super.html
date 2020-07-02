@@ -4,12 +4,6 @@ layout: default
 {% include system/helpers.html %}
 
 {% include page/header/super-hero.html content=page.hero %}
-<table {{table.outer}}>
-  <tr>
-    <td align="center" bgcolor="{{color.background.inner}}" style="{{spacing.gutter}}">
-      {{content}}
-    </td>
-  </tr>
-</table>
+{{content}}
 {% include page/footer/promo.html %}
 {% include page/footer/quicklinks.html %}

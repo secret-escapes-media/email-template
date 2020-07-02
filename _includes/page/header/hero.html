@@ -1,17 +1,20 @@
 
-<!-- Hero -->
+<!-- header/hero.html -->
+
 {% include system/helpers.html %}
 
 {% assign this         = include.content %}
 {% assign config       = this.config %}
-{% assign title        = this.title %}
-{% assign image        = this.image %}
-{% assign text-content = this.content %}
+{% assign row-gutter   = "0" %}
 {% assign theme        = "dark" %}
 
 
 {% if config.theme == "light" %}
   {% assign theme = "light" %}
+{% endif %}
+
+{% if config.row-gutter %}
+  {% assign row-gutter = config.row-gutter %}
 {% endif %}
 
 
@@ -25,3 +28,5 @@
 {% if this.image %}
   {% include page/header/image.html content=this %}
 {% endif %}
+
+{% include element/space.html color=color.background.inner height=row-gutter %}

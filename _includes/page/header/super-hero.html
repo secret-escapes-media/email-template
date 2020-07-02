@@ -1,5 +1,6 @@
 
-<!-- Super Hero -->
+<!-- header/super-hero.html -->
+
 {% include system/helpers.html %}
 
 {% assign this         = include.content %}
@@ -30,6 +31,7 @@
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
 {% endif %}
+
 
 
 <table {{table.outer}}>
@@ -128,10 +130,6 @@
     </td>
   </tr>
 </table>
-<table {{table.outer}}>
-  <tr>
-    <td bgcolor="{{color.background.inner}}" style="height: {{row-gutter}}px;"></td>
-  </tr>
-</table>
+{% include element/space.html color=color.background.inner height=row-gutter %}
 
 

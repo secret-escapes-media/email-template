@@ -1,4 +1,4 @@
-<!-- Location -->
+<!-- element/location.html -->
 
 {% include system/helpers.html %}
 
@@ -7,8 +7,8 @@
 {% assign marker     = "se20..location.png" %}
 
 
-{% if config.align %}
-  {% assign text-align = config.align %}
+{% if include.align %}
+  {% assign text-align = include.align %}
 {% endif %}
 
 {% if include.color %}

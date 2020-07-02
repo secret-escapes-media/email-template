@@ -43,12 +43,13 @@
       link=link
       style=row.style
       scale=row.scale
-      align=include.align%}
+      align=include.align %}
 
   {% elsif row.location %}
     {% include element/location.html
       location=row.location
-      theme=include.theme %}
+      theme=include.theme
+      align=include.align %}
 
   {% elsif row.promo %}
     {% include element/promo.html

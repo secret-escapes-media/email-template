@@ -1,15 +1,30 @@
 
-{% assign config       = include.content.config %}
-{% assign items        = include.content.items %}
-{% assign row-gutter   = "30" %}
-{% assign text-align   = "center" %}
-{% assign background   = color.background.box %}
-{% assign theme        = config.theme %}
-{% assign width        = layout.width.lg | divided_by: 2 %}
-{% assign link         = page.page-link %}
-{% assign row-height   = "300" %}
-{% assign align-image  = "left" %}
-{% assign align-text   = "right" %}
+{% assign config           = include.content.config %}
+{% assign items            = include.content.items %}
+{% assign link             = page.page-link %}
+{% assign row-gutter       = "30" %}
+{% assign text-align       = "center" %}
+{% assign width            = layout.width.lg | divided_by: 2 %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
+{% assign row-height       = "300" %}
+{% assign align-image      = "left" %}
+{% assign align-text       = "right" %}
+
+
+
+{% if config.theme %}
+  {% assign theme = config.theme %}
+{% endif %}
+
+{% if config.background-color %}
+  {% assign background-color = config.background-color %}
+{% endif %}
+
+{% if config.box-color %}
+  {% assign box-color = config.box-color %}
+{% endif %}
 
 {% if config.height %}
   {% assign row-height = config.height %}
@@ -22,11 +37,6 @@
 {% if config.row-gutter %}
   {% assign row-gutter = config.row-gutter %}
 {% endif %}
-
-{% if config.background %}
-  {% assign background = config.background %}
-{% endif %}
-
 
 
 
@@ -51,6 +61,12 @@
     {% endif %}
   {% endif %}
 
+  <!-- row.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
+
   <!--[if (gte mso 9)|(IE)]>
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
   <tr>
@@ -59,9 +75,9 @@
   <table {{table.inner}}>
     <tr>
       {% if config.alternating %}
-      <td align="center" bgcolor="{{background}}" style="{% if forloop.first %}{{rounded.top.md}}{% elsif forloop.last %}{{rounded.bottom.md}}{% endif %} {{depth.default}} font-size:0;">
+      <td align="center" bgcolor="{{box-color}}" style="{% if forloop.first %}{{rounded.top.md}}{% elsif forloop.last %}{{rounded.bottom.md}}{% endif %} {{depth.default}} font-size:0;">
       {% else %}
-      <td align="center" bgcolor="{{background}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
+      <td align="center" bgcolor="{{box-color}}" style="{{rounded.md}} {{depth.default}} font-size:0;">
       {% endif %}
 
         <!--[if (gte mso 9)|(IE)]>
@@ -130,5 +146,10 @@
   </table>
   <![endif]-->
   {% include element/space.html height=row-gutter %}
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
 
 {% endfor %}

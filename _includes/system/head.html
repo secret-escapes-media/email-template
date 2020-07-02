@@ -77,10 +77,8 @@
       {% endfor %}
       /* Buttons */
       {% for item in button.scale %}
-        td[class*="button-{{item[0]}}"] {
+        a[class*="button-{{item[0]}}"] {
           padding: {{item[1].padding}}px {{item[1].padding | times: 2}}px !important;
-        }
-        a[class*="button-label-{{item[0]}}"] {
           font-size: {{item[1].font-size}}px !important;
           line-height: {{item[1].font-size}}px !important;
         }

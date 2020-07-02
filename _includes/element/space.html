@@ -1,12 +1,16 @@
-<!-- Space -->
+<!-- element/space.html -->
 
 {% assign height = "30" %}
 {% if height %}
   {% assign height = include.height %}
 {% endif %}
+{% if include.color %}
+  {% assign space-color = include.color %}
+{% endif %}
 
 <table {{table.fluid}}>
   <tr>
-    <td align="center" height="{{height}}"></td>
+    <td align="center" bgcolor="{{space-color}}" height="{{height}}"></td>
   </tr>
 </table>
+{% assign space-color ="" %}

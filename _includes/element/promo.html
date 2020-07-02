@@ -1,4 +1,4 @@
-<!-- Promo -->
+<!-- element/promo.html -->
 
 {% include system/helpers.html %}
 
@@ -16,6 +16,8 @@
 
 {% if include.color %}
   {% assign textcolor = include.color %}
+{% elsif include.theme == 'dark' %}
+  {% assign textcolor = color.white %}
 {% endif %}
 
 {% assign promo-code    = include.promo %}
@@ -31,7 +33,7 @@
       <table {{table.fluid}}>
         {% if promo-before %}
         <tr>
-          <td align="{{align}}" style="{{default.text.xl}}" class="text-xl">
+          <td align="{{align}}" class="text-xl" style="{{default.text.xl}} color: {{textcolor}};">
             {{promo-before}}
           </td>
         </tr>
@@ -40,7 +42,7 @@
           <td align="center" style="{{spacing.vpad.xs}}">
             <table {{table.fluid}} style="border: 1px solid {{color.primary.default}};">
               <tr>
-                <td align="{{align}}" style="{{default.text.xxl}} {{spacing.boxpad.xs}} {{typography.bold}}" class="text-xxl">
+                <td align="{{align}}" class="text-xxl" style="{{default.text.xxl}} {{spacing.boxpad.xs}} {{typography.bold}} color: {{textcolor}};">
                   {{promo-code}}
                 </td>
               </tr>
@@ -49,7 +51,7 @@
         </tr>
         {% if promo-after %}
         <tr>
-          <td align="{{align}}" style="{{default.text.sm}}" class="text-sm">
+          <td align="{{align}}" class="text-sm" style="{{default.text.sm}} color: {{textcolor}};">
             {{promo-after}}
           </td>
         </tr>

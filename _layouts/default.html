@@ -37,8 +37,16 @@ SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
           <tr>
           <td align="center" valign="top" width="{{layout.width.xl}}">
           <![endif]-->
+          <table {{table.outer}}>
+          <tr>
+          <td align="center">
+
           {{ content }}
           {% include page/footer/legal.html %}
+
+          </td>
+          </tr>
+          </table>
           <!--[if (gte mso 9)|(IE)]>
           </td>
           </tr>
