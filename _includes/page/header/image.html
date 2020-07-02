@@ -48,11 +48,11 @@
 
 <table {{table.outer}}>
   <tr>
-    <td align="center" bgcolor="{{color.black}}" background="img/{{image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
+    <td align="center" bgcolor="{{color.black}}" background="{{page.img}}{{image.file}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover;" height="{{image-height}}">
       <!--[if mso | ie]>
-      <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="img/{{image.file}}" />
+      <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.xl}}px; height: {{image-height}}px;" src="{{page.img}}{{image.file}}" />
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.xl}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
-      <v:fill type="frame" size="100%,100%"  src="img/{{image.file}}" />
+      <v:fill type="frame" size="100%,100%"  src="{{page.img}}{{image.file}}" />
       <v:textbox inset="0,0,0,0">
       <![endif]-->
       <table align="center" {{table.fluid}}><!-- Link -->

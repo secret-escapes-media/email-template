@@ -1,0 +1,132 @@
+---
+layout: promotion
+img: img/example/hotel-feature/
+
+subject-line: Example Hotel Feature
+preheader: Email preheader
+
+page-link: #page-link
+background-color:
+box-color:
+terms-and-conditions:
+
+hero:
+  config:
+    row-gutter: 15
+  title:
+    - title: Our Sunday best-ever
+      style: xxxl
+    - paragraph: Taking the top spot on our 10-week best-ever hotel countdown is none other than the 17th century luxury Lainston House. Situated just outside Winchester, this stately hotel is home to award-winning dining and stunning luxury suites. This one will sell-out fast, so book our top hotel now and you'll also earn a £50 welcome back gift.
+  image:
+    file: BG..hero.jpg
+    height: 300
+  content:
+    - location: Lainston House, Hampshire
+    - title: 5* Winchester country manor hotel with acclaimed dining - Fully refundable
+    - paragraph: A five-star Winchester country house stay with a raved-about restaurant, beautiful grounds and country pursuits – includes full English breakfast and optional dinner. Fully refundable - book with confidence.
+      style: lg
+    - text-link: View deal
+
+
+
+
+features:
+  config:
+    row-gutter: 1
+    col-gutter: 0
+    alternating: true
+    height: 215
+  items:
+
+    - image: C..1.jpg
+      content:
+      - paragraph: The 5-star hotel is one of the best-ever reviewed hotels with Secret Escapes customers.
+        style: lg
+
+    - image: C..2.jpg
+      content:
+      - paragraph: You can spend some time learning new skills; like the exclusive cookery school or the falconry experience.
+        style: lg
+
+    - image: C..3.jpg
+      content:
+      - paragraph: A walk among the grounds is a spectacular, regal way to spend a summer staycation.
+        style: lg
+
+
+
+
+reviews:
+  config:
+    row-gutter: 30
+    text-align: left
+  items:
+
+    - content:
+      - image: stars.png
+        width: 80
+      - space: 10
+      - paragraph: "Fantastic value for money - beautiful hotel, wonderful food and we couldn't believe how amazing our room was"
+        style: lg
+      - paragraph: Rebecca, hotel guest
+        style: caps
+
+    - content:
+      - image: stars.png
+        width: 80
+      - space: 10
+      - paragraph: "A fantastic deal with two course dinner and huge suites. We will be booking Lainston House again!"
+        style: lg
+      - paragraph: Wendy, hotel guest
+        style: caps
+
+    - content:
+      - image: stars.png
+        width: 80
+      - space: 10
+      - paragraph: "First class experience all round: hotel, hotel staff and good were exceptional. A 10/10 for everything."
+        style: lg
+      - paragraph: Grace, hotel guest
+        style: caps
+
+
+
+
+offer:
+  config:
+  items:
+
+    - title: 5* Winchester country manor hotel with acclaimed dining - Fully refundable
+      location: Lainston House, Hampshire
+      description: A five-star Winchester country house stay with a raved-about restaurant, beautiful grounds and country pursuits – includes full English breakfast and optional dinner. Fully refundable - book with confidence
+      price: 195
+      price-description: per suite per night
+      saved: 36
+      expires: 2021/06/29
+      image: https://secretescapes-web.imgix.net/hotels/397/66ad10bd_b51c_4be3_a3bf_0f08d2c0ac7e.jpg?auto=format,compress
+      link: https://www.secretescapes.com/lainston-house-hampshire/sale-hotel
+
+
+
+---
+{% include system/helpers.html %}
+
+
+
+
+<table {{table.fluid}}>
+  <tr>
+    <td bgcolor="{{color.background.inner}}">
+      {% include element/title.html title="Why we chose it" style="lg" %}
+      {% include element/space.html height="30" %}
+    </td>
+  </tr>
+</table>
+
+{% include component/row.html content=page.features %}
+{% include element/space.html color=color.background.inner height="30" %}
+
+{% include component/three-col.html content=page.reviews %}
+
+{% include component/offer-one-col.html content=page.offer %}
+

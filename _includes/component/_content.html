@@ -72,5 +72,11 @@
       height=row.space
       color=row.color %}
 
+  {% elsif row.image %}
+    {% include element/image.html
+      image=row.image
+      width=row.width
+      link=link %}
+
   {% endif %}
 {% endfor %}

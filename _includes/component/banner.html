@@ -64,11 +64,11 @@
 
         <table {{table.fluid}}>
           <tr>
-            <td align="center" bgcolor="{{box-color}}" background="img/{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.md}}" class="rounded-md" height="{{image-height}}">
+            <td align="center" bgcolor="{{box-color}}" background="{{page.img}}{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.md}}" class="rounded-md" height="{{image-height}}">
               <!--[if mso | ie]>
-              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: {{image-height}}px;" src="img/{{item.image}}" />
+              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: {{image-height}}px;" src="{{page.img}}{{item.image}}" />
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.lg}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
-              <v:fill type="frame" size="100%,100%"  src="img/{{item.image}}" />
+              <v:fill type="frame" size="100%,100%"  src="{{page.img}}{{item.image}}" />
               <v:textbox inset="0,0,0,0">
               <![endif]-->
               <table align="center" {{table.fluid}}>

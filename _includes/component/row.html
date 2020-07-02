@@ -94,12 +94,12 @@
                   <td align="center">
                     <a href="{{link}}">
                       {% if config.alternating %}
-                        <img class="responsive-lg" src="img/{{item.image}}" width="{{width}}" style="display: block;
+                        <img class="responsive-lg" src="{{page.img}}{{item.image}}" width="{{width}}" style="display: block;
                         {% if forloop.first %}border-top-left-radius: 3px;
                         {% elsif forloop.last and pos == 'two' %}border-bottom-right-radius: 3px;
                         {% elsif forloop.last and pos == 'one' %}border-bottom-left-radius: 3px;{% endif %}" />
                       {% else %}
-                        <img class="responsive-lg rounded-left" src="img/{{item.image}}" width="{{width}}" style="display: block; {{rounded.left.md}}" />
+                        <img class="responsive-lg rounded-left" src="{{page.img}}{{item.image}}" width="{{width}}" style="display: block; {{rounded.left.md}}" />
                       {% endif %}
                     </a>
                   </td>

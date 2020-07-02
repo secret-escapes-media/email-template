@@ -1,0 +1,61 @@
+---
+layout: trading
+img: img/
+
+subject-line: Example Trading
+preheader: Email preheader
+
+page-link: #page-link
+background-color:
+box-color:
+terms-and-conditions:
+
+hero:
+  config:
+    row-gutter: 30
+  title:
+    - title: Uncover more of the UK
+      style: xxl
+    - paragraph: Make the most of your summer at home with an incredible staycation. Whether you fancy heading to a sandy Cornish beach, want to try your hand at paddle-boarding in the Lake District, or fancy a tranquil spa stay at a stately manor hotel, there are plenty of amazing sights across the UK all waiting to welcome you back.
+
+
+
+
+offers:
+  config:
+  items:
+
+    - title: Boutique waterfront Ipswich stay - Fully refundable
+      location: Salthouse Harbour Hotel, Suffolk
+      description: Quirky and traditional styles sit side by side at this boutique waterfront Ipswich hotel on Neptune Quay - includes breakfast, a choice of rooms, late check-out and optional dinner. Fully refundable - book with confidence.
+      price: 99
+      price-description: per room per night
+      saved: 58
+      expires: 2021/05/31
+      image: https://secretescapes-web.imgix.net/hotels/245/209d79a2_fc9a_4151_8d11_efe60a8f9379.jpg?auto=format,compress
+      link: https://www.secretescapes.com/salthouse-harbour-hotel-fully-refundable-ipswich-suffolk-united-kingdom/sale-hotel
+
+    - title: Refined stay on Cheltenham's promenade - Fully refundable
+      location: Cheltenham Queens - MGallery Collection, Cotswolds
+      description: A beautiful Regency stay on The Promenade in Cheltenham, at the gateway to the Cotswolds - including breakfast. Fully refundable - book with confidence
+      price: 79
+      price-description: per room per night
+      saved: 53
+      expires: 2021/06/07
+      image: https://secretescapes-web.imgix.net/hotels/259/bd8b0d26_c296_4f82_8edd_428f4105b2ce.jpg?auto=format,compress
+      link: https://www.secretescapes.com/cheltenham-queens-mgallery-collection-fully-refundable-cheltenham-cotswolds/sale-hotel
+
+---
+{% include system/helpers.html %}
+
+<table {{table.fluid}}>
+  <tr>
+    <td bgcolor="{{color.background.inner}}">
+      {% include element/title.html title="Refundable deals" style="caps" %}
+      {% include element/space.html height="30" %}
+    </td>
+  </tr>
+</table>
+
+{% include component/offer-one-col.html content=page.offers %}
+
