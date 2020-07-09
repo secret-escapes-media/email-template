@@ -1,0 +1,68 @@
+---
+layout: super
+img: ../../img/example/direct/
+
+subject-line: Busy morning? Relish a moment of calm with dorset cereals
+preheader:
+
+page-link: #page-link
+terms-and-conditions:
+
+hero:
+  config:
+    link: "#hero-link"
+    row-gutter: 0
+  banner:
+    title:
+      image: T..banner-title.png
+      width: 480
+    background:
+      image: BG..super.jpg
+      height: 520
+  content:
+    - paragraph: Discover a delicious breakfast with dorset cereals. From gloriously nutty to luscious berry and cherry muesli, these breakfasts deserve to be savoured. With dorset cereals, take Breakfast on the Slow for a delicious start to your day, and take time to enjoy those special moments.
+      style: lg
+    - space: 8
+    - button: Read more
+
+
+
+
+features:
+  config:
+    row-gutter: 0
+    align: left
+    alternating: true
+    background-color: "#1E1F26"
+    box-color: "#1f2e3c"
+    theme: dark
+    height: 225
+  items:
+
+    - image: C..direct1.jpg
+      content:
+        - paragraph: Based in dazzling Dorset, dorset cereals make cereals that are worth slowing down for and savouring.
+          style: lg
+
+    - image: C..direct2.jpg
+      content:
+        - paragraph: Despite all the haste and hurry in life, dorset cereals believes in creating a calm moment of pleasure at the start of the day. They call it Breakfast on the Slow.
+          style: lg
+
+    - image: C..direct3.jpg
+      content:
+        - paragraph: The muesli range is high in fibre, as well as being suitable for vegans too, giving you even more reasons for a Breakfast on the Slow.
+          style: lg
+
+    - image: C..direct4.jpg
+      content:
+        - paragraph: They love trees, and all the good they do for our planet. So to date, dorset cereals have worked with the Woodland Trust to plant over 38,000 of them across the UK.
+          style: lg
+
+
+
+---
+{% include system/helpers.html %}
+
+{% include component/row.html content=page.features %}
+{% include element/space.html height="45" color="#1E1F26" %}

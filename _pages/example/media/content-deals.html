@@ -1,0 +1,200 @@
+---
+layout: super
+img: ../../img/example/content-deals/
+
+subject-line: On your bike! Go British with Brompton & win a luxury UK escape
+preheader: UK summer staycation ideas with Brompton Bikes
+
+page-link: #page-link
+terms-and-conditions:
+
+hero:
+  config:
+    link: "#hero-link"
+    row-gutter: 30
+  banner:
+    background:
+      image: BG..super.jpg
+      height: 520
+  content:
+    - title: UK summer staycation ideas with Brompton Bikes
+      style: xxl
+    - paragraph: Ready to embrace summer at home? Discover how you can make the most of your British staycation with Brompton Bike Hire.
+    - paragraph: Pick up your foldable Brompton bike from a number of docking stations across the country, pop it easily on the train or in the car, and head for the great outdoors. Discover wide-open spaces and dramatic coastlines at your leisure, with the iconic Brompton ready to easily fold away back at your hotel. With long hire periods of up to 30 days and monthly subscription offers, add a Brompton to your staycation for an adventurous and active getaway.
+
+    - hr: 60
+    - space: 8
+    - title: Win a two-night trip to the Lake District with a whole year of free Brompton hire
+    - space: 20
+    - image: C..competition.jpg
+    - space: 20
+    - paragraph: Win a two-night trip to the Lake District with a whole year of free Brompton hire! We’ll send you to the gorgeous Belsfield Hotel, a grand period property set on the shimmering shores of Windermere. Enjoy a hearty breakfast each morning, before you pedal power your way around the irresistible Lakeland scenes.
+      style: lg
+    - space: 8
+    - button: Enter now
+
+
+
+
+exeter:
+  config:
+    row-gutter: 10
+    align: center
+  items:
+    - link: "#one-col-link"
+      image: C..exeter.jpg
+      content:
+        - title: From Exeter to the coast
+        - paragraph: Pick up your Brompton from Exeter and explore the glorious coastlines of Cornwall. This land of irresistible coastal villages and gorgeous outdoor scenes make for a truly inspiring getaway. Hug the coastline and explore the affectionately-named English Riviera, before heading north for enchanting castles and secluded beaches.
+
+exeter-offers:
+  items:
+    - title: Modern Birmingham city centre stay - Fully refundable
+      location: Park Regis Birmingham
+      description: Polished Birmingham hotel located in the city centre
+      price: 89
+      price-description: per room per night
+      saved: 61
+      expires: 2021/05/31
+      image: https://secretescapes-web.imgix.net/hotels/249/ddbf9765_06ae_4f5a_a58d_5b039327d3e6.jpg?auto=format,compress
+      link: https://www.secretescapes.com/park-regis-birmingham-west-midlands-united-kingdom/sale-hotel
+
+
+
+
+bristol:
+  config:
+    row-gutter: 10
+    align: center
+  items:
+    - link: "#one-col-link"
+      image: C..bristol.jpg
+      content:
+        - title: From Bristol to the countryside
+        - paragraph: Discover the quintessential country villages of the Cotswolds, a short trip from Bristol. Gently rolling hills make for an even gentler cycle, as you dip into the honey-hued hamlets and unspoilt countryside. Alight at famed foodie hotspots and buzzing pubs, unpicking the picture-postcard beauty of this famed destination.
+
+bristol-offers:
+  items:
+    - title: Modern Birmingham city centre stay - Fully refundable
+      location: Park Regis Birmingham
+      description: Polished Birmingham hotel located in the city centre
+      price: 89
+      price-description: per room per night
+      saved: 61
+      expires: 2021/05/31
+      image: https://secretescapes-web.imgix.net/hotels/249/ddbf9765_06ae_4f5a_a58d_5b039327d3e6.jpg?auto=format,compress
+      link: https://www.secretescapes.com/park-regis-birmingham-west-midlands-united-kingdom/sale-hotel
+
+
+
+
+birmingham:
+  config:
+    row-gutter: 10
+    align: center
+  items:
+    - link: "#one-col-link"
+      image: C..birmingham.jpg
+      content:
+        - title: From Birmingham to the Heritage Coast
+        - paragraph: Leave the bustle of Birmingham behind and hop on the train. Destination? The glorious Welsh coast. 22 miles of unspoilt coastline is ready to be explored, a designated heritage coast filled with incredible outdoor vistas. Explore it all on a network of cycle paths, with buzzing hubs like studenty Aberystwyth making the perfect base camp.
+
+birmingham-offers:
+  items:
+    - title: Modern Birmingham city centre stay - Fully refundable
+      location: Park Regis Birmingham
+      description: Polished Birmingham hotel located in the city centre
+      price: 89
+      price-description: per room per night
+      saved: 61
+      expires: 2021/05/31
+      image: https://secretescapes-web.imgix.net/hotels/249/ddbf9765_06ae_4f5a_a58d_5b039327d3e6.jpg?auto=format,compress
+      link: https://www.secretescapes.com/park-regis-birmingham-west-midlands-united-kingdom/sale-hotel
+
+
+
+
+promos:
+  config:
+    row-gutter: 0
+    align: left
+    alternating: true
+    background-color: "#1E1F26"
+    box-color: "#000000"
+    theme: dark
+  items:
+
+    - link: "#two-col-link"
+      image: C..promo-hire.jpg
+      content:
+        - title: Hire a Brompton today!
+          style: md
+        - paragraph: Start planning your UK adventure now. Download the app and pick from a range of docking stations, with up to 30 days hire for those extra long getaways.
+        - text-link: Start now
+
+    - link: "#two-col-link"
+      image: C..promo-subscription.jpg
+      content:
+        - title: Brompton Subscription
+          style: md
+        - paragraph: Feeling attached and want to keep the Brompton bike longer? Sign up to Brompton Subscription and pay monthly
+        - text-link: Find out more
+
+
+---
+{% include system/helpers.html %}
+
+
+
+{% include component/one-col.html content=page.comp %}
+
+<table {{table.fluid}}>
+  <tr>
+    <td bgcolor="{{color.background.inner}}">
+      <table {{table.inner}}>
+        <tr>
+          <td style="{{spacing.gutter}}">
+            {% include element/space.html height="15" %}
+            {% include element/title.html title="Escape the city" style="xl" %}
+            {% include element/space.html height="10" %}
+            {% include element/paragraph.html paragraph="No matter where you want to travel to, you’ll find a docking station somewhere en route. Pick up a Brompton and add a new way of adventuring to your staycation." %}
+            {% include element/space.html height="45" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% include component/one-col.html content=page.exeter %}
+{% include component/offer-row.html content=page.exeter-offers %}
+{% include element/space.html height="45" color=color.background.inner %}
+
+{% include component/one-col.html content=page.bristol %}
+{% include component/offer-row.html content=page.bristol-offers %}
+{% include element/space.html height="45" color=color.background.inner %}
+
+{% include component/one-col.html content=page.birmingham %}
+{% include component/offer-row.html content=page.birmingham-offers %}
+{% include element/space.html height="45" color=color.background.inner %}
+
+
+<table {{table.fluid}}>
+  <tr>
+    <td bgcolor="{{color.black}}">
+      <table {{table.inner}}>
+        <tr>
+          <td style="{{spacing.gutter}}">
+            {% include element/space.html height="45" %}
+            {% include element/title.html title="Start now" style="xl" theme="dark" %}
+            {% include element/space.html height="30" %}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% include component/row.html content=page.promos %}
+{% include element/space.html height="45" color=color.black %}
+

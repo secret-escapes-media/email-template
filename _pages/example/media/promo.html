@@ -1,0 +1,69 @@
+---
+layout: promotion
+img: ../../img/example/promo/
+
+subject-line: Let them know you care - 💐 send a bouquet of beautiful flowers
+preheader:
+
+page-link: #page-link
+terms-and-conditions:
+
+hero:
+  config:
+    link: "#hero-link"
+    row-gutter: 30
+  title:
+    - title: Send someone a bouquet of beautiful flowers
+      style: xxl
+    - paragraph: Save 15% on all orders with our exclusive members' offer
+      style: xxl
+  image:
+    file: BG..hero.jpg
+    height: 300
+  content:
+    - paragraph: Want to treat a key worker, know someone celebrating an isolation birthday, or simply want to let that person know you’re thinking about them? Why not send a beautiful bouquet of hand-tied flowers to brighten up their day.
+    - hr: 30
+    - promo: SECRETESCAPES
+      before: "Save 15% on all orders with our exclusive discount code:"
+    - space: 8
+    - button: Shop now
+
+
+
+
+features:
+  config:
+    row-gutter: 0
+    align: left
+    alternating: true
+    height: 300
+  items:
+
+    - image: C..feature1.jpg
+      content:
+        - title: A free greeting card and free next day delivery
+          style: md
+        - paragraph: Looking for a last-minute gift and something you can send direct to their door? Arena flowers have got you covered with their free greetings cards and speedy next day delivery.
+        - text-link: Find out more
+
+    - image: C..feature2.jpg
+      content:
+        - title: Every bouquet is hand-tied
+          style: md
+        - paragraph: Just as each customer is different, so is each of Arena’s bouquets. Arena Flowers' talented florists arrange and hand tie every bunch for that personalised touch.
+        - text-link: Find out more
+
+    - image: C..feature3.jpg
+      content:
+        - title: The UK’s No.1 rated ethical florist
+          style: md
+        - paragraph: When you buy flowers, we plant trees. Giving back to the environment is just as important as sending the perfect gift. Which is why Arena Flowers is voted the most ethical online florist.
+        - text-link: Find out more
+
+
+
+---
+{% include system/helpers.html %}
+
+{% include component/row.html content=page.features %}
+{% include element/space.html height="45" %}

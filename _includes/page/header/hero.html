@@ -3,11 +3,22 @@
 
 {% include system/helpers.html %}
 
-{% assign this         = include.content %}
-{% assign config       = this.config %}
-{% assign row-gutter   = "0" %}
-{% assign theme        = "dark" %}
+{% assign this             = include.content %}
+{% assign config           = this.config %}
+{% assign row-gutter       = "0" %}
+{% assign theme            = "dark" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
 
+
+
+{% if config.background-color %}
+  {% assign background-color = config.background-color %}
+{% endif %}
+
+{% if config.box-color %}
+  {% assign box-color = config.box-color %}
+{% endif %}
 
 {% if config.theme == "light" %}
   {% assign theme = "light" %}
@@ -29,4 +40,4 @@
   {% include page/header/image.html content=this %}
 {% endif %}
 
-{% include element/space.html color=color.background.inner height=row-gutter %}
+{% include element/space.html color=background-color height=row-gutter %}
