@@ -28,3 +28,12 @@ img[class*="responsive-md"]{
 img[class="logo-icon__line"]{
   display: none !important;
 }
+
+td[class*="offer-image"] {
+  height: 240px !important;
+}
+table[class*="offer-image__link"],
+td[class*="offer-image__link"],
+a[class*="offer-image__link"] {
+  height: 130px !important;
+}

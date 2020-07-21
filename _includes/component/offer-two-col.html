@@ -1,0 +1,173 @@
+
+{% assign items            = include.content.items %}
+{% assign row-gutter       = "30" %}
+{% assign col-gutter       = "30" %}
+{% assign image-height     = "165" %}
+{% assign background-color = color.background.inner %}
+{% assign box-color        = color.background.box %}
+{% assign theme            = "light" %}
+
+
+
+{% for item in items %}
+
+  {% assign width = layout.width.lg | minus: col-gutter | divided_by: 2 %}
+
+  {% capture pos %}{% cycle "one", "two" %}{% endcapture %}
+  {% if pos == "one" and forloop.last %}
+    {% assign align = "center" %}
+  {% elsif pos == "one" %}
+    {% assign align = "left" %}
+  {% elsif pos == "two" %}
+    {% assign align = "right" %}
+  {% endif %}
+
+  {% if pos == 'one' %}
+
+  <!-- offer-two-col.html -->
+  <table {{table.outer}}>
+  <tr>
+  <td align="center" bgcolor="{{background-color}}" style="{{spacing.gutter}}">
+  <!-- Component start -->
+
+  <!--[if (gte mso 9)|(IE)]>
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+  <tr>
+  <td align="center" valign="top" width="{{layout.width.lg}}">
+  <![endif]-->
+  <table {{table.inner}}>
+    <tr>
+      <td align="center" style="font-size:0;">
+      <!--[if (gte mso 9)|(IE)]>
+      <table align="{{align}}" border="0" cellspacing="0" cellpadding="0" width="{{layout.width.lg}}">
+      <tr>
+      <td align="center" valign="top" width="{{width}}">
+      <![endif]-->
+  {% endif %}
+
+        <div class="responsive-lg" style="display:inline-block; vertical-align:top; max-width:50%; min-width:{{width}}px; width:100%;">
+        <table {{table.default}} class="responsive-lg" align="{{align}}" width="100%" style="width: 100%; max-width: {{width}}px;">
+          <tr>
+            <td align="center" style="padding-bottom: {{row-gutter}}px;">
+
+              <table {{table.default}}>
+                <tr>
+                  <td align="center" bgcolor="{{box-color}}" style="{{rounded.md}} {{depth.default}}">
+                    <table {{table.default}}>
+
+                      <tr>
+                        <td align="center" bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.top.md}}" class="rounded-top-md offer-image" height="{{image-height}}">
+                          <!--[if mso | ie]>
+                          <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: {{image-height}}px;" src="{{item.image}}" />
+                          <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.lg}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
+                          <v:fill type="frame" size="100%,100%"  src="{{item.image}}" />
+                          <v:textbox inset="0,0,0,0">
+                          <![endif]-->
+                          <table align="center" {{table.fluid}}>
+                            <tr>
+                              <td align="center">
+                                <!-- Top -->
+                                <table {{table.fluid}} height="45">
+                                  <tr>
+                                    <td width="{{spacing.sm}}"></td>
+                                    <td align="center" valign="top" class="text-sm" style="padding-top: {{spacing.sm}}px; {{default.text.sm}} {{typography.bold}} color: {{color.white}}; text-align: left;">
+                                      Sale ends {{item.expires | date: "%B %d"}}
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!-- Link -->
+                                {% if item.attribute %}
+                                  {% assign link-height = image-height | minus: 90 %}
+                                {% else %}
+                                  {% assign link-height = image-height | minus: 45 %}
+                                {% endif %}
+                                <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
+                                  <tr>
+                                    <td align="center" class="offer-image__link" height="{{link-height}}">
+                                      <a href="{{item.link}}" class="offer-image__link" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                                {% if item.attribute %}
+                                <!-- Bottom -->
+                                <table {{table.fluid}} height="45">
+                                  <tr>
+                                    <td width="{{spacing.sm}}"></td>
+                                    <td align="center" valign="bottom" style="padding-bottom: {{spacing.sm}}px;">
+                                      {% include element/badge.html label=item.attribute %}
+                                    </td>
+                                  </tr>
+                                </table>
+                                {% endif %}
+                              </td>
+                            </tr>
+                          </table>
+                          <!--[if mso | ie]>
+                          </v:textbox>
+                          </v:fill>
+                          </v:rect>
+                          </v:image>
+                          <![endif]-->
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <td align="left" style="{{spacing.hpad.sm}} {{spacing.vpad.sm}}">
+                          {% include element/location.html location=item.location align="left" style="sm" %}
+                          {% include element/title.html title=item.title style="sm" align="left" %}
+                          {% include element/space.html height="8" %}
+                          {% include element/paragraph.html paragraph=item.description align="left" style="sm" spacing="0" %}
+                          {% include element/space.html height="4" %}
+                          <!-- CTA -->
+                          <table {{table.fluid}}>
+                            <tr>
+                              <td align="left">
+                                {% capture price %}
+                                  {{locale.offer.from}} <span style="font-weight: 700; font-size: 18px;">{{locale.offer.currency}}{{item.price}}</span> {{item.price-description}}
+                                {% endcapture %}
+                                {% include element/button.html link=item.link label=price align="left" style="offer-price" scale="sm" %}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        </div>
+
+        {% if pos == 'one' %}
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        <td style="font-size: 1px;" width="{{col-gutter}}"></td>
+        <td align="right" valign="top" width="{{width}}">
+        <![endif]-->
+        {% endif %}
+
+  {% if pos == 'two' or forloop.last %}
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+
+  <!-- Component end -->
+  </td>
+  </tr>
+  </table>
+  {% endif %}
+{% endfor %}

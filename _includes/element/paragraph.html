@@ -6,6 +6,10 @@
 {% assign style      = "default" %}
 {% assign textcolor  = color.grey.dark %}
 
+{% if include.spacing %}
+  {% assign paragraph-spacing = include.spacing %}
+{% endif %}
+
 {% if include.align %}
   {% assign align = include.align %}
 {% endif %}
@@ -22,7 +26,7 @@
 
 <table {{table.fluid}}>
   <tr>
-    <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{default.text.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0 !important;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0 !important;{% endunless %}">
+    <td align="{{align}}" class="text{% if include.style %}-{{include.style}}{% endif %}" style="{{default.text.[style]}} color: {{textcolor}}; {% if forloop.last %}padding-bottom: 0 !important;{% endif %} {% unless forloop.length > 0 %}padding-bottom: 0 !important;{% endunless %}{% if paragraph-spacing %}padding-bottom: {{paragraph-spacing}}px !important;{% endif %}">
       {{include.paragraph}}
     </td>
   </tr>

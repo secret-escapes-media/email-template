@@ -21,6 +21,6 @@ title-xxl:      "font-size: 36px !important; line-height: 45px !important; paddi
 title-xl:       "font-size: 32px !important; line-height: 40px !important; padding-bottom: 8px !important;"
 title-lg:       "font-size: 26px !important; line-height: 32px !important; padding-bottom: 6px !important;"
 title-md:       "font-size: 22px !important; line-height: 27px !important; padding-bottom: 5px !important;"
-title-sm:       "font-size: 18px !important; line-height: 23px !important; padding-bottom: 4px !important;"
+title-sm:       "font-size: 19px !important; line-height: 24px !important; padding-bottom: 4px !important;"
 title-xs:       "font-size: 16px !important; line-height: 20px !important; padding-bottom: 4px !important;"
 title-caps:     "font-size: 18px !important; line-height: 22px !important; padding-bottom: 8px !important;"

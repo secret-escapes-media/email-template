@@ -5,17 +5,17 @@ style:
   default:
     text-color: "#ffffff"
     background: "#FA8C38"
-    background-css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
+    css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
 
   primary:
     text-color: "#ffffff"
     background: "#FA8C38"
-    background-css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
+    css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%);"
 
   secondary:
     text-color: "#ffffff"
     background: "#00818F"
-    background-css: "background: linear-gradient(180deg, #2194A1 12.52%, #0C7F8C 87.48%);"
+    css: "background: linear-gradient(180deg, #2194A1 12.52%, #0C7F8C 87.48%);"
 
   light:
     text-color: "#1E1F26"
@@ -28,7 +28,12 @@ style:
   outline:
     text-color: "#1E1F26"
     background: "#ffffff"
-    background-css: "border: 1px solid #43444C;"
+    css: "border: 1px solid #43444C;"
+
+  offer-price:
+    text-color: "#ffffff"
+    background: "#FA8C38"
+    css: "background: linear-gradient(180deg, #FF872C 12.52%, #F36900 87.48%); text-transform: none; letter-spacing: 0;"
 
 
 

@@ -28,7 +28,7 @@
 
         <table {{table.fluid}}>
           <tr>
-            <td align="center" bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.top.md}}" class="rounded-top-md" height="{{image-height}}">
+            <td align="center" bgcolor="{{color.black}}" background="{{item.image}}" style="background-position: top center; background-repeat: no-repeat; background-size: cover; {{rounded.top.md}}" class="rounded-top-md offer-image" height="{{image-height}}">
               <!--[if mso | ie]>
               <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0; display: inline-block; width: {{layout.width.lg}}px; height: {{image-height}}px;" src="{{item.image}}" />
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: {{layout.width.lg}}px; height: {{image-height}}px; border: 0;display:inline-block;position:absolute;">
@@ -53,10 +53,10 @@
                     {% else %}
                       {% assign link-height = image-height | minus: 45 %}
                     {% endif %}
-                    <table class="offer__image" {{table.fluid}} height="{{link-height}}">
+                    <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
                       <tr>
-                        <td align="center" height="{{link-height}}">
-                          <a href="{{item.link}}" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
+                        <td align="center" class="offer-image__link" height="{{link-height}}">
+                          <a href="{{item.link}}" class="offer-image__link" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
                         </td>
                       </tr>
                     </table>
@@ -86,12 +86,13 @@
             <td align="left" style="{{spacing.hpad.md}} {{spacing.vpad.md}}">
               {% include element/location.html location=item.location align="left" %}
               {% include element/title.html title=item.title style="lg" align="left" %}
-              {% include element/space.html height="10" %}
-              {% include element/paragraph.html paragraph=item.description align="left" %}
+              {% include element/space.html height="8" %}
+              {% include element/paragraph.html paragraph=item.description align="left" spacing="0" %}
+              {% include element/space.html height="12" %}
               <!-- Price + CTA -->
               <table {{table.fluid}}>
                 <tr>
-                  <td align="left" style="padding-top: 15px;">
+                  <td align="left">
                     <table {{table.fluid}}>
                       <tr>
                         <td align="left" class="text-md" style="{{default.text.md}} color: {{color.grey.dark}};">
@@ -99,7 +100,7 @@
                         </td>
                         <td style="font-size:1px;" width="15"></td>
                         <td align="right">
-                          {% include element/button.html label=locale.offer.cta align="right" %}
+                          {% include element/button.html link=item.link label=locale.offer.cta align="right" %}
                         </td>
                       </tr>
                     </table>
