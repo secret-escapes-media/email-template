@@ -16,14 +16,31 @@
 
   {% capture googlefonts %}
     {% for font in foundations.fonts %}
-      {{font.gfont}}:
-      {% for weight in font.weights %}
-        {{weight.weight}}{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-      {% unless forloop.last %}|{% endunless %}
+      {{font.gfont}}
+
+      {% if font.weights %}
+        {% if font.italics %}
+          :ital,wght@
+          {% for weight in font.weights %}
+            0,{{weight.weight}};
+          {% endfor %}
+          {% for weight in font.weights %}
+            1,{{weight.weight}}{% unless forloop.last %};{% endunless %}
+          {% endfor %}
+
+        {% else %}
+          :wght@
+          {% for weight in font.weights %}
+            {{weight.weight}}{% unless forloop.last %};{% endunless %}
+          {% endfor %}
+
+        {% endif %}
+      {% endif %}
+
+      {% unless forloop.last %}&family={% endunless %}
     {% endfor %}
   {% endcapture %}
-  <link href='https://fonts.googleapis.com/css?family={{googlefonts|strip_newlines|remove:" "}}' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css2?family={{googlefonts|strip_newlines|remove:" "}}&display=swap' rel='stylesheet'>
 
   <!-- // FIX: DPI Scaling in Outlook 2007-2013 -->
   <!--[if gte mso 9]><xml>
