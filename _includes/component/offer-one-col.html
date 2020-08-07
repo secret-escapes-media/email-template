@@ -10,6 +10,10 @@
 
 {% for item in items %}
 
+  {% if item.attribute-refundable || item.attribute-flights || item.attribute-customisable  %}
+    {% assign has-attribute = true %}
+  {% endif %}
+
   <!-- offer-one-col.html -->
   <table {{table.outer}}>
   <tr>
@@ -48,7 +52,7 @@
                       </tr>
                     </table>
                     <!-- Link -->
-                    {% if item.attribute %}
+                    {% if has-attribute %}
                       {% assign link-height = image-height | minus: 90 %}
                     {% else %}
                       {% assign link-height = image-height | minus: 45 %}
@@ -60,13 +64,19 @@
                         </td>
                       </tr>
                     </table>
-                    {% if item.attribute %}
+                    {% if has-attribute %}
                     <!-- Bottom -->
                     <table {{table.fluid}} height="45">
                       <tr>
                         <td width="{{spacing.sm}}"></td>
                         <td align="center" valign="bottom" style="padding-bottom: {{spacing.sm}}px;">
-                          {% include element/badge.html label=item.attribute %}
+                          {% if item.attribute-refundable %}
+                            {% include element/badge.html attribute="refundable" %}
+                          {% elsif item.attribute-flights %}
+                            {% include element/badge.html attribute="flights" %}
+                          {% elsif item.attribute-customisable %}
+                            {% include element/badge.html attribute="customisable" %}
+                          {% endif %}
                         </td>
                       </tr>
                     </table>

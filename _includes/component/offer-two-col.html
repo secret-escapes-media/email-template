@@ -11,6 +11,10 @@
 
 {% for item in items %}
 
+  {% if item.attribute-refundable || item.attribute-flights || item.attribute-customisable  %}
+    {% assign has-attribute = true %}
+  {% endif %}
+
   {% assign width = layout.width.lg | minus: col-gutter | divided_by: 2 %}
 
   {% capture pos %}{% cycle "one", "two" %}{% endcapture %}
@@ -66,39 +70,14 @@
                           <table align="center" {{table.fluid}}>
                             <tr>
                               <td align="center">
-                                <!-- Top -->
-                                <table {{table.fluid}} height="45">
-                                  <tr>
-                                    <td width="{{spacing.sm}}"></td>
-                                    <td align="center" valign="top" class="text-sm" style="padding-top: {{spacing.sm}}px; {{default.text.sm}} {{typography.bold}} color: {{color.white}}; text-align: left;">
-                                      Sale ends {{item.expires | date: "%B %d"}}
-                                    </td>
-                                  </tr>
-                                </table>
                                 <!-- Link -->
-                                {% if item.attribute %}
-                                  {% assign link-height = image-height | minus: 90 %}
-                                {% else %}
-                                  {% assign link-height = image-height | minus: 45 %}
-                                {% endif %}
-                                <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
+                                <table class="offer-image__link" {{table.fluid}} height="{{image-height}}">
                                   <tr>
-                                    <td align="center" class="offer-image__link" height="{{link-height}}">
-                                      <a href="{{item.link}}" class="offer-image__link" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
+                                    <td align="center" class="offer-image__link" height="{{image-height}}">
+                                      <a href="{{item.link}}" class="offer-image__link" style="height: {{image-height}}px; width: 100%; display: block;">&nbsp;</a>
                                     </td>
                                   </tr>
                                 </table>
-                                {% if item.attribute %}
-                                <!-- Bottom -->
-                                <table {{table.fluid}} height="45">
-                                  <tr>
-                                    <td width="{{spacing.sm}}"></td>
-                                    <td align="center" valign="bottom" style="padding-bottom: {{spacing.sm}}px;">
-                                      {% include element/badge.html label=item.attribute %}
-                                    </td>
-                                  </tr>
-                                </table>
-                                {% endif %}
                               </td>
                             </tr>
                           </table>

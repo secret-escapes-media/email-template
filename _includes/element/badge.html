@@ -6,6 +6,17 @@
 {% assign align      = "left" %}
 {% assign background = "#00818F" %}
 
+{% if include.attribute == "refundable" %}
+  {% assign label      = "Refundable" %}
+  {% assign background = "#128B71" %}
+{% elsif include.attribute == "flights" %}
+  {% assign label      = "Flights" %}
+  {% assign background = "#000000" %}
+{% elsif include.attribute == "customisable" %}
+  {% assign label      = "Customisable" %}
+  {% assign background = "#583490" %}
+{% endif %}
+
 
 {% if include.label %}
   {% assign label = include.label %}
