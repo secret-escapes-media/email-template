@@ -7,13 +7,13 @@
 {% assign background = "#00818F" %}
 
 {% if include.attribute == "refundable" %}
-  {% assign label      = "Refundable" %}
+  {% assign label      = locale.offer.refundable %}
   {% assign background = "#128B71" %}
 {% elsif include.attribute == "flights" %}
-  {% assign label      = "Flights" %}
+  {% assign label      = locale.offer.flights %}
   {% assign background = "#000000" %}
 {% elsif include.attribute == "customisable" %}
-  {% assign label      = "Customisable" %}
+  {% assign label      = locale.offer.customisable %}
   {% assign background = "#583490" %}
 {% endif %}
 
@@ -32,7 +32,7 @@
     <td align="{{align}}">
       <table {{table.default}} align="{{align}}" style="border-collapse: separate !important; border-spacing: 0;">
         <tr>
-          <td class="badge" bgcolor="{{background}}" style="background-color: {{background}}; {{rounded.md}} display: inline-block; text-decoration: none; text-transform: uppercase; text-align: center; font-size: 14px; line-height: 14px; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; letter-spacing: .1em; color: {{color.white}}; border-style: solid; border-color: {{background}}; border-top-width: 7px; border-bottom-width: 7px; border-left-width: 14px; border-right-width: 14px;">
+          <td class="badge" bgcolor="{{background}}" style="background-color: {{background}}; {{rounded.md}} display: inline-block; text-decoration: none; text-transform: uppercase; text-align: center; font-size: 12px; line-height: 12px; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Source Sans Pro'; letter-spacing: .1em; color: {{color.white}}; border-style: solid; border-color: {{background}}; border-top-width: 6px; border-bottom-width: 6px; border-left-width: 12px; border-right-width: 12px;">
             {{label}}
           </td>
         </tr>

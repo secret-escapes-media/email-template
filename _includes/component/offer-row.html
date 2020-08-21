@@ -49,19 +49,10 @@
                 <tr>
                   <td align="center">
                     <!-- Top -->
-                    <table {{table.fluid}} height="45">
-                      <tr>
-                        <td width="{{spacing.sm}}"></td>
-                        <td align="center" valign="top" class="text-md" style="padding-top: {{spacing.sm}}px; {{default.text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
-                          Sale ends {{item.expires | date: "%B %d"}}
-                        </td>
-                      </tr>
-                    </table>
-                    <!-- Link -->
                     {% if has-attribute %}
-                      {% assign link-height = image-height | minus: 90 %}
-                    {% else %}
                       {% assign link-height = image-height | minus: 45 %}
+                    {% else %}
+                      {% assign link-height = image-height %}
                     {% endif %}
                     <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
                       <tr>
@@ -113,7 +104,7 @@
               <!-- Location -->
               {% include element/location.html location=item.location align="left" %}
               <!-- Title -->
-              {% include element/title.html title=item.title align="left" style="md" %}
+              {% include element/title.html title=item.title align="left" style="sm" %}
               {% include element/space.html height="4" %}
               {% include element/paragraph.html paragraph=item.description align="left" style="sm" spacing="0" %}
               {% include element/space.html height="12" %}

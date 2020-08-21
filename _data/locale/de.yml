@@ -7,6 +7,9 @@ offer:
   cta: Jetzt angebote
   currency: €
   from: Ab
+  refundable: Stornierbar
+  flights: Flüge Inklusive
+  customisable: Konfigurierbar
 
 link:
   current-sales: https://www.secretescapes.de/aktuelle-angebote
@@ -24,7 +27,7 @@ footer:
   quicklinks:
     view-online: "Im Browser öffnen"
     fewer-emails: "Weniger Mails, bitte"
-    unsubscribe: "Hier von abmelden"
+    unsubscribe: "Abmelden"
   legal:
     - paragraph: >
         Für Sie finden wir Luxushotels und exklusive Urlaubsziele sowie außergewöhnliche Extras, die Ihnen bestimmt gefallen.

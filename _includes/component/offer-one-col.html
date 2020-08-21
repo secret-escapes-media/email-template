@@ -42,20 +42,11 @@
               <table align="center" {{table.fluid}}>
                 <tr>
                   <td align="center">
-                    <!-- Top -->
-                    <table {{table.fluid}} height="45">
-                      <tr>
-                        <td width="{{spacing.sm}}"></td>
-                        <td align="center" valign="top" class="text-md" style="padding-top: {{spacing.sm}}px; {{default.text.md}} {{typography.bold}} color: {{color.white}}; text-align: left;">
-                          Sale ends {{item.expires | date: "%B %d"}}
-                        </td>
-                      </tr>
-                    </table>
                     <!-- Link -->
                     {% if has-attribute %}
-                      {% assign link-height = image-height | minus: 90 %}
-                    {% else %}
                       {% assign link-height = image-height | minus: 45 %}
+                    {% else %}
+                      {% assign link-height = image-height %}
                     {% endif %}
                     <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
                       <tr>

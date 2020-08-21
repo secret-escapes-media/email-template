@@ -7,6 +7,9 @@ offer:
   cta: View sale
   currency: £
   from: From
+  refundable: Refundable
+  flights: Flights
+  customisable: Customisable
 
 link:
   current-sales: https://www.secretescapes.com/current-sales
