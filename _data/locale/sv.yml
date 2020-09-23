@@ -1,0 +1,34 @@
+
+##################################################################################################
+# Sweden
+#
+
+offer:
+  cta: Se erbjudande
+  currency: £
+  from: Från
+
+link:
+  current-sales: https://www.secretescapes.se/
+  contact: https://www.secretescapes.se/kontakt
+  faq: https://www.secretescapes.se/vanliga-fragor
+  terms-and-conditions: https://www.secretescapes.se/regler-och-villkor
+  privacy-policy: https://www.secretescapes.se/integritetspolicy
+  subscriptions: http://www.secretescapes.se/dina-prenumerationer
+
+footer:
+  promo: "Oslagbara rabatter på handplockade hotell och resor"
+  promo-button: "SE VÅRA ERBJUDANDEN"
+  best-wishes: "Best wishes from Secret Escapes"
+  faq: "Any questions? See our FAQs here."
+  quicklinks:
+    view-online: "Visa online"
+    fewer-emails: "Hantera prenumeration"
+    unsubscribe: "Avsluta prenumerationen"
+  partnership: När vi inte är upptagna med att erbjuda handplockade hotell och resor vill vi hålla koll på kampanjer som vi tror att du kommer att älska, som den här till exempel. Det här emailet skrevs av vår redaktion i samarbete med
+  legal:
+    - paragraph: >
+        Genom att klicka på våra email loggas du in på Secret Escapes. För att berätta för vänner om erbjudandet är det bäst att använda dela-knappen på hemsidan. För att komma i kontakt med oss, gå till <a href="https://www.secretescapes.se/kontakt" style="font-weight: 600; text-decoration: none; color: #5B5D67;">secretescapes.se/kontakt</a>.
+    - paragraph: >
+        Secret Escapes Ltd. är ett bolag registrerat i England & Wales med organisationsnummer 07026107. Sätesadressen är Floor 4, 120 Holborn, London, EC1N 2TD, Storbritannien
+

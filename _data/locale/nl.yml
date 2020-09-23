@@ -1,0 +1,40 @@
+
+##################################################################################################
+# Netherlands
+#
+
+offer:
+  cta:
+  currency: €
+  from:
+  refundable:
+  flights:
+  customisable:
+
+link:
+  current-sales: https://no.secretescapes.com/
+  contact: https://no.secretescapes.com/kontakt
+  faq: https://no.secretescapes.com/faq
+  terms-and-conditions: https://no.secretescapes.com/terms-and-conditions
+  privacy-policy: https://no.secretescapes.com/privacy-policy
+  subscriptions: http://no.secretescapes.com/your-subscriptions
+
+footer:
+  promo: "Tot 70% korting op luxe hotels en vakanties"
+  promo-button:
+  best-wishes:
+  faq:
+  quicklinks:
+    view-online: "Online bekijken"
+    fewer-emails: "Minder e-mails"
+    unsubscribe: "Afmelden"
+  partnership: Luxe reizen is onze passie en af en toe presenteren we speciale promoties die interessant zouden kunnen zijn voor onze leden - zoals deze. Deze e-mail is samengesteld door onze redactie in samenwerking met
+  legal:
+    - paragraph: >
+        Für Sie finden wir Luxushotels und exklusive Urlaubsziele sowie außergewöhnliche Extras, die Ihnen bestimmt gefallen.
+    - paragraph: >
+        Wilt u direct contact, stuur dan een e-mail aan <a href="mailto:klantenservice@secretescapes.nl" style="font-weight: 600; text-decoration: none; color: #5B5D67;">klantenservice@secretescapes.nl</a> of bel ons op dit nummer: <a href="+31200709152" style="font-weight: 600; text-decoration: none; color: #5B5D67;">(+3‌1)(‌0)‌20 0‌70 9‌1 5‌2</a>.
+    - paragraph: >
+        Secret Escapes Ltd is een onder nummer 07‌0261‌07 in Engeland en Wales geregistreerde onderneming. © Secret Escapes 2018
+
+
