@@ -85,7 +85,16 @@
               <tr>
                 <td class="hero__link" align="center" valign="middle">
                   {% if banner.title.image %}
-                    {% include element/image.html image=banner.title.image alt=banner.title.text link=link width=banner.title.width %}
+                    <table {{table.fluid}}>
+                      <tr>
+                        <td align="center">
+                          <a href="{{link}}">
+                            <img class="responsive-lg" src="{{page.img}}{{banner.title.image}}" alt="{{banner.title.text}}" width="100%" style="max-width: {{banner.title.width}}px; display: block;" />
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+
                   {% elsif banner.title %}
                     {% include element/title.html title=banner.title.text style="xxxl" theme="dark" %}
                   {% else %}
@@ -96,7 +105,7 @@
               <!-- Bottom fade -->
               <tr>
                 <td align="center" valign="bottom" height="60" style="vertical-align: bottom;">
-                  <img src="http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se20..hero-fade-bottom.png" class="responsive-lg" width="{{layout.width.xl}}" style="vertical-align: bottom; max-width: 100%; display: block;">
+                  <img src="http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/se20..hero-fade-bottom.png" class="responsive-lg" width="100%" style="vertical-align: bottom; max-width: {{layout.width.xl}}px; display: block;">
                 </td>
               </tr>
             </table>
