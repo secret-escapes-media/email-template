@@ -10,6 +10,8 @@
 
 {% for item in items %}
 
+  {% assign offer-link = item.link | append: site.ampscript.gastring %}
+
   {% if item.attribute-refundable || item.attribute-flights || item.attribute-customisable  %}
     {% assign has-attribute = true %}
   {% endif %}
@@ -51,7 +53,7 @@
                     <table class="offer-image__link" {{table.fluid}} height="{{link-height}}">
                       <tr>
                         <td align="center" class="offer-image__link" height="{{link-height}}">
-                          <a href="{{item.link}}" class="offer-image__link" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
+                          <a href="{{offer-link}}" class="offer-image__link" style="height: {{link-height}}px; width: 100%; display: block;">&nbsp;</a>
                         </td>
                       </tr>
                     </table>
@@ -101,7 +103,7 @@
                         </td>
                         <td style="font-size:1px;" width="15"></td>
                         <td align="right">
-                          {% include element/button.html link=item.link label=locale.offer.cta align="right" %}
+                          {% include element/button.html link=offer-link label=locale.offer.cta align="right" %}
                         </td>
                       </tr>
                     </table>
