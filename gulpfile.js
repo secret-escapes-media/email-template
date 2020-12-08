@@ -113,7 +113,7 @@ function compressHtml() {
       'new-empty-tags': 'custom'
     }))
     // cant stop htmltidy from auto closing this custom element, Exact target wont accept it closed, so need to replace
-    .pipe(replace('<custom name="opencounter" type="tracking" />', '<custom name="opencounter" type="tracking">'))
+    .pipe(replace('<custom name="opencounter" type="tracking"></custom>', '<custom name="opencounter" type="tracking">'))
     .pipe(gulp.dest('./_site'));
 }
 

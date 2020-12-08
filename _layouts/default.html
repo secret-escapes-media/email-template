@@ -29,6 +29,7 @@ SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
   {% include system/head.html %}
   <body>
     {% include system/preheader.html %}
+    <custom name="opencounter" type="tracking"></custom>
     <table {{table.fluid}}>
       <tr>
         <td align="center" bgcolor="{{color.background.outer}}">
@@ -55,6 +56,5 @@ SET @gaString = concat("auth=",@encData, "&noPasswordSignIn=true", @gaString)
         </td>
       </tr>
     </table>
-    <custom name="opencounter" type="tracking">
   </body>
 </html>
